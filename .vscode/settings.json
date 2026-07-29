@@ -1,0 +1,20 @@
+{
+  "python.REPL.enableREPLSmartSend": false,
+
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/.DS_Store": true,
+    "**/Thumbs.db": true,
+    "**/flutter/ephemeral": true,
+    "**/Flutter/ephemeral": true,
+    "**/.symlinks": true,
+    "**/.plugin_symlinks": true,
+    "**/CVS": true,
+    "**/.ruby-lsp": true,
+    "**/.pyc": { "when": "$(basename).py" },
+    "**/__pycache__": true,
+    "**/__pytest_cache": true
+  }
+}
