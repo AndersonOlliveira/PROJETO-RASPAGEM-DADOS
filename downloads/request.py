@@ -10,14 +10,14 @@ from bs4 import BeautifulSoup
 from collections import Counter, defaultdict
 from Processor.ClassResquest import RateLimiter
 # self contem todos as configurações 
-buffer_mensagens_emails =[]
+# buffer_mensagens_emails =[]
 timer_ativo = False
 lock_error = threading.Lock()
 
 def pull_request(servidor):
     global buffer_mensagens_emails, timer_ativo, lock_error 
             
-    JANELA_COLETA_SEGUNDOS = 30
+    JANELA_COLETA_SEGUNDOS = 60
     soup_page = ""
     erro = False
     lock_erros = threading.Lock()
@@ -38,7 +38,7 @@ def pull_request(servidor):
             "Connection": "keep-alive"
             })
        
-    for tentativa in range(2):
+    for tentativa in range(3):
         try:
             rate_limiter.wait()
     
@@ -47,7 +47,7 @@ def pull_request(servidor):
                 "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/120.0.0.0 Safari/537.36",
             ])
             session.headers["User-Agent"] = navegador
-            response = session.get(servidor, timeout=15)
+            response = session.get(servidor, timeout=JANELA_COLETA_SEGUNDOS)
             if response.status_code == 403:
                 ClassLogger.logging.info(f" 403 detectado (tentativa {tentativa+1})")
                 msg_custom = f"Acesso Negado (403). Verifique permissões ou Headers. Detalhes: {servidor}"
@@ -55,7 +55,7 @@ def pull_request(servidor):
                 with lock_erros:
                     erro = True
                     acumulo_erros[servidor]["ERROR"] += 1
-                    buffer_mensagens_emails.append(f"[{datetime.now().strftime('%H:%M:%S')}] {msg_custom}")
+                    # buffer_mensagens_emails.append(f"[{datetime.now().strftime('%H:%M:%S')}] {msg_custom}")
     
                     # Se não houver um timer rodando, inicia um agora
                     if not timer_ativo:
