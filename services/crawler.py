@@ -1,40 +1,68 @@
-from config.config import URL_INICIAL
-from downloads.request import pull_request
-from parser.cards import extrair_cards
-from parser.paginacao import extrair_links
+from types import SimpleNamespace
+from pathlib import Path
 from utils.csv import salvar_csv
 from Logs import ClassLogger
 
 
-def iniciar():
+def iniciar(self,servidor):
 
-    fila = [URL_INICIAL]
+    try:
 
-    visitadas = set()
+        nome = servidor["nome"]
+        url = servidor["url"]
+        parsers = servidor["parser"]
+        paginacao = servidor["pagination"]
+        nav = servidor["pagin"]
 
-    while fila:
+        pasta = Path("arquivos") / nome
+        pasta.mkdir(parents=True, exist_ok=True)
 
-        url = fila.pop(0)
+        fila = [servidor['url']]
 
-        if url in visitadas:
-            continue
+        # print(fila)
+        # return
 
-        print(f"Processando {url}")
+        visitadas = set()
 
-        visitadas.add(url)
 
-        soup = pull_request(url)
+        while fila:
 
-        registros = extrair_cards(soup)
+            url = fila.pop(0)
 
-        salvar_csv(registros)
+            if url in visitadas:
+                continue
 
-        links = extrair_links(soup)
+            ClassLogger.logging.info(f"Processando {url}")
 
-        for link in links:
+            visitadas.add(url)
 
-            if link not in visitadas:
+            soup =  self.client.get(url)
 
-                fila.append(link)
+            if soup is None:
+                ClassLogger.logging.warning(f"Não foi possível obter a página: {url}")
+                continue
 
-    ClassLogger.logging.info("Finalizado")
+            registros = parsers(soup)
+
+            if parsers is None:
+               ClassLogger.logging.error(f"Nenhum parser configurado para {nome}")
+               return
+            
+            salvar_csv(registros=registros,pasta=pasta,nome=nome)
+
+            # # links = extrair_links(soup,url)
+            links = nav(soup,url)
+            print(f"links {links}")
+
+            if paginacao:
+
+                for link in links:
+
+                    if link not in visitadas:
+
+                        fila.append(link)
+
+        ClassLogger.logging.info("Finalizado")
+    except Exception as e:
+        ClassLogger.logging.error(f"Erro fatal na execução: {e}", exc_info=True)        
+        

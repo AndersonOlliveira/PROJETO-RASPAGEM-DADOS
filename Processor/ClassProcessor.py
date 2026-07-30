@@ -3,21 +3,20 @@ from datetime import datetime
 import time
 from Logs import ClassLogger
 from Tratamentos.ProcessoDados import Process
-# from Processar.Process_from_name import process_from_name
-# from Processar.Process_verify import process_verify_status
-# from Processar.Process_MatchName import process_match_name
-# from Processar.Process_limite import process_limite_countrie
-# from Conexao import ConectionClass, ConectionPool
+from parser.grupoangelus import extrair_cards as parser_grupo
+from parser.vidaPrev import extrair_cards as parser_vdprev
+from parser.new14Parser import extrair_cards as parser_news
+from parser.consonifunerais import extrair_cards as parser_consoni
+from parserPagina.consonifunerais import extrair_links as parser_consoni_div
+from parserPagina.vidaPrev import extrair_links as parser_vida_href
+from parserPagina.parse_ossels import extrair_links as parse_ossel_link
+from parser.ggo import extrair_cards as parser_ggo
+from parser.ossel import extrair_cards as parser_ossel
 from concurrent.futures import ThreadPoolExecutor, as_completed
-# from db_poll import DbPool
-# from Conexao.ConectionTrheaddeConectionPoll import ConectionClass as t
-# from Mail.ClassMail import enviar_email_all
-# from Model.ClassModel import buscar_teste, search_data_interpol
+from downloads.RequestClient import RequestClient
+
 import pandas as pd
 from pathlib import Path
-import csv
-
-
 
 
 class Processor:
@@ -26,8 +25,54 @@ class Processor:
         self.max_workers = max_workers
         self.max_workers_conn = 2
         self.batch_size = batch_size
+        self.client = RequestClient()
         # self.idProcesso = idProcesso
         self.servidor = 'https://obituario.grupoangelus.com.br/g/4'
+        self.consonifunerais = 'https://consonifunerais.com.br/falecidos/'
+        self.servidores = {
+                    1: {
+                        "nome": "grupoangelus",
+                        "url": "https://obituario.grupoangelus.com.br/g/4",
+                        "parser": parser_grupo,
+                        "pagination": True
+                    },
+
+                    2: {
+                        "nome": "consonifunerais",
+                        "url": "https://consonifunerais.com.br/falecidos/",
+                        "parser": parser_consoni,
+                        "pagination": True,
+                        "pagin": parser_consoni_div
+                    },
+                    3: {
+                        "nome": "vidaprev",
+                        "url": "https://www.vidaprev.com.br/falecimentos",
+                        "parser": parser_vdprev,
+                        "pagination": True,
+                        "pagin": parser_vida_href
+                    },
+
+                    4: {
+                        "nome": "ossel",
+                        "url": "https://obituario.ossel.com.br/",
+                        "parser": parser_ossel,
+                        "pagination": True,
+                        "pagin": parse_ossel_link
+                    }, 
+                        5: {
+                        "nome": "14news",
+                        "url": "https://14news.com.br/obituario/",
+                        "parser": parser_news,
+                        "pagination": True,
+                        "pagin": parser_consoni_div
+                    }
+                }
+        # self.parsers = {
+        # 1: parser_grupo,
+        # 2: parser_consoni,
+        # 3: parser_ggo,
+        # 4: parser_ossel
+        # }
         self.servidor_headers = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36'}
         self.batch_counter_status1 = 0
         self.batch_counter_status2 = 0
