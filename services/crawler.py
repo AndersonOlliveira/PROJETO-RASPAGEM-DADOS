@@ -1,7 +1,12 @@
-from types import SimpleNamespace
+import calendar
 from pathlib import Path
-from utils.csv import salvar_csv
 from Logs import ClassLogger
+from datetime import datetime
+from utils.montarParametros import gerar_urls_ggo
+from urllib.parse import urlencode
+from utils.csv import salvar_csv
+from types import SimpleNamespace
+
 
 
 def iniciar(self,servidor):
@@ -9,16 +14,24 @@ def iniciar(self,servidor):
     try:
 
         nome = servidor["nome"]
-        url = servidor["url"]
+        url_base = servidor["url"]
         parsers = servidor["parser"]
         paginacao = servidor["pagination"]
         nav = servidor["pagin"]
+        parametros = servidor['parametros']
 
         pasta = Path("arquivos") / nome
         pasta.mkdir(parents=True, exist_ok=True)
+        fila = []
 
-        fila = [servidor['url']]
-
+        # SE EXISTIR MONTO OS RARAMETROS 
+        if parametros:
+          
+            fila.extend(gerar_urls_ggo(url_base))
+        else:
+            fila.append(url_base)
+                    
+        
         # print(fila)
         # return
 
@@ -27,19 +40,21 @@ def iniciar(self,servidor):
 
         while fila:
 
-            url = fila.pop(0)
+            url_base = fila.pop(0)
 
-            if url in visitadas:
+            if url_base in visitadas:
                 continue
 
-            ClassLogger.logging.info(f"Processando {url}")
+            ClassLogger.logging.info(f"Processando {url_base}")
 
-            visitadas.add(url)
+            visitadas.add(url_base)
 
-            soup =  self.client.get(url)
+            soup = self.client.get(url_base)
+            # links = nav(soup,url_base)
+            # print(f"links {links}")
 
             if soup is None:
-                ClassLogger.logging.warning(f"Não foi possível obter a página: {url}")
+                ClassLogger.logging.warning(f"Não foi possível obter a página: {url_base}")
                 continue
 
             registros = parsers(soup)
@@ -50,19 +65,24 @@ def iniciar(self,servidor):
             
             salvar_csv(registros=registros,pasta=pasta,nome=nome)
 
-            # # links = extrair_links(soup,url)
-            links = nav(soup,url)
-            print(f"links {links}")
+
+            
+
+            # links = extrair_links(soup,url_base)
+          
 
             if paginacao:
+                links = nav(soup,url_base)
+                print(f"links {links}")
 
                 for link in links:
 
                     if link not in visitadas:
 
                         fila.append(link)
-
+        self.client.salvar_erros(pasta)
         ClassLogger.logging.info("Finalizado")
+        self.stats.salvar(pasta)
     except Exception as e:
         ClassLogger.logging.error(f"Erro fatal na execução: {e}", exc_info=True)        
         
