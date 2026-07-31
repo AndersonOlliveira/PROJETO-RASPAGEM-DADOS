@@ -7,11 +7,18 @@ from parser.grupoangelus import extrair_cards as parser_grupo
 from parser.vidaPrev import extrair_cards as parser_vdprev
 from parser.new14Parser import extrair_cards as parser_news
 from parser.consonifunerais import extrair_cards as parser_consoni
+from parser.ggo import extrair_cards as parser_ggo
+from parser.ossel import extrair_cards as parser_ossel
+from parser.parser_arvore import extrair_cards as parser_arvore
+from parser.parser_pmfi import extrair_cards as parser_pmfi
+from parser.parser_orsola import extrair_cards as parser_ors
 from parserPagina.consonifunerais import extrair_links as parser_consoni_div
 from parserPagina.vidaPrev import extrair_links as parser_vida_href
 from parserPagina.parse_ossels import extrair_links as parse_ossel_link
-from parser.ggo import extrair_cards as parser_ggo
-from parser.ossel import extrair_cards as parser_ossel
+from parserPagina.ggoInterno import extrair_links as parse_gg_link
+from parserPagina.arvoreVida import extrair_links as parse_arvore_div
+from parserPagina.orsolaPage import extrair_links as orsolaPage
+from utils.CrawlerStats import CrawlerStats
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from downloads.RequestClient import RequestClient
 
@@ -25,7 +32,8 @@ class Processor:
         self.max_workers = max_workers
         self.max_workers_conn = 2
         self.batch_size = batch_size
-        self.client = RequestClient()
+        # self.client = RequestClient()
+        self.client = RequestClient(self.stats)
         # self.idProcesso = idProcesso
         self.servidor = 'https://obituario.grupoangelus.com.br/g/4'
         self.consonifunerais = 'https://consonifunerais.com.br/falecidos/'
@@ -34,7 +42,8 @@ class Processor:
                         "nome": "grupoangelus",
                         "url": "https://obituario.grupoangelus.com.br/g/4",
                         "parser": parser_grupo,
-                        "pagination": True
+                        "pagination": True,
+                        "parametros": False
                     },
 
                     2: {
@@ -42,14 +51,16 @@ class Processor:
                         "url": "https://consonifunerais.com.br/falecidos/",
                         "parser": parser_consoni,
                         "pagination": True,
-                        "pagin": parser_consoni_div
+                        "pagin": parser_consoni_div,
+                        "parametros": False
                     },
                     3: {
                         "nome": "vidaprev",
                         "url": "https://www.vidaprev.com.br/falecimentos",
                         "parser": parser_vdprev,
                         "pagination": True,
-                        "pagin": parser_vida_href
+                        "pagin": parser_vida_href,
+                        "parametros": False
                     },
 
                     4: {
@@ -57,14 +68,48 @@ class Processor:
                         "url": "https://obituario.ossel.com.br/",
                         "parser": parser_ossel,
                         "pagination": True,
-                        "pagin": parse_ossel_link
+                        "pagin": parse_ossel_link,
+                        "parametros": False
                     }, 
                         5: {
                         "nome": "14news",
                         "url": "https://14news.com.br/obituario/",
                         "parser": parser_news,
                         "pagination": True,
-                        "pagin": parser_consoni_div
+                        "pagin": parser_consoni_div,
+                        "parametros": False
+                    },
+                    6: {
+                        "nome": "ggo-interno",
+                        "url": "https://ggo-interno.com.br/obituario/",
+                        "parser": parser_ggo,
+                        "pagination": True,
+                        "pagin": parse_gg_link,
+                        "parametros": True
+                    }, 
+                    7: {
+                        "nome": "arvorespelavida",
+                        "url": "https://arvorespelavida.org.br/obituario/",
+                        "parser": parser_arvore,
+                        "pagination": True,
+                        "pagin": parse_arvore_div,
+                        "parametros": False
+                    },
+                    8: {
+                        "nome": "pmfi",
+                        "url": "https://www3.pmfi.pr.gov.br/PSIPortal/SircofWeb/Formularios/wfrmSircObituario_Site.aspx",
+                        "parser": parser_pmfi,
+                        "pagination": False,
+                        "pagin": parse_arvore_div,
+                        "parametros": False
+                    },
+                    9: {
+                        "nome": "orsola",
+                        "url": "https://www.orsola.com.br/notas-de-falecimentos/",
+                        "parser": parser_ors,
+                        "pagination": True,
+                        "pagin": orsolaPage,
+                        "parametros": False
                     }
                 }
         # self.parsers = {
@@ -73,6 +118,7 @@ class Processor:
         # 3: parser_ggo,
         # 4: parser_ossel
         # }
+        self.stats = CrawlerStats()
         self.servidor_headers = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36'}
         self.batch_counter_status1 = 0
         self.batch_counter_status2 = 0

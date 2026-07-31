@@ -1,14 +1,16 @@
 import random
 import time
 import requests
-
+import pandas as pd
+from datetime import datetime
 from bs4 import BeautifulSoup
 from Logs import ClassLogger
 from Processor.ClassResquest import RateLimiter
 
 
 class RequestClient:
-    def __init__(self):
+    def __init__(self, stats):
+        self.stats = stats
         self.session = requests.Session()
         self.rate_limiter = RateLimiter()
         self.session.headers.update({
@@ -16,6 +18,8 @@ class RequestClient:
             "Accept": "text/html",
             "Connection": "keep-alive"
         })
+
+        self.erros = [] # ARMAZENA OS ERROS
 
     def user_agent(self):
         return random.choice([
@@ -33,13 +37,69 @@ class RequestClient:
 
                 return BeautifulSoup(resposta.text,"html.parser")
 
+            except requests.exceptions.ReadTimeout as e:
+                self.stats.timeout()
+
+                self.adicionar_erro(
+                    url,
+                    tentativa + 1,
+                    e)
+
+                ClassLogger.logging.warning(
+                    f"Timeout de leitura ({tentativa+1}/5): {url}"
+                )
+
             except requests.exceptions.ConnectionError as e:
-                ClassLogger.logging.warning(f"Timout {url}")
+                self.stats.timeout()
+
+                self.adicionar_erro(
+                                    url,
+                                    tentativa + 1,
+                                    e)
+                ClassLogger.logging.warning(f"Erro de conexão ({tentativa+1}/5): {url}")
 
             except requests.exceptions.HTTPError as e:
+                self.stats.timeout()
+                
+                self.adicionar_erro(
+                    url,
+                    tentativa + 1,
+                    e)
                 ClassLogger.logging.warning(f"HTTP {e.response.status_code}")
+                if e.response.status_code == 404:
+                    break
+            except requests.exceptions.RequestException as e:
+                self.stats.timeout()
 
+                ClassLogger.logging.error(
+                    f"Erro Requests: {e}"
+                )
+
+        
         time.sleep(2** tentativa)
+        # self.erros.append({
+        #         "url": url,
+        #         "tentativas": tentativa + 1,
+        #         "data": datetime.now().strftime("%d/%m/%Y %H:%M:%S"),
+        #         "erro": str(e)
+        #     })
 
+        if self.client.erros:
+            pd.DataFrame(self.client.erros).to_csv(
+                    "arquivos/erros.csv",
+                    sep=";",
+                    index=False,
+                    encoding="utf-8-sig"
+                )
         return None
+
+
+    def adicionar_erro(self, url, tentativa, erro):
+
+        self.erros.append({
+            "url": url,
+            "tentativa": tentativa,
+            "data": datetime.now().strftime("%d/%m/%Y %H:%M:%S"),
+            "erro": str(erro)
+        })
         

@@ -1,5 +1,4 @@
 from Logs import ClassLogger
-
 from services.crawler import iniciar
 
 def Process(self):
@@ -13,9 +12,12 @@ def Process(self):
     # PARA  aracatuba
     # PARA  pmfi
     #5 PARA  14news
-    print(f"SERVIDORES {self.servidores[2]}")
+    #6 PARA  gg-interno
+    #7 PARA  arvore
+    #8 PARA  pmfi
+    print(f"SERVIDORES {self.servidores[9]}")
 
-    servidor = self.servidores.get(2)
+    servidor = self.servidores.get(9)
 
     # print(servidor)
     # return
