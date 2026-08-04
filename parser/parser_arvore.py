@@ -2,7 +2,9 @@ from datetime import datetime
 from Logs import ClassLogger
 from downloads.request import pull_request
 from downloads.RequestClient import RequestClient
-def extrair_cards(soup):
+
+
+def extrair_cards(self,soup):
 
     print(f"ESTOU SAINDO NA ARVORE? ")
 

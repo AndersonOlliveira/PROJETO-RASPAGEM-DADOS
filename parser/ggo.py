@@ -2,7 +2,7 @@ import re
 from Logs import ClassLogger
 from datetime import datetime
 
-def extrair_cards(soup):
+def extrair_cards(self,soup):
     print(f"VOU SAIR AQUI COM O RESULTADO DA CONSULTA? DO GG INTERNO")
     registros = []
 

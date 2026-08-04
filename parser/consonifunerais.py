@@ -3,7 +3,7 @@ from datetime import datetime
 from Logs import ClassLogger
 from downloads.request import pull_request
 # from Processor.ClassProcessor import Processo
-def extrair_cards(soup):
+def extrair_cards(self,soup):
 
 
     try:

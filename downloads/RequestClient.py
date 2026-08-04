@@ -2,6 +2,7 @@ import random
 import time
 import requests
 import pandas as pd
+from utils.erros import salvar_erros
 from datetime import datetime
 from bs4 import BeautifulSoup
 from Logs import ClassLogger
@@ -20,6 +21,10 @@ class RequestClient:
         })
 
         self.erros = [] # ARMAZENA OS ERROS
+
+    def salvar_erros(self,pasta):
+        salvar_erros(self.erros,pasta)
+        self.erros.clear()
 
     def user_agent(self):
         return random.choice([
@@ -84,7 +89,73 @@ class RequestClient:
         #         "erro": str(e)
         #     })
 
-        if self.client.erros:
+        if self.erros:
+            pd.DataFrame(self.client.erros).to_csv(
+                    "arquivos/erros.csv",
+                    sep=";",
+                    index=False,
+                    encoding="utf-8-sig"
+                )
+        return None
+    
+    def post(self,url,data):
+        for tentativa in range(5):
+            try:
+                self.rate_limiter.wait()
+                self.session.headers["User-Agent"] = self.user_agent()
+                resposta = self.session.post(url,data=data,timeout=(10,30))
+                resposta.raise_for_status()
+
+                return BeautifulSoup(resposta.text,"html.parser")
+
+            except requests.exceptions.ReadTimeout as e:
+                self.stats.timeout()
+
+                self.adicionar_erro(
+                    url,
+                    tentativa + 1,
+                    e)
+
+                ClassLogger.logging.warning(
+                    f"Timeout de leitura ({tentativa+1}/5): {url}"
+                )
+
+            except requests.exceptions.ConnectionError as e:
+                self.stats.timeout()
+
+                self.adicionar_erro(
+                                    url,
+                                    tentativa + 1,
+                                    e)
+                ClassLogger.logging.warning(f"Erro de conexão ({tentativa+1}/5): {url}")
+
+            except requests.exceptions.HTTPError as e:
+                self.stats.timeout()
+                
+                self.adicionar_erro(
+                    url,
+                    tentativa + 1,
+                    e)
+                ClassLogger.logging.warning(f"HTTP {e.response.status_code}")
+                if e.response.status_code == 404:
+                    break
+            except requests.exceptions.RequestException as e:
+                self.stats.timeout()
+
+                ClassLogger.logging.error(
+                    f"Erro Requests: {e}"
+                )
+
+        
+        time.sleep(2** tentativa)
+        # self.erros.append({
+        #         "url": url,
+        #         "tentativas": tentativa + 1,
+        #         "data": datetime.now().strftime("%d/%m/%Y %H:%M:%S"),
+        #         "erro": str(e)
+        #     })
+
+        if self.erros:
             pd.DataFrame(self.client.erros).to_csv(
                     "arquivos/erros.csv",
                     sep=";",

@@ -5,6 +5,7 @@ from datetime import datetime
 from utils.montarParametros import gerar_urls_ggo
 from urllib.parse import urlencode
 from utils.csv import salvar_csv
+from utils.erros import salvar_erros
 from types import SimpleNamespace
 
 
@@ -19,6 +20,7 @@ def iniciar(self,servidor):
         paginacao = servidor["pagination"]
         nav = servidor["pagin"]
         parametros = servidor['parametros']
+        parsers_links = servidor['tdados']
 
         pasta = Path("arquivos") / nome
         pasta.mkdir(parents=True, exist_ok=True)
@@ -53,33 +55,45 @@ def iniciar(self,servidor):
             # links = nav(soup,url_base)
             # print(f"links {links}")
 
+
             if soup is None:
                 ClassLogger.logging.warning(f"Não foi possível obter a página: {url_base}")
                 continue
 
-            registros = parsers(soup)
+            registros = parsers(self,soup)
 
-            if parsers is None:
-               ClassLogger.logging.error(f"Nenhum parser configurado para {nome}")
-               return
+            # if nav:
+                
+            #     ClassLogger.logging.warning(f"TENHO LINKS AQUI")
+            #     for registro in registros:
+            #         novos_registros = []
+                    
+            #         print(f"MEUS LINKS LOCALIZADOS PARA DETALHE {registro['LINKS']}")
+            #         soup = self.client.get(registro['LINKS'])
+            #         print(f"MEUS LINKS LOCALIZADOS PARA DETALHE {soup}")
+            #         detalhe = parsers_links(soup)
+            #         novos_registros.extend(detalhe)
+
+            #         print(f"meus novos registros {novos_registros} ")
+
+            #         registros = novos_registros
+                
+
+            # if parsers is None:
+            #    ClassLogger.logging.error(f"Nenhum parser configurado para {nome}")
+            #    return
             
             salvar_csv(registros=registros,pasta=pasta,nome=nome)
+            #  # links = extrair_links(soup,url_base)
+            # if paginacao:
+            #     links = nav(soup,url_base)
+            #     print(f"links {links}")
 
+            #     for link in links:
 
-            
+            #         if link not in visitadas:
 
-            # links = extrair_links(soup,url_base)
-          
-
-            if paginacao:
-                links = nav(soup,url_base)
-                print(f"links {links}")
-
-                for link in links:
-
-                    if link not in visitadas:
-
-                        fila.append(link)
+            #             fila.append(link)
         self.client.salvar_erros(pasta)
         ClassLogger.logging.info("Finalizado")
         self.stats.salvar(pasta)
