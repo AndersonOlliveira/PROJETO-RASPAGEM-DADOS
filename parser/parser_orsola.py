@@ -3,7 +3,7 @@ from Logs import ClassLogger
 import re
 
 
-def extrair_cards(soup):
+def extrair_cards(self,soup):
 
     try:
         div_mae = soup.find_all('div', class_="card-falecimento single")
@@ -42,7 +42,7 @@ def extrair_cards(soup):
 
 
 
-        return registro
+        return registro 
 
     except Exception as e:
             ClassLogger.logging.error(

@@ -1,6 +1,6 @@
 import re
 
-def extrair_cards(soup):
+def extrair_cards(self,soup):
 
     lista = []
 

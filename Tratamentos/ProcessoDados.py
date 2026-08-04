@@ -15,9 +15,12 @@ def Process(self):
     #6 PARA  gg-interno
     #7 PARA  arvore
     #8 PARA  pmfi
-    print(f"SERVIDORES {self.servidores[9]}")
+    #9 PARA  orsola
+    #10 PARA  pontaGrossa
 
-    servidor = self.servidores.get(9)
+    print(f"SERVIDORES {self.servidores[10]}")
+
+    servidor = self.servidores.get(10)
 
     # print(servidor)
     # return

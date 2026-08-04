@@ -2,7 +2,7 @@ import re
 from Logs import ClassLogger
 from datetime import datetime
 
-def extrair_cards(soup):
+def extrair_cards(self,soup):
 
     print(f"ESTOU ACESSADNO OS CARS VINDO DA PAGINA 14 NEWS")
     # print(soup)

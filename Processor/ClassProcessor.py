@@ -12,12 +12,16 @@ from parser.ossel import extrair_cards as parser_ossel
 from parser.parser_arvore import extrair_cards as parser_arvore
 from parser.parser_pmfi import extrair_cards as parser_pmfi
 from parser.parser_orsola import extrair_cards as parser_ors
+from parser.parser_ponta import extrair_cards as parser_ponta
+from parser.parser_ponta_dados import extrair_cards as parser_ponta_dados
+from parser.parser_dlconvencios import extrair_cards as parser_dl
 from parserPagina.consonifunerais import extrair_links as parser_consoni_div
 from parserPagina.vidaPrev import extrair_links as parser_vida_href
 from parserPagina.parse_ossels import extrair_links as parse_ossel_link
 from parserPagina.ggoInterno import extrair_links as parse_gg_link
 from parserPagina.arvoreVida import extrair_links as parse_arvore_div
 from parserPagina.orsolaPage import extrair_links as orsolaPage
+from parserPagina.pontaGrossa import extrair_links as PontaGrossaPage
 from utils.CrawlerStats import CrawlerStats
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from downloads.RequestClient import RequestClient
@@ -33,7 +37,9 @@ class Processor:
         self.max_workers_conn = 2
         self.batch_size = batch_size
         # self.client = RequestClient()
+        self.stats = CrawlerStats()
         self.client = RequestClient(self.stats)
+        # self.client.salvar_erros(pasta)
         # self.idProcesso = idProcesso
         self.servidor = 'https://obituario.grupoangelus.com.br/g/4'
         self.consonifunerais = 'https://consonifunerais.com.br/falecidos/'
@@ -110,6 +116,22 @@ class Processor:
                         "pagination": True,
                         "pagin": orsolaPage,
                         "parametros": False
+                    } , 10: {
+                        "nome": "pontaGrossa",
+                        "url": "https://app.pontagrossa.pr.gov.br/sisppg/servico_funerario/internet/mostra_hoje.php",
+                        "parser": parser_ponta,
+                        "pagination": False,
+                        "pagin": PontaGrossaPage,
+                        "parametros": False,
+                        "tdados": parser_ponta_dados
+                    }, 11: {
+                        "nome": "dlcorconvenios",
+                        "url": "https://dlcorconvenios.com.br/obituario/",
+                        "parser": parser_dl,
+                        "pagination": False,
+                        "pagin": PontaGrossaPage,
+                        "parametros": False,
+                        "tdados": parser_ponta_dados
                     }
                 }
         # self.parsers = {
@@ -118,7 +140,7 @@ class Processor:
         # 3: parser_ggo,
         # 4: parser_ossel
         # }
-        self.stats = CrawlerStats()
+       
         self.servidor_headers = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36'}
         self.batch_counter_status1 = 0
         self.batch_counter_status2 = 0

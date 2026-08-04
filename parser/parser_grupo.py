@@ -1,6 +1,6 @@
 import re
 
-def extrair_cards(soup):
+def extrair_cards(self,soup):
 
     lista = []
 
@@ -23,4 +23,4 @@ def extrair_cards(soup):
 
         lista.append(registro)
 
-    return lista
+    return lista 
