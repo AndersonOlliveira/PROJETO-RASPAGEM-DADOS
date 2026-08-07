@@ -113,8 +113,8 @@ def extrair_links(self,soup):
 
             # include the row data together with the link so caller can associate them
             results.append({
+                "COLS": dados,
                 "LINKS": full_url,
-                "COLS": dados
             })
 
         return results

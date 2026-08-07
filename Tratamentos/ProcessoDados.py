@@ -17,10 +17,13 @@ def Process(self):
     #8 PARA  pmfi
     #9 PARA  orsola
     #10 PARA  pontaGrossa
+    #11 PARA  dlcorconvenios
+    #11 PARA  dlcorconvenios
 
-    print(f"SERVIDORES {self.servidores[10]}")
 
-    servidor = self.servidores.get(10)
+    print(f"SERVIDORES {self.servidores[6]}")
+
+    servidor = self.servidores.get(6)
 
     # print(servidor)
     # return
