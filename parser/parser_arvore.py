@@ -27,8 +27,8 @@ def extrair_cards(self,soup):
                 # If get is an instance method, instantiate RequestClient();
                 # otherwise call it as a class/static method.
                 # instantiate RequestClient and call its instance method
-                client = RequestClient()
-                result_soup = client.get(busca_links)
+               
+                result_soup =  self.client.get(busca_links)
                 p_tag = result_soup.find("p", class_="info-nome")
                 nome =  p_tag.get_text(strip=True).upper()
                 registro['NOME'] = nome

@@ -51,6 +51,7 @@ class Processor:
                         "url": "https://obituario.grupoangelus.com.br/g/4",
                         "parser": parser_grupo,
                         "pagination": True,
+                        "pagin": False,
                         "parametros": False
                     },
 
@@ -176,8 +177,11 @@ class Processor:
         ClassLogger.logging.info("=" * 80)
 
         try:
-            
-            total_processados = Process(self)
+            # print(obter_servidores(self,[1, 7, 12]))
+            registros = obter_servidores(self,[1, 7,8,3])
+            # print(registros)
+
+            total_processados = Process(self,registros)
 
             ClassLogger.logging.info(f"minha quantidade de dados processados :  {total_processados}")
           
@@ -233,7 +237,7 @@ class Processor:
 
     
 
-
+# SEPARAR ESTES SERVIDORES PARA A BUSCA
 def obter_servidores(self, ids):
     if isinstance(ids, int):
         ids = [ids]

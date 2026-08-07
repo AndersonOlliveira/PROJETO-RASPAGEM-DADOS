@@ -89,18 +89,25 @@ def iniciar(self,servidor):
             
             salvar_csv(registros=registros,pasta=pasta,nome=nome)
             #  # links = extrair_links(soup,url_base)
-            if paginacao:
-                links = nav(soup,url_base)
-                print(f"links {links}")
+        #     if paginacao:
+        #         links = nav(soup,url_base)
+        #         print(f"links {links}")
 
-                for link in links:
+        #         for link in links:
 
-                    if link not in visitadas:
+        #             if link not in visitadas:
 
-                        fila.append(link)
-        self.client.salvar_erros(pasta)
+        #                 fila.append(link)
+        # self.client.salvar_erros(pasta)
         ClassLogger.logging.info("Finalizado")
         self.stats.salvar(pasta)
     except Exception as e:
-        ClassLogger.logging.error(f"Erro fatal na execução: {e}", exc_info=True)        
+        ClassLogger.logging.error(f"Erro fatal na execução: {e}", exc_info=True)   
+
+def Crawlers(servidor):
+    print(f" NUMERO ENVIADO VIA API ::: {servidor}")
+
+    return "TESTE PARA CONSULTA API"
+
+
         

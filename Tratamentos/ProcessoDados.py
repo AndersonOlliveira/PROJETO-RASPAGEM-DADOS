@@ -1,7 +1,7 @@
 from Logs import ClassLogger
 from services.crawler import iniciar
 
-def Process(self):
+def Process(self,serves):
     ClassLogger.logging.info('ACESSANDO O PROCESS PARA ENVIAR OS DADOS')
 
     #1 PARA  grupoangelus
@@ -21,19 +21,27 @@ def Process(self):
     #11 PARA  dlcorconvenios
 
 
-    print(f"SERVIDORES {self.servidores[6]}")
+    # print(f"SERVIDORES {self.servidores[8]}")
 
-    servidor = self.servidores.get(6)
+    # servidor = self.servidores.get(8)
 
     # print(servidor)
     # return
 
     try:
-        if servidor: 
-            iniciar(self,servidor) 
-    
+        if serves:
+
+            for servidor in serves:
+
+                print(f"Processando servidor: {servidor['nome']}")
+
+                iniciar(self, servidor)
+
     except Exception as e:
-        ClassLogger.logging.error(f"Erro fatal na execução: {e}", exc_info=True)        
+        ClassLogger.logging.error(
+            f"Erro fatal na execução: {e}",
+            exc_info=True
+        )        
 
 
             

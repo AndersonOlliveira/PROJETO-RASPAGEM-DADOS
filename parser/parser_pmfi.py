@@ -3,7 +3,7 @@ from Logs import ClassLogger
 import re
 
 
-def extrair_cards(soup):
+def extrair_cards(self,soup):
 
     try:
 
@@ -35,7 +35,7 @@ def extrair_cards(soup):
             if not nome:
                 continue
 
-            filiacao_texto = texto("lblFiliacao")
+            filiacao_texto = texto("lblFiliacao0")
             filiacao = [x.strip() for x in filiacao_texto.split("&")] if filiacao_texto else []
 
             match = re.search(r"\d{2}/\d{2}/\d{4}", texto("Label14"))
@@ -47,7 +47,7 @@ def extrair_cards(soup):
                 "IDADE": texto("lblIdade"),
                 "FILIACAO_A": filiacao[0] if len(filiacao) > 0 else "",
                 "FILIACAO_B": filiacao[1] if len(filiacao) > 1 else "",
-                "PROFISSAO": texto("lblProfissao"),
+                "PROFISSAO": texto("lblProfissao0"),
                 "CAUSA_MORTE": texto("Label13"),
                 "DATA_FALECIMENTO": data_falecimento,
                 "DATA_FALECIMENTO_COMPLETO": texto("Label14"),
