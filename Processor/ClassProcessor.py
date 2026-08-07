@@ -3,6 +3,7 @@ from datetime import datetime
 import time
 from Logs import ClassLogger
 from Tratamentos.ProcessoDados import Process
+from Tratamentos.Normlizar import arquivos_process
 from parser.grupoangelus import extrair_cards as parser_grupo
 from parser.vidaPrev import extrair_cards as parser_vdprev
 from parser.new14Parser import extrair_cards as parser_news
@@ -15,6 +16,7 @@ from parser.parser_orsola import extrair_cards as parser_ors
 from parser.parser_ponta import extrair_cards as parser_ponta
 from parser.parser_ponta_dados import extrair_cards as parser_ponta_dados
 from parser.parser_dlconvencios import extrair_cards as parser_dl
+from parser.parser_aracatuba import extrair_cards as parser_aracatuba
 from parserPagina.consonifunerais import extrair_links as parser_consoni_div
 from parserPagina.vidaPrev import extrair_links as parser_vida_href
 from parserPagina.parse_ossels import extrair_links as parse_ossel_link
@@ -132,6 +134,17 @@ class Processor:
                         "pagin": PontaGrossaPage,
                         "parametros": False,
                         "tdados": parser_ponta_dados
+                    },
+                      12: {
+                        "nome": "aracatuba",
+                        "url": "https://s126.asp.srv.br:446/tributario.pm.aracatuba.sp/com.asp.tributario.externo.wpconsultavelorioext",
+                        # "url": "https://s126.asp.srv.br:446/tributario.pm.aracatuba.sp/PublicTempStorage/eewcConsultaVelorio-3951.xlsx",
+                        "parser": parser_aracatuba,
+                        "pagination": False,
+                        "pagin": False,
+                        "parametros": False,
+                        "tdados": False,
+                        "baixar": True
                     }
                 }
         # self.parsers = {
@@ -179,15 +192,60 @@ class Processor:
             corpo = f"""<h2 style="color:red;">Falha no processo de Captura e tratamento dos dados</h2> <p>{datetime.now().strftime('%Y-%m-%d %H:%M:%S')} Mensagem:: {error}</p>"""
             # enviar_email_all(corpo)
 
-        finally:
+        pass
              
-             ClassLogger.logging.error(f"Aplicação finalizada!")
+    def processar_arquivos(self):
+        inicio = datetime.now()
+        ClassLogger.logging.info("=" * 80)
+        ClassLogger.logging.info(f"Inicio proceso nomarlização dos dadose - {inicio}")
+        time.sleep(2)
+        ClassLogger.logging.info("=" * 80)
+        try:
+            # print(obter_servidores(self,[1, 7, 12]))
+                    
+            total_processados = arquivos_process(self)
+        
+            ClassLogger.logging.info(f"minha quantidade de dados processados :  {total_processados}")
+                  
+            fim = datetime.now()
+            duracao = (fim - inicio).total_seconds()
+            ClassLogger.logging.info("---" * 80)
+                  
+        
+        except Exception as e:
+            ClassLogger.logging.error(f"Erro fatal na execução: {str(e)}")
+            error = f"Erro fatal na execução: process_api {str(e)}"
+            corpo = f"""<h2 style="color:red;">Falha no processo de Captura e tratamento dos dados</h2> <p>{datetime.now().strftime('%Y-%m-%d %H:%M:%S')} Mensagem:: {error}</p>"""
+                  
+        
+        finally:
+            ClassLogger.logging.error(f"Aplicação finalizada!")
+        
              
  
 
 
     def executar_ciclo(self):
-        self.executar()   
+        self.executar() 
+        # PROCESSAR OS DADOS CAPTURADOS
+        # self.processar_arquivos() 
+
+
+    
+
+
+def obter_servidores(self, ids):
+    if isinstance(ids, int):
+        ids = [ids]
+
+    return [
+        self.servidores[id]
+        for id in ids
+        if id in self.servidores
+    ]
+
+
+       
         
 
   

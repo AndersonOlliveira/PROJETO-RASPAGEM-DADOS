@@ -20,10 +20,12 @@ def iniciar(self,servidor):
         paginacao = servidor["pagination"]
         nav = servidor["pagin"]
         parametros = servidor['parametros']
-        parsers_links = servidor['tdados']
+        # parsers_links = servidor['tdados']
 
         pasta = Path("arquivos") / nome
         pasta.mkdir(parents=True, exist_ok=True)
+        pasta_ERRO = Path("arquivos/error") 
+        pasta_ERRO.mkdir(parents=True, exist_ok=True)
         fila = []
 
         # SE EXISTIR MONTO OS RARAMETROS 
@@ -32,7 +34,7 @@ def iniciar(self,servidor):
             fila.extend(gerar_urls_ggo(url_base))
         else:
             fila.append(url_base)
-                    
+                   
         
         # print(fila)
         # return
@@ -60,6 +62,10 @@ def iniciar(self,servidor):
                 ClassLogger.logging.warning(f"Não foi possível obter a página: {url_base}")
                 continue
 
+            if parsers is None:
+                ClassLogger.logging.error(f"Nenhum parser configurado para {nome}")
+                return
+
             registros = parsers(self,soup)
 
             # if nav:
@@ -79,21 +85,19 @@ def iniciar(self,servidor):
             #         registros = novos_registros
                 
 
-            # if parsers is None:
-            #    ClassLogger.logging.error(f"Nenhum parser configurado para {nome}")
-            #    return
+           
             
             salvar_csv(registros=registros,pasta=pasta,nome=nome)
             #  # links = extrair_links(soup,url_base)
-            # if paginacao:
-            #     links = nav(soup,url_base)
-            #     print(f"links {links}")
+            if paginacao:
+                links = nav(soup,url_base)
+                print(f"links {links}")
 
-            #     for link in links:
+                for link in links:
 
-            #         if link not in visitadas:
+                    if link not in visitadas:
 
-            #             fila.append(link)
+                        fila.append(link)
         self.client.salvar_erros(pasta)
         ClassLogger.logging.info("Finalizado")
         self.stats.salvar(pasta)

@@ -5,7 +5,7 @@ def gerar_urls_ggo(url_base):
 
     urls = []
 
-    ano = datetime.now().year -1
+    ano = datetime.now().year
 
     for mes in range(1, 13):
 
