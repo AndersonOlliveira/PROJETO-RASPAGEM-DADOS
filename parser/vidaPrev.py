@@ -3,7 +3,7 @@ from datetime import datetime
 
 
 
-def extrair_cards(soup):
+def extrair_cards(self,soup):
 
     blocos = soup.find_all('div', class_="bg-white rounded-lg shadow-sm overflow-hidden group flex flex-col h-full")
     registros = []
