@@ -1,20 +1,24 @@
-from pathlib import Path
 import pandas as pd
+from pathlib import Path
+from utils.info_pastas import verificar_pasta
 from Logs import ClassLogger
+from datetime import datetime
+
 
 # CSV = Path("tabela_populada.csv")
-
-def salvar_csv(registros, pasta,nome):
+def salvar_csv(registros, pasta, nome):
 
     try:
-
-        arquivo = pasta / f"{nome}.csv"
 
         if not registros:
             return
 
+        dia = datetime.now().strftime("%d-%m-%Y")
+
+        arquivo = pasta / f"{nome}_{dia}.csv"
+
         df = pd.DataFrame(registros)
-            
+
         df.to_csv(
             arquivo,
             sep=";",
@@ -24,5 +28,13 @@ def salvar_csv(registros, pasta,nome):
             index=False
         )
 
+        ClassLogger.logging.info(
+            f"Registros adicionados em: {arquivo}"
+        )
+
     except Exception as e:
-         ClassLogger.logging.error(f"Erro fatal na execução: {e}", exc_info=True)        
+
+        ClassLogger.logging.error(
+            f"Erro ao salvar CSV: {e}",
+            exc_info=True
+        )

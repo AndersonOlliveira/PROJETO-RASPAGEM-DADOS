@@ -25,6 +25,7 @@ from parserPagina.arvoreVida import extrair_links as parse_arvore_div
 from parserPagina.orsolaPage import extrair_links as orsolaPage
 from parserPagina.pontaGrossa import extrair_links as PontaGrossaPage
 from utils.CrawlerStats import CrawlerStats
+from utils.obter_servidor import obter_servidores
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from downloads.RequestClient import RequestClient
 
@@ -178,13 +179,11 @@ class Processor:
 
         try:
             # print(obter_servidores(self,[1, 7, 12]))
-            registros = obter_servidores(self,[1, 7,8,3])
-            # print(registros)
+            registros = obter_servidores(self,[3])
 
             total_processados = Process(self,registros)
 
-            ClassLogger.logging.info(f"minha quantidade de dados processados :  {total_processados}")
-          
+            
             fim = datetime.now()
             duracao = (fim - inicio).total_seconds()
             ClassLogger.logging.info("---" * 80)
@@ -233,21 +232,6 @@ class Processor:
         self.executar() 
         # PROCESSAR OS DADOS CAPTURADOS
         # self.processar_arquivos() 
-
-
-    
-
-# SEPARAR ESTES SERVIDORES PARA A BUSCA
-def obter_servidores(self, ids):
-    if isinstance(ids, int):
-        ids = [ids]
-
-    return [
-        self.servidores[id]
-        for id in ids
-        if id in self.servidores
-    ]
-
 
        
         
