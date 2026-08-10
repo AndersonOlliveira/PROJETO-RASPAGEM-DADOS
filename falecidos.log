@@ -186230,3 +186230,457 @@ Iniciando Processo para captura dos dados
 2026-08-07 17:23:02,499 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 2026-08-07 17:23:02,500 - INFO - 
 Iniciando Processo para captura dos dados
+2026-08-10 09:42:57,900 - INFO - ================================================================================
+2026-08-10 09:42:57,905 - INFO - Iniciando Consulta Site - 2026-08-10 09:42:57.900548
+2026-08-10 09:42:59,905 - INFO - ================================================================================
+2026-08-10 09:42:59,906 - INFO - ACESSANDO O PROCESS PARA ENVIAR OS DADOS
+2026-08-10 09:42:59,908 - INFO - Processando https://obituario.grupoangelus.com.br/g/4
+2026-08-10 09:42:59,908 - INFO - Finalizado
+2026-08-10 09:42:59,908 - INFO - minha quantidade de dados processados :  None
+2026-08-10 09:42:59,908 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-10 09:42:59,908 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-10 09:43:34,612 - INFO - ================================================================================
+2026-08-10 09:43:34,612 - INFO - Iniciando Consulta Site - 2026-08-10 09:43:34.612081
+2026-08-10 09:43:36,613 - INFO - ================================================================================
+2026-08-10 09:43:36,613 - INFO - ACESSANDO O PROCESS PARA ENVIAR OS DADOS
+2026-08-10 09:43:36,614 - INFO - Processando https://obituario.grupoangelus.com.br/g/4
+2026-08-10 09:43:36,614 - INFO - Finalizado
+2026-08-10 09:43:36,615 - INFO - minha quantidade de dados processados :  None
+2026-08-10 09:43:36,615 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-10 09:43:36,615 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-10 09:45:11,644 - INFO - ================================================================================
+2026-08-10 09:45:11,644 - INFO - Iniciando Consulta Site - 2026-08-10 09:45:11.644512
+2026-08-10 09:45:13,654 - INFO - ================================================================================
+2026-08-10 09:45:13,661 - INFO - ACESSANDO O PROCESS PARA ENVIAR OS DADOS
+2026-08-10 09:45:13,676 - INFO - Processando https://obituario.grupoangelus.com.br/g/4
+2026-08-10 09:45:13,681 - INFO - Finalizado
+2026-08-10 09:45:13,720 - INFO - minha quantidade de dados processados :  None
+2026-08-10 09:45:13,724 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-10 09:45:13,727 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-10 09:45:49,582 - INFO - ================================================================================
+2026-08-10 09:45:49,583 - INFO - Iniciando Consulta Site - 2026-08-10 09:45:49.582733
+2026-08-10 09:45:51,583 - INFO - ================================================================================
+2026-08-10 09:45:51,583 - INFO - ACESSANDO O PROCESS PARA ENVIAR OS DADOS
+2026-08-10 09:45:51,585 - INFO - Processando https://obituario.grupoangelus.com.br/g/4
+2026-08-10 09:45:51,585 - INFO - Finalizado
+2026-08-10 09:45:51,592 - INFO - minha quantidade de dados processados :  None
+2026-08-10 09:45:51,592 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-10 09:45:51,592 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-10 09:51:04,198 - INFO - ================================================================================
+2026-08-10 09:51:04,199 - INFO - Iniciando Consulta Site - 2026-08-10 09:51:04.198875
+2026-08-10 09:51:06,200 - INFO - ================================================================================
+2026-08-10 09:51:06,200 - INFO - ACESSANDO O PROCESS PARA ENVIAR OS DADOS
+2026-08-10 09:51:06,202 - INFO - Processando https://obituario.grupoangelus.com.br/g/4
+2026-08-10 09:51:06,202 - INFO - Finalizado
+2026-08-10 09:51:06,234 - INFO - Processando https://arvorespelavida.org.br/obituario/
+2026-08-10 09:51:06,235 - INFO - Finalizado
+2026-08-10 09:51:06,248 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-10 09:51:06,250 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-10 09:51:26,798 - INFO - ================================================================================
+2026-08-10 09:51:26,798 - INFO - Iniciando Consulta Site - 2026-08-10 09:51:26.798112
+2026-08-10 09:51:28,799 - INFO - ================================================================================
+2026-08-10 09:51:28,799 - INFO - ACESSANDO O PROCESS PARA ENVIAR OS DADOS
+2026-08-10 09:51:28,800 - INFO - Processando https://obituario.grupoangelus.com.br/g/4
+2026-08-10 09:51:28,801 - INFO - Finalizado
+2026-08-10 09:51:28,809 - INFO - Processando https://arvorespelavida.org.br/obituario/
+2026-08-10 09:51:28,809 - INFO - Finalizado
+2026-08-10 09:51:28,814 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-10 09:51:28,814 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-10 10:08:47,434 - INFO - ================================================================================
+2026-08-10 10:08:47,435 - INFO - Iniciando Consulta Site - 2026-08-10 10:08:47.434077
+2026-08-10 10:08:49,438 - INFO - ================================================================================
+2026-08-10 10:08:49,439 - INFO - ACESSANDO O PROCESS PARA ENVIAR OS DADOS
+2026-08-10 10:08:49,442 - INFO - Processando https://app.pontagrossa.pr.gov.br/sisppg/servico_funerario/internet/mostra_hoje.php
+2026-08-10 10:09:27,835 - INFO - Finalizado
+2026-08-10 10:09:27,840 - INFO - Processando https://www.vidaprev.com.br/falecimentos
+2026-08-10 10:09:31,188 - INFO - Finalizado
+2026-08-10 10:09:31,190 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-10 10:09:31,190 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-10 10:12:24,180 - INFO - ================================================================================
+2026-08-10 10:12:24,180 - INFO - Iniciando Consulta Site - 2026-08-10 10:12:24.180436
+2026-08-10 10:12:26,181 - INFO - ================================================================================
+2026-08-10 10:12:26,182 - INFO - ACESSANDO O PROCESS PARA ENVIAR OS DADOS
+2026-08-10 10:12:26,183 - INFO - Processando https://www.vidaprev.com.br/falecimentos
+2026-08-10 10:12:27,076 - INFO - Finalizado
+2026-08-10 10:12:27,080 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-10 10:12:27,081 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-10 10:14:01,051 - INFO - ================================================================================
+2026-08-10 10:14:01,052 - INFO - Iniciando Consulta Site - 2026-08-10 10:14:01.051905
+2026-08-10 10:14:03,053 - INFO - ================================================================================
+2026-08-10 10:14:03,053 - INFO - ACESSANDO O PROCESS PARA ENVIAR OS DADOS
+2026-08-10 10:14:03,054 - INFO - Processando https://www.vidaprev.com.br/falecimentos
+2026-08-10 10:14:04,046 - INFO - Finalizado
+2026-08-10 10:14:04,054 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-10 10:14:04,060 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-10 10:14:36,929 - INFO - ================================================================================
+2026-08-10 10:14:36,929 - INFO - Iniciando Consulta Site - 2026-08-10 10:14:36.929034
+2026-08-10 10:14:38,930 - INFO - ================================================================================
+2026-08-10 10:14:38,931 - INFO - ACESSANDO O PROCESS PARA ENVIAR OS DADOS
+2026-08-10 10:14:38,932 - INFO - Processando https://www.vidaprev.com.br/falecimentos
+2026-08-10 10:14:40,051 - INFO - Finalizado
+2026-08-10 10:14:40,056 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-10 10:14:40,056 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-10 10:15:31,172 - INFO - ================================================================================
+2026-08-10 10:15:31,172 - INFO - Iniciando Consulta Site - 2026-08-10 10:15:31.172449
+2026-08-10 10:15:33,173 - INFO - ================================================================================
+2026-08-10 10:15:33,173 - INFO - ACESSANDO O PROCESS PARA ENVIAR OS DADOS
+2026-08-10 10:15:33,174 - INFO - Processando https://www.vidaprev.com.br/falecimentos
+2026-08-10 10:15:33,873 - INFO - Finalizado
+2026-08-10 10:15:33,877 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-10 10:15:33,877 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-10 10:16:02,717 - INFO - ================================================================================
+2026-08-10 10:16:02,718 - INFO - Iniciando Consulta Site - 2026-08-10 10:16:02.717754
+2026-08-10 10:16:04,718 - INFO - ================================================================================
+2026-08-10 10:16:04,719 - INFO - ACESSANDO O PROCESS PARA ENVIAR OS DADOS
+2026-08-10 10:16:04,720 - INFO - Processando https://www.vidaprev.com.br/falecimentos
+2026-08-10 10:16:05,509 - INFO - Finalizado
+2026-08-10 10:16:05,512 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-10 10:16:05,512 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-10 10:16:33,270 - INFO - ================================================================================
+2026-08-10 10:16:33,270 - INFO - Iniciando Consulta Site - 2026-08-10 10:16:33.270341
+2026-08-10 10:16:35,271 - INFO - ================================================================================
+2026-08-10 10:16:35,271 - INFO - ACESSANDO O PROCESS PARA ENVIAR OS DADOS
+2026-08-10 10:16:35,272 - INFO - Processando https://www.vidaprev.com.br/falecimentos
+2026-08-10 10:16:35,996 - INFO - Finalizado
+2026-08-10 10:16:35,999 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-10 10:16:35,999 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-10 10:28:24,270 - INFO - ================================================================================
+2026-08-10 10:28:24,271 - INFO - Iniciando Consulta Site - 2026-08-10 10:28:24.270557
+2026-08-10 10:28:26,304 - INFO - ================================================================================
+2026-08-10 10:28:26,317 - INFO - ACESSANDO O PROCESS PARA ENVIAR OS DADOS
+2026-08-10 10:28:26,346 - INFO - Processando https://www.vidaprev.com.br/falecimentos
+2026-08-10 10:28:27,097 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=2
+2026-08-10 10:28:28,307 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=3
+2026-08-10 10:28:30,272 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=4
+2026-08-10 10:28:32,135 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=5
+2026-08-10 10:28:33,929 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=6
+2026-08-10 10:28:35,202 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=7
+2026-08-10 10:28:37,877 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=8
+2026-08-10 10:28:39,716 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=9
+2026-08-10 10:28:40,924 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=10
+2026-08-10 10:28:42,127 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=325
+2026-08-10 10:28:43,249 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=326
+2026-08-10 10:28:46,022 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=1
+2026-08-10 10:28:47,199 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=11
+2026-08-10 10:28:48,629 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-08-10 10:33:02,606 - INFO - ================================================================================
+2026-08-10 10:33:02,607 - INFO - Iniciando Consulta Site - 2026-08-10 10:33:02.606457
+2026-08-10 10:33:04,608 - INFO - ================================================================================
+2026-08-10 10:33:04,608 - INFO - ACESSANDO O PROCESS PARA ENVIAR OS DADOS
+2026-08-10 10:33:04,612 - INFO - Processando https://www.vidaprev.com.br/falecimentos
+2026-08-10 10:33:05,518 - INFO - Registros adicionados em: arquivos\vidaprev\vidaprev_10-08-2026.csv
+2026-08-10 10:33:05,520 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=2
+2026-08-10 10:33:07,034 - INFO - Registros adicionados em: arquivos\vidaprev\vidaprev_10-08-2026.csv
+2026-08-10 10:33:07,036 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=3
+2026-08-10 10:33:08,034 - INFO - Registros adicionados em: arquivos\vidaprev\vidaprev_10-08-2026.csv
+2026-08-10 10:33:08,035 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=4
+2026-08-10 10:33:10,950 - INFO - Registros adicionados em: arquivos\vidaprev\vidaprev_10-08-2026.csv
+2026-08-10 10:33:10,951 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=5
+2026-08-10 10:33:13,552 - INFO - Registros adicionados em: arquivos\vidaprev\vidaprev_10-08-2026.csv
+2026-08-10 10:33:13,554 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=6
+2026-08-10 10:33:16,429 - INFO - Registros adicionados em: arquivos\vidaprev\vidaprev_10-08-2026.csv
+2026-08-10 10:33:16,430 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=7
+2026-08-10 10:33:18,154 - INFO - Registros adicionados em: arquivos\vidaprev\vidaprev_10-08-2026.csv
+2026-08-10 10:33:18,155 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=8
+2026-08-10 10:33:20,326 - INFO - Registros adicionados em: arquivos\vidaprev\vidaprev_10-08-2026.csv
+2026-08-10 10:33:20,328 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=9
+2026-08-10 10:33:21,810 - INFO - Registros adicionados em: arquivos\vidaprev\vidaprev_10-08-2026.csv
+2026-08-10 10:33:21,811 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=10
+2026-08-10 10:33:22,862 - INFO - Registros adicionados em: arquivos\vidaprev\vidaprev_10-08-2026.csv
+2026-08-10 10:33:22,863 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=325
+2026-08-10 10:33:24,123 - INFO - Registros adicionados em: arquivos\vidaprev\vidaprev_10-08-2026.csv
+2026-08-10 10:33:24,124 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=326
+2026-08-10 10:33:26,433 - INFO - Registros adicionados em: arquivos\vidaprev\vidaprev_10-08-2026.csv
+2026-08-10 10:33:26,434 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=1
+2026-08-10 10:33:28,558 - INFO - Registros adicionados em: arquivos\vidaprev\vidaprev_10-08-2026.csv
+2026-08-10 10:33:28,559 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=11
+2026-08-10 10:33:29,919 - INFO - Registros adicionados em: arquivos\vidaprev\vidaprev_10-08-2026.csv
+2026-08-10 10:33:29,920 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=12
+2026-08-10 10:33:32,310 - INFO - Registros adicionados em: arquivos\vidaprev\vidaprev_10-08-2026.csv
+2026-08-10 10:33:32,312 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=13
+2026-08-10 10:33:34,744 - INFO - Registros adicionados em: arquivos\vidaprev\vidaprev_10-08-2026.csv
+2026-08-10 10:33:34,744 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=324
+2026-08-10 10:33:37,477 - INFO - Registros adicionados em: arquivos\vidaprev\vidaprev_10-08-2026.csv
+2026-08-10 10:33:37,478 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=317
+2026-08-10 10:33:40,431 - INFO - Registros adicionados em: arquivos\vidaprev\vidaprev_10-08-2026.csv
+2026-08-10 10:33:40,433 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=318
+2026-08-10 10:33:41,695 - INFO - Registros adicionados em: arquivos\vidaprev\vidaprev_10-08-2026.csv
+2026-08-10 10:33:41,696 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=319
+2026-08-10 10:33:44,569 - INFO - Registros adicionados em: arquivos\vidaprev\vidaprev_10-08-2026.csv
+2026-08-10 10:33:44,570 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=320
+2026-08-10 10:33:45,869 - INFO - Registros adicionados em: arquivos\vidaprev\vidaprev_10-08-2026.csv
+2026-08-10 10:33:45,870 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=321
+2026-08-10 10:33:47,467 - INFO - Registros adicionados em: arquivos\vidaprev\vidaprev_10-08-2026.csv
+2026-08-10 10:33:47,468 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=322
+2026-08-10 10:33:50,124 - INFO - Registros adicionados em: arquivos\vidaprev\vidaprev_10-08-2026.csv
+2026-08-10 10:33:50,126 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=323
+2026-08-10 10:33:52,676 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-08-10 10:59:45,636 - INFO - ================================================================================
+2026-08-10 10:59:45,637 - INFO - Iniciando Consulta Site - 2026-08-10 10:59:45.636616
+2026-08-10 10:59:47,638 - INFO - ================================================================================
+2026-08-10 10:59:47,638 - INFO - ACESSANDO O PROCESS PARA ENVIAR OS DADOS
+2026-08-10 10:59:47,643 - INFO - Processando https://www.vidaprev.com.br/falecimentos
+2026-08-10 10:59:48,536 - INFO - Registros adicionados em: arquivos\vidaprev\vidaprev_10-08-2026.csv
+2026-08-10 10:59:48,539 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=2
+2026-08-10 10:59:50,517 - INFO - Registros adicionados em: arquivos\vidaprev\vidaprev_10-08-2026.csv
+2026-08-10 10:59:50,520 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=3
+2026-08-10 10:59:53,366 - INFO - Registros adicionados em: arquivos\vidaprev\vidaprev_10-08-2026.csv
+2026-08-10 10:59:53,368 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=4
+2026-08-10 10:59:55,885 - INFO - Registros adicionados em: arquivos\vidaprev\vidaprev_10-08-2026.csv
+2026-08-10 10:59:55,887 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=5
+2026-08-10 10:59:58,260 - INFO - Registros adicionados em: arquivos\vidaprev\vidaprev_10-08-2026.csv
+2026-08-10 10:59:58,262 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=6
+2026-08-10 10:59:59,234 - INFO - Registros adicionados em: arquivos\vidaprev\vidaprev_10-08-2026.csv
+2026-08-10 10:59:59,235 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=7
+2026-08-10 11:00:00,351 - INFO - Registros adicionados em: arquivos\vidaprev\vidaprev_10-08-2026.csv
+2026-08-10 11:00:00,353 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=8
+2026-08-10 11:00:03,335 - INFO - Registros adicionados em: arquivos\vidaprev\vidaprev_10-08-2026.csv
+2026-08-10 11:00:03,338 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=9
+2026-08-10 11:00:05,519 - INFO - Registros adicionados em: arquivos\vidaprev\vidaprev_10-08-2026.csv
+2026-08-10 11:00:05,520 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=10
+2026-08-10 11:00:07,302 - INFO - Registros adicionados em: arquivos\vidaprev\vidaprev_10-08-2026.csv
+2026-08-10 11:00:07,303 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=325
+2026-08-10 11:00:09,290 - INFO - Registros adicionados em: arquivos\vidaprev\vidaprev_10-08-2026.csv
+2026-08-10 11:00:09,292 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=326
+2026-08-10 11:00:11,549 - INFO - Registros adicionados em: arquivos\vidaprev\vidaprev_10-08-2026.csv
+2026-08-10 11:00:11,550 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=1
+2026-08-10 11:00:13,104 - INFO - Registros adicionados em: arquivos\vidaprev\vidaprev_10-08-2026.csv
+2026-08-10 11:00:13,106 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=11
+2026-08-10 11:00:14,628 - INFO - Registros adicionados em: arquivos\vidaprev\vidaprev_10-08-2026.csv
+2026-08-10 11:00:14,632 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=12
+2026-08-10 11:00:17,396 - INFO - Registros adicionados em: arquivos\vidaprev\vidaprev_10-08-2026.csv
+2026-08-10 11:00:17,398 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=13
+2026-08-10 11:00:19,333 - INFO - Registros adicionados em: arquivos\vidaprev\vidaprev_10-08-2026.csv
+2026-08-10 11:00:19,334 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=324
+2026-08-10 11:00:21,530 - INFO - Registros adicionados em: arquivos\vidaprev\vidaprev_10-08-2026.csv
+2026-08-10 11:00:21,531 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=317
+2026-08-10 11:00:24,205 - INFO - Registros adicionados em: arquivos\vidaprev\vidaprev_10-08-2026.csv
+2026-08-10 11:00:24,206 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=318
+2026-08-10 11:00:27,082 - INFO - Registros adicionados em: arquivos\vidaprev\vidaprev_10-08-2026.csv
+2026-08-10 11:00:27,084 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=319
+2026-08-10 11:00:29,369 - INFO - Registros adicionados em: arquivos\vidaprev\vidaprev_10-08-2026.csv
+2026-08-10 11:00:29,370 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=320
+2026-08-10 11:00:30,690 - INFO - Registros adicionados em: arquivos\vidaprev\vidaprev_10-08-2026.csv
+2026-08-10 11:00:30,692 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=321
+2026-08-10 11:00:32,097 - INFO - Registros adicionados em: arquivos\vidaprev\vidaprev_10-08-2026.csv
+2026-08-10 11:00:32,099 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=322
+2026-08-10 11:00:34,983 - INFO - Registros adicionados em: arquivos\vidaprev\vidaprev_10-08-2026.csv
+2026-08-10 11:00:34,985 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=323
+2026-08-10 11:00:36,734 - INFO - Registros adicionados em: arquivos\vidaprev\vidaprev_10-08-2026.csv
+2026-08-10 11:00:36,735 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=14
+2026-08-10 11:00:37,929 - INFO - Registros adicionados em: arquivos\vidaprev\vidaprev_10-08-2026.csv
+2026-08-10 11:00:37,930 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=15
+2026-08-10 11:00:40,590 - INFO - Registros adicionados em: arquivos\vidaprev\vidaprev_10-08-2026.csv
+2026-08-10 11:00:40,592 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=16
+2026-08-10 11:00:41,803 - INFO - Registros adicionados em: arquivos\vidaprev\vidaprev_10-08-2026.csv
+2026-08-10 11:00:41,805 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=316
+2026-08-10 11:00:43,929 - INFO - Registros adicionados em: arquivos\vidaprev\vidaprev_10-08-2026.csv
+2026-08-10 11:00:43,930 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=314
+2026-08-10 11:00:45,439 - INFO - Registros adicionados em: arquivos\vidaprev\vidaprev_10-08-2026.csv
+2026-08-10 11:00:45,440 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=315
+2026-08-10 11:00:48,177 - INFO - Registros adicionados em: arquivos\vidaprev\vidaprev_10-08-2026.csv
+2026-08-10 11:00:48,178 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=17
+2026-08-10 11:00:50,752 - INFO - Registros adicionados em: arquivos\vidaprev\vidaprev_10-08-2026.csv
+2026-08-10 11:00:50,754 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=18
+2026-08-10 11:00:53,635 - INFO - Registros adicionados em: arquivos\vidaprev\vidaprev_10-08-2026.csv
+2026-08-10 11:00:53,636 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=19
+2026-08-10 11:00:55,999 - INFO - Registros adicionados em: arquivos\vidaprev\vidaprev_10-08-2026.csv
+2026-08-10 11:00:56,001 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=313
+2026-08-10 11:00:57,535 - INFO - Registros adicionados em: arquivos\vidaprev\vidaprev_10-08-2026.csv
+2026-08-10 11:00:57,536 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=311
+2026-08-10 11:00:59,087 - INFO - Registros adicionados em: arquivos\vidaprev\vidaprev_10-08-2026.csv
+2026-08-10 11:00:59,089 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=312
+2026-08-10 11:01:00,292 - INFO - Registros adicionados em: arquivos\vidaprev\vidaprev_10-08-2026.csv
+2026-08-10 11:01:00,296 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=20
+2026-08-10 11:01:01,432 - INFO - Registros adicionados em: arquivos\vidaprev\vidaprev_10-08-2026.csv
+2026-08-10 11:01:01,433 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=21
+2026-08-10 11:01:02,610 - INFO - Registros adicionados em: arquivos\vidaprev\vidaprev_10-08-2026.csv
+2026-08-10 11:01:02,611 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=22
+2026-08-10 11:01:04,645 - INFO - Registros adicionados em: arquivos\vidaprev\vidaprev_10-08-2026.csv
+2026-08-10 11:01:04,647 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=310
+2026-08-10 11:01:06,591 - INFO - Registros adicionados em: arquivos\vidaprev\vidaprev_10-08-2026.csv
+2026-08-10 11:01:06,593 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=308
+2026-08-10 11:01:08,458 - INFO - Registros adicionados em: arquivos\vidaprev\vidaprev_10-08-2026.csv
+2026-08-10 11:01:08,460 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=309
+2026-08-10 11:01:11,022 - INFO - Registros adicionados em: arquivos\vidaprev\vidaprev_10-08-2026.csv
+2026-08-10 11:01:11,024 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=23
+2026-08-10 11:01:12,023 - INFO - Registros adicionados em: arquivos\vidaprev\vidaprev_10-08-2026.csv
+2026-08-10 11:01:12,025 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=24
+2026-08-10 11:01:13,415 - INFO - Registros adicionados em: arquivos\vidaprev\vidaprev_10-08-2026.csv
+2026-08-10 11:01:13,416 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=25
+2026-08-10 11:01:15,677 - INFO - Registros adicionados em: arquivos\vidaprev\vidaprev_10-08-2026.csv
+2026-08-10 11:01:15,678 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=307
+2026-08-10 11:01:18,047 - INFO - Registros adicionados em: arquivos\vidaprev\vidaprev_10-08-2026.csv
+2026-08-10 11:01:18,048 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=305
+2026-08-10 11:01:19,773 - INFO - Registros adicionados em: arquivos\vidaprev\vidaprev_10-08-2026.csv
+2026-08-10 11:01:19,775 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=306
+2026-08-10 11:01:20,955 - INFO - Registros adicionados em: arquivos\vidaprev\vidaprev_10-08-2026.csv
+2026-08-10 11:01:20,957 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=26
+2026-08-10 11:01:23,818 - INFO - Registros adicionados em: arquivos\vidaprev\vidaprev_10-08-2026.csv
+2026-08-10 11:01:23,819 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=27
+2026-08-10 11:01:25,780 - INFO - Registros adicionados em: arquivos\vidaprev\vidaprev_10-08-2026.csv
+2026-08-10 11:01:25,783 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=28
+2026-08-10 11:01:28,555 - INFO - Registros adicionados em: arquivos\vidaprev\vidaprev_10-08-2026.csv
+2026-08-10 11:01:28,557 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=304
+2026-08-10 11:01:30,792 - INFO - Registros adicionados em: arquivos\vidaprev\vidaprev_10-08-2026.csv
+2026-08-10 11:01:30,793 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=302
+2026-08-10 11:01:33,412 - INFO - Registros adicionados em: arquivos\vidaprev\vidaprev_10-08-2026.csv
+2026-08-10 11:01:33,413 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=303
+2026-08-10 11:01:36,214 - INFO - Registros adicionados em: arquivos\vidaprev\vidaprev_10-08-2026.csv
+2026-08-10 11:01:36,216 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=29
+2026-08-10 11:01:38,642 - INFO - Registros adicionados em: arquivos\vidaprev\vidaprev_10-08-2026.csv
+2026-08-10 11:01:38,643 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=30
+2026-08-10 11:01:39,956 - INFO - Registros adicionados em: arquivos\vidaprev\vidaprev_10-08-2026.csv
+2026-08-10 11:01:39,957 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=31
+2026-08-10 11:01:41,913 - INFO - Registros adicionados em: arquivos\vidaprev\vidaprev_10-08-2026.csv
+2026-08-10 11:01:41,914 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=301
+2026-08-10 11:01:43,388 - INFO - Registros adicionados em: arquivos\vidaprev\vidaprev_10-08-2026.csv
+2026-08-10 11:01:43,390 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=299
+2026-08-10 11:01:45,094 - INFO - Registros adicionados em: arquivos\vidaprev\vidaprev_10-08-2026.csv
+2026-08-10 11:01:45,096 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=300
+2026-08-10 11:01:46,444 - INFO - Registros adicionados em: arquivos\vidaprev\vidaprev_10-08-2026.csv
+2026-08-10 11:01:46,445 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=32
+2026-08-10 11:01:47,550 - INFO - Registros adicionados em: arquivos\vidaprev\vidaprev_10-08-2026.csv
+2026-08-10 11:01:47,552 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=33
+2026-08-10 11:01:50,237 - INFO - Registros adicionados em: arquivos\vidaprev\vidaprev_10-08-2026.csv
+2026-08-10 11:01:50,238 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=34
+2026-08-10 11:01:53,336 - INFO - Registros adicionados em: arquivos\vidaprev\vidaprev_10-08-2026.csv
+2026-08-10 11:01:53,337 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=298
+2026-08-10 11:01:54,184 - INFO - Registros adicionados em: arquivos\vidaprev\vidaprev_10-08-2026.csv
+2026-08-10 11:01:54,185 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=296
+2026-08-10 11:01:55,351 - INFO - Registros adicionados em: arquivos\vidaprev\vidaprev_10-08-2026.csv
+2026-08-10 11:01:55,352 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=297
+2026-08-10 11:01:58,057 - INFO - Registros adicionados em: arquivos\vidaprev\vidaprev_10-08-2026.csv
+2026-08-10 11:01:58,058 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=35
+2026-08-10 11:01:59,055 - INFO - Registros adicionados em: arquivos\vidaprev\vidaprev_10-08-2026.csv
+2026-08-10 11:01:59,056 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=36
+2026-08-10 11:02:00,875 - INFO - Registros adicionados em: arquivos\vidaprev\vidaprev_10-08-2026.csv
+2026-08-10 11:02:00,876 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=37
+2026-08-10 11:02:02,927 - INFO - Registros adicionados em: arquivos\vidaprev\vidaprev_10-08-2026.csv
+2026-08-10 11:02:02,929 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=295
+2026-08-10 11:02:05,190 - INFO - Registros adicionados em: arquivos\vidaprev\vidaprev_10-08-2026.csv
+2026-08-10 11:02:05,192 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=293
+2026-08-10 11:02:07,849 - INFO - Registros adicionados em: arquivos\vidaprev\vidaprev_10-08-2026.csv
+2026-08-10 11:02:07,851 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=294
+2026-08-10 11:02:09,154 - INFO - Registros adicionados em: arquivos\vidaprev\vidaprev_10-08-2026.csv
+2026-08-10 11:02:09,155 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=38
+2026-08-10 11:02:12,059 - INFO - Registros adicionados em: arquivos\vidaprev\vidaprev_10-08-2026.csv
+2026-08-10 11:02:12,075 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=39
+2026-08-10 11:02:14,563 - INFO - Registros adicionados em: arquivos\vidaprev\vidaprev_10-08-2026.csv
+2026-08-10 11:02:14,575 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=40
+2026-08-10 11:02:17,188 - INFO - Registros adicionados em: arquivos\vidaprev\vidaprev_10-08-2026.csv
+2026-08-10 11:02:17,190 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=292
+2026-08-10 11:02:18,688 - INFO - Registros adicionados em: arquivos\vidaprev\vidaprev_10-08-2026.csv
+2026-08-10 11:02:18,696 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=290
+2026-08-10 11:02:19,833 - INFO - Registros adicionados em: arquivos\vidaprev\vidaprev_10-08-2026.csv
+2026-08-10 11:02:19,835 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=291
+2026-08-10 11:02:22,171 - INFO - Registros adicionados em: arquivos\vidaprev\vidaprev_10-08-2026.csv
+2026-08-10 11:02:22,173 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=41
+2026-08-10 11:02:24,111 - INFO - Registros adicionados em: arquivos\vidaprev\vidaprev_10-08-2026.csv
+2026-08-10 11:02:24,113 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=42
+2026-08-10 11:02:26,841 - INFO - Registros adicionados em: arquivos\vidaprev\vidaprev_10-08-2026.csv
+2026-08-10 11:02:26,842 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=43
+2026-08-10 11:02:28,859 - INFO - Registros adicionados em: arquivos\vidaprev\vidaprev_10-08-2026.csv
+2026-08-10 11:02:28,861 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=289
+2026-08-10 11:02:30,203 - INFO - Registros adicionados em: arquivos\vidaprev\vidaprev_10-08-2026.csv
+2026-08-10 11:02:30,204 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=287
+2026-08-10 11:02:31,591 - INFO - Registros adicionados em: arquivos\vidaprev\vidaprev_10-08-2026.csv
+2026-08-10 11:02:31,593 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=288
+2026-08-10 11:02:34,509 - INFO - Registros adicionados em: arquivos\vidaprev\vidaprev_10-08-2026.csv
+2026-08-10 11:02:34,511 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=44
+2026-08-10 11:02:37,236 - INFO - Registros adicionados em: arquivos\vidaprev\vidaprev_10-08-2026.csv
+2026-08-10 11:02:37,237 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=45
+2026-08-10 11:02:38,774 - INFO - Registros adicionados em: arquivos\vidaprev\vidaprev_10-08-2026.csv
+2026-08-10 11:02:38,775 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=46
+2026-08-10 11:02:40,367 - INFO - Registros adicionados em: arquivos\vidaprev\vidaprev_10-08-2026.csv
+2026-08-10 11:02:40,368 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=286
+2026-08-10 11:02:41,428 - INFO - Registros adicionados em: arquivos\vidaprev\vidaprev_10-08-2026.csv
+2026-08-10 11:02:41,430 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=284
+2026-08-10 11:02:43,113 - INFO - Registros adicionados em: arquivos\vidaprev\vidaprev_10-08-2026.csv
+2026-08-10 11:02:43,114 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=285
+2026-08-10 11:02:45,126 - INFO - Registros adicionados em: arquivos\vidaprev\vidaprev_10-08-2026.csv
+2026-08-10 11:02:45,128 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=47
+2026-08-10 11:02:47,043 - INFO - Registros adicionados em: arquivos\vidaprev\vidaprev_10-08-2026.csv
+2026-08-10 11:02:47,044 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=48
+2026-08-10 11:02:49,124 - INFO - Registros adicionados em: arquivos\vidaprev\vidaprev_10-08-2026.csv
+2026-08-10 11:02:49,125 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=49
+2026-08-10 11:02:51,296 - INFO - Registros adicionados em: arquivos\vidaprev\vidaprev_10-08-2026.csv
+2026-08-10 11:02:51,297 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=283
+2026-08-10 11:02:53,561 - INFO - Registros adicionados em: arquivos\vidaprev\vidaprev_10-08-2026.csv
+2026-08-10 11:02:53,562 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=281
+2026-08-10 11:02:54,627 - INFO - Registros adicionados em: arquivos\vidaprev\vidaprev_10-08-2026.csv
+2026-08-10 11:02:54,628 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=282
+2026-08-10 11:02:56,335 - INFO - Registros adicionados em: arquivos\vidaprev\vidaprev_10-08-2026.csv
+2026-08-10 11:02:56,336 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=50
+2026-08-10 11:02:57,515 - INFO - Registros adicionados em: arquivos\vidaprev\vidaprev_10-08-2026.csv
+2026-08-10 11:02:57,517 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=51
+2026-08-10 11:03:00,341 - INFO - Registros adicionados em: arquivos\vidaprev\vidaprev_10-08-2026.csv
+2026-08-10 11:03:00,343 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=52
+2026-08-10 11:03:02,062 - INFO - Registros adicionados em: arquivos\vidaprev\vidaprev_10-08-2026.csv
+2026-08-10 11:03:02,063 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=280
+2026-08-10 11:03:03,619 - INFO - Registros adicionados em: arquivos\vidaprev\vidaprev_10-08-2026.csv
+2026-08-10 11:03:03,621 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=278
+2026-08-10 11:03:05,864 - INFO - Registros adicionados em: arquivos\vidaprev\vidaprev_10-08-2026.csv
+2026-08-10 11:03:05,866 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=279
+2026-08-10 11:03:07,563 - INFO - Registros adicionados em: arquivos\vidaprev\vidaprev_10-08-2026.csv
+2026-08-10 11:03:07,564 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=53
+2026-08-10 11:03:09,475 - INFO - Registros adicionados em: arquivos\vidaprev\vidaprev_10-08-2026.csv
+2026-08-10 11:03:09,478 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=54
+2026-08-10 11:03:12,314 - INFO - Registros adicionados em: arquivos\vidaprev\vidaprev_10-08-2026.csv
+2026-08-10 11:03:12,316 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=55
+2026-08-10 11:03:13,586 - INFO - Registros adicionados em: arquivos\vidaprev\vidaprev_10-08-2026.csv
+2026-08-10 11:03:13,588 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=277
+2026-08-10 11:03:16,097 - INFO - Registros adicionados em: arquivos\vidaprev\vidaprev_10-08-2026.csv
+2026-08-10 11:03:16,099 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=275
+2026-08-10 11:03:17,986 - INFO - Registros adicionados em: arquivos\vidaprev\vidaprev_10-08-2026.csv
+2026-08-10 11:03:17,988 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=276
+2026-08-10 11:03:19,847 - INFO - Registros adicionados em: arquivos\vidaprev\vidaprev_10-08-2026.csv
+2026-08-10 11:03:19,848 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=56
+2026-08-10 11:03:21,404 - INFO - Registros adicionados em: arquivos\vidaprev\vidaprev_10-08-2026.csv
+2026-08-10 11:03:21,405 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=57
+2026-08-10 11:03:22,970 - INFO - Registros adicionados em: arquivos\vidaprev\vidaprev_10-08-2026.csv
+2026-08-10 11:03:22,971 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=58
+2026-08-10 11:03:25,680 - INFO - Registros adicionados em: arquivos\vidaprev\vidaprev_10-08-2026.csv
+2026-08-10 11:03:25,681 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=274
+2026-08-10 11:03:28,340 - INFO - Registros adicionados em: arquivos\vidaprev\vidaprev_10-08-2026.csv
+2026-08-10 11:03:28,342 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=272
+2026-08-10 11:03:30,013 - INFO - Registros adicionados em: arquivos\vidaprev\vidaprev_10-08-2026.csv
+2026-08-10 11:03:30,023 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=273
+2026-08-10 11:03:30,751 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-08-10 11:04:49,321 - INFO - ================================================================================
+2026-08-10 11:04:49,322 - INFO - Iniciando Consulta Site - 2026-08-10 11:04:49.321858
+2026-08-10 11:04:51,323 - INFO - ================================================================================
+2026-08-10 11:04:51,323 - INFO - ACESSANDO O PROCESS PARA ENVIAR OS DADOS
+2026-08-10 11:04:51,325 - INFO - Processando https://www.vidaprev.com.br/falecimentos
+2026-08-10 11:04:52,086 - INFO - Registros adicionados em: arquivos\vidaprev\vidaprev_10-08-2026.csv
+2026-08-10 11:04:52,087 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=2
+2026-08-10 11:04:52,834 - INFO - Registros adicionados em: arquivos\vidaprev\vidaprev_10-08-2026.csv
+2026-08-10 11:04:52,835 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=3
+2026-08-10 11:04:55,383 - INFO - Registros adicionados em: arquivos\vidaprev\vidaprev_10-08-2026.csv
+2026-08-10 11:04:55,385 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=4
+2026-08-10 11:04:57,071 - INFO - Registros adicionados em: arquivos\vidaprev\vidaprev_10-08-2026.csv
+2026-08-10 11:04:57,073 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=5
+2026-08-10 11:04:59,660 - INFO - Registros adicionados em: arquivos\vidaprev\vidaprev_10-08-2026.csv
+2026-08-10 11:04:59,661 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=6
+2026-08-10 11:05:01,448 - INFO - Registros adicionados em: arquivos\vidaprev\vidaprev_10-08-2026.csv
+2026-08-10 11:05:01,449 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=7
+2026-08-10 11:05:02,749 - INFO - Registros adicionados em: arquivos\vidaprev\vidaprev_10-08-2026.csv
+2026-08-10 11:05:02,750 - INFO - Processando https://www.vidaprev.com.br/falecimentos?page=8
+2026-08-10 11:05:03,045 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).

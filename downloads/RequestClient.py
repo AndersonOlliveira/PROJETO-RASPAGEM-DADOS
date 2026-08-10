@@ -29,9 +29,7 @@ class RequestClient:
     def user_agent(self):
         return random.choice([
           "Mozilla/5.0 (Windows NT 10.0; Win64; x64)",
-            "Mozilla/5.0 (X11; Linux x86_64)",
-            # "Mozilla/5.0 (Windows NT 10.0; Win64; x64)...",
-            # "Mozilla/5.0 (X11; Linux x86_64)...",
+            "Mozilla/5.0 (X11; Linux x86_64)"
         ])
 
     def get(self,url):

@@ -1,5 +1,7 @@
+import time
 from Logs import ClassLogger
 from services.crawler import iniciar
+from Mail.ClassMail import enviar_email_all
 
 def Process(self,serves):
     ClassLogger.logging.info('ACESSANDO O PROCESS PARA ENVIAR OS DADOS')
@@ -39,9 +41,10 @@ def Process(self,serves):
 
     except Exception as e:
         ClassLogger.logging.error(
-            f"Erro fatal na execução: {e}",
+            f"Erro fatal na execução dos servidores: {e}",
             exc_info=True
-        )        
+        )
+        enviar_email_all(f"[{time.strftime('%H:%M:%S')}]\nErro fatal na execução dos servidores: {e}")        
 
 
             
