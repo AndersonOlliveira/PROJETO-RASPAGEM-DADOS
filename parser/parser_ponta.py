@@ -11,12 +11,16 @@ def extrair_cards(self,soup):
             registros = []
             links = {}
 
-            # 1 - links da página de hoje
+            # # 1 - links da página de hoje
             for item in extrair_links(self, soup):
                 links[item["LINKS"]] = item
 
+
+            
+
             # 2 - páginas dos últimos dias
             lista_post = parser_ponta(soup, url=None)
+            print(f"MINHA LISTA {lista_post}")
 
             post_processados = set()
 
@@ -61,6 +65,9 @@ def extrair_cards(self,soup):
                 elif retorno_montagem:
                         registros.append(retorno_montagem)
 
+            print("RESULTADO")
+            print(registros)
+
             return registros
             
         except Exception as e:
@@ -95,6 +102,8 @@ def extrair_links(self,soup):
         for linha in linhas:
             link = linha.find("a", href=True)
             dados = [td.get_text(strip=True) for td in linha.select("td")]
+
+            # print(dados)
 
             # skip if no link in this row
             if not link:
@@ -136,6 +145,9 @@ def montar_dados(soup,url):
         linhas = soup.find_all("tr")
 
         for linha in linhas:
+
+            print(f"MINHAS LINHAS PROCESSADAS")
+            print(linha)
             colunas = linha.find_all("td")
 
             if colunas[0].get("align") != "right":

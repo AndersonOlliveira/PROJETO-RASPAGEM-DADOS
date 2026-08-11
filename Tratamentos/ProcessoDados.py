@@ -4,6 +4,7 @@ from services.crawler import iniciar
 from Mail.ClassMail import enviar_email_all
 from utils.info_pastas import abrir_arquivos
 from concurrent.futures import ThreadPoolExecutor, as_completed
+from utils.montarParametros import gerar_urls_ggo
 
 def Process(self,serves):
     ClassLogger.logging.info('ACESSANDO O PROCESS PARA ENVIAR OS DADOS')
@@ -31,35 +32,41 @@ def Process(self,serves):
 
     # print(servidor)
     # return
+    # TESTE DE GERAÇÃO DAS URL PARA OS ULTIMO 10 ANOS
+    # result_url = gerar_urls_ggo("https://ggo-interno.com.br/obituario/?")
 
+    # print(f"MEU RESULADO DA URL {result_url}")
+    executor = None
     try:
+        if not serves:
+            return
         if serves:
             with ThreadPoolExecutor(max_workers=self.max_workers) as executor:
                 futures = []
                 try:
                     futures = [ 
                     executor.submit(iniciar,self,servidor) for servidor in serves]
-                    # for future in as_completed(futures):
-                    #     try:
-                    #         result = future.result()
-                    #         detalhes.append(result) # FAZ AS CONSULTAS INDIVIDUAIS E ADICIONA DENTRO DE DETALHE
-                    #         print("✔ Detalhe recebido") 
-                    #     except Exception as e:
-                    #         ClassLogger.logger.error(f"Erro ao processar a URL: {e}", exc_info=True)
-                                        
-
+                 
                     # for servidor in serves:
                     #      print(f"Processando servidor: {servidor['nome']}")
                     #     # print(f"Processando servidor: {self.max_workers}")
                            
                     #     iniciar(self, servidor)
-                    #                        # pasta = f"arquivos/{servidor['nome']}"
-                                           # registros_atual, diferenca = abrir_arquivos(self,pasta)
+                    # print(futures)
+                        # pasta = f"arquivos/{servidor['nome']}"
+                        # registros_atual, diferenca,registros_antigo = abrir_arquivos(pasta)
+                    
 
+                except KeyboardInterrupt as e:
+                          # Permite parar o script com Ctrl+C no terminal
+                        ClassLogger.logging.info("\nEncerrando loop por comando do usuário Processo Dados (Ctrl+C).")
+                          # break
+                        enviar_email_all(f"[{time.strftime('%H:%M:%S')}]\nEncerrando loop por comando do usuário (Ctrl+C).")
                 except Exception as e:
-                            ClassLogger.logging.error(f"Erro ao processar paginas para localizar as páginas: {e}", exc_info=True)
-                            links = None
-
+                              # Lida com erros inesperados e continua o loop
+                        ClassLogger.logging.info(f"[{time.strftime('%H:%M:%S')}] Erro inesperado: {e}. Continuará em 30 segundos.")
+                        enviar_email_all(f"[{time.strftime('%H:%M:%S')}] Erro inesperado: {e}. Continuará em 30 segundos.")
+                
            
 
 

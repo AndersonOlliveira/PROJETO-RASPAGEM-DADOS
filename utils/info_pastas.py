@@ -45,9 +45,15 @@ def preparar_pasta(pasta):
             )
 
             if not match:
-                print(f"Arquivo sem data no nome: {arquivo.name}")
+                print(
+                    f"Arquivo sem data no nome: {arquivo.name}. "
+                    f"Movendo para OLD."
+                )
+                destino = pasta_old / arquivo.name
+                if destino.exists():
+                    destino.unlink()
+                arquivo.rename(destino)
                 continue
-
             data_arquivo = datetime.strptime(
                 match.group(1),
                 "%d-%m-%Y"
@@ -73,6 +79,7 @@ def preparar_pasta(pasta):
                     f"Arquivo antigo movido para OLD: "
                     f"{arquivo.name}"
                 )
+           
 
     except Exception as e:
 
@@ -101,19 +108,20 @@ def abrir_arquivos(pasta):
     pasta_old = pasta / "old"
 
     arquivos_antigos = {}
-
+    
     if pasta_old.exists() and pasta_old.is_dir():
         for arquivo_antigo in pasta_old.glob("*.csv"):
-
             prefixo = _prefix_nome(arquivo_antigo.name)
             data_antiga = _extrair_data_nome(arquivo_antigo.name)
-
+            
             if not prefixo or not data_antiga:
                 continue
 
             atual = arquivos_antigos.get(prefixo)
+           
 
             if not atual or data_antiga > atual[0]:
+             
                 arquivos_antigos[prefixo] = (
                     data_antiga,
                     arquivo_antigo
@@ -136,7 +144,7 @@ def abrir_arquivos(pasta):
             continue
 
         data_arquivo = _extrair_data_nome(arquivo.name)
-
+      
         if not data_arquivo:
             print(f"Arquivo sem data no nome: {arquivo.name}")
             continue

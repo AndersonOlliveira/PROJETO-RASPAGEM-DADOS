@@ -78,10 +78,10 @@ class RequestClient:
                 ClassLogger.logging.warning(f"HTTP {e.response.status_code}")
                 if e.response.status_code == 404:
                     self.stats.http_error()
-
                     break
             except requests.exceptions.RequestException as e:
                 self.stats.timeout()
+                self.stats.http_error()
 
                 ClassLogger.logging.error(
                     f"Erro Requests: {e}"

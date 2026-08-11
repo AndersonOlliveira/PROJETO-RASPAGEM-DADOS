@@ -168,6 +168,7 @@ class Processor:
         self.periodo = 'SEMANAL'
         self.true = True
         self.false =False
+        self.parar = False
         # self.todos_resultados = []
         self.batch_size_verify = 50
         self.lock = threading.Lock()
@@ -182,7 +183,7 @@ class Processor:
 
         try:
             # print(obter_servidores(self,[1, 7, 12]))
-            registros = obter_servidores(self,[6,9,5])
+            registros = obter_servidores(self,[10])
 
             total_processados = Process(self,registros)
 
