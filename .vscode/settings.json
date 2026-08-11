@@ -16,5 +16,19 @@
     "**/.pyc": { "when": "$(basename).py" },
     "**/__pycache__": true,
     "**/__pytest_cache": true
-  }
+  },
+
+  "python.analysis.exclude": [
+    "**/__pycache__",
+    "**/__pytest_cache__",
+    "**/.git",
+    "**/.venv",
+    "**/env",
+    "**/build",
+    "**/dist"
+  ],
+
+  "python.analysis.diagnosticMode": "openFilesOnly",
+  "python.analysis.indexServicesReferences": false,
+  "python.analysis.packageIndexDepths": [{ "name": "", "depth": 2 }]
 }

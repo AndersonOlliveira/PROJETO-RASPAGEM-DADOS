@@ -2,6 +2,7 @@ import threading
 from datetime import datetime
 import time
 from Logs import ClassLogger
+from utils.CrawlerStats import enviar_relatorio_email,enviar_email_all
 from Tratamentos.ProcessoDados import Process
 from Tratamentos.Normlizar import arquivos_process
 from parser.grupoangelus import extrair_cards as parser_grupo
@@ -24,9 +25,10 @@ from parserPagina.ggoInterno import extrair_links as parse_gg_link
 from parserPagina.arvoreVida import extrair_links as parse_arvore_div
 from parserPagina.orsolaPage import extrair_links as orsolaPage
 from parserPagina.pontaGrossa import extrair_links as PontaGrossaPage
+from parserPagina.Angelus import extrair_links as angeleus
 from utils.CrawlerStats import CrawlerStats
 from utils.obter_servidor import obter_servidores
-from concurrent.futures import ThreadPoolExecutor, as_completed
+
 from downloads.RequestClient import RequestClient
 
 import pandas as pd
@@ -52,7 +54,7 @@ class Processor:
                         "url": "https://obituario.grupoangelus.com.br/g/4",
                         "parser": parser_grupo,
                         "pagination": True,
-                        "pagin": False,
+                        "pagin": angeleus,
                         "parametros": False
                     },
 
@@ -166,6 +168,7 @@ class Processor:
         self.periodo = 'SEMANAL'
         self.true = True
         self.false =False
+        # self.todos_resultados = []
         self.batch_size_verify = 50
         self.lock = threading.Lock()
         # self.db = ConectionPool.DbPool(maxconn=self.max_workers)
@@ -179,9 +182,20 @@ class Processor:
 
         try:
             # print(obter_servidores(self,[1, 7, 12]))
-            registros = obter_servidores(self,[3])
+            registros = obter_servidores(self,[6,9,5])
 
             total_processados = Process(self,registros)
+
+            # ENVIA 
+            try:
+                dados_relatorio = self.stats.todos_resultados
+            except Exception:
+                if isinstance(self.stats, list):
+                    dados_relatorio = self.stats
+                else:
+                    dados_relatorio = getattr(self.stats, 'todos_resultados', self.stats)
+
+            enviar_relatorio_email(dados_relatorio)
 
             
             fim = datetime.now()
@@ -193,7 +207,7 @@ class Processor:
             ClassLogger.logging.error(f"Erro fatal na execução: {str(e)}")
             error = f"Erro fatal na execução: process_api {str(e)}"
             corpo = f"""<h2 style="color:red;">Falha no processo de Captura e tratamento dos dados</h2> <p>{datetime.now().strftime('%Y-%m-%d %H:%M:%S')} Mensagem:: {error}</p>"""
-            # enviar_email_all(corpo)
+            enviar_email_all(corpo)
 
         pass
              
