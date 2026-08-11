@@ -42,8 +42,10 @@ class RequestClient:
                 self.stats.processada()
                 content_type = resposta.headers.get('Content-Type', '').lower()
                 if 'text/html' in content_type:
+                    self.stats.sucesso()
                     return BeautifulSoup(resposta.text,"html.parser")
                 else:
+                    self.stats.sucesso()
                     return resposta.content
 
             except requests.exceptions.ReadTimeout as e:
@@ -66,7 +68,7 @@ class RequestClient:
                 ClassLogger.logging.warning(f"Erro de conexão ({tentativa+1}/5): {url}")
 
             except requests.exceptions.HTTPError as e:
-                self.stats.timeout()
+                # self.stats.timeout()
                 self.stats.http_error()
                 
                 self.adicionar_erro(
@@ -113,9 +115,12 @@ class RequestClient:
                 self.session.headers["User-Agent"] = self.user_agent()
                 resposta = self.session.post(url,data=data,timeout=(10,30))
                 resposta.raise_for_status()
-
                 self.stats.processada()
-                return BeautifulSoup(resposta.text,"html.parser")
+                if resposta:
+                   self.stats.sucesso()
+                   return BeautifulSoup(resposta.text,"html.parser")
+                else:
+                    return "Nenhum dado a ser retornado"
 
             except requests.exceptions.ReadTimeout as e:
                 self.stats.timeout()

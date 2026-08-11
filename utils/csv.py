@@ -1,9 +1,7 @@
 import pandas as pd
-from pathlib import Path
-from utils.info_pastas import verificar_pasta
 from Logs import ClassLogger
 from datetime import datetime
-
+from Mail.ClassMail import enviar_email_all
 
 # CSV = Path("tabela_populada.csv")
 def salvar_csv(registros, pasta, nome):
@@ -29,7 +27,7 @@ def salvar_csv(registros, pasta, nome):
         )
 
         ClassLogger.logging.info(
-            f"Registros adicionados em: {arquivo}"
+            f"Registros sendo adicionados em: {arquivo}"
         )
 
     except Exception as e:
@@ -38,3 +36,4 @@ def salvar_csv(registros, pasta, nome):
             f"Erro ao salvar CSV: {e}",
             exc_info=True
         )
+        enviar_email_all(f"Erro ao salvar CSV: {e}",exc_info=True)

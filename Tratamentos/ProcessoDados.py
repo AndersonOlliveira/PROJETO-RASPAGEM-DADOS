@@ -2,6 +2,8 @@ import time
 from Logs import ClassLogger
 from services.crawler import iniciar
 from Mail.ClassMail import enviar_email_all
+from utils.info_pastas import abrir_arquivos
+from concurrent.futures import ThreadPoolExecutor, as_completed
 
 def Process(self,serves):
     ClassLogger.logging.info('ACESSANDO O PROCESS PARA ENVIAR OS DADOS')
@@ -32,12 +34,36 @@ def Process(self,serves):
 
     try:
         if serves:
+            with ThreadPoolExecutor(max_workers=self.max_workers) as executor:
+                futures = []
+                try:
+                    futures = [ 
+                    executor.submit(iniciar,self,servidor) for servidor in serves]
+                    # for future in as_completed(futures):
+                    #     try:
+                    #         result = future.result()
+                    #         detalhes.append(result) # FAZ AS CONSULTAS INDIVIDUAIS E ADICIONA DENTRO DE DETALHE
+                    #         print("✔ Detalhe recebido") 
+                    #     except Exception as e:
+                    #         ClassLogger.logger.error(f"Erro ao processar a URL: {e}", exc_info=True)
+                                        
 
-            for servidor in serves:
+                    # for servidor in serves:
+                    #      print(f"Processando servidor: {servidor['nome']}")
+                    #     # print(f"Processando servidor: {self.max_workers}")
+                           
+                    #     iniciar(self, servidor)
+                    #                        # pasta = f"arquivos/{servidor['nome']}"
+                                           # registros_atual, diferenca = abrir_arquivos(self,pasta)
 
-                print(f"Processando servidor: {servidor['nome']}")
+                except Exception as e:
+                            ClassLogger.logging.error(f"Erro ao processar paginas para localizar as páginas: {e}", exc_info=True)
+                            links = None
 
-                iniciar(self, servidor)
+           
+
+
+                
 
     except Exception as e:
         ClassLogger.logging.error(
@@ -46,9 +72,6 @@ def Process(self,serves):
         )
         enviar_email_all(f"[{time.strftime('%H:%M:%S')}]\nErro fatal na execução dos servidores: {e}")        
 
-
-            
-    
 
         
     

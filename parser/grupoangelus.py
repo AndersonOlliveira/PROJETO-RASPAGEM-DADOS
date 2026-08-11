@@ -1,4 +1,5 @@
 import re
+from datetime import datetime
 
 def extrair_cards(self,soup):
 
@@ -17,9 +18,11 @@ def extrair_cards(self,soup):
             "NOME": nome.get_text(strip=True) if nome else "",
             "DATA_NASCIMENTO": spans[0].get_text(strip=True) if len(spans) > 0 else "",
             "DATA_FALECIMENTO": spans[1].get_text(strip=True) if len(spans) > 1 else "",
-             "LINK": card.find("a")["href"] if card.find("a") else ""
+            "LINK": card.find("a")["href"] if card.find("a") else "",
+            "DATA_CAPTURA": datetime.now().strftime("%d/%m/%Y %H:%M")
         }
-        
+
+       
 
         lista.append(registro)
 
