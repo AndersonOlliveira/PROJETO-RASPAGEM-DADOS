@@ -42,14 +42,31 @@ class CrawlerStats:
 
     def salvar(self, pasta, nome):
         fim = datetime.now()
-        self.stats["servidor"] = nome
-        self.stats["inicio"] = self.inicio.strftime("%d/%m/%Y %H:%M:%S")
-        self.stats["fim"] = fim.strftime("%d/%m/%Y %H:%M:%S")
-        self.stats["duracao_segundos"] = round((fim-self.inicio).total_seconds(),2)
-        self.stats["Qta_registros"],self.stats["Qta_diferença"], self.stats["Qta_registro_anteriores"] = abrir_arquivos(pasta)
+        dados = self.stats.copy() # copio e vou inteirando
 
-        df = pd.DataFrame([self.stats])
-       
+        dados["servidor"] = nome
+
+        dados["inicio"] = self.inicio.strftime(
+            "%d/%m/%Y %H:%M:%S"
+        )
+
+        dados["fim"] = fim.strftime(
+            "%d/%m/%Y %H:%M:%S"
+        )
+
+        dados["duracao_segundos"] = round(
+            (fim - self.inicio).total_seconds(),
+            2
+        )
+
+        (
+            dados["qta_registros"],
+            dados["qta_diferença"],
+            dados["qta_registro_anteriores"]
+        ) = abrir_arquivos(pasta)
+
+        df = pd.DataFrame([dados])
+
         df.to_csv(
             Path(pasta) / "estatisticas.csv",
             sep=";",
@@ -57,6 +74,7 @@ class CrawlerStats:
             index=False
         )
 
+        # guarda somente o resultado deste servidor
         self.todos_resultados.append(df)
 
 def enviar_relatorio_email(self):

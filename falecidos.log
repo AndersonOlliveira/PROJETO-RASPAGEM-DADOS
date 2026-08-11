@@ -191073,3 +191073,734 @@ Iniciando Processo para captura dos dados
 2026-08-11 08:43:10,978 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 2026-08-11 08:43:10,978 - INFO - 
 Iniciando Processo para captura dos dados
+2026-08-11 12:07:12,233 - INFO - ================================================================================
+2026-08-11 12:07:12,234 - INFO - Iniciando Consulta Site - 2026-08-11 12:07:12.233167
+2026-08-11 12:07:14,234 - INFO - ================================================================================
+2026-08-11 12:07:14,235 - INFO - ACESSANDO O PROCESS PARA ENVIAR OS DADOS
+2026-08-11 12:07:14,249 - INFO - Processando lote com 1 URLs
+2026-08-11 12:07:14,253 - INFO - Processando lote com 1 URLs
+2026-08-11 12:07:16,313 - INFO - Registros sendo adicionados em: arquivos\grupoangelus\grupoangelus_11-08-2026.csv
+2026-08-11 12:07:16,315 - INFO - Processando lote com 1 URLs
+2026-08-11 12:07:17,988 - INFO - Registros sendo adicionados em: arquivos\grupoangelus\grupoangelus_11-08-2026.csv
+2026-08-11 12:07:17,990 - INFO - Processando lote com 2 URLs
+2026-08-11 12:07:22,632 - INFO - Registros sendo adicionados em: arquivos\grupoangelus\grupoangelus_11-08-2026.csv
+2026-08-11 12:07:22,645 - INFO - Registros sendo adicionados em: arquivos\grupoangelus\grupoangelus_11-08-2026.csv
+2026-08-11 12:07:22,648 - INFO - Processando lote com 1 URLs
+2026-08-11 12:07:26,935 - INFO - Registros sendo adicionados em: arquivos\grupoangelus\grupoangelus_11-08-2026.csv
+2026-08-11 12:07:26,937 - INFO - Processando lote com 1 URLs
+2026-08-11 12:07:31,818 - INFO - Registros sendo adicionados em: arquivos\grupoangelus\grupoangelus_11-08-2026.csv
+2026-08-11 12:07:31,819 - INFO - Processando lote com 1 URLs
+2026-08-11 12:07:35,720 - INFO - Registros sendo adicionados em: arquivos\grupoangelus\grupoangelus_11-08-2026.csv
+2026-08-11 12:07:35,721 - INFO - Processando lote com 1 URLs
+2026-08-11 12:07:39,218 - INFO - Registros sendo adicionados em: arquivos\grupoangelus\grupoangelus_11-08-2026.csv
+2026-08-11 12:07:39,219 - INFO - Processando lote com 1 URLs
+2026-08-11 12:07:43,284 - INFO - Registros sendo adicionados em: arquivos\grupoangelus\grupoangelus_11-08-2026.csv
+2026-08-11 12:07:43,285 - INFO - Processando lote com 1 URLs
+2026-08-11 12:07:46,807 - INFO - Registros sendo adicionados em: arquivos\grupoangelus\grupoangelus_11-08-2026.csv
+2026-08-11 12:07:46,815 - INFO - Processando lote com 1 URLs
+2026-08-11 12:07:49,284 - INFO - Registros sendo adicionados em: arquivos\grupoangelus\grupoangelus_11-08-2026.csv
+2026-08-11 12:07:49,285 - INFO - Processando lote com 1 URLs
+2026-08-11 12:07:54,866 - INFO - Registros sendo adicionados em: arquivos\grupoangelus\grupoangelus_11-08-2026.csv
+2026-08-11 12:07:54,869 - INFO - Processando lote com 1 URLs
+2026-08-11 12:08:00,065 - INFO - Registros sendo adicionados em: arquivos\grupoangelus\grupoangelus_11-08-2026.csv
+2026-08-11 12:08:00,066 - INFO - Processando lote com 1 URLs
+2026-08-11 12:08:05,971 - INFO - Registros sendo adicionados em: arquivos\grupoangelus\grupoangelus_11-08-2026.csv
+2026-08-11 12:08:05,972 - INFO - Processando lote com 1 URLs
+2026-08-11 12:08:09,507 - INFO - Registros sendo adicionados em: arquivos\grupoangelus\grupoangelus_11-08-2026.csv
+2026-08-11 12:08:09,508 - INFO - Processando lote com 1 URLs
+2026-08-11 12:08:11,722 - INFO - Registros sendo adicionados em: arquivos\arvorespelavida\arvorespelavida_11-08-2026.csv
+2026-08-11 12:08:11,724 - INFO - Processando lote com 2 URLs
+2026-08-11 12:08:14,073 - INFO - Registros sendo adicionados em: arquivos\grupoangelus\grupoangelus_11-08-2026.csv
+2026-08-11 12:08:14,077 - INFO - Finalizado servidor: grupoangelus
+2026-08-11 12:08:42,341 - INFO - Registros sendo adicionados em: arquivos\arvorespelavida\arvorespelavida_11-08-2026.csv
+2026-08-11 12:09:05,562 - INFO - Registros sendo adicionados em: arquivos\arvorespelavida\arvorespelavida_11-08-2026.csv
+2026-08-11 12:09:05,564 - INFO - Processando lote com 2 URLs
+2026-08-11 12:09:33,556 - INFO - Registros sendo adicionados em: arquivos\arvorespelavida\arvorespelavida_11-08-2026.csv
+2026-08-11 12:09:57,649 - INFO - Registros sendo adicionados em: arquivos\arvorespelavida\arvorespelavida_11-08-2026.csv
+2026-08-11 12:09:57,764 - INFO - Processando lote com 2 URLs
+2026-08-11 12:10:23,249 - INFO - Registros sendo adicionados em: arquivos\arvorespelavida\arvorespelavida_11-08-2026.csv
+2026-08-11 12:10:23,251 - INFO - Processando lote com 2 URLs
+2026-08-11 12:10:52,112 - INFO - Registros sendo adicionados em: arquivos\arvorespelavida\arvorespelavida_11-08-2026.csv
+2026-08-11 12:15:05,213 - INFO - ================================================================================
+2026-08-11 12:15:05,213 - INFO - Iniciando Consulta Site - 2026-08-11 12:15:05.213091
+2026-08-11 12:15:07,216 - INFO - ================================================================================
+2026-08-11 12:15:07,225 - INFO - ACESSANDO O PROCESS PARA ENVIAR OS DADOS
+2026-08-11 12:15:07,367 - INFO - Processando lote com 1 URLs
+2026-08-11 12:15:07,373 - INFO - Processando lote com 1 URLs
+2026-08-11 12:15:09,755 - INFO - Registros sendo adicionados em: arquivos\grupoangelus\grupoangelus_11-08-2026.csv
+2026-08-11 12:15:09,760 - INFO - Processando lote com 1 URLs
+2026-08-11 12:15:12,711 - INFO - Registros sendo adicionados em: arquivos\grupoangelus\grupoangelus_11-08-2026.csv
+2026-08-11 12:15:12,712 - INFO - Processando lote com 2 URLs
+2026-08-11 12:15:16,168 - INFO - Registros sendo adicionados em: arquivos\grupoangelus\grupoangelus_11-08-2026.csv
+2026-08-11 12:15:16,173 - INFO - Registros sendo adicionados em: arquivos\grupoangelus\grupoangelus_11-08-2026.csv
+2026-08-11 12:15:16,175 - INFO - Processando lote com 1 URLs
+2026-08-11 12:15:20,400 - INFO - Registros sendo adicionados em: arquivos\grupoangelus\grupoangelus_11-08-2026.csv
+2026-08-11 12:15:20,403 - INFO - Processando lote com 1 URLs
+2026-08-11 12:15:25,056 - INFO - Registros sendo adicionados em: arquivos\grupoangelus\grupoangelus_11-08-2026.csv
+2026-08-11 12:15:25,270 - INFO - Processando lote com 1 URLs
+2026-08-11 12:15:30,085 - INFO - Registros sendo adicionados em: arquivos\grupoangelus\grupoangelus_11-08-2026.csv
+2026-08-11 12:15:30,089 - INFO - Processando lote com 1 URLs
+2026-08-11 12:15:33,675 - INFO - Registros sendo adicionados em: arquivos\grupoangelus\grupoangelus_11-08-2026.csv
+2026-08-11 12:15:33,830 - INFO - Processando lote com 1 URLs
+2026-08-11 12:15:38,740 - INFO - Registros sendo adicionados em: arquivos\grupoangelus\grupoangelus_11-08-2026.csv
+2026-08-11 12:15:38,992 - INFO - Processando lote com 1 URLs
+2026-08-11 12:15:42,337 - INFO - Registros sendo adicionados em: arquivos\grupoangelus\grupoangelus_11-08-2026.csv
+2026-08-11 12:15:42,461 - INFO - Processando lote com 1 URLs
+2026-08-11 12:15:47,263 - INFO - Registros sendo adicionados em: arquivos\grupoangelus\grupoangelus_11-08-2026.csv
+2026-08-11 12:15:47,277 - INFO - Processando lote com 1 URLs
+2026-08-11 12:15:50,065 - INFO - Registros sendo adicionados em: arquivos\grupoangelus\grupoangelus_11-08-2026.csv
+2026-08-11 12:15:50,067 - INFO - Processando lote com 1 URLs
+2026-08-11 12:15:54,178 - INFO - Registros sendo adicionados em: arquivos\grupoangelus\grupoangelus_11-08-2026.csv
+2026-08-11 12:15:54,180 - INFO - Processando lote com 1 URLs
+2026-08-11 12:15:55,942 - INFO - Registros sendo adicionados em: arquivos\grupoangelus\grupoangelus_11-08-2026.csv
+2026-08-11 12:15:55,959 - INFO - Processando lote com 1 URLs
+2026-08-11 12:15:58,772 - INFO - Registros sendo adicionados em: arquivos\grupoangelus\grupoangelus_11-08-2026.csv
+2026-08-11 12:15:58,788 - INFO - Processando lote com 1 URLs
+2026-08-11 12:15:59,957 - INFO - Registros sendo adicionados em: arquivos\grupoangelus\grupoangelus_11-08-2026.csv
+2026-08-11 12:15:59,958 - INFO - Finalizado servidor: grupoangelus
+2026-08-11 12:16:05,151 - INFO - Registros sendo adicionados em: arquivos\arvorespelavida\arvorespelavida_11-08-2026.csv
+2026-08-11 12:16:05,153 - INFO - Processando lote com 5 URLs
+2026-08-11 12:16:41,093 - INFO - Registros sendo adicionados em: arquivos\arvorespelavida\arvorespelavida_11-08-2026.csv
+2026-08-11 12:17:06,094 - INFO - Registros sendo adicionados em: arquivos\arvorespelavida\arvorespelavida_11-08-2026.csv
+2026-08-11 12:17:32,565 - INFO - Registros sendo adicionados em: arquivos\arvorespelavida\arvorespelavida_11-08-2026.csv
+2026-08-11 12:17:58,733 - INFO - Registros sendo adicionados em: arquivos\arvorespelavida\arvorespelavida_11-08-2026.csv
+2026-08-11 12:17:58,789 - INFO - Processando lote com 4 URLs
+2026-08-11 12:18:35,865 - INFO - Registros sendo adicionados em: arquivos\arvorespelavida\arvorespelavida_11-08-2026.csv
+2026-08-11 12:19:00,166 - INFO - Registros sendo adicionados em: arquivos\arvorespelavida\arvorespelavida_11-08-2026.csv
+2026-08-11 12:19:22,729 - INFO - Registros sendo adicionados em: arquivos\arvorespelavida\arvorespelavida_11-08-2026.csv
+2026-08-11 12:19:22,731 - INFO - Processando lote com 4 URLs
+2026-08-11 12:19:47,635 - WARNING - Erro de conexão (1/5): https://arvorespelavida.org.br/obituario/janio-cesar-fink/16013/
+2026-08-11 12:20:01,313 - INFO - Registros sendo adicionados em: arquivos\arvorespelavida\arvorespelavida_11-08-2026.csv
+2026-08-11 12:20:24,588 - INFO - Registros sendo adicionados em: arquivos\arvorespelavida\arvorespelavida_11-08-2026.csv
+2026-08-11 12:51:16,654 - INFO - ================================================================================
+2026-08-11 12:51:16,655 - INFO - Iniciando Consulta Site - 2026-08-11 12:51:16.654905
+2026-08-11 12:51:18,656 - INFO - ================================================================================
+2026-08-11 12:51:18,656 - INFO - ACESSANDO O PROCESS PARA ENVIAR OS DADOS
+2026-08-11 12:51:18,663 - INFO - Processando https://arvorespelavida.org.br/obituario/
+2026-08-11 12:51:18,663 - INFO - Processando https://obituario.grupoangelus.com.br/g/4
+2026-08-11 12:51:18,663 - INFO - Processando lote com 1 URL(s)
+2026-08-11 12:51:18,664 - INFO - Processando lote com 1 URL(s)
+2026-08-11 12:51:18,664 - ERROR - Erro fatal na execução: 'Processor' object has no attribute 'processar_url'
+Traceback (most recent call last):
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\services\crawler.py", line 271, in iniciar
+    self.processar_url,
+    ^^^^^^^^^^^^^^^^^^
+AttributeError: 'Processor' object has no attribute 'processar_url'
+2026-08-11 12:51:18,664 - ERROR - Erro fatal na execução: 'Processor' object has no attribute 'processar_url'
+Traceback (most recent call last):
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\services\crawler.py", line 271, in iniciar
+    self.processar_url,
+    ^^^^^^^^^^^^^^^^^^
+AttributeError: 'Processor' object has no attribute 'processar_url'
+2026-08-11 12:51:20,110 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-11 12:51:20,110 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-11 12:52:11,986 - INFO - ================================================================================
+2026-08-11 12:52:11,987 - INFO - Iniciando Consulta Site - 2026-08-11 12:52:11.986545
+2026-08-11 12:52:13,988 - INFO - ================================================================================
+2026-08-11 12:52:13,988 - INFO - ACESSANDO O PROCESS PARA ENVIAR OS DADOS
+2026-08-11 12:52:13,993 - INFO - Processando https://obituario.grupoangelus.com.br/g/4
+2026-08-11 12:52:13,995 - INFO - Processando https://arvorespelavida.org.br/obituario/
+2026-08-11 12:52:13,995 - INFO - Processando lote com 1 URL(s)
+2026-08-11 12:52:13,995 - INFO - Processando lote com 1 URL(s)
+2026-08-11 12:52:13,996 - INFO - Processando URL: https://obituario.grupoangelus.com.br/g/4
+2026-08-11 12:52:13,997 - INFO - Processando URL: https://arvorespelavida.org.br/obituario/
+2026-08-11 12:52:16,272 - ERROR - Erro fatal na execução: cannot access local variable 'soup' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\services\crawler.py", line 292, in iniciar
+    if soup is None:
+       ^^^^
+UnboundLocalError: cannot access local variable 'soup' where it is not associated with a value
+2026-08-11 12:52:45,350 - ERROR - Erro fatal na execução: cannot access local variable 'soup' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\services\crawler.py", line 292, in iniciar
+    if soup is None:
+       ^^^^
+UnboundLocalError: cannot access local variable 'soup' where it is not associated with a value
+2026-08-11 12:52:46,578 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-08-11 12:53:14,577 - INFO - ================================================================================
+2026-08-11 12:53:14,577 - INFO - Iniciando Consulta Site - 2026-08-11 12:53:14.577235
+2026-08-11 12:53:16,586 - INFO - ================================================================================
+2026-08-11 12:53:16,588 - INFO - ACESSANDO O PROCESS PARA ENVIAR OS DADOS
+2026-08-11 12:53:16,601 - INFO - Processando https://obituario.grupoangelus.com.br/g/4
+2026-08-11 12:53:16,602 - INFO - Processando lote com 1 URL(s)
+2026-08-11 12:53:16,604 - INFO - Processando URL: https://obituario.grupoangelus.com.br/g/4
+2026-08-11 12:53:16,604 - INFO - Processando URL: <Processor.ClassProcessor.Processor object at 0x000001CA30EA9D30>
+2026-08-11 12:53:18,501 - ERROR - Erro fatal na execução: cannot access local variable 'soup' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\services\crawler.py", line 293, in iniciar
+    if soup is None:
+       ^^^^
+UnboundLocalError: cannot access local variable 'soup' where it is not associated with a value
+2026-08-11 12:53:20,033 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-11 12:53:20,034 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-11 12:55:10,395 - INFO - ================================================================================
+2026-08-11 12:55:10,395 - INFO - Iniciando Consulta Site - 2026-08-11 12:55:10.395346
+2026-08-11 12:55:12,396 - INFO - ================================================================================
+2026-08-11 12:55:12,396 - INFO - ACESSANDO O PROCESS PARA ENVIAR OS DADOS
+2026-08-11 12:55:12,400 - INFO - Processando https://obituario.grupoangelus.com.br/g/4
+2026-08-11 12:55:12,400 - INFO - Processando lote com 1 URL(s)
+2026-08-11 12:55:12,401 - INFO - Processando URL: https://obituario.grupoangelus.com.br/g/4
+2026-08-11 12:55:12,401 - INFO - MEU SELF: <Processor.ClassProcessor.Processor object at 0x000002A5D2BE9D30>
+2026-08-11 12:55:14,209 - ERROR - Erro fatal na execução: cannot access local variable 'soup' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\services\crawler.py", line 293, in iniciar
+    if soup is None:
+       ^^^^
+UnboundLocalError: cannot access local variable 'soup' where it is not associated with a value
+2026-08-11 12:55:15,422 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-08-11 12:56:14,612 - INFO - ================================================================================
+2026-08-11 12:56:14,612 - INFO - Iniciando Consulta Site - 2026-08-11 12:56:14.612306
+2026-08-11 12:56:16,613 - INFO - ================================================================================
+2026-08-11 12:56:16,613 - INFO - ACESSANDO O PROCESS PARA ENVIAR OS DADOS
+2026-08-11 12:56:16,616 - INFO - Processando https://obituario.grupoangelus.com.br/g/4
+2026-08-11 12:56:16,616 - INFO - Processando lote com 1 URL(s)
+2026-08-11 12:56:16,616 - INFO - Processando URL: https://obituario.grupoangelus.com.br/g/4
+2026-08-11 12:56:16,616 - INFO - MEU SELF: <Processor.ClassProcessor.Processor object at 0x000001E5526B9D30>
+2026-08-11 12:56:18,223 - ERROR - Erro fatal na execução: module 'Logs.ClassLogger' has no attribute 'logger'
+Traceback (most recent call last):
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\services\crawler.py", line 280, in iniciar
+    url_processada, registros = future.result()
+                                ~~~~~~~~~~~~~^^
+  File "C:\Users\proScore_25\.pyenv\pyenv-win\versions\3.13.3\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\proScore_25\.pyenv\pyenv-win\versions\3.13.3\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Users\proScore_25\.pyenv\pyenv-win\versions\3.13.3\Lib\concurrent\futures\thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+TypeError: 'tuple' object is not callable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\services\crawler.py", line 286, in iniciar
+    ClassLogger.logger.error(f"Erro ao processar a URL: {e}", exc_info=True)
+    ^^^^^^^^^^^^^^^^^^
+AttributeError: module 'Logs.ClassLogger' has no attribute 'logger'
+2026-08-11 12:56:19,543 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-11 12:56:19,544 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-11 12:56:39,205 - INFO - ================================================================================
+2026-08-11 12:56:39,206 - INFO - Iniciando Consulta Site - 2026-08-11 12:56:39.205873
+2026-08-11 12:56:41,206 - INFO - ================================================================================
+2026-08-11 12:56:41,206 - INFO - ACESSANDO O PROCESS PARA ENVIAR OS DADOS
+2026-08-11 12:56:41,209 - INFO - Processando https://obituario.grupoangelus.com.br/g/4
+2026-08-11 12:56:41,209 - INFO - Processando lote com 1 URL(s)
+2026-08-11 12:56:41,210 - INFO - Processando URL: https://obituario.grupoangelus.com.br/g/4
+2026-08-11 12:56:41,210 - INFO - MEU SELF: <Processor.ClassProcessor.Processor object at 0x0000021CB63A9D30>
+2026-08-11 12:56:42,860 - ERROR - Erro ao processar a URL: 'tuple' object is not callable
+Traceback (most recent call last):
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\services\crawler.py", line 280, in iniciar
+    url_processada, registros = future.result()
+                                ~~~~~~~~~~~~~^^
+  File "C:\Users\proScore_25\.pyenv\pyenv-win\versions\3.13.3\Lib\concurrent\futures\_base.py", line 449, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\proScore_25\.pyenv\pyenv-win\versions\3.13.3\Lib\concurrent\futures\_base.py", line 401, in __get_result
+    raise self._exception
+  File "C:\Users\proScore_25\.pyenv\pyenv-win\versions\3.13.3\Lib\concurrent\futures\thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+TypeError: 'tuple' object is not callable
+2026-08-11 12:56:42,863 - WARNING - Não foi possível obter a página: https://obituario.grupoangelus.com.br/g/4
+2026-08-11 12:56:42,863 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-11 12:56:42,864 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-11 14:55:25,503 - INFO - ================================================================================
+2026-08-11 14:55:25,503 - INFO - Iniciando Consulta Site - 2026-08-11 14:55:25.502988
+2026-08-11 14:55:27,504 - INFO - ================================================================================
+2026-08-11 14:55:27,505 - INFO - ACESSANDO O PROCESS PARA ENVIAR OS DADOS
+2026-08-11 14:55:27,517 - INFO - Processando https://obituario.grupoangelus.com.br/g/4
+2026-08-11 14:55:27,526 - INFO - Processando https://www3.pmfi.pr.gov.br/PSIPortal/SircofWeb/Formularios/wfrmSircObituario_Site.aspx
+2026-08-11 14:55:29,757 - INFO - Registros sendo adicionados em: arquivos\grupoangelus\grupoangelus_11-08-2026.csv
+2026-08-11 14:55:29,760 - INFO - Finalizado
+2026-08-11 14:55:29,877 - INFO - Processando https://dlcorconvenios.com.br/obituario/
+2026-08-11 14:55:31,861 - INFO - 238 registros encontrados.
+2026-08-11 14:55:31,881 - INFO - Registros sendo adicionados em: arquivos\pmfi\pmfi_11-08-2026.csv
+2026-08-11 14:55:31,929 - INFO - Finalizado
+2026-08-11 14:55:32,725 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-08-11 15:03:13,893 - INFO - ================================================================================
+2026-08-11 15:03:13,909 - INFO - Iniciando Consulta Site - 2026-08-11 15:03:13.892823
+2026-08-11 15:03:15,919 - INFO - ================================================================================
+2026-08-11 15:03:15,920 - INFO - ACESSANDO O PROCESS PARA ENVIAR OS DADOS
+2026-08-11 15:03:15,921 - ERROR - Erro ao processar paginas para localizar as páginas: abrir_arquivos() takes 1 positional argument but 2 were given
+Traceback (most recent call last):
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\Tratamentos\ProcessoDados.py", line 50, in Process
+    registros_atual, diferenca = abrir_arquivos(self,pasta)
+                                 ~~~~~~~~~~~~~~^^^^^^^^^^^^
+TypeError: abrir_arquivos() takes 1 positional argument but 2 were given
+2026-08-11 15:03:15,926 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-11 15:03:15,927 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-11 15:04:44,283 - INFO - ================================================================================
+2026-08-11 15:04:44,284 - INFO - Iniciando Consulta Site - 2026-08-11 15:04:44.283620
+2026-08-11 15:04:46,285 - INFO - ================================================================================
+2026-08-11 15:04:46,285 - INFO - ACESSANDO O PROCESS PARA ENVIAR OS DADOS
+2026-08-11 15:04:46,286 - INFO - [15:04:46] Erro inesperado: abrir_arquivos() takes 1 positional argument but 2 were given. Continuará em 30 segundos.
+2026-08-11 15:04:48,014 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-11 15:04:48,014 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-11 15:14:32,388 - INFO - ================================================================================
+2026-08-11 15:14:32,389 - INFO - Iniciando Consulta Site - 2026-08-11 15:14:32.388402
+2026-08-11 15:14:34,390 - INFO - ================================================================================
+2026-08-11 15:14:34,390 - INFO - ACESSANDO O PROCESS PARA ENVIAR OS DADOS
+2026-08-11 15:14:34,531 - INFO - [15:14:34] Erro inesperado: too many values to unpack (expected 2). Continuará em 30 segundos.
+2026-08-11 15:14:34,531 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-11 15:14:34,531 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-11 15:24:56,085 - INFO - ================================================================================
+2026-08-11 15:24:56,086 - INFO - Iniciando Consulta Site - 2026-08-11 15:24:56.085588
+2026-08-11 15:24:58,087 - INFO - ================================================================================
+2026-08-11 15:24:58,087 - INFO - ACESSANDO O PROCESS PARA ENVIAR OS DADOS
+2026-08-11 15:24:58,088 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-11 15:24:58,088 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-11 15:25:36,206 - INFO - ================================================================================
+2026-08-11 15:25:36,206 - INFO - Iniciando Consulta Site - 2026-08-11 15:25:36.206236
+2026-08-11 15:25:38,207 - INFO - ================================================================================
+2026-08-11 15:25:38,207 - INFO - ACESSANDO O PROCESS PARA ENVIAR OS DADOS
+2026-08-11 15:25:38,208 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-11 15:25:38,208 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-11 15:26:00,894 - INFO - ================================================================================
+2026-08-11 15:26:00,896 - INFO - Iniciando Consulta Site - 2026-08-11 15:26:00.894516
+2026-08-11 15:26:02,896 - INFO - ================================================================================
+2026-08-11 15:26:02,897 - INFO - ACESSANDO O PROCESS PARA ENVIAR OS DADOS
+2026-08-11 15:26:02,897 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-11 15:26:02,897 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-11 15:28:46,505 - INFO - ================================================================================
+2026-08-11 15:28:46,506 - INFO - Iniciando Consulta Site - 2026-08-11 15:28:46.505853
+2026-08-11 15:28:48,507 - INFO - ================================================================================
+2026-08-11 15:28:48,507 - INFO - ACESSANDO O PROCESS PARA ENVIAR OS DADOS
+2026-08-11 15:28:48,508 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-11 15:28:48,508 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-11 15:30:53,221 - INFO - ================================================================================
+2026-08-11 15:30:53,222 - INFO - Iniciando Consulta Site - 2026-08-11 15:30:53.221739
+2026-08-11 15:30:55,222 - INFO - ================================================================================
+2026-08-11 15:30:55,223 - INFO - ACESSANDO O PROCESS PARA ENVIAR OS DADOS
+2026-08-11 15:30:55,224 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-11 15:30:55,225 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-11 15:31:55,436 - INFO - ================================================================================
+2026-08-11 15:31:55,436 - INFO - Iniciando Consulta Site - 2026-08-11 15:31:55.436212
+2026-08-11 15:31:57,437 - INFO - ================================================================================
+2026-08-11 15:31:57,437 - INFO - ACESSANDO O PROCESS PARA ENVIAR OS DADOS
+2026-08-11 15:31:57,438 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-11 15:31:57,439 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-11 15:32:46,242 - INFO - ================================================================================
+2026-08-11 15:32:46,242 - INFO - Iniciando Consulta Site - 2026-08-11 15:32:46.242320
+2026-08-11 15:32:48,244 - INFO - ================================================================================
+2026-08-11 15:32:48,244 - INFO - ACESSANDO O PROCESS PARA ENVIAR OS DADOS
+2026-08-11 15:32:48,246 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-11 15:32:48,247 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-11 15:34:22,164 - INFO - ================================================================================
+2026-08-11 15:34:22,164 - INFO - Iniciando Consulta Site - 2026-08-11 15:34:22.164607
+2026-08-11 15:34:24,165 - INFO - ================================================================================
+2026-08-11 15:34:24,165 - INFO - ACESSANDO O PROCESS PARA ENVIAR OS DADOS
+2026-08-11 15:34:24,173 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-11 15:34:24,174 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-11 15:35:01,349 - INFO - ================================================================================
+2026-08-11 15:35:01,349 - INFO - Iniciando Consulta Site - 2026-08-11 15:35:01.349368
+2026-08-11 15:35:03,350 - INFO - ================================================================================
+2026-08-11 15:35:03,350 - INFO - ACESSANDO O PROCESS PARA ENVIAR OS DADOS
+2026-08-11 15:35:03,352 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-11 15:35:03,352 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-11 15:35:18,703 - INFO - ================================================================================
+2026-08-11 15:35:18,703 - INFO - Iniciando Consulta Site - 2026-08-11 15:35:18.703425
+2026-08-11 15:35:20,704 - INFO - ================================================================================
+2026-08-11 15:35:20,705 - INFO - ACESSANDO O PROCESS PARA ENVIAR OS DADOS
+2026-08-11 15:35:20,707 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-11 15:35:20,708 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-11 15:39:08,081 - INFO - ================================================================================
+2026-08-11 15:39:08,081 - INFO - Iniciando Consulta Site - 2026-08-11 15:39:08.081427
+2026-08-11 15:39:10,083 - INFO - ================================================================================
+2026-08-11 15:39:10,085 - INFO - ACESSANDO O PROCESS PARA ENVIAR OS DADOS
+2026-08-11 15:39:10,189 - INFO - [15:39:10] Erro inesperado: too many values to unpack (expected 2). Continuará em 30 segundos.
+2026-08-11 15:39:10,190 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-11 15:39:10,191 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-11 15:40:40,376 - INFO - ================================================================================
+2026-08-11 15:40:40,376 - INFO - Iniciando Consulta Site - 2026-08-11 15:40:40.376151
+2026-08-11 15:40:42,377 - INFO - ================================================================================
+2026-08-11 15:40:42,377 - INFO - ACESSANDO O PROCESS PARA ENVIAR OS DADOS
+2026-08-11 15:40:42,408 - INFO - [15:40:42] Erro inesperado: too many values to unpack (expected 2). Continuará em 30 segundos.
+2026-08-11 15:40:42,408 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-11 15:40:42,408 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-11 15:41:47,945 - INFO - ================================================================================
+2026-08-11 15:41:47,947 - INFO - Iniciando Consulta Site - 2026-08-11 15:41:47.945116
+2026-08-11 15:41:49,948 - INFO - ================================================================================
+2026-08-11 15:41:49,948 - INFO - ACESSANDO O PROCESS PARA ENVIAR OS DADOS
+2026-08-11 15:41:49,986 - INFO - [15:41:49] Erro inesperado: too many values to unpack (expected 2). Continuará em 30 segundos.
+2026-08-11 15:41:49,986 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-11 15:41:49,987 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-11 15:42:57,162 - INFO - ================================================================================
+2026-08-11 15:42:57,162 - INFO - Iniciando Consulta Site - 2026-08-11 15:42:57.162123
+2026-08-11 15:42:59,163 - INFO - ================================================================================
+2026-08-11 15:42:59,163 - INFO - ACESSANDO O PROCESS PARA ENVIAR OS DADOS
+2026-08-11 15:42:59,191 - INFO - [15:42:59] Erro inesperado: too many values to unpack (expected 2). Continuará em 30 segundos.
+2026-08-11 15:42:59,192 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-11 15:42:59,192 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-11 15:44:30,896 - INFO - ================================================================================
+2026-08-11 15:44:30,896 - INFO - Iniciando Consulta Site - 2026-08-11 15:44:30.896250
+2026-08-11 15:44:32,897 - INFO - ================================================================================
+2026-08-11 15:44:32,897 - INFO - ACESSANDO O PROCESS PARA ENVIAR OS DADOS
+2026-08-11 15:44:32,963 - INFO - [15:44:32] Erro inesperado: too many values to unpack (expected 2). Continuará em 30 segundos.
+2026-08-11 15:44:32,964 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-11 15:44:32,973 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-11 15:46:04,876 - INFO - ================================================================================
+2026-08-11 15:46:04,877 - INFO - Iniciando Consulta Site - 2026-08-11 15:46:04.876719
+2026-08-11 15:46:06,877 - INFO - ================================================================================
+2026-08-11 15:46:06,878 - INFO - ACESSANDO O PROCESS PARA ENVIAR OS DADOS
+2026-08-11 15:46:06,910 - INFO - [15:46:06] Erro inesperado: too many values to unpack (expected 2). Continuará em 30 segundos.
+2026-08-11 15:46:06,910 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-11 15:46:06,910 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-11 15:46:51,090 - INFO - ================================================================================
+2026-08-11 15:46:51,090 - INFO - Iniciando Consulta Site - 2026-08-11 15:46:51.090418
+2026-08-11 15:46:53,091 - INFO - ================================================================================
+2026-08-11 15:46:53,091 - INFO - ACESSANDO O PROCESS PARA ENVIAR OS DADOS
+2026-08-11 15:46:53,126 - INFO - [15:46:53] Erro inesperado: too many values to unpack (expected 2). Continuará em 30 segundos.
+2026-08-11 15:46:53,126 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-11 15:46:53,126 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-11 15:49:25,261 - INFO - ================================================================================
+2026-08-11 15:49:25,261 - INFO - Iniciando Consulta Site - 2026-08-11 15:49:25.261115
+2026-08-11 15:49:27,262 - INFO - ================================================================================
+2026-08-11 15:49:27,262 - INFO - ACESSANDO O PROCESS PARA ENVIAR OS DADOS
+2026-08-11 15:49:27,265 - INFO - [15:49:27] Erro inesperado: 'NoneType' object is not subscriptable. Continuará em 30 segundos.
+2026-08-11 15:49:27,266 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-11 15:49:27,266 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-11 15:49:53,148 - INFO - ================================================================================
+2026-08-11 15:49:53,148 - INFO - Iniciando Consulta Site - 2026-08-11 15:49:53.147991
+2026-08-11 15:49:55,148 - INFO - ================================================================================
+2026-08-11 15:49:55,149 - INFO - ACESSANDO O PROCESS PARA ENVIAR OS DADOS
+2026-08-11 15:49:55,153 - INFO - [15:49:55] Erro inesperado: too many values to unpack (expected 2). Continuará em 30 segundos.
+2026-08-11 15:49:55,153 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-11 15:49:55,153 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-11 15:51:21,158 - INFO - ================================================================================
+2026-08-11 15:51:21,159 - INFO - Iniciando Consulta Site - 2026-08-11 15:51:21.158608
+2026-08-11 15:51:23,162 - INFO - ================================================================================
+2026-08-11 15:51:23,167 - INFO - ACESSANDO O PROCESS PARA ENVIAR OS DADOS
+2026-08-11 15:51:23,730 - INFO - [15:51:23] Erro inesperado: too many values to unpack (expected 2). Continuará em 30 segundos.
+2026-08-11 15:51:23,771 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-11 15:51:23,787 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-11 15:52:14,189 - INFO - ================================================================================
+2026-08-11 15:52:14,189 - INFO - Iniciando Consulta Site - 2026-08-11 15:52:14.188962
+2026-08-11 15:52:16,190 - INFO - ================================================================================
+2026-08-11 15:52:16,190 - INFO - ACESSANDO O PROCESS PARA ENVIAR OS DADOS
+2026-08-11 15:52:16,205 - INFO - [15:52:16] Erro inesperado: too many values to unpack (expected 2). Continuará em 30 segundos.
+2026-08-11 15:52:16,207 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-11 15:52:16,207 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-11 15:52:35,027 - INFO - ================================================================================
+2026-08-11 15:52:35,028 - INFO - Iniciando Consulta Site - 2026-08-11 15:52:35.027835
+2026-08-11 15:52:37,029 - INFO - ================================================================================
+2026-08-11 15:52:37,029 - INFO - ACESSANDO O PROCESS PARA ENVIAR OS DADOS
+2026-08-11 15:52:37,037 - INFO - [15:52:37] Erro inesperado: too many values to unpack (expected 2). Continuará em 30 segundos.
+2026-08-11 15:52:37,037 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-11 15:52:37,038 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-11 15:53:10,191 - INFO - ================================================================================
+2026-08-11 15:53:10,192 - INFO - Iniciando Consulta Site - 2026-08-11 15:53:10.191860
+2026-08-11 15:53:12,193 - INFO - ================================================================================
+2026-08-11 15:53:12,194 - INFO - ACESSANDO O PROCESS PARA ENVIAR OS DADOS
+2026-08-11 15:53:12,195 - INFO - [15:53:12] Erro inesperado: 'NoneType' object is not subscriptable. Continuará em 30 segundos.
+2026-08-11 15:53:12,196 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-11 15:53:12,196 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-11 15:54:55,001 - INFO - ================================================================================
+2026-08-11 15:54:55,001 - INFO - Iniciando Consulta Site - 2026-08-11 15:54:55.001171
+2026-08-11 15:54:57,002 - INFO - ================================================================================
+2026-08-11 15:54:57,002 - INFO - ACESSANDO O PROCESS PARA ENVIAR OS DADOS
+2026-08-11 15:54:57,038 - INFO - [15:54:57] Erro inesperado: too many values to unpack (expected 2). Continuará em 30 segundos.
+2026-08-11 15:54:57,038 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-11 15:54:57,039 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-11 15:56:49,902 - INFO - ================================================================================
+2026-08-11 15:56:49,903 - INFO - Iniciando Consulta Site - 2026-08-11 15:56:49.902768
+2026-08-11 15:56:51,904 - INFO - ================================================================================
+2026-08-11 15:56:51,905 - INFO - ACESSANDO O PROCESS PARA ENVIAR OS DADOS
+2026-08-11 15:56:51,991 - INFO - [15:56:51] Erro inesperado: too many values to unpack (expected 2). Continuará em 30 segundos.
+2026-08-11 15:56:51,996 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-11 15:56:51,999 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-11 15:57:40,967 - INFO - ================================================================================
+2026-08-11 15:57:40,970 - INFO - Iniciando Consulta Site - 2026-08-11 15:57:40.967605
+2026-08-11 15:57:42,972 - INFO - ================================================================================
+2026-08-11 15:57:42,972 - INFO - ACESSANDO O PROCESS PARA ENVIAR OS DADOS
+2026-08-11 15:57:43,026 - INFO - [15:57:43] Erro inesperado: too many values to unpack (expected 2). Continuará em 30 segundos.
+2026-08-11 15:57:43,027 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-11 15:57:43,027 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-11 15:59:40,370 - INFO - ================================================================================
+2026-08-11 15:59:40,370 - INFO - Iniciando Consulta Site - 2026-08-11 15:59:40.370349
+2026-08-11 15:59:42,371 - INFO - ================================================================================
+2026-08-11 15:59:42,371 - INFO - ACESSANDO O PROCESS PARA ENVIAR OS DADOS
+2026-08-11 15:59:42,425 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-11 15:59:42,425 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-11 16:04:04,411 - INFO - ================================================================================
+2026-08-11 16:04:04,412 - INFO - Iniciando Consulta Site - 2026-08-11 16:04:04.411621
+2026-08-11 16:04:06,414 - INFO - ================================================================================
+2026-08-11 16:04:06,414 - INFO - ACESSANDO O PROCESS PARA ENVIAR OS DADOS
+2026-08-11 16:04:06,429 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-11 16:04:06,429 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-11 16:04:54,592 - INFO - ================================================================================
+2026-08-11 16:04:54,592 - INFO - Iniciando Consulta Site - 2026-08-11 16:04:54.592202
+2026-08-11 16:04:56,593 - INFO - ================================================================================
+2026-08-11 16:04:56,593 - INFO - ACESSANDO O PROCESS PARA ENVIAR OS DADOS
+2026-08-11 16:04:56,599 - INFO - Processando https://app.pontagrossa.pr.gov.br/sisppg/servico_funerario/internet/mostra_hoje.php
+2026-08-11 16:10:26,675 - INFO - ================================================================================
+2026-08-11 16:10:26,676 - INFO - Iniciando Consulta Site - 2026-08-11 16:10:26.675761
+2026-08-11 16:10:28,676 - INFO - ================================================================================
+2026-08-11 16:10:28,677 - INFO - ACESSANDO O PROCESS PARA ENVIAR OS DADOS
+2026-08-11 16:10:28,679 - INFO - Processando https://app.pontagrossa.pr.gov.br/sisppg/servico_funerario/internet/mostra_hoje.php
+2026-08-11 16:10:38,693 - WARNING - Erro de conexão (1/5): https://app.pontagrossa.pr.gov.br/sisppg/servico_funerario/internet/mostra_hoje.php
+2026-08-11 16:10:48,704 - WARNING - Erro de conexão (2/5): https://app.pontagrossa.pr.gov.br/sisppg/servico_funerario/internet/mostra_hoje.php
+2026-08-11 16:10:58,716 - WARNING - Erro de conexão (3/5): https://app.pontagrossa.pr.gov.br/sisppg/servico_funerario/internet/mostra_hoje.php
+2026-08-11 16:11:08,726 - WARNING - Erro de conexão (4/5): https://app.pontagrossa.pr.gov.br/sisppg/servico_funerario/internet/mostra_hoje.php
+2026-08-11 16:11:18,742 - WARNING - Erro de conexão (5/5): https://app.pontagrossa.pr.gov.br/sisppg/servico_funerario/internet/mostra_hoje.php
+2026-08-11 16:11:34,769 - WARNING - Não foi possível obter a página: https://app.pontagrossa.pr.gov.br/sisppg/servico_funerario/internet/mostra_hoje.php
+2026-08-11 16:11:34,771 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-08-11 16:16:10,794 - INFO - ================================================================================
+2026-08-11 16:16:10,795 - INFO - Iniciando Consulta Site - 2026-08-11 16:16:10.794574
+2026-08-11 16:16:11,609 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-08-11 16:16:18,563 - INFO - ================================================================================
+2026-08-11 16:16:18,570 - INFO - Iniciando Consulta Site - 2026-08-11 16:16:18.563052
+2026-08-11 16:16:20,571 - INFO - ================================================================================
+2026-08-11 16:16:20,572 - INFO - ACESSANDO O PROCESS PARA ENVIAR OS DADOS
+2026-08-11 16:16:20,573 - INFO - 1 servidores enviados para processamento.
+2026-08-11 16:16:20,576 - INFO - Processando https://app.pontagrossa.pr.gov.br/sisppg/servico_funerario/internet/mostra_hoje.php
+2026-08-11 16:16:30,635 - WARNING - Erro de conexão (1/5): https://app.pontagrossa.pr.gov.br/sisppg/servico_funerario/internet/mostra_hoje.php
+2026-08-11 16:16:40,651 - WARNING - Erro de conexão (2/5): https://app.pontagrossa.pr.gov.br/sisppg/servico_funerario/internet/mostra_hoje.php
+2026-08-11 16:16:50,703 - WARNING - Erro de conexão (3/5): https://app.pontagrossa.pr.gov.br/sisppg/servico_funerario/internet/mostra_hoje.php
+2026-08-11 16:17:00,721 - WARNING - Erro de conexão (4/5): https://app.pontagrossa.pr.gov.br/sisppg/servico_funerario/internet/mostra_hoje.php
+2026-08-11 16:17:10,725 - WARNING - Erro de conexão (5/5): https://app.pontagrossa.pr.gov.br/sisppg/servico_funerario/internet/mostra_hoje.php
+2026-08-11 16:17:26,766 - WARNING - Não foi possível obter a página: https://app.pontagrossa.pr.gov.br/sisppg/servico_funerario/internet/mostra_hoje.php
+2026-08-11 16:17:26,767 - WARNING - 
+Ctrl+C detectado. Encerrando processo...
+2026-08-11 16:17:26,767 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-11 16:17:26,768 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-11 16:22:41,506 - INFO - ================================================================================
+2026-08-11 16:22:41,507 - INFO - Iniciando Consulta Site - 2026-08-11 16:22:41.506209
+2026-08-11 16:22:43,508 - INFO - ================================================================================
+2026-08-11 16:22:43,508 - INFO - ACESSANDO O PROCESS PARA ENVIAR OS DADOS
+2026-08-11 16:22:43,509 - INFO - 1 servidores enviados para processamento.
+2026-08-11 16:22:43,513 - INFO - Processando https://app.pontagrossa.pr.gov.br/sisppg/servico_funerario/internet/mostra_hoje.php
+2026-08-11 16:22:53,535 - WARNING - Erro de conexão (1/5): https://app.pontagrossa.pr.gov.br/sisppg/servico_funerario/internet/mostra_hoje.php
+2026-08-11 16:23:03,542 - WARNING - Erro de conexão (2/5): https://app.pontagrossa.pr.gov.br/sisppg/servico_funerario/internet/mostra_hoje.php
+2026-08-11 16:23:13,547 - WARNING - Erro de conexão (3/5): https://app.pontagrossa.pr.gov.br/sisppg/servico_funerario/internet/mostra_hoje.php
+2026-08-11 16:23:23,564 - WARNING - Erro de conexão (4/5): https://app.pontagrossa.pr.gov.br/sisppg/servico_funerario/internet/mostra_hoje.php
+2026-08-11 16:23:33,581 - WARNING - Erro de conexão (5/5): https://app.pontagrossa.pr.gov.br/sisppg/servico_funerario/internet/mostra_hoje.php
+2026-08-11 16:23:49,610 - WARNING - Não foi possível obter a página: https://app.pontagrossa.pr.gov.br/sisppg/servico_funerario/internet/mostra_hoje.php
+2026-08-11 16:23:49,611 - WARNING - 
+Ctrl+C detectado. Encerrando processo...
+2026-08-11 16:23:49,612 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-11 16:23:49,612 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-11 16:31:04,158 - INFO - ================================================================================
+2026-08-11 16:31:04,158 - INFO - Iniciando Consulta Site - 2026-08-11 16:31:04.158377
+2026-08-11 16:31:06,159 - INFO - ================================================================================
+2026-08-11 16:31:06,161 - INFO - ACESSANDO O PROCESS PARA ENVIAR OS DADOS
+2026-08-11 16:31:06,163 - INFO - 1 servidores enviados para processamento.
+2026-08-11 16:31:06,168 - INFO - Processando https://app.pontagrossa.pr.gov.br/sisppg/servico_funerario/internet/mostra_hoje.php
+2026-08-11 16:31:16,207 - WARNING - Erro de conexão (1/5): https://app.pontagrossa.pr.gov.br/sisppg/servico_funerario/internet/mostra_hoje.php
+2026-08-11 16:31:26,214 - WARNING - Erro de conexão (2/5): https://app.pontagrossa.pr.gov.br/sisppg/servico_funerario/internet/mostra_hoje.php
+2026-08-11 16:31:36,240 - WARNING - Erro de conexão (3/5): https://app.pontagrossa.pr.gov.br/sisppg/servico_funerario/internet/mostra_hoje.php
+2026-08-11 16:31:46,258 - WARNING - Erro de conexão (4/5): https://app.pontagrossa.pr.gov.br/sisppg/servico_funerario/internet/mostra_hoje.php
+2026-08-11 16:31:56,264 - WARNING - Erro de conexão (5/5): https://app.pontagrossa.pr.gov.br/sisppg/servico_funerario/internet/mostra_hoje.php
+2026-08-11 16:32:12,276 - WARNING - Não foi possível obter a página: https://app.pontagrossa.pr.gov.br/sisppg/servico_funerario/internet/mostra_hoje.php
+2026-08-11 16:32:12,277 - WARNING - 
+Ctrl+C detectado. Encerrando processo...
+2026-08-11 16:32:12,278 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-11 16:32:12,278 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-11 16:36:02,040 - INFO - ================================================================================
+2026-08-11 16:36:02,040 - INFO - Iniciando Consulta Site - 2026-08-11 16:36:02.039968
+2026-08-11 16:36:04,041 - INFO - ================================================================================
+2026-08-11 16:36:04,041 - INFO - ACESSANDO O PROCESS PARA ENVIAR OS DADOS
+2026-08-11 16:36:04,042 - INFO - 1 servidores enviados para processamento.
+2026-08-11 16:36:04,044 - INFO - Processando https://app.pontagrossa.pr.gov.br/sisppg/servico_funerario/internet/mostra_hoje.php
+2026-08-11 16:36:14,071 - WARNING - Erro de conexão (1/5): https://app.pontagrossa.pr.gov.br/sisppg/servico_funerario/internet/mostra_hoje.php
+2026-08-11 16:36:24,083 - WARNING - Erro de conexão (2/5): https://app.pontagrossa.pr.gov.br/sisppg/servico_funerario/internet/mostra_hoje.php
+2026-08-11 16:36:34,099 - WARNING - Erro de conexão (3/5): https://app.pontagrossa.pr.gov.br/sisppg/servico_funerario/internet/mostra_hoje.php
+2026-08-11 16:36:44,114 - WARNING - Erro de conexão (4/5): https://app.pontagrossa.pr.gov.br/sisppg/servico_funerario/internet/mostra_hoje.php
+2026-08-11 16:36:54,119 - WARNING - Erro de conexão (5/5): https://app.pontagrossa.pr.gov.br/sisppg/servico_funerario/internet/mostra_hoje.php
+2026-08-11 16:37:10,126 - WARNING - Não foi possível obter a página: https://app.pontagrossa.pr.gov.br/sisppg/servico_funerario/internet/mostra_hoje.php
+2026-08-11 16:37:10,126 - INFO - Servidor finalizado: None
+2026-08-11 16:37:10,127 - INFO - Processamento dos servidores encerrado.
+2026-08-11 16:37:10,130 - ERROR - Erro fatal na execução: cannot access local variable 'e' where it is not associated with a value
+2026-08-11 16:37:12,075 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-11 16:38:18,042 - INFO - ================================================================================
+2026-08-11 16:38:18,042 - INFO - Iniciando Consulta Site - 2026-08-11 16:38:18.042328
+2026-08-11 16:38:20,043 - INFO - ================================================================================
+2026-08-11 16:38:20,043 - INFO - ACESSANDO O PROCESS PARA ENVIAR OS DADOS
+2026-08-11 16:38:20,046 - INFO - Processando https://app.pontagrossa.pr.gov.br/sisppg/servico_funerario/internet/mostra_hoje.php
+2026-08-11 16:38:30,065 - WARNING - Erro de conexão (1/5): https://app.pontagrossa.pr.gov.br/sisppg/servico_funerario/internet/mostra_hoje.php
+2026-08-11 16:38:40,081 - WARNING - Erro de conexão (2/5): https://app.pontagrossa.pr.gov.br/sisppg/servico_funerario/internet/mostra_hoje.php
+2026-08-11 16:38:50,099 - WARNING - Erro de conexão (3/5): https://app.pontagrossa.pr.gov.br/sisppg/servico_funerario/internet/mostra_hoje.php
+2026-08-11 16:39:00,113 - WARNING - Erro de conexão (4/5): https://app.pontagrossa.pr.gov.br/sisppg/servico_funerario/internet/mostra_hoje.php
+2026-08-11 16:39:07,869 - ERROR - Erro fatal na execução: 'LINKS'
+Traceback (most recent call last):
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\parser\parser_ponta.py", line 16, in extrair_cards
+    links[item["LINKS"]] = item
+          ~~~~^^^^^^^^^
+KeyError: 'LINKS'
+2026-08-11 16:39:07,876 - INFO - Finalizado
+2026-08-11 16:39:09,355 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-11 16:39:09,356 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-11 16:44:08,104 - INFO - ================================================================================
+2026-08-11 16:44:08,104 - INFO - Iniciando Consulta Site - 2026-08-11 16:44:08.104367
+2026-08-11 16:44:10,111 - INFO - ================================================================================
+2026-08-11 16:44:10,121 - INFO - ACESSANDO O PROCESS PARA ENVIAR OS DADOS
+2026-08-11 16:44:10,178 - INFO - Processando https://app.pontagrossa.pr.gov.br/sisppg/servico_funerario/internet/mostra_hoje.php
+2026-08-11 16:44:11,628 - ERROR - Erro fatal na execução: 'LINKS'
+Traceback (most recent call last):
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\parser\parser_ponta.py", line 16, in extrair_cards
+    links[item["LINKS"]] = item
+          ~~~~^^^^^^^^^
+KeyError: 'LINKS'
+2026-08-11 16:44:11,631 - INFO - Finalizado
+2026-08-11 16:44:13,571 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-11 16:44:13,571 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-11 16:45:26,016 - INFO - ================================================================================
+2026-08-11 16:45:26,017 - INFO - Iniciando Consulta Site - 2026-08-11 16:45:26.016485
+2026-08-11 16:45:28,019 - INFO - ================================================================================
+2026-08-11 16:45:28,019 - INFO - ACESSANDO O PROCESS PARA ENVIAR OS DADOS
+2026-08-11 16:45:28,021 - INFO - Processando https://app.pontagrossa.pr.gov.br/sisppg/servico_funerario/internet/mostra_hoje.php
+2026-08-11 16:45:28,834 - ERROR - Erro fatal na execução: 'LINKS'
+Traceback (most recent call last):
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\parser\parser_ponta.py", line 16, in extrair_cards
+    links[item["LINKS"]] = item
+          ~~~~^^^^^^^^^
+KeyError: 'LINKS'
+2026-08-11 16:45:28,836 - INFO - Finalizado
+2026-08-11 16:45:30,541 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-11 16:45:30,541 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-11 16:45:55,598 - INFO - ================================================================================
+2026-08-11 16:45:55,598 - INFO - Iniciando Consulta Site - 2026-08-11 16:45:55.598051
+2026-08-11 16:45:57,599 - INFO - ================================================================================
+2026-08-11 16:45:57,599 - INFO - ACESSANDO O PROCESS PARA ENVIAR OS DADOS
+2026-08-11 16:45:57,603 - INFO - Processando https://app.pontagrossa.pr.gov.br/sisppg/servico_funerario/internet/mostra_hoje.php
+2026-08-11 16:45:58,382 - ERROR - Erro fatal na execução: 'LINKS'
+Traceback (most recent call last):
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\parser\parser_ponta.py", line 16, in extrair_cards
+    links[item["LINKS"]] = item
+          ~~~~^^^^^^^^^
+KeyError: 'LINKS'
+2026-08-11 16:45:58,383 - INFO - Finalizado
+2026-08-11 16:46:00,193 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-11 16:46:00,194 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-11 16:47:38,873 - INFO - ================================================================================
+2026-08-11 16:47:38,873 - INFO - Iniciando Consulta Site - 2026-08-11 16:47:38.873333
+2026-08-11 16:47:40,874 - INFO - ================================================================================
+2026-08-11 16:47:40,874 - INFO - ACESSANDO O PROCESS PARA ENVIAR OS DADOS
+2026-08-11 16:47:40,881 - INFO - Processando https://app.pontagrossa.pr.gov.br/sisppg/servico_funerario/internet/mostra_hoje.php
+2026-08-11 16:47:41,711 - ERROR - Erro fatal na execução: 'LINKS'
+Traceback (most recent call last):
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\parser\parser_ponta.py", line 16, in extrair_cards
+    links[item["LINKS"]] = item
+          ~~~~^^^^^^^^^
+KeyError: 'LINKS'
+2026-08-11 16:47:41,713 - INFO - Finalizado
+2026-08-11 16:47:43,247 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-11 16:47:43,248 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-11 16:49:01,469 - INFO - ================================================================================
+2026-08-11 16:49:01,470 - INFO - Iniciando Consulta Site - 2026-08-11 16:49:01.469881
+2026-08-11 16:49:03,470 - INFO - ================================================================================
+2026-08-11 16:49:03,471 - INFO - ACESSANDO O PROCESS PARA ENVIAR OS DADOS
+2026-08-11 16:49:03,473 - INFO - Processando https://app.pontagrossa.pr.gov.br/sisppg/servico_funerario/internet/mostra_hoje.php
+2026-08-11 16:49:04,238 - INFO - Finalizado
+2026-08-11 16:49:05,918 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-11 16:49:05,919 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-11 16:49:58,135 - INFO - ================================================================================
+2026-08-11 16:49:58,135 - INFO - Iniciando Consulta Site - 2026-08-11 16:49:58.135345
+2026-08-11 16:50:00,136 - INFO - ================================================================================
+2026-08-11 16:50:00,137 - INFO - ACESSANDO O PROCESS PARA ENVIAR OS DADOS
+2026-08-11 16:50:00,139 - INFO - Processando https://app.pontagrossa.pr.gov.br/sisppg/servico_funerario/internet/mostra_hoje.php
+2026-08-11 16:50:02,536 - ERROR - Erro fatal na execução: 'LINKS'
+Traceback (most recent call last):
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\parser\parser_ponta.py", line 44, in extrair_cards
+    links[item["LINKS"]] = item
+          ~~~~^^^^^^^^^
+KeyError: 'LINKS'
+2026-08-11 16:50:02,538 - INFO - Finalizado
+2026-08-11 16:50:04,124 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-11 16:50:04,126 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-11 16:50:54,411 - INFO - ================================================================================
+2026-08-11 16:50:54,411 - INFO - Iniciando Consulta Site - 2026-08-11 16:50:54.411480
+2026-08-11 16:50:56,412 - INFO - ================================================================================
+2026-08-11 16:50:56,412 - INFO - ACESSANDO O PROCESS PARA ENVIAR OS DADOS
+2026-08-11 16:50:56,414 - INFO - Processando https://app.pontagrossa.pr.gov.br/sisppg/servico_funerario/internet/mostra_hoje.php
+2026-08-11 16:50:59,274 - ERROR - Erro fatal na execução: 'LINKS'
+Traceback (most recent call last):
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\parser\parser_ponta.py", line 44, in extrair_cards
+    links[item["LINKS"]] = item
+          ~~~~^^^^^^^^^
+KeyError: 'LINKS'
+2026-08-11 16:50:59,276 - INFO - Finalizado
+2026-08-11 16:51:00,720 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-11 16:51:00,720 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-11 16:59:04,754 - INFO - ================================================================================
+2026-08-11 16:59:04,755 - INFO - Iniciando Consulta Site - 2026-08-11 16:59:04.754580
+2026-08-11 16:59:06,755 - INFO - ================================================================================
+2026-08-11 16:59:06,756 - INFO - ACESSANDO O PROCESS PARA ENVIAR OS DADOS
+2026-08-11 16:59:06,758 - INFO - Processando https://app.pontagrossa.pr.gov.br/sisppg/servico_funerario/internet/mostra_hoje.php
+2026-08-11 16:59:34,012 - INFO - Registros sendo adicionados em: arquivos\pontaGrossa\pontaGrossa_11-08-2026.csv
+2026-08-11 16:59:34,013 - INFO - Finalizado
+2026-08-11 16:59:36,054 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-11 16:59:36,054 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-11 17:00:47,311 - INFO - ================================================================================
+2026-08-11 17:00:47,311 - INFO - Iniciando Consulta Site - 2026-08-11 17:00:47.311035
+2026-08-11 17:00:49,312 - INFO - ================================================================================
+2026-08-11 17:00:49,312 - INFO - ACESSANDO O PROCESS PARA ENVIAR OS DADOS
+2026-08-11 17:00:49,314 - INFO - Processando https://app.pontagrossa.pr.gov.br/sisppg/servico_funerario/internet/mostra_hoje.php
+2026-08-11 17:01:15,090 - INFO - Registros sendo adicionados em: arquivos\pontaGrossa\pontaGrossa_11-08-2026.csv
+2026-08-11 17:01:15,092 - INFO - Finalizado
+2026-08-11 17:01:15,132 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-08-11 17:04:53,663 - INFO - ================================================================================
+2026-08-11 17:04:53,663 - INFO - Iniciando Consulta Site - 2026-08-11 17:04:53.662953
+2026-08-11 17:04:55,696 - INFO - ================================================================================
+2026-08-11 17:04:55,709 - INFO - ACESSANDO O PROCESS PARA ENVIAR OS DADOS
+2026-08-11 17:04:55,727 - INFO - Processando https://app.pontagrossa.pr.gov.br/sisppg/servico_funerario/internet/mostra_hoje.php
+2026-08-11 17:05:05,797 - WARNING - Erro de conexão (1/5): https://app.pontagrossa.pr.gov.br/sisppg/servico_funerario/internet/mostra_hoje.php
+2026-08-11 17:05:15,812 - WARNING - Erro de conexão (2/5): https://app.pontagrossa.pr.gov.br/sisppg/servico_funerario/internet/mostra_hoje.php
+2026-08-11 17:05:25,833 - WARNING - Erro de conexão (3/5): https://app.pontagrossa.pr.gov.br/sisppg/servico_funerario/internet/mostra_hoje.php
+2026-08-11 17:05:35,846 - WARNING - Erro de conexão (4/5): https://app.pontagrossa.pr.gov.br/sisppg/servico_funerario/internet/mostra_hoje.php
+2026-08-11 17:05:45,858 - WARNING - Erro de conexão (5/5): https://app.pontagrossa.pr.gov.br/sisppg/servico_funerario/internet/mostra_hoje.php
+2026-08-11 17:06:01,874 - WARNING - Não foi possível obter a página: https://app.pontagrossa.pr.gov.br/sisppg/servico_funerario/internet/mostra_hoje.php
+2026-08-11 17:06:01,876 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
