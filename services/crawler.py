@@ -288,6 +288,8 @@ def iniciar(self,servidor):
 
                 try:
                     registros = executor.submit(parsers, self, soup).result()
+                    print(registros)
+                    print("MEU REGISTRO ENVIADOS")
                 except KeyboardInterrupt as e:
                     ClassLogger.logging.info("\nEncerrando loop por comando do usuário Crawler Dados (Ctrl+C).")
                                 
