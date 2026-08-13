@@ -191804,3 +191804,949 @@ Encerrando loop por comando do usuário (Ctrl+C).
 2026-08-11 17:06:01,874 - WARNING - Não foi possível obter a página: https://app.pontagrossa.pr.gov.br/sisppg/servico_funerario/internet/mostra_hoje.php
 2026-08-11 17:06:01,876 - INFO - 
 Encerrando loop por comando do usuário (Ctrl+C).
+2026-08-13 14:45:44,896 - INFO - ================================================================================
+2026-08-13 14:45:44,897 - INFO - Iniciando Consulta Site - 2026-08-13 14:45:44.896282
+2026-08-13 14:45:46,897 - INFO - ================================================================================
+2026-08-13 14:45:46,898 - INFO - ACESSANDO O PROCESS PARA ENVIAR OS DADOS
+2026-08-13 14:45:46,913 - INFO - Processando https://app.pontagrossa.pr.gov.br/sisppg/servico_funerario/internet/mostra_hoje.php
+2026-08-13 14:46:11,543 - INFO - Registros sendo adicionados em: arquivos\pontaGrossa\pontaGrossa_13-08-2026.csv
+2026-08-13 14:46:11,543 - INFO - Finalizado
+2026-08-13 14:46:11,629 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-08-13 14:47:51,911 - INFO - ================================================================================
+2026-08-13 14:47:51,912 - INFO - Iniciando Consulta Site - 2026-08-13 14:47:51.911195
+2026-08-13 14:47:53,913 - INFO - ================================================================================
+2026-08-13 14:47:53,914 - INFO - ACESSANDO O PROCESS PARA ENVIAR OS DADOS
+2026-08-13 14:47:53,917 - INFO - Processando https://app.pontagrossa.pr.gov.br/sisppg/servico_funerario/internet/mostra_hoje.php
+2026-08-13 14:47:56,515 - INFO - Registros sendo adicionados em: arquivos\pontaGrossa\pontaGrossa_13-08-2026.csv
+2026-08-13 14:47:56,516 - INFO - Finalizado
+2026-08-13 14:47:58,150 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-13 14:47:58,151 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-13 14:48:55,526 - INFO - ================================================================================
+2026-08-13 14:48:55,526 - INFO - Iniciando Consulta Site - 2026-08-13 14:48:55.526001
+2026-08-13 14:48:57,527 - INFO - ================================================================================
+2026-08-13 14:48:57,527 - INFO - ACESSANDO O PROCESS PARA ENVIAR OS DADOS
+2026-08-13 14:48:57,530 - INFO - Processando https://app.pontagrossa.pr.gov.br/sisppg/servico_funerario/internet/mostra_hoje.php
+2026-08-13 14:48:58,371 - INFO - Finalizado
+2026-08-13 14:48:59,923 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-13 14:48:59,923 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-13 14:52:58,107 - INFO - ================================================================================
+2026-08-13 14:52:58,108 - INFO - Iniciando Consulta Site - 2026-08-13 14:52:58.107598
+2026-08-13 14:53:00,108 - INFO - ================================================================================
+2026-08-13 14:53:00,108 - INFO - ACESSANDO O PROCESS PARA ENVIAR OS DADOS
+2026-08-13 14:53:00,111 - INFO - Processando https://app.pontagrossa.pr.gov.br/sisppg/servico_funerario/internet/mostra_hoje.php
+2026-08-13 14:53:01,034 - INFO - Finalizado
+2026-08-13 14:53:02,508 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-13 14:53:02,509 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-13 14:56:25,233 - INFO - ================================================================================
+2026-08-13 14:56:25,234 - INFO - Iniciando Consulta Site - 2026-08-13 14:56:25.233202
+2026-08-13 14:56:27,235 - INFO - ================================================================================
+2026-08-13 14:56:27,237 - INFO - ACESSANDO O PROCESS PARA ENVIAR OS DADOS
+2026-08-13 14:56:27,247 - INFO - Processando https://app.pontagrossa.pr.gov.br/sisppg/servico_funerario/internet/mostra_hoje.php
+2026-08-13 14:56:28,818 - INFO - Finalizado
+2026-08-13 14:56:30,664 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-13 14:56:30,664 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-13 14:58:11,042 - INFO - ================================================================================
+2026-08-13 14:58:11,043 - INFO - Iniciando Consulta Site - 2026-08-13 14:58:11.042612
+2026-08-13 14:58:13,044 - INFO - ================================================================================
+2026-08-13 14:58:13,044 - INFO - ACESSANDO O PROCESS PARA ENVIAR OS DADOS
+2026-08-13 14:58:13,049 - INFO - Processando https://app.pontagrossa.pr.gov.br/sisppg/servico_funerario/internet/mostra_hoje.php
+2026-08-13 14:58:13,973 - INFO - Finalizado
+2026-08-13 14:58:15,652 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-13 14:58:15,652 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-13 15:00:01,197 - INFO - ================================================================================
+2026-08-13 15:00:01,198 - INFO - Iniciando Consulta Site - 2026-08-13 15:00:01.197315
+2026-08-13 15:00:03,212 - INFO - ================================================================================
+2026-08-13 15:00:03,212 - INFO - ACESSANDO O PROCESS PARA ENVIAR OS DADOS
+2026-08-13 15:00:03,215 - INFO - Processando https://app.pontagrossa.pr.gov.br/sisppg/servico_funerario/internet/mostra_hoje.php
+2026-08-13 15:00:03,976 - INFO - Finalizado
+2026-08-13 15:00:05,533 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-13 15:00:05,533 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-13 15:00:15,474 - INFO - ================================================================================
+2026-08-13 15:00:15,475 - INFO - Iniciando Consulta Site - 2026-08-13 15:00:15.474860
+2026-08-13 15:00:17,475 - INFO - ================================================================================
+2026-08-13 15:00:17,475 - INFO - ACESSANDO O PROCESS PARA ENVIAR OS DADOS
+2026-08-13 15:00:17,479 - INFO - Processando https://app.pontagrossa.pr.gov.br/sisppg/servico_funerario/internet/mostra_hoje.php
+2026-08-13 15:00:18,280 - INFO - Finalizado
+2026-08-13 15:00:19,682 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-13 15:00:19,686 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-13 15:01:51,599 - INFO - ================================================================================
+2026-08-13 15:01:51,600 - INFO - Iniciando Consulta Site - 2026-08-13 15:01:51.599680
+2026-08-13 15:01:53,602 - INFO - ================================================================================
+2026-08-13 15:01:53,603 - INFO - ACESSANDO O PROCESS PARA ENVIAR OS DADOS
+2026-08-13 15:01:53,606 - INFO - Processando https://app.pontagrossa.pr.gov.br/sisppg/servico_funerario/internet/mostra_hoje.php
+2026-08-13 15:01:54,408 - INFO - Finalizado
+2026-08-13 15:01:56,101 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-13 15:01:56,101 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-13 15:05:05,253 - INFO - ================================================================================
+2026-08-13 15:05:05,255 - INFO - Iniciando Consulta Site - 2026-08-13 15:05:05.253832
+2026-08-13 15:05:07,255 - INFO - ================================================================================
+2026-08-13 15:05:07,255 - INFO - ACESSANDO O PROCESS PARA ENVIAR OS DADOS
+2026-08-13 15:05:07,260 - INFO - Processando https://app.pontagrossa.pr.gov.br/sisppg/servico_funerario/internet/mostra_hoje.php
+2026-08-13 15:05:08,213 - INFO - Finalizado
+2026-08-13 15:05:09,733 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-13 15:05:09,734 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-13 15:06:43,329 - INFO - ================================================================================
+2026-08-13 15:06:43,330 - INFO - Iniciando Consulta Site - 2026-08-13 15:06:43.329719
+2026-08-13 15:06:45,330 - INFO - ================================================================================
+2026-08-13 15:06:45,330 - INFO - ACESSANDO O PROCESS PARA ENVIAR OS DADOS
+2026-08-13 15:06:45,333 - INFO - Processando https://app.pontagrossa.pr.gov.br/sisppg/servico_funerario/internet/mostra_hoje.php
+2026-08-13 15:06:46,190 - INFO - Finalizado
+2026-08-13 15:06:47,741 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-13 15:06:47,742 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-13 15:09:11,321 - INFO - ================================================================================
+2026-08-13 15:09:11,321 - INFO - Iniciando Consulta Site - 2026-08-13 15:09:11.321490
+2026-08-13 15:09:13,322 - INFO - ================================================================================
+2026-08-13 15:09:13,323 - INFO - ACESSANDO O PROCESS PARA ENVIAR OS DADOS
+2026-08-13 15:09:13,325 - INFO - Processando https://app.pontagrossa.pr.gov.br/sisppg/servico_funerario/internet/mostra_hoje.php
+2026-08-13 15:09:14,172 - ERROR - Erro fatal na execução: list index out of range
+Traceback (most recent call last):
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\parser\parser_ponta.py", line 109, in extrair_links
+    if dados and dados[0] != "Nome" and dados[1] != "Sexo" and dados[2] != "Data Sepultamento" and dados[3] != "Cemitério" and dados[4] != "Mais Detalhes" :
+                                                                                                   ~~~~~^^^
+IndexError: list index out of range
+2026-08-13 15:09:14,177 - INFO - Finalizado
+2026-08-13 15:09:15,663 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-13 15:09:15,664 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-13 15:10:05,653 - INFO - ================================================================================
+2026-08-13 15:10:05,653 - INFO - Iniciando Consulta Site - 2026-08-13 15:10:05.653255
+2026-08-13 15:10:07,654 - INFO - ================================================================================
+2026-08-13 15:10:07,654 - INFO - ACESSANDO O PROCESS PARA ENVIAR OS DADOS
+2026-08-13 15:10:07,660 - INFO - Processando https://app.pontagrossa.pr.gov.br/sisppg/servico_funerario/internet/mostra_hoje.php
+2026-08-13 15:10:08,585 - ERROR - Erro fatal na execução: list index out of range
+Traceback (most recent call last):
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\parser\parser_ponta.py", line 111, in extrair_links
+    if dados and dados[0] != "Nome" and dados[1] != "Sexo" and dados[2] != "Data Sepultamento" and dados[3] and != "Cemitério" and dados[4] != "Mais Detalhes" :
+                                                                                                   ~~~~~^^^
+IndexError: list index out of range
+2026-08-13 15:10:08,588 - INFO - Finalizado
+2026-08-13 15:10:10,247 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-13 15:10:10,248 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-13 15:10:58,029 - INFO - ================================================================================
+2026-08-13 15:10:58,033 - INFO - Iniciando Consulta Site - 2026-08-13 15:10:58.029098
+2026-08-13 15:11:00,046 - INFO - ================================================================================
+2026-08-13 15:11:00,051 - INFO - ACESSANDO O PROCESS PARA ENVIAR OS DADOS
+2026-08-13 15:11:00,057 - INFO - Processando https://app.pontagrossa.pr.gov.br/sisppg/servico_funerario/internet/mostra_hoje.php
+2026-08-13 15:11:01,235 - ERROR - Erro fatal na execução: list index out of range
+Traceback (most recent call last):
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\parser\parser_ponta.py", line 109, in extrair_links
+    print(f"dado apresentado  { dados[2]}" )
+                                ~~~~~^^^
+IndexError: list index out of range
+2026-08-13 15:11:01,237 - INFO - Finalizado
+2026-08-13 15:11:02,768 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-13 15:11:02,769 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-13 15:11:17,955 - INFO - ================================================================================
+2026-08-13 15:11:17,956 - INFO - Iniciando Consulta Site - 2026-08-13 15:11:17.955587
+2026-08-13 15:11:19,956 - INFO - ================================================================================
+2026-08-13 15:11:19,956 - INFO - ACESSANDO O PROCESS PARA ENVIAR OS DADOS
+2026-08-13 15:11:19,960 - INFO - Processando https://app.pontagrossa.pr.gov.br/sisppg/servico_funerario/internet/mostra_hoje.php
+2026-08-13 15:11:20,865 - ERROR - Erro fatal na execução: list index out of range
+Traceback (most recent call last):
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\parser\parser_ponta.py", line 109, in extrair_links
+    print(f"dado apresentado  { dados[1]}" )
+                                ~~~~~^^^
+IndexError: list index out of range
+2026-08-13 15:11:20,866 - INFO - Finalizado
+2026-08-13 15:11:22,670 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-13 15:11:22,671 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-13 15:11:28,936 - INFO - ================================================================================
+2026-08-13 15:11:28,936 - INFO - Iniciando Consulta Site - 2026-08-13 15:11:28.936166
+2026-08-13 15:11:30,937 - INFO - ================================================================================
+2026-08-13 15:11:30,937 - INFO - ACESSANDO O PROCESS PARA ENVIAR OS DADOS
+2026-08-13 15:11:30,941 - INFO - Processando https://app.pontagrossa.pr.gov.br/sisppg/servico_funerario/internet/mostra_hoje.php
+2026-08-13 15:11:31,852 - INFO - Finalizado
+2026-08-13 15:11:33,392 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-13 15:11:33,392 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-13 15:12:56,866 - INFO - ================================================================================
+2026-08-13 15:12:56,866 - INFO - Iniciando Consulta Site - 2026-08-13 15:12:56.865997
+2026-08-13 15:12:58,867 - INFO - ================================================================================
+2026-08-13 15:12:58,867 - INFO - ACESSANDO O PROCESS PARA ENVIAR OS DADOS
+2026-08-13 15:12:58,871 - INFO - Processando https://app.pontagrossa.pr.gov.br/sisppg/servico_funerario/internet/mostra_hoje.php
+2026-08-13 15:13:00,096 - ERROR - Erro fatal na execução: list indices must be integers or slices, not str
+Traceback (most recent call last):
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\parser\parser_ponta.py", line 16, in extrair_cards
+    links[item["LINKS"]] = item
+          ~~~~^^^^^^^^^
+TypeError: list indices must be integers or slices, not str
+2026-08-13 15:13:00,099 - INFO - Finalizado
+2026-08-13 15:13:01,927 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-13 15:13:01,928 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-13 15:13:57,577 - INFO - ================================================================================
+2026-08-13 15:13:57,577 - INFO - Iniciando Consulta Site - 2026-08-13 15:13:57.577138
+2026-08-13 15:13:59,578 - INFO - ================================================================================
+2026-08-13 15:13:59,579 - INFO - ACESSANDO O PROCESS PARA ENVIAR OS DADOS
+2026-08-13 15:13:59,582 - INFO - Processando https://app.pontagrossa.pr.gov.br/sisppg/servico_funerario/internet/mostra_hoje.php
+2026-08-13 15:14:01,014 - ERROR - Erro fatal na execução: list indices must be integers or slices, not str
+Traceback (most recent call last):
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\parser\parser_ponta.py", line 16, in extrair_cards
+    links[item["LINKS"]] = item
+          ~~~~^^^^^^^^^
+TypeError: list indices must be integers or slices, not str
+2026-08-13 15:14:01,017 - INFO - Finalizado
+2026-08-13 15:14:02,740 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-13 15:14:02,740 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-13 15:14:47,901 - INFO - ================================================================================
+2026-08-13 15:14:47,901 - INFO - Iniciando Consulta Site - 2026-08-13 15:14:47.901337
+2026-08-13 15:14:49,902 - INFO - ================================================================================
+2026-08-13 15:14:49,902 - INFO - ACESSANDO O PROCESS PARA ENVIAR OS DADOS
+2026-08-13 15:14:49,905 - INFO - Processando https://app.pontagrossa.pr.gov.br/sisppg/servico_funerario/internet/mostra_hoje.php
+2026-08-13 15:14:50,843 - ERROR - Erro fatal na execução: list indices must be integers or slices, not str
+Traceback (most recent call last):
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\parser\parser_ponta.py", line 16, in extrair_cards
+    links[item["LINKS"]] = item
+          ~~~~^^^^^^^^^
+TypeError: list indices must be integers or slices, not str
+2026-08-13 15:14:50,845 - INFO - Finalizado
+2026-08-13 15:14:52,281 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-13 15:14:52,281 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-13 15:20:38,231 - INFO - ================================================================================
+2026-08-13 15:20:38,231 - INFO - Iniciando Consulta Site - 2026-08-13 15:20:38.231320
+2026-08-13 15:20:40,232 - INFO - ================================================================================
+2026-08-13 15:20:40,232 - INFO - ACESSANDO O PROCESS PARA ENVIAR OS DADOS
+2026-08-13 15:20:40,235 - INFO - Processando https://app.pontagrossa.pr.gov.br/sisppg/servico_funerario/internet/mostra_hoje.php
+2026-08-13 15:20:41,022 - ERROR - Erro fatal na execução: expected string or bytes-like object, got 'Tag'
+Traceback (most recent call last):
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\parser\parser_ponta.py", line 110, in extrair_links
+    datas = re.findall(r"\d{2}/\d{2}/\d{4}", link)
+  File "C:\Users\proScore_25\.pyenv\pyenv-win\versions\3.13.3\Lib\re\__init__.py", line 278, in findall
+    return _compile(pattern, flags).findall(string)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+TypeError: expected string or bytes-like object, got 'Tag'
+2026-08-13 15:20:41,025 - INFO - Finalizado
+2026-08-13 15:20:42,538 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-13 15:20:42,538 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-13 15:22:49,938 - INFO - ================================================================================
+2026-08-13 15:22:49,939 - INFO - Iniciando Consulta Site - 2026-08-13 15:22:49.938807
+2026-08-13 15:22:51,939 - INFO - ================================================================================
+2026-08-13 15:22:51,941 - INFO - ACESSANDO O PROCESS PARA ENVIAR OS DADOS
+2026-08-13 15:22:51,951 - INFO - Processando https://app.pontagrossa.pr.gov.br/sisppg/servico_funerario/internet/mostra_hoje.php
+2026-08-13 15:22:53,344 - ERROR - Erro fatal na execução: string indices must be integers, not 'str'
+Traceback (most recent call last):
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\parser\parser_ponta.py", line 17, in extrair_cards
+    links[item["LINKS"]] = item
+          ~~~~^^^^^^^^^
+TypeError: string indices must be integers, not 'str'
+2026-08-13 15:22:53,355 - INFO - Finalizado
+2026-08-13 15:22:55,098 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-13 15:22:55,100 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-13 15:24:23,051 - INFO - ================================================================================
+2026-08-13 15:24:23,052 - INFO - Iniciando Consulta Site - 2026-08-13 15:24:23.051922
+2026-08-13 15:24:25,052 - INFO - ================================================================================
+2026-08-13 15:24:25,053 - INFO - ACESSANDO O PROCESS PARA ENVIAR OS DADOS
+2026-08-13 15:24:25,055 - INFO - Processando https://app.pontagrossa.pr.gov.br/sisppg/servico_funerario/internet/mostra_hoje.php
+2026-08-13 15:24:25,870 - ERROR - Erro fatal na execução: search() missing 1 required positional argument: 'string'
+Traceback (most recent call last):
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\parser\parser_ponta.py", line 113, in extrair_links
+    nascimento = re.search(texto_title).group()
+                 ~~~~~~~~~^^^^^^^^^^^^^
+TypeError: search() missing 1 required positional argument: 'string'
+2026-08-13 15:24:25,871 - INFO - Finalizado
+2026-08-13 15:24:27,416 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-13 15:24:27,416 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-13 15:25:25,460 - INFO - ================================================================================
+2026-08-13 15:25:25,460 - INFO - Iniciando Consulta Site - 2026-08-13 15:25:25.460393
+2026-08-13 15:25:27,461 - INFO - ================================================================================
+2026-08-13 15:25:27,461 - INFO - ACESSANDO O PROCESS PARA ENVIAR OS DADOS
+2026-08-13 15:25:27,465 - INFO - Processando https://app.pontagrossa.pr.gov.br/sisppg/servico_funerario/internet/mostra_hoje.php
+2026-08-13 15:25:28,246 - ERROR - Erro fatal na execução: 'str' object has no attribute 'get_text'
+Traceback (most recent call last):
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\parser\parser_ponta.py", line 112, in extrair_links
+    texto = texto_title.get_text(strip=True)
+            ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'get_text'
+2026-08-13 15:25:28,250 - INFO - Finalizado
+2026-08-13 15:25:29,709 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-13 15:25:29,709 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-13 15:25:41,698 - INFO - ================================================================================
+2026-08-13 15:25:41,699 - INFO - Iniciando Consulta Site - 2026-08-13 15:25:41.698854
+2026-08-13 15:25:43,699 - INFO - ================================================================================
+2026-08-13 15:25:43,699 - INFO - ACESSANDO O PROCESS PARA ENVIAR OS DADOS
+2026-08-13 15:25:43,702 - INFO - Processando https://app.pontagrossa.pr.gov.br/sisppg/servico_funerario/internet/mostra_hoje.php
+2026-08-13 15:25:44,568 - ERROR - Erro fatal na execução: string indices must be integers, not 'str'
+Traceback (most recent call last):
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\parser\parser_ponta.py", line 17, in extrair_cards
+    links[item["LINKS"]] = item
+          ~~~~^^^^^^^^^
+TypeError: string indices must be integers, not 'str'
+2026-08-13 15:25:44,570 - INFO - Finalizado
+2026-08-13 15:25:46,270 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-13 15:25:46,270 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-13 15:27:51,749 - INFO - ================================================================================
+2026-08-13 15:27:51,749 - INFO - Iniciando Consulta Site - 2026-08-13 15:27:51.749196
+2026-08-13 15:27:53,750 - INFO - ================================================================================
+2026-08-13 15:27:53,750 - INFO - ACESSANDO O PROCESS PARA ENVIAR OS DADOS
+2026-08-13 15:27:53,754 - INFO - Processando https://app.pontagrossa.pr.gov.br/sisppg/servico_funerario/internet/mostra_hoje.php
+2026-08-13 15:27:55,074 - INFO - Registros sendo adicionados em: arquivos\pontaGrossa\pontaGrossa_13-08-2026.csv
+2026-08-13 15:27:55,074 - INFO - Finalizado
+2026-08-13 15:27:56,662 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-13 15:27:56,663 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-13 15:31:11,243 - INFO - ================================================================================
+2026-08-13 15:31:11,245 - INFO - Iniciando Consulta Site - 2026-08-13 15:31:11.243208
+2026-08-13 15:31:13,246 - INFO - ================================================================================
+2026-08-13 15:31:13,247 - INFO - ACESSANDO O PROCESS PARA ENVIAR OS DADOS
+2026-08-13 15:31:13,250 - INFO - Processando https://app.pontagrossa.pr.gov.br/sisppg/servico_funerario/internet/mostra_hoje.php
+2026-08-13 15:31:15,514 - INFO - Registros sendo adicionados em: arquivos\pontaGrossa\pontaGrossa_13-08-2026.csv
+2026-08-13 15:31:15,515 - INFO - Finalizado
+2026-08-13 15:31:17,065 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-13 15:31:17,066 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-13 15:33:09,350 - INFO - ================================================================================
+2026-08-13 15:33:09,350 - INFO - Iniciando Consulta Site - 2026-08-13 15:33:09.350599
+2026-08-13 15:33:11,351 - INFO - ================================================================================
+2026-08-13 15:33:11,351 - INFO - ACESSANDO O PROCESS PARA ENVIAR OS DADOS
+2026-08-13 15:33:11,356 - INFO - Processando https://app.pontagrossa.pr.gov.br/sisppg/servico_funerario/internet/mostra_hoje.php
+2026-08-13 15:33:13,605 - INFO - Registros sendo adicionados em: arquivos\pontaGrossa\pontaGrossa_13-08-2026.csv
+2026-08-13 15:33:13,605 - INFO - Finalizado
+2026-08-13 15:33:15,292 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-13 15:33:15,293 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-13 15:42:31,981 - INFO - ================================================================================
+2026-08-13 15:42:31,982 - INFO - Iniciando Consulta Site - 2026-08-13 15:42:31.981648
+2026-08-13 15:42:33,996 - INFO - ================================================================================
+2026-08-13 15:42:34,037 - INFO - ACESSANDO O PROCESS PARA ENVIAR OS DADOS
+2026-08-13 15:42:34,244 - INFO - Processando https://app.pontagrossa.pr.gov.br/sisppg/servico_funerario/internet/mostra_hoje.php
+2026-08-13 15:42:36,742 - ERROR - Erro fatal na execução: 'NoneType' object is not callable
+Traceback (most recent call last):
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\parser\parser_ponta.py", line 196, in montar_dados
+    dados_alinhados = dict(soup)
+TypeError: 'NoneType' object is not callable
+2026-08-13 15:42:36,840 - INFO - Finalizado
+2026-08-13 15:42:39,632 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-13 15:42:39,682 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-13 15:44:07,470 - INFO - ================================================================================
+2026-08-13 15:44:07,541 - INFO - Iniciando Consulta Site - 2026-08-13 15:44:07.470839
+2026-08-13 15:44:09,598 - INFO - ================================================================================
+2026-08-13 15:44:09,636 - INFO - ACESSANDO O PROCESS PARA ENVIAR OS DADOS
+2026-08-13 15:44:10,029 - INFO - Processando https://app.pontagrossa.pr.gov.br/sisppg/servico_funerario/internet/mostra_hoje.php
+2026-08-13 15:44:13,798 - INFO - Registros sendo adicionados em: arquivos\pontaGrossa\pontaGrossa_13-08-2026.csv
+2026-08-13 15:44:13,891 - INFO - Finalizado
+2026-08-13 15:44:14,039 - ERROR - Erro fatal na execução: Error tokenizing data. C error: Expected 11 fields in line 16, saw 16
+Traceback (most recent call last):
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\services\crawler.py", line 330, in iniciar
+    self.stats.salvar(pasta,nome)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\utils\CrawlerStats.py", line 66, in salvar
+    ) = abrir_arquivos(pasta)
+        ~~~~~~~~~~~~~~^^^^^^^
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\utils\info_pastas.py", line 161, in abrir_arquivos
+    df_atual = pd.read_csv(
+        arquivo,
+        sep=";"
+    )
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\.venvFalecidos\Lib\site-packages\pandas\io\parsers\readers.py", line 873, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\.venvFalecidos\Lib\site-packages\pandas\io\parsers\readers.py", line 306, in _read
+    return parser.read(nrows)
+           ~~~~~~~~~~~^^^^^^^
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\.venvFalecidos\Lib\site-packages\pandas\io\parsers\readers.py", line 1947, in read
+    ) = self._engine.read(  # type: ignore[attr-defined]
+        ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        nrows
+        ^^^^^
+    )
+    ^
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\.venvFalecidos\Lib\site-packages\pandas\io\parsers\c_parser_wrapper.py", line 215, in read
+    chunks = self._reader.read_low_memory(nrows)
+  File "pandas/_libs/parsers.pyx", line 832, in pandas._libs.parsers.TextReader.read_low_memory
+  File "pandas/_libs/parsers.pyx", line 897, in pandas._libs.parsers.TextReader._read_rows
+  File "pandas/_libs/parsers.pyx", line 868, in pandas._libs.parsers.TextReader._tokenize_rows
+  File "pandas/_libs/parsers.pyx", line 885, in pandas._libs.parsers.TextReader._check_tokenize_status
+  File "pandas/_libs/parsers.pyx", line 2084, in pandas._libs.parsers.raise_parser_error
+pandas.errors.ParserError: Error tokenizing data. C error: Expected 11 fields in line 16, saw 16
+
+2026-08-13 15:44:15,947 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-13 15:44:15,958 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-13 15:49:51,951 - INFO - ================================================================================
+2026-08-13 15:49:51,952 - INFO - Iniciando Consulta Site - 2026-08-13 15:49:51.951546
+2026-08-13 15:49:53,953 - INFO - ================================================================================
+2026-08-13 15:49:53,953 - INFO - ACESSANDO O PROCESS PARA ENVIAR OS DADOS
+2026-08-13 15:49:53,958 - INFO - Processando https://app.pontagrossa.pr.gov.br/sisppg/servico_funerario/internet/mostra_hoje.php
+2026-08-13 15:49:55,432 - ERROR - Erro fatal na execução: 'NoneType' object has no attribute 'group'
+Traceback (most recent call last):
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\parser\parser_ponta.py", line 217, in montar_dados
+    dados_alinhados["IDADE"] = re.search(r"IDADE\s+(\d+)\sANOS", valor).group(1)
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'group'
+2026-08-13 15:49:55,437 - INFO - Finalizado
+2026-08-13 15:49:55,449 - ERROR - Erro fatal na execução: Error tokenizing data. C error: Expected 11 fields in line 16, saw 16
+Traceback (most recent call last):
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\services\crawler.py", line 332, in iniciar
+    self.stats.salvar(pasta,nome)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\utils\CrawlerStats.py", line 66, in salvar
+    ) = abrir_arquivos(pasta)
+        ~~~~~~~~~~~~~~^^^^^^^
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\utils\info_pastas.py", line 161, in abrir_arquivos
+    df_atual = pd.read_csv(
+        arquivo,
+        sep=";"
+    )
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\.venvFalecidos\Lib\site-packages\pandas\io\parsers\readers.py", line 873, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\.venvFalecidos\Lib\site-packages\pandas\io\parsers\readers.py", line 306, in _read
+    return parser.read(nrows)
+           ~~~~~~~~~~~^^^^^^^
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\.venvFalecidos\Lib\site-packages\pandas\io\parsers\readers.py", line 1947, in read
+    ) = self._engine.read(  # type: ignore[attr-defined]
+        ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        nrows
+        ^^^^^
+    )
+    ^
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\.venvFalecidos\Lib\site-packages\pandas\io\parsers\c_parser_wrapper.py", line 215, in read
+    chunks = self._reader.read_low_memory(nrows)
+  File "pandas/_libs/parsers.pyx", line 832, in pandas._libs.parsers.TextReader.read_low_memory
+  File "pandas/_libs/parsers.pyx", line 897, in pandas._libs.parsers.TextReader._read_rows
+  File "pandas/_libs/parsers.pyx", line 868, in pandas._libs.parsers.TextReader._tokenize_rows
+  File "pandas/_libs/parsers.pyx", line 885, in pandas._libs.parsers.TextReader._check_tokenize_status
+  File "pandas/_libs/parsers.pyx", line 2084, in pandas._libs.parsers.raise_parser_error
+pandas.errors.ParserError: Error tokenizing data. C error: Expected 11 fields in line 16, saw 16
+
+2026-08-13 15:49:57,153 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-13 15:49:57,154 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-13 15:50:34,739 - INFO - ================================================================================
+2026-08-13 15:50:34,739 - INFO - Iniciando Consulta Site - 2026-08-13 15:50:34.739301
+2026-08-13 15:50:36,740 - INFO - ================================================================================
+2026-08-13 15:50:36,740 - INFO - ACESSANDO O PROCESS PARA ENVIAR OS DADOS
+2026-08-13 15:50:36,742 - INFO - Processando https://app.pontagrossa.pr.gov.br/sisppg/servico_funerario/internet/mostra_hoje.php
+2026-08-13 15:50:38,336 - INFO - Registros sendo adicionados em: arquivos\pontaGrossa\pontaGrossa_13-08-2026.csv
+2026-08-13 15:50:38,338 - INFO - Finalizado
+2026-08-13 15:50:38,374 - ERROR - Erro fatal na execução: Error tokenizing data. C error: Expected 11 fields in line 16, saw 16
+Traceback (most recent call last):
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\services\crawler.py", line 332, in iniciar
+    self.stats.salvar(pasta,nome)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\utils\CrawlerStats.py", line 66, in salvar
+    ) = abrir_arquivos(pasta)
+        ~~~~~~~~~~~~~~^^^^^^^
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\utils\info_pastas.py", line 161, in abrir_arquivos
+    df_atual = pd.read_csv(
+        arquivo,
+        sep=";"
+    )
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\.venvFalecidos\Lib\site-packages\pandas\io\parsers\readers.py", line 873, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\.venvFalecidos\Lib\site-packages\pandas\io\parsers\readers.py", line 306, in _read
+    return parser.read(nrows)
+           ~~~~~~~~~~~^^^^^^^
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\.venvFalecidos\Lib\site-packages\pandas\io\parsers\readers.py", line 1947, in read
+    ) = self._engine.read(  # type: ignore[attr-defined]
+        ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        nrows
+        ^^^^^
+    )
+    ^
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\.venvFalecidos\Lib\site-packages\pandas\io\parsers\c_parser_wrapper.py", line 215, in read
+    chunks = self._reader.read_low_memory(nrows)
+  File "pandas/_libs/parsers.pyx", line 832, in pandas._libs.parsers.TextReader.read_low_memory
+  File "pandas/_libs/parsers.pyx", line 897, in pandas._libs.parsers.TextReader._read_rows
+  File "pandas/_libs/parsers.pyx", line 868, in pandas._libs.parsers.TextReader._tokenize_rows
+  File "pandas/_libs/parsers.pyx", line 885, in pandas._libs.parsers.TextReader._check_tokenize_status
+  File "pandas/_libs/parsers.pyx", line 2084, in pandas._libs.parsers.raise_parser_error
+pandas.errors.ParserError: Error tokenizing data. C error: Expected 11 fields in line 16, saw 16
+
+2026-08-13 15:50:39,762 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-13 15:50:39,762 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-13 15:54:11,323 - INFO - ================================================================================
+2026-08-13 15:54:11,324 - INFO - Iniciando Consulta Site - 2026-08-13 15:54:11.323235
+2026-08-13 15:54:13,326 - INFO - ================================================================================
+2026-08-13 15:54:13,326 - INFO - ACESSANDO O PROCESS PARA ENVIAR OS DADOS
+2026-08-13 15:54:13,329 - INFO - Processando https://app.pontagrossa.pr.gov.br/sisppg/servico_funerario/internet/mostra_hoje.php
+2026-08-13 15:54:14,169 - INFO - Finalizado
+2026-08-13 15:54:14,173 - ERROR - Erro fatal na execução: Error tokenizing data. C error: Expected 11 fields in line 16, saw 16
+Traceback (most recent call last):
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\services\crawler.py", line 332, in iniciar
+    self.stats.salvar(pasta,nome)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\utils\CrawlerStats.py", line 66, in salvar
+    ) = abrir_arquivos(pasta)
+        ~~~~~~~~~~~~~~^^^^^^^
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\utils\info_pastas.py", line 161, in abrir_arquivos
+    df_atual = pd.read_csv(
+        arquivo,
+        sep=";"
+    )
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\.venvFalecidos\Lib\site-packages\pandas\io\parsers\readers.py", line 873, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\.venvFalecidos\Lib\site-packages\pandas\io\parsers\readers.py", line 306, in _read
+    return parser.read(nrows)
+           ~~~~~~~~~~~^^^^^^^
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\.venvFalecidos\Lib\site-packages\pandas\io\parsers\readers.py", line 1947, in read
+    ) = self._engine.read(  # type: ignore[attr-defined]
+        ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        nrows
+        ^^^^^
+    )
+    ^
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\.venvFalecidos\Lib\site-packages\pandas\io\parsers\c_parser_wrapper.py", line 215, in read
+    chunks = self._reader.read_low_memory(nrows)
+  File "pandas/_libs/parsers.pyx", line 832, in pandas._libs.parsers.TextReader.read_low_memory
+  File "pandas/_libs/parsers.pyx", line 897, in pandas._libs.parsers.TextReader._read_rows
+  File "pandas/_libs/parsers.pyx", line 868, in pandas._libs.parsers.TextReader._tokenize_rows
+  File "pandas/_libs/parsers.pyx", line 885, in pandas._libs.parsers.TextReader._check_tokenize_status
+  File "pandas/_libs/parsers.pyx", line 2084, in pandas._libs.parsers.raise_parser_error
+pandas.errors.ParserError: Error tokenizing data. C error: Expected 11 fields in line 16, saw 16
+
+2026-08-13 15:54:15,745 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-13 15:54:15,745 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-13 15:55:25,060 - INFO - ================================================================================
+2026-08-13 15:55:25,060 - INFO - Iniciando Consulta Site - 2026-08-13 15:55:25.060011
+2026-08-13 15:55:27,062 - INFO - ================================================================================
+2026-08-13 15:55:27,069 - INFO - ACESSANDO O PROCESS PARA ENVIAR OS DADOS
+2026-08-13 15:55:27,116 - INFO - Processando https://app.pontagrossa.pr.gov.br/sisppg/servico_funerario/internet/mostra_hoje.php
+2026-08-13 15:55:28,208 - INFO - Finalizado
+2026-08-13 15:55:28,213 - ERROR - Erro fatal na execução: Error tokenizing data. C error: Expected 11 fields in line 16, saw 16
+Traceback (most recent call last):
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\services\crawler.py", line 332, in iniciar
+    self.stats.salvar(pasta,nome)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\utils\CrawlerStats.py", line 66, in salvar
+    ) = abrir_arquivos(pasta)
+        ~~~~~~~~~~~~~~^^^^^^^
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\utils\info_pastas.py", line 161, in abrir_arquivos
+    df_atual = pd.read_csv(
+        arquivo,
+        sep=";"
+    )
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\.venvFalecidos\Lib\site-packages\pandas\io\parsers\readers.py", line 873, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\.venvFalecidos\Lib\site-packages\pandas\io\parsers\readers.py", line 306, in _read
+    return parser.read(nrows)
+           ~~~~~~~~~~~^^^^^^^
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\.venvFalecidos\Lib\site-packages\pandas\io\parsers\readers.py", line 1947, in read
+    ) = self._engine.read(  # type: ignore[attr-defined]
+        ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        nrows
+        ^^^^^
+    )
+    ^
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\.venvFalecidos\Lib\site-packages\pandas\io\parsers\c_parser_wrapper.py", line 215, in read
+    chunks = self._reader.read_low_memory(nrows)
+  File "pandas/_libs/parsers.pyx", line 832, in pandas._libs.parsers.TextReader.read_low_memory
+  File "pandas/_libs/parsers.pyx", line 897, in pandas._libs.parsers.TextReader._read_rows
+  File "pandas/_libs/parsers.pyx", line 868, in pandas._libs.parsers.TextReader._tokenize_rows
+  File "pandas/_libs/parsers.pyx", line 885, in pandas._libs.parsers.TextReader._check_tokenize_status
+  File "pandas/_libs/parsers.pyx", line 2084, in pandas._libs.parsers.raise_parser_error
+pandas.errors.ParserError: Error tokenizing data. C error: Expected 11 fields in line 16, saw 16
+
+2026-08-13 15:55:29,880 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-13 15:55:29,880 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-13 15:56:52,474 - INFO - ================================================================================
+2026-08-13 15:56:52,474 - INFO - Iniciando Consulta Site - 2026-08-13 15:56:52.474448
+2026-08-13 15:56:54,475 - INFO - ================================================================================
+2026-08-13 15:56:54,475 - INFO - ACESSANDO O PROCESS PARA ENVIAR OS DADOS
+2026-08-13 15:56:54,479 - INFO - Processando https://app.pontagrossa.pr.gov.br/sisppg/servico_funerario/internet/mostra_hoje.php
+2026-08-13 15:56:55,630 - INFO - Finalizado
+2026-08-13 15:56:55,638 - ERROR - Erro fatal na execução: Error tokenizing data. C error: Expected 11 fields in line 16, saw 16
+Traceback (most recent call last):
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\services\crawler.py", line 332, in iniciar
+    self.stats.salvar(pasta,nome)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\utils\CrawlerStats.py", line 66, in salvar
+    ) = abrir_arquivos(pasta)
+        ~~~~~~~~~~~~~~^^^^^^^
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\utils\info_pastas.py", line 161, in abrir_arquivos
+    df_atual = pd.read_csv(
+        arquivo,
+        sep=";"
+    )
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\.venvFalecidos\Lib\site-packages\pandas\io\parsers\readers.py", line 873, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\.venvFalecidos\Lib\site-packages\pandas\io\parsers\readers.py", line 306, in _read
+    return parser.read(nrows)
+           ~~~~~~~~~~~^^^^^^^
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\.venvFalecidos\Lib\site-packages\pandas\io\parsers\readers.py", line 1947, in read
+    ) = self._engine.read(  # type: ignore[attr-defined]
+        ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        nrows
+        ^^^^^
+    )
+    ^
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\.venvFalecidos\Lib\site-packages\pandas\io\parsers\c_parser_wrapper.py", line 215, in read
+    chunks = self._reader.read_low_memory(nrows)
+  File "pandas/_libs/parsers.pyx", line 832, in pandas._libs.parsers.TextReader.read_low_memory
+  File "pandas/_libs/parsers.pyx", line 897, in pandas._libs.parsers.TextReader._read_rows
+  File "pandas/_libs/parsers.pyx", line 868, in pandas._libs.parsers.TextReader._tokenize_rows
+  File "pandas/_libs/parsers.pyx", line 885, in pandas._libs.parsers.TextReader._check_tokenize_status
+  File "pandas/_libs/parsers.pyx", line 2084, in pandas._libs.parsers.raise_parser_error
+pandas.errors.ParserError: Error tokenizing data. C error: Expected 11 fields in line 16, saw 16
+
+2026-08-13 15:56:56,950 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-13 15:56:56,951 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-13 15:58:50,674 - INFO - ================================================================================
+2026-08-13 15:58:50,674 - INFO - Iniciando Consulta Site - 2026-08-13 15:58:50.673994
+2026-08-13 15:58:52,674 - INFO - ================================================================================
+2026-08-13 15:58:52,675 - INFO - ACESSANDO O PROCESS PARA ENVIAR OS DADOS
+2026-08-13 15:58:52,677 - INFO - Processando https://app.pontagrossa.pr.gov.br/sisppg/servico_funerario/internet/mostra_hoje.php
+2026-08-13 15:58:54,800 - INFO - Registros sendo adicionados em: arquivos\pontaGrossa\pontaGrossa_13-08-2026.csv
+2026-08-13 15:58:54,800 - INFO - Finalizado
+2026-08-13 15:58:54,845 - ERROR - Erro fatal na execução: Error tokenizing data. C error: Expected 11 fields in line 16, saw 16
+Traceback (most recent call last):
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\services\crawler.py", line 332, in iniciar
+    self.stats.salvar(pasta,nome)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\utils\CrawlerStats.py", line 66, in salvar
+    ) = abrir_arquivos(pasta)
+        ~~~~~~~~~~~~~~^^^^^^^
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\utils\info_pastas.py", line 161, in abrir_arquivos
+    df_atual = pd.read_csv(
+        arquivo,
+        sep=";"
+    )
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\.venvFalecidos\Lib\site-packages\pandas\io\parsers\readers.py", line 873, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\.venvFalecidos\Lib\site-packages\pandas\io\parsers\readers.py", line 306, in _read
+    return parser.read(nrows)
+           ~~~~~~~~~~~^^^^^^^
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\.venvFalecidos\Lib\site-packages\pandas\io\parsers\readers.py", line 1947, in read
+    ) = self._engine.read(  # type: ignore[attr-defined]
+        ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        nrows
+        ^^^^^
+    )
+    ^
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\.venvFalecidos\Lib\site-packages\pandas\io\parsers\c_parser_wrapper.py", line 215, in read
+    chunks = self._reader.read_low_memory(nrows)
+  File "pandas/_libs/parsers.pyx", line 832, in pandas._libs.parsers.TextReader.read_low_memory
+  File "pandas/_libs/parsers.pyx", line 897, in pandas._libs.parsers.TextReader._read_rows
+  File "pandas/_libs/parsers.pyx", line 868, in pandas._libs.parsers.TextReader._tokenize_rows
+  File "pandas/_libs/parsers.pyx", line 885, in pandas._libs.parsers.TextReader._check_tokenize_status
+  File "pandas/_libs/parsers.pyx", line 2084, in pandas._libs.parsers.raise_parser_error
+pandas.errors.ParserError: Error tokenizing data. C error: Expected 11 fields in line 16, saw 16
+
+2026-08-13 15:58:56,443 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-13 15:58:56,443 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-13 16:01:12,846 - INFO - ================================================================================
+2026-08-13 16:01:12,847 - INFO - Iniciando Consulta Site - 2026-08-13 16:01:12.846740
+2026-08-13 16:01:14,847 - INFO - ================================================================================
+2026-08-13 16:01:14,848 - INFO - ACESSANDO O PROCESS PARA ENVIAR OS DADOS
+2026-08-13 16:01:14,850 - INFO - Processando https://app.pontagrossa.pr.gov.br/sisppg/servico_funerario/internet/mostra_hoje.php
+2026-08-13 16:01:16,107 - INFO - Registros sendo adicionados em: arquivos\pontaGrossa\pontaGrossa_13-08-2026.csv
+2026-08-13 16:01:16,108 - INFO - Finalizado
+2026-08-13 16:01:16,149 - ERROR - Erro fatal na execução: Error tokenizing data. C error: Expected 11 fields in line 16, saw 16
+Traceback (most recent call last):
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\services\crawler.py", line 332, in iniciar
+    self.stats.salvar(pasta,nome)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\utils\CrawlerStats.py", line 66, in salvar
+    ) = abrir_arquivos(pasta)
+        ~~~~~~~~~~~~~~^^^^^^^
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\utils\info_pastas.py", line 161, in abrir_arquivos
+    df_atual = pd.read_csv(
+        arquivo,
+        sep=";"
+    )
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\.venvFalecidos\Lib\site-packages\pandas\io\parsers\readers.py", line 873, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\.venvFalecidos\Lib\site-packages\pandas\io\parsers\readers.py", line 306, in _read
+    return parser.read(nrows)
+           ~~~~~~~~~~~^^^^^^^
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\.venvFalecidos\Lib\site-packages\pandas\io\parsers\readers.py", line 1947, in read
+    ) = self._engine.read(  # type: ignore[attr-defined]
+        ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        nrows
+        ^^^^^
+    )
+    ^
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\.venvFalecidos\Lib\site-packages\pandas\io\parsers\c_parser_wrapper.py", line 215, in read
+    chunks = self._reader.read_low_memory(nrows)
+  File "pandas/_libs/parsers.pyx", line 832, in pandas._libs.parsers.TextReader.read_low_memory
+  File "pandas/_libs/parsers.pyx", line 897, in pandas._libs.parsers.TextReader._read_rows
+  File "pandas/_libs/parsers.pyx", line 868, in pandas._libs.parsers.TextReader._tokenize_rows
+  File "pandas/_libs/parsers.pyx", line 885, in pandas._libs.parsers.TextReader._check_tokenize_status
+  File "pandas/_libs/parsers.pyx", line 2084, in pandas._libs.parsers.raise_parser_error
+pandas.errors.ParserError: Error tokenizing data. C error: Expected 11 fields in line 16, saw 16
+
+2026-08-13 16:01:17,528 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-13 16:01:17,528 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-13 16:05:50,523 - INFO - ================================================================================
+2026-08-13 16:05:50,524 - INFO - Iniciando Consulta Site - 2026-08-13 16:05:50.523641
+2026-08-13 16:05:52,525 - INFO - ================================================================================
+2026-08-13 16:05:52,525 - INFO - ACESSANDO O PROCESS PARA ENVIAR OS DADOS
+2026-08-13 16:05:52,530 - INFO - Processando https://app.pontagrossa.pr.gov.br/sisppg/servico_funerario/internet/mostra_hoje.php
+2026-08-13 16:05:54,556 - ERROR - Erro fatal na execução: 'NoneType' object has no attribute 'group'
+Traceback (most recent call last):
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\parser\parser_ponta.py", line 225, in montar_dados
+    dados_alinhados["IDADE"] = re.search(r"(\d+)\ANOS", valor).group(1)
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'group'
+2026-08-13 16:05:54,578 - INFO - Registros sendo adicionados em: arquivos\pontaGrossa\pontaGrossa_13-08-2026.csv
+2026-08-13 16:05:54,579 - INFO - Finalizado
+2026-08-13 16:05:54,650 - ERROR - Erro fatal na execução: Error tokenizing data. C error: Expected 11 fields in line 16, saw 16
+Traceback (most recent call last):
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\services\crawler.py", line 332, in iniciar
+    self.stats.salvar(pasta,nome)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\utils\CrawlerStats.py", line 66, in salvar
+    ) = abrir_arquivos(pasta)
+        ~~~~~~~~~~~~~~^^^^^^^
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\utils\info_pastas.py", line 161, in abrir_arquivos
+    df_atual = pd.read_csv(
+        arquivo,
+        sep=";"
+    )
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\.venvFalecidos\Lib\site-packages\pandas\io\parsers\readers.py", line 873, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\.venvFalecidos\Lib\site-packages\pandas\io\parsers\readers.py", line 306, in _read
+    return parser.read(nrows)
+           ~~~~~~~~~~~^^^^^^^
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\.venvFalecidos\Lib\site-packages\pandas\io\parsers\readers.py", line 1947, in read
+    ) = self._engine.read(  # type: ignore[attr-defined]
+        ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        nrows
+        ^^^^^
+    )
+    ^
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\.venvFalecidos\Lib\site-packages\pandas\io\parsers\c_parser_wrapper.py", line 215, in read
+    chunks = self._reader.read_low_memory(nrows)
+  File "pandas/_libs/parsers.pyx", line 832, in pandas._libs.parsers.TextReader.read_low_memory
+  File "pandas/_libs/parsers.pyx", line 897, in pandas._libs.parsers.TextReader._read_rows
+  File "pandas/_libs/parsers.pyx", line 868, in pandas._libs.parsers.TextReader._tokenize_rows
+  File "pandas/_libs/parsers.pyx", line 885, in pandas._libs.parsers.TextReader._check_tokenize_status
+  File "pandas/_libs/parsers.pyx", line 2084, in pandas._libs.parsers.raise_parser_error
+pandas.errors.ParserError: Error tokenizing data. C error: Expected 11 fields in line 16, saw 16
+
+2026-08-13 16:05:56,229 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-13 16:05:56,230 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-13 16:07:37,966 - INFO - ================================================================================
+2026-08-13 16:07:37,966 - INFO - Iniciando Consulta Site - 2026-08-13 16:07:37.966401
+2026-08-13 16:07:39,967 - INFO - ================================================================================
+2026-08-13 16:07:39,967 - INFO - ACESSANDO O PROCESS PARA ENVIAR OS DADOS
+2026-08-13 16:07:39,970 - INFO - Processando https://app.pontagrossa.pr.gov.br/sisppg/servico_funerario/internet/mostra_hoje.php
+2026-08-13 16:07:42,279 - INFO - Registros sendo adicionados em: arquivos\pontaGrossa\pontaGrossa_13-08-2026.csv
+2026-08-13 16:07:42,280 - INFO - Finalizado
+2026-08-13 16:07:42,327 - ERROR - Erro fatal na execução: Error tokenizing data. C error: Expected 11 fields in line 16, saw 16
+Traceback (most recent call last):
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\services\crawler.py", line 332, in iniciar
+    self.stats.salvar(pasta,nome)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\utils\CrawlerStats.py", line 66, in salvar
+    ) = abrir_arquivos(pasta)
+        ~~~~~~~~~~~~~~^^^^^^^
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\utils\info_pastas.py", line 161, in abrir_arquivos
+    df_atual = pd.read_csv(
+        arquivo,
+        sep=";"
+    )
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\.venvFalecidos\Lib\site-packages\pandas\io\parsers\readers.py", line 873, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\.venvFalecidos\Lib\site-packages\pandas\io\parsers\readers.py", line 306, in _read
+    return parser.read(nrows)
+           ~~~~~~~~~~~^^^^^^^
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\.venvFalecidos\Lib\site-packages\pandas\io\parsers\readers.py", line 1947, in read
+    ) = self._engine.read(  # type: ignore[attr-defined]
+        ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        nrows
+        ^^^^^
+    )
+    ^
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\.venvFalecidos\Lib\site-packages\pandas\io\parsers\c_parser_wrapper.py", line 215, in read
+    chunks = self._reader.read_low_memory(nrows)
+  File "pandas/_libs/parsers.pyx", line 832, in pandas._libs.parsers.TextReader.read_low_memory
+  File "pandas/_libs/parsers.pyx", line 897, in pandas._libs.parsers.TextReader._read_rows
+  File "pandas/_libs/parsers.pyx", line 868, in pandas._libs.parsers.TextReader._tokenize_rows
+  File "pandas/_libs/parsers.pyx", line 885, in pandas._libs.parsers.TextReader._check_tokenize_status
+  File "pandas/_libs/parsers.pyx", line 2084, in pandas._libs.parsers.raise_parser_error
+pandas.errors.ParserError: Error tokenizing data. C error: Expected 11 fields in line 16, saw 16
+
+2026-08-13 16:07:43,745 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-13 16:07:43,746 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-13 16:10:23,725 - INFO - ================================================================================
+2026-08-13 16:10:23,741 - INFO - Iniciando Consulta Site - 2026-08-13 16:10:23.725250
+2026-08-13 16:10:25,742 - INFO - ================================================================================
+2026-08-13 16:10:25,742 - INFO - ACESSANDO O PROCESS PARA ENVIAR OS DADOS
+2026-08-13 16:10:25,746 - INFO - Processando https://app.pontagrossa.pr.gov.br/sisppg/servico_funerario/internet/mostra_hoje.php
+2026-08-13 16:10:28,336 - INFO - Registros sendo adicionados em: arquivos\pontaGrossa\pontaGrossa_13-08-2026.csv
+2026-08-13 16:10:28,336 - INFO - Finalizado
+2026-08-13 16:10:28,429 - ERROR - Erro fatal na execução: Error tokenizing data. C error: Expected 11 fields in line 16, saw 16
+Traceback (most recent call last):
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\services\crawler.py", line 332, in iniciar
+    self.stats.salvar(pasta,nome)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\utils\CrawlerStats.py", line 66, in salvar
+    ) = abrir_arquivos(pasta)
+        ~~~~~~~~~~~~~~^^^^^^^
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\utils\info_pastas.py", line 161, in abrir_arquivos
+    df_atual = pd.read_csv(
+        arquivo,
+        sep=";"
+    )
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\.venvFalecidos\Lib\site-packages\pandas\io\parsers\readers.py", line 873, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\.venvFalecidos\Lib\site-packages\pandas\io\parsers\readers.py", line 306, in _read
+    return parser.read(nrows)
+           ~~~~~~~~~~~^^^^^^^
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\.venvFalecidos\Lib\site-packages\pandas\io\parsers\readers.py", line 1947, in read
+    ) = self._engine.read(  # type: ignore[attr-defined]
+        ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        nrows
+        ^^^^^
+    )
+    ^
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\.venvFalecidos\Lib\site-packages\pandas\io\parsers\c_parser_wrapper.py", line 215, in read
+    chunks = self._reader.read_low_memory(nrows)
+  File "pandas/_libs/parsers.pyx", line 832, in pandas._libs.parsers.TextReader.read_low_memory
+  File "pandas/_libs/parsers.pyx", line 897, in pandas._libs.parsers.TextReader._read_rows
+  File "pandas/_libs/parsers.pyx", line 868, in pandas._libs.parsers.TextReader._tokenize_rows
+  File "pandas/_libs/parsers.pyx", line 885, in pandas._libs.parsers.TextReader._check_tokenize_status
+  File "pandas/_libs/parsers.pyx", line 2084, in pandas._libs.parsers.raise_parser_error
+pandas.errors.ParserError: Error tokenizing data. C error: Expected 11 fields in line 16, saw 16
+
+2026-08-13 16:10:29,833 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-13 16:10:29,834 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-13 16:15:36,118 - INFO - ================================================================================
+2026-08-13 16:15:36,119 - INFO - Iniciando Consulta Site - 2026-08-13 16:15:36.118779
+2026-08-13 16:15:38,120 - INFO - ================================================================================
+2026-08-13 16:15:38,120 - INFO - ACESSANDO O PROCESS PARA ENVIAR OS DADOS
+2026-08-13 16:15:38,125 - INFO - Processando https://app.pontagrossa.pr.gov.br/sisppg/servico_funerario/internet/mostra_hoje.php
+2026-08-13 16:15:39,429 - INFO - Registros sendo adicionados em: arquivos\pontaGrossa\pontaGrossa_13-08-2026.csv
+2026-08-13 16:15:39,429 - INFO - Finalizado
+2026-08-13 16:15:40,981 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-13 16:15:40,982 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-13 16:19:09,953 - INFO - ================================================================================
+2026-08-13 16:19:09,953 - INFO - Iniciando Consulta Site - 2026-08-13 16:19:09.953001
+2026-08-13 16:19:11,954 - INFO - ================================================================================
+2026-08-13 16:19:11,954 - INFO - ACESSANDO O PROCESS PARA ENVIAR OS DADOS
+2026-08-13 16:19:11,956 - INFO - Processando https://app.pontagrossa.pr.gov.br/sisppg/servico_funerario/internet/mostra_hoje.php
+2026-08-13 16:19:14,467 - INFO - Registros sendo adicionados em: arquivos\pontaGrossa\pontaGrossa_13-08-2026.csv
+2026-08-13 16:19:14,471 - INFO - Finalizado
+2026-08-13 16:19:16,217 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-13 16:19:16,218 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-13 16:20:16,485 - INFO - ================================================================================
+2026-08-13 16:20:16,485 - INFO - Iniciando Consulta Site - 2026-08-13 16:20:16.485239
+2026-08-13 16:20:18,486 - INFO - ================================================================================
+2026-08-13 16:20:18,486 - INFO - ACESSANDO O PROCESS PARA ENVIAR OS DADOS
+2026-08-13 16:20:18,489 - INFO - Processando https://app.pontagrossa.pr.gov.br/sisppg/servico_funerario/internet/mostra_hoje.php
+2026-08-13 16:20:20,576 - ERROR - Erro fatal na execução: print() got an unexpected keyword argument 'exc_info'
+Traceback (most recent call last):
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\parser\parser_ponta.py", line 243, in montar_dados
+    idade = re.search(r"IDADE:\d+ anos", valor).group().replace("IDADE:", "")
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'group'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\parser\parser_ponta.py", line 64, in extrair_cards
+    retorno_montagem = montar_dados(detalhe, lista_original)
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\parser\parser_ponta.py", line 290, in montar_dados
+    print(f"Erro ao alinhar dados: {e}", exc_info=True)
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: print() got an unexpected keyword argument 'exc_info'
+2026-08-13 16:20:20,580 - INFO - Finalizado
+2026-08-13 16:20:22,014 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-13 16:20:22,015 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-13 16:22:05,266 - INFO - ================================================================================
+2026-08-13 16:22:05,270 - INFO - Iniciando Consulta Site - 2026-08-13 16:22:05.266367
+2026-08-13 16:22:07,272 - INFO - ================================================================================
+2026-08-13 16:22:07,272 - INFO - ACESSANDO O PROCESS PARA ENVIAR OS DADOS
+2026-08-13 16:22:07,275 - INFO - Processando https://app.pontagrossa.pr.gov.br/sisppg/servico_funerario/internet/mostra_hoje.php
+2026-08-13 16:22:09,595 - INFO - Registros sendo adicionados em: arquivos\pontaGrossa\pontaGrossa_13-08-2026.csv
+2026-08-13 16:22:09,596 - INFO - Finalizado
+2026-08-13 16:22:11,031 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-13 16:22:11,032 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-13 16:22:58,501 - INFO - ================================================================================
+2026-08-13 16:22:58,501 - INFO - Iniciando Consulta Site - 2026-08-13 16:22:58.501369
+2026-08-13 16:23:00,502 - INFO - ================================================================================
+2026-08-13 16:23:00,502 - INFO - ACESSANDO O PROCESS PARA ENVIAR OS DADOS
+2026-08-13 16:23:00,505 - INFO - Processando https://app.pontagrossa.pr.gov.br/sisppg/servico_funerario/internet/mostra_hoje.php
+2026-08-13 16:23:02,486 - INFO - Registros sendo adicionados em: arquivos\pontaGrossa\pontaGrossa_13-08-2026.csv
+2026-08-13 16:23:02,487 - INFO - Finalizado
+2026-08-13 16:23:02,523 - ERROR - Erro fatal na execução: Error tokenizing data. C error: Expected 17 fields in line 5, saw 18
+Traceback (most recent call last):
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\services\crawler.py", line 332, in iniciar
+    self.stats.salvar(pasta,nome)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\utils\CrawlerStats.py", line 66, in salvar
+    ) = abrir_arquivos(pasta)
+        ~~~~~~~~~~~~~~^^^^^^^
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\utils\info_pastas.py", line 161, in abrir_arquivos
+    df_atual = pd.read_csv(
+        arquivo,
+        sep=";"
+    )
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\.venvFalecidos\Lib\site-packages\pandas\io\parsers\readers.py", line 873, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\.venvFalecidos\Lib\site-packages\pandas\io\parsers\readers.py", line 306, in _read
+    return parser.read(nrows)
+           ~~~~~~~~~~~^^^^^^^
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\.venvFalecidos\Lib\site-packages\pandas\io\parsers\readers.py", line 1947, in read
+    ) = self._engine.read(  # type: ignore[attr-defined]
+        ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        nrows
+        ^^^^^
+    )
+    ^
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\.venvFalecidos\Lib\site-packages\pandas\io\parsers\c_parser_wrapper.py", line 215, in read
+    chunks = self._reader.read_low_memory(nrows)
+  File "pandas/_libs/parsers.pyx", line 832, in pandas._libs.parsers.TextReader.read_low_memory
+  File "pandas/_libs/parsers.pyx", line 897, in pandas._libs.parsers.TextReader._read_rows
+  File "pandas/_libs/parsers.pyx", line 868, in pandas._libs.parsers.TextReader._tokenize_rows
+  File "pandas/_libs/parsers.pyx", line 885, in pandas._libs.parsers.TextReader._check_tokenize_status
+  File "pandas/_libs/parsers.pyx", line 2084, in pandas._libs.parsers.raise_parser_error
+pandas.errors.ParserError: Error tokenizing data. C error: Expected 17 fields in line 5, saw 18
+
+2026-08-13 16:23:04,022 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-13 16:23:04,023 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-13 16:23:13,382 - INFO - ================================================================================
+2026-08-13 16:23:13,382 - INFO - Iniciando Consulta Site - 2026-08-13 16:23:13.382162
+2026-08-13 16:23:15,383 - INFO - ================================================================================
+2026-08-13 16:23:15,383 - INFO - ACESSANDO O PROCESS PARA ENVIAR OS DADOS
+2026-08-13 16:23:15,385 - INFO - Processando https://app.pontagrossa.pr.gov.br/sisppg/servico_funerario/internet/mostra_hoje.php
+2026-08-13 16:23:17,235 - INFO - Registros sendo adicionados em: arquivos\pontaGrossa\pontaGrossa_13-08-2026.csv
+2026-08-13 16:23:17,236 - INFO - Finalizado
+2026-08-13 16:23:18,765 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-13 16:23:18,765 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-13 16:35:38,537 - INFO - ================================================================================
+2026-08-13 16:35:38,538 - INFO - Iniciando Consulta Site - 2026-08-13 16:35:38.537198
+2026-08-13 16:35:40,538 - INFO - ================================================================================
+2026-08-13 16:35:40,538 - INFO - ACESSANDO O PROCESS PARA ENVIAR OS DADOS
+2026-08-13 16:35:40,544 - INFO - Processando https://app.pontagrossa.pr.gov.br/sisppg/servico_funerario/internet/mostra_hoje.php
+2026-08-13 16:36:29,921 - INFO - Registros sendo adicionados em: arquivos\pontaGrossa\pontaGrossa_13-08-2026.csv
+2026-08-13 16:36:29,922 - INFO - Finalizado
+2026-08-13 16:36:31,513 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-13 16:36:31,515 - INFO - 
+Iniciando Processo para captura dos dados
