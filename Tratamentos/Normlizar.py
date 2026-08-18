@@ -4,17 +4,28 @@ import numpy as np
 import pandas as pd
 
 from pathlib import Path
+from collections import Counter, defaultdict
 from Logs import ClassLogger
 from utils.auxliares import auxliares
 from utils.unicode import remover
 from datetime import time,datetime
 from services.crawler import iniciar
+from Model.ClassModel import insert_base_obito,exists_by_name
+from concurrent.futures import ThreadPoolExecutor, as_completed
 
 
 
 
 
 def arquivos_process(self):
+
+    contador = defaultdict(lambda: {
+        "ACHADAS": 0,
+        "NA": 0,
+        "ERROR":0,
+        "QTINSERT": 0
+        })
+    
     ClassLogger.logging.info("ACESSANDO PAGINA PARA PROCESSAR OS DADOS")
     ClassLogger.logging.info("REALIZAR A NORMALIZAR!!")
 
@@ -23,7 +34,7 @@ def arquivos_process(self):
 
     # return
     # 
-    registros = self.servidores.get(3)
+    registros = self.servidores.get(2)
 
     print(registros)
     arquivos = f"arquivos/{registros['nome']}"
@@ -32,28 +43,134 @@ def arquivos_process(self):
     # return
 
     try:
-        dados = []  # Lista para armazenar os DataFrames processados
-        caminho = os.listdir(arquivos)
-        for arquivo in caminho:
-            print(arquivo)
-            # Ignora arquivos temporários ou ocultos (como .DS_Store no Mac ou temporários do Windows)
-            if arquivo.startswith('.'):
-                continue
+        dados = []
+        arquivos_data = []
+        # df_filtrado = {}
 
-            if arquivo == 'old' or arquivo == 'estatisticas.csv':
-                continue
+        caminho_arquivos = Path(arquivos)
+        nome = registros["nome"]
 
-            # if arquivo == registros['nome']:
-                
-            print(f"Processando: {arquivo}")
+        for arquivo in caminho_arquivos.glob("*.csv"):
+
+            print(f"Analisando: {arquivo.name}")
+
             
-        #     # Lê o CSV atual
-        # try:
-            df = pd.read_csv(f"{arquivos}/{arquivo}", sep=";")
-            # print(df)
+            if arquivo.name == "estatisticas.csv":
+                     continue
 
-        # except Exception as e:
-        #     print(f"MEUS ERROS {e}")# Ajusta cabeçalho 
+            if not arquivo.name.startswith(f"{nome}_"):
+                    continue
+
+            try:
+                data_str = arquivo.stem.replace(
+                    f"{nome}_",
+                    "",
+                    1
+                )
+
+                data = datetime.strptime(
+                    data_str,
+                    "%d-%m-%Y"
+                ).date()
+
+                arquivos_data.append(
+                    (data, arquivo)
+                )
+
+                print(f"MEUS DADOS LOCALIZADO {arquivos_data}")
+
+            except ValueError:
+
+           
+                continue
+
+
+            
+            if not arquivos_data:
+
+                print(
+                    f"Nenhum arquivo com data encontrado para {nome}"
+                )
+
+            else:
+
+                # Mais recente primeiro
+                arquivos_data.sort(
+                    key=lambda x: x[0],
+                    reverse=True
+                )
+
+                arquivo_atual = arquivos_data[0][1]
+
+                print(
+                    f"Arquivo mais recente: "
+                    f"{arquivo_atual.name}"
+                )
+
+                if len(arquivos_data) > 1:
+
+                    arquivo_anterior = arquivos_data[1][1]
+
+                    print(
+                        f"Arquivo anterior: "
+                        f"{arquivo_anterior.name}"
+                    )
+
+                else:
+
+                    arquivo_anterior = None
+
+                    print(
+                        "Não existe arquivo anterior."
+                    )
+
+                    print(f"{arquivos_data}")
+                    print(f"{arquivo_anterior}")
+
+
+                arquivo_antigo = buscar_arquivo_antigo(
+                    arquivos,
+                    nome
+                    )
+
+                print(f"Arquivo antigo encontrado: {arquivo_antigo}")
+
+            # print(f"MEUS DADOS LOCALIZADOS {qta_arquivo}")
+               
+
+            if arquivo == 'old' or arquivo == 'estatisticas.csv' or  arquivo == 'error':
+                continue
+
+
+            caminho_atual = arquivos
+
+            print(f"Processando CAMINHO: {caminho_atual}")
+
+            df = pegar_registros_novos(
+                arquivo_atual,
+                arquivo_antigo
+            )
+
+            if df.empty:
+                print("Nenhum registro novo para processar.")
+                continue
+
+            print(
+                f"Vou processar {len(df)} registros novos."
+            )
+
+                
+            # print(f"Processando : {arquivo}")
+            
+            # Lê o CSV atual
+            # df = pd.read_csv(f"{arquivos}/{arquivo}", sep=";")
+
+            
+            contador[arquivo]["ACHADAS"] += 1              
+            contador[arquivo]["QTINSERT"] += len(df)       
+          
+
+    
             df.columns = df.columns.str.strip().str.rstrip(':').str.strip().str.replace(' ', '_')
 
             df.rename(columns={'FALECIMENTO':  auxliares.TEXTO_FALECIMENTO ,'DATA_NACIMENTO': 'DATA_NASCIMENTO'}, inplace=True)
@@ -92,6 +209,7 @@ def arquivos_process(self):
                 #INICIA COMO SEM INFORMACAO
                 df['FAMILIARES_A'] =  auxliares.TEXTO_FAMILIARES
                 df['FAMILIARES_B'] =  auxliares.TEXTO_FAMILIARES
+                df['CONJUGE'] = auxliares.TEXTO_P
 
                 if 'FAMILIARES' in df.columns:
                     df['FAMILIARES_A'] =  df['FAMILIARES'].apply(tratar_familiares_A).str.upper()
@@ -116,6 +234,7 @@ def arquivos_process(self):
             
                 
                 # Aplica as funções nas colunas
+                df['CONJUGE'] = auxliares.TEXTO_P
                 df['ANO_NASCIMENTO_ESTIMADO'] = df['IDADE'].apply(calcula_ano)
                 if 'DATA_NASCIMENTO' in df.columns:
                     df['ANO_NASCIMENTO_INFORMADO'] = df['DATA_NASCIMENTO'].apply(formatar_data)
@@ -142,24 +261,19 @@ def arquivos_process(self):
                     df['CIDADE'] = df['CIDADE'].str.upper()
                 else:
                     df['CIDADE'] = auxliares.TEXTO_P
-                
-                # Filtra apenas as colunas desejadas para o resultado final
+
+                 # Filtra apenas as colunas desejadas para o resultado final
                 df_filtrado = df[['NOME', 'IDADE','DATA_FALECIMENTO','ANO_NASCIMENTO_ESTIMADO', 'LINK','DATA_CAPTURA','ANO_NASCIMENTO_INFORMADO','CIDADE','FAMILIARES_A','FAMILIARES_B','CONJUGE']].rename(columns={'LINK': 'LINK_FONTE'})
                 
-                # CORREÇÃO: Adiciona o DataFrame processado à lista DENTRO do laço 'for'
+             
                 dados.append(df_filtrado)
 
-            # Concatena todos os arquivos processados em um único DataFrame final
+          
             df_final = pd.concat(dados, ignore_index=True)
+            contador[arquivo]["QTINSERT"] = len(df_final)
             # print(df_final)
-
-
-
-
-            print(dados)
-
-            
-
+           
+        return dados
 
     except Exception as e:
          ClassLogger.logging.error(f"Erro fatal na execução para normalizar: {e}", exc_info=True)       
@@ -181,8 +295,10 @@ def formatar_data(data_envida):
     # print(f"ESTOU SAINDO NO FORMATAR DATA  SEM A HORA ENVIADA :: {data_envida}")
     if isinstance(data_envida, float) or data_envida is None or str(data_envida).lower() == 'nan' or str(data_envida) == auxliares.DATA_PARAO:
         return auxliares.DATA_PARAO
-    
-        
+
+    if data_envida in ['nan', '', 'none', '0', '{}']:
+        return auxliares.DATA_PARAO
+
     data_str = str(data_envida).strip()
     data_str_formmat = re.sub(r'-', '', data_str)
     try:
@@ -191,12 +307,21 @@ def formatar_data(data_envida):
         # DOIS TRATAMENTO PARA QUANDO NÃO TIVER HORA NA DATA
 
     except ValueError:
-         
-        data_objeto = datetime.strptime(data_str_formmat, "%d/%m/%Y")
+        try:
+            
+            data_objeto = datetime.strptime(data_str_formmat, "%d/%m/%Y")
+            return data_objeto.strftime("%Y/%m/%d")
+        
+        except ValueError:
+            try:
+               
+                data_objeto = datetime.strptime(data_str_formmat, "%d%m/%Y")
+                return data_objeto.strftime("%Y/%m/%d")
+            
+            except ValueError as e:
+                print(f"MEU ERRO: Formato desconhecido para a string '{data_str_formmat}' -> {e}")
+                return auxliares.DATA_PARAO
 
-        # print(f"minha data data_objeto {data_objeto}")
-        data_formatada = data_objeto.strftime("%Y/%m/%d")
-        return data_formatada
     except Exception as e:
         ClassLogger.logging.info(f"Erro em formatar a data com o nan: {e}", exc_info=True)
         return auxliares.DATA_PARAO
@@ -213,6 +338,7 @@ def formatar_data_hora(data_envida):
         return auxliares.DATA_PARAO
 
 def achar_idade(nasc,falec):
+
     nasc_str = str(nasc).strip().lower()
     falec_str = str(falec).strip().lower()
 
@@ -221,7 +347,7 @@ def achar_idade(nasc,falec):
     nasc_str = re.sub(r'-', '', nasc_str)
     
     # Verifica se os valores são nulos, vazios ou 'nan'
-    if nasc_str in ['nan', '', 'none', '0'] or falec_str in ['nan', '', 'none', '0']:
+    if nasc_str in ['nan', '', 'none', '0', '{}'] or falec_str in ['nan', '', 'none', '0', '{}']:
         return 0 
         
     try:
@@ -238,6 +364,11 @@ def achar_idade(nasc,falec):
 def tratar_familiares_A(textos):
     
     dados_extraidos = []
+    if textos is None or (isinstance(textos, float) and pd.isna(textos)):
+        textos = ""
+    elif not isinstance(textos, str):
+        textos = str(textos)
+
     texto_limpo = re.sub(r'\(In Memoriam\)', '', textos, flags=re.IGNORECASE)
     conjuges_pais = re.findall(r'(?:Sr\.|Sra\.|esposa Sra\.|esposo\.|Viúvo\.|Viúva\.)\s+([A-Z][a-zÀ-ÿ]+(?:\s+[A-Z][a-zÀ-ÿ]+)*)', texto_limpo)
     # filhos_match = re.search(r'deixa (?:os filhos|as filhas|filhos)\s+([^,]+?)(?=\s*,\s*familiares|\s*$)', texto_limpo)
@@ -259,6 +390,11 @@ def tratar_familiares_A(textos):
 def tratar_familiares_B(textos):
     
     dados_extraidos = []
+    if textos is None or (isinstance(textos, float) and pd.isna(textos)):
+        textos = ""
+    elif not isinstance(textos, str):
+        textos = str(textos)
+
     texto_limpo = re.sub(r'\(In Memoriam\)', '', textos, flags=re.IGNORECASE)
     # conjuges_pais = re.findall(r'(?:Sr\.|Sra\.|esposa Sra\.|esposo\.|Viúvo\.|Viúva\.)\s+([A-Z][a-zÀ-ÿ]+(?:\s+[A-Z][a-zÀ-ÿ]+)*)', texto_limpo)
     filhos_match = re.search(r'deixa (?:os filhos|as filhas|filhos)\s+([^,]+?)(?=\s*,\s*familiares|\s*$)', texto_limpo)
@@ -306,17 +442,127 @@ def verificar_data(data):
     if data_str in (auxliares.DATA_PARAO, ''):
         return auxliares.DATA_PARAO
 
-
     try:
         formato = "%d/%m/%Y"
         data_convertida = datetime.strptime(data, formato)
         # print(f"Data válida! {data_convertida}")
         return data
-    except Exception as e:
-            print(f"Data inválida ou formato incorreto {data}")
-            print("Data inválida ou formato incorreto.")
-            ClassLogger.logging.info(f"Data inválida ou formato incorreto {e} {data}", exc_info=True)
-            return auxliares.DATA_PARAO
 
+    except ValueError as e:
+
+        if '/-' in str(data):
+            return auxliares.DATA_PARAO # AJUSTA ESTE RETORNO PRA TRAZER O RESULTADO CORRETO
+
+
+    except Exception as e:
+        print(f"Data inválida ou formato incorreto {data}")
+        print("Data inválida ou formato incorreto.")
+        ClassLogger.logging.info(f"Data inválida ou formato incorreto {e} {data}", exc_info=True)
+        return auxliares.DATA_PARAO
+
+
+
+def buscar_arquivo_antigo(arquivos,nome):
+    pasta_old = Path(arquivos) / "old"
+
+    if not pasta_old.exists():
+        print("Pasta OLD não existe")
+        return None
+
+    arquivos_encontrados = []
+
+    for arquivo in pasta_old.glob("*.csv"):
+
+        print(f"Analisando arquivo: {arquivo.name}")
+        
+        if not arquivo.name.startswith(f"{nome}_"):
+            continue
+
+        try:
+
+            data_str = arquivo.stem.replace(
+                f"{nome}_",
+                "",
+                1
+            )
+
+            data = datetime.strptime(
+                data_str,
+                "%d-%m-%Y"
+            ).date()
+
+            arquivos_encontrados.append(
+                (data, arquivo)
+            )
+
+        except ValueError:
+            continue
+
+    if not arquivos_encontrados:
+
+        print("Nenhum arquivo com data encontrado.")
+        return None
+
+    # Ordena da data mais recente para a mais antiga
+    arquivos_encontrados.sort(
+        key=lambda x: x[0],
+        reverse=True
+    )
+
+    arquivo_mais_recente = arquivos_encontrados[0][1]
+
+    print(
+        f"Arquivo mais recente: "
+        f"{arquivo_mais_recente.name}"
+    )
+
+    return arquivo_mais_recente
+
+
+
+def pegar_registros_novos(arquivo_atual, arquivo_antigo):
+
+    df_atual = pd.read_csv(
+        arquivo_atual,
+        sep=";"
+    )
+
+    # Não existe arquivo anterior
+    if arquivo_antigo is None:
+
+        print("Não existe arquivo anterior.")
+        print(f"Serão processados {len(df_atual)} registros.")
+
+        return df_atual
+
+    df_antigo = pd.read_csv(
+        arquivo_antigo,
+        sep=";"
+    )
+
+    print(f"Arquivo atual: {len(df_atual)} registros")
+    print(f"Arquivo antigo: {len(df_antigo)} registros")
+
+    # Se não aumentou
+    if len(df_atual) <= len(df_antigo):
+
+        print("Não houve crescimento.")
+
+        return pd.DataFrame()
+    df_atual.columns = df_atual.columns.str.strip().str.rstrip(':').str.strip().str.replace(' ', '_')
+    df_antigo.columns = df_antigo.columns.str.strip().str.rstrip(':').str.strip().str.replace(' ', '_')
+    df_atual.rename(columns={'FALECIMENTO': auxliares.TEXTO_FALECIMENTO, 'DATA_NASCIMENTO': 'DATA_NASCIMENTO'}, inplace=True)  
+    df_antigo.rename(columns={'FALECIMENTO': auxliares.TEXTO_FALECIMENTO, 'DATA_NASCIMENTO': 'DATA_NASCIMENTO'}, inplace=True)  
+
+    novos = df_atual[
+    ~df_atual.set_index(["NOME", "DATA_FALECIMENTO"]).index.isin(
+        df_antigo.set_index(["NOME", "DATA_FALECIMENTO"]).index
+    )].copy()
+
+    print(
+        f"Novos registros encontrados: {len(novos)}"
+    )
+
+    return novos
 
 

@@ -1,10 +1,17 @@
-import threading
-from datetime import datetime
+import sys
 import time
+import threading
+import psycopg2
+from src.pushdados import upDados
 from Logs import ClassLogger
-from utils.CrawlerStats import enviar_relatorio_email,enviar_email_all
+from datetime import datetime
+from utils.CrawlerStats import CrawlerStats
+from utils.obter_servidor import obter_servidores
+from downloads.RequestClient import RequestClient
+from Conexao import ConectionClass, ConectionPool
 from Tratamentos.ProcessoDados import Process
 from Tratamentos.Normlizar import arquivos_process
+from parserPagina.Angelus import extrair_links as angeleus
 from parser.grupoangelus import extrair_cards as parser_grupo
 from parser.vidaPrev import extrair_cards as parser_vdprev
 from parser.new14Parser import extrair_cards as parser_news
@@ -25,15 +32,7 @@ from parserPagina.ggoInterno import extrair_links as parse_gg_link
 from parserPagina.arvoreVida import extrair_links as parse_arvore_div
 from parserPagina.orsolaPage import extrair_links as orsolaPage
 from parserPagina.pontaGrossa import extrair_links as PontaGrossaPage
-from parserPagina.Angelus import extrair_links as angeleus
-from utils.CrawlerStats import CrawlerStats
-from utils.obter_servidor import obter_servidores
-
-from downloads.RequestClient import RequestClient
-
-import pandas as pd
-from pathlib import Path
-
+from utils.CrawlerStats import enviar_relatorio_email,enviar_email_all
 
 class Processor:
     def __init__(self, max_workers: int = 10, batch_size: int = 1000):
@@ -149,31 +148,41 @@ class Processor:
                         "parametros": False,
                         "tdados": False,
                         "baixar": True
-                    }
-                }
-        # self.parsers = {
-        # 1: parser_grupo,
-        # 2: parser_consoni,
-        # 3: parser_ggo,
-        # 4: parser_ossel
-        # }
-       
+                    } 
+                    } 
         self.servidor_headers = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36'}
         self.batch_counter_status1 = 0
         self.batch_counter_status2 = 0
         self.batch_counter_status4 = 0
-        self.qtPage = 160 # resultado na tela e apresentado somente 160 registros 
-        self.indicePage = 1
-        self.time_sleps = 2
-        self.periodo = 'SEMANAL'
         self.true = True
         self.false =False
         self.parar = False
         # self.todos_resultados = []
         self.batch_size_verify = 50
         self.lock = threading.Lock()
-        # self.db = ConectionPool.DbPool(maxconn=self.max_workers)
+        self.lock = threading.Lock()
+               
+        # # ADICIONANDO A CAPTURA DOS ERROS DENTRO DO CODIGO, PARA CONEXAO E QUERY QUE DEREM ERROS
+        try:
+           self.db = ConectionPool.DbPool(maxconn=self.max_workers)
+        except psycopg2.OperationalError as err_db:
+            erro_msg = f"Erro operacional na inicialização do PostgreSQL (Timeout/Rede):\n{err_db}"
+            ClassLogger.logging.error(f"Erro capturado no init: {erro_msg}")
+                   
+            corpo_html = f"""
+                   <h2>Error Conexão com o Banco de Dados Recusada</h2>
+                   <p><b>Data/Hora:</b> {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}</p>
+                   <p><b>Detalhes do Erro:</b></p>
+                   <pre style="background-color: #f4f4f4; padding: 10px; border: 1px solid #ddd;">{erro_msg}</pre>
+                   """
+            enviar_email_all(corpo_html)
 
+            sys.exit(1)
+        except Exception as e:
+            erro_msg = f"Erro inesperado ao criar o Pool de Conexões: {str(e)}"
+            ClassLogger.logger.error(erro_msg)
+            enviar_email_all(f"<h2>Erro no Init</h2><p>{erro_msg}</p>")
+            sys.exit(1)
     def executar(self):
         inicio = datetime.now()
         ClassLogger.logging.info("=" * 80)
@@ -183,7 +192,7 @@ class Processor:
 
         try:
             # print(obter_servidores(self,[1, 7, 12]))
-            registros = obter_servidores(self,[10])
+            registros = obter_servidores(self,[13])
 
             total_processados = Process(self,registros)
 
@@ -221,9 +230,13 @@ class Processor:
         try:
             # print(obter_servidores(self,[1, 7, 12]))
                     
-            total_processados = arquivos_process(self)
+            result_normalizar = arquivos_process(self)
         
-            ClassLogger.logging.info(f"minha quantidade de dados processados :  {total_processados}")
+            ClassLogger.logging.info(f"minha quantidade de dados processados :  {len(result_normalizar)}")
+
+            if result_normalizar:
+                #REALIZAR O PROCESSAMENTO PARA INSERIR AO BANCO
+                upDados(result_normalizar)
                   
             fim = datetime.now()
             duracao = (fim - inicio).total_seconds()
@@ -244,9 +257,9 @@ class Processor:
 
 
     def executar_ciclo(self):
-        self.executar() 
+        # self.executar() 
         # PROCESSAR OS DADOS CAPTURADOS
-        # self.processar_arquivos() 
+        self.processar_arquivos() 
 
        
         
