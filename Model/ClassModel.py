@@ -1,11 +1,12 @@
-from tabulate import tabulate
-from typing import Dict, List, Optional, Tuple
+import traceback
 from Logs import ClassLogger
+from tabulate import tabulate
+from datetime import datetime
 from Conexao import ConectionClass
 from psycopg2.extras import RealDictCursor
-from datetime import datetime
-import traceback
-
+from typing import Dict, List, Optional, Tuple
+from Mail.ClassMail import enviar_email_all
+from utils.auxliares import auxliares
 
 
 def insert_interpol(self,registro: Dict, cursor, connection):
@@ -50,172 +51,117 @@ def insert_interpol(self,registro: Dict, cursor, connection):
 
 #inserir o lote dos registos
 # def insert_base_interpol(self, registro: dict, conn, falha_ids):
-def insert_base_obito(self, registro):
-    exits = False
+def insert_base_obito(self,registro):
+    # exits = False
+    # exits = exists_by_name(self,registro['NOME'],registro['DATA_FALECIMENTO'])
 
-    exits = exists_by_name(self,registro['NOME'],registro['DATA_FALECIMENTO'])
-
-    if not exits:
+    # if not exits:
    
         try:
-                query = """
-                    INSERT INTO  public.cntobitocaptura(
-	                    nome, idade, data_falecimento, ano_nascimento_estimado, link_fonte, ano_nascimento, cidade, familiares_a, familiares_b, conjuge, data_captura)
-                    VALUES  (%s,%s, %s, %s, %s, %s, %s, %s, %s, %s, %s) """
-
-              
-
-                print(query)
-                print((
-                registro['nome_completo'],
-                registro['sexo'],
-                registro['data_nascimento'],
-                registro['nacionalidade'],
-                registro['idiona'],
-                registro['acusacao'],
-                registro['thumbnail'],
-                registro['data_consulta'],
-                registro['hora_consulta'],
-                registro['id_interpol'],
-                registro['naturalidade'],
-                registro['person_sigla_unico']
+            query = """INSERT INTO obito_captura.obito_dados(
+	                nome, idade, data_falecimento, ano_nascimento_estimado, link_fonte, data_nascimento, cidade,data_captura)
+                    VALUES  (%s,%s, %s, %s, %s, %s, %s, %s) RETURNING obito_id;"""
+            print(query)
+            print((
+                registro['NOME'],
+                registro['IDADE'],
+                registro['DATA_FALECIMENTO'],
+                registro['ANO_NASCIMENTO_ESTIMADO'],
+                registro['LINK_FONTE'],
+                registro['ANO_NASCIMENTO_INFORMADO'],
+                registro['CIDADE'],
+            
                 ))
-        
-        
-            # return
-                # try:
-                    
-                #     with self.db.get_connection() as conn:
-                #         with conn.cursor() as cursor:
-                #             cursor.execute(query, (
-                                
-                #                 registro['nome_completo'],
-                #                 registro['sexo'],
-                #                 registro['data_nascimento'],
-                #                 registro['nacionalidade'],
-                #                 registro['idiona'],
-                #                 registro['acusacao'],
-                #                 registro['thumbnail'],
-                #                 registro['data_consulta'],
-                #                 registro['hora_consulta'],
-                #                 registro['id_interpol'],
-                #                 registro['naturalidade'],
-                #                 registro['country_wanted'],
-                #                 True  #quando inserir recebe true
-                #             ))
+                
+            try:
+                with self.db.get_connection() as conn:
+                        with conn.cursor() as cursor:
+                            cursor.execute(query, (
+                                registro['NOME'],
+                                registro['IDADE'],
+                                registro['DATA_FALECIMENTO'],
+                                registro['ANO_NASCIMENTO_ESTIMADO'],
+                                registro['LINK_FONTE'],
+                                registro['ANO_NASCIMENTO_INFORMADO'],
+                                registro['CIDADE'],
+                                registro['DATA_CAPTURA'],
+                                 ))
+                            
+                            novo_id = cursor.fetchone()[0]
 
-                #         return {
-                #                 "id": registro['id_interpol'],
-                #                 "status": "sucesso",
-                #                 "person_sigla_unico": registro['person_sigla_unico']
-                #             } 
-            
-            
-                # except Exception as e:
-                #     ClassLogger.logger.error(f"falha em inserir os dados na base  insert_base_interpol - {repr(e)}")
-                #     return {
-                #             "id": registro['id_interpol'],
-                #             "status": "erro",
-                #             "person_sigla_unico": registro['person_sigla_unico'],
-                #             'error': str(e)
-                # }
+                            if novo_id:
+                                return_info_familiar = inser_familiares(self,conn,registro,novo_id)
+                                  # INSERIR OS COMPLEMENTOS NA OUTRA TABELA  COM O ID
+                            
+                        print(f"ID RERTORNADO PARA O ÓBITO {novo_id}")
+
+                        return {
+                                "nome": registro['NOME'],
+                                "id_obito": novo_id,
+                                "status": "sucesso",
+                                "info_familiar": return_info_familiar if return_info_familiar else auxliares.INFO_INSERT
+                               
+                        } 
+            except Exception as e:
+                    print(traceback.format_exc())
+                    ClassLogger.logging.error(f"falha em inserir os dados na base  insert_base_interpol - {repr(e)}")
+                    return {
+                        "nome": registro['nome'],
+                        "status": "erro",
+                        "fonte": registro['LINK_FONTE'],
+                        "error": traceback.format_exc()
+                }
         except Exception as e:
             return {
-                # "id": registro['id_interpol'],
-                # "status": "existente", 
-                # "person_sigla_unico": registro['person_sigla_unico']
+               "nome": registro['nome'],
+               "status": "existente", 
+               "fonte": registro['LINK_FONTE']
             }
 
 
-def insert_data_interpol_new(conn,nome,
-                nascimento,
-                nacionalidade,
-                naturalidade,
-                id_interpol,
-                sexo,
-                acusacao,
-                idioma,
-                thumbnail,
-                data_consulta,
-                hora_consulta,
-                pais_procurado,person_sigla_unico):
+def inser_familiares(self,conn,registro,id_obito):
         
                 query = """
-                    INSERT INTO public.interpol_dados 
-                        (nome, sexo, nascimento,nacionalidade,idioma,acusacao,foto,data_consulta_fonte,hora_consulta_fonte,id_interpol,naturalidade, pais_procurado,situacao)
-                    VALUES  (%s,%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s,%s) """
+                    INSERT INTO obito_captura.obito_familiares 
+                        (id_obito, familiares_a, familiares_b,info_adicional)
+                    VALUES  (%s,%s, %s, %s) RETURNING familiar_id;"""
 
-                # print(f"Registro a ser inserido:")
-                # print(f"{nome}")
-                # print(f"{nacionalidade}")
-                # print(f"{naturalidade}")
-                # print(f"{id_interpol}")
-                # print(f"{sexo}")
-                # print(f"{acusacao}")
-                # print(f"{idioma}")
-                # print(f"{thumbnail}")
-                # print(f"{data_consulta}")
-                # print(f"{pais_procurado}")
-                # print(f"minha person sigla {person_sigla_unico}")
 
                 print(query)
                 print((
-                nome,
-                sexo,
-                nascimento,
-                nacionalidade,
-                idioma,
-                acusacao,
-                thumbnail,
-                data_consulta,
-                hora_consulta,
-                id_interpol,
-                naturalidade,
-                pais_procurado,
-                True  #quando inserir recebe true
-            ))
+                id_obito,
+                registro['FAMILIARES_A'],
+                registro['FAMILIARES_B'],
+                registro['FAMILIARES'],
+                ))
         
         
             # return
                 try:
                     with conn.cursor() as cursor:
                         cursor.execute(query, (
-                           nome,
-                           sexo,
-                           nascimento,
-                           nacionalidade,
-                           idioma,
-                           acusacao,
-                           thumbnail,
-                           data_consulta,
-                           hora_consulta,
-                           id_interpol,
-                           naturalidade,
-                           pais_procurado,
-                           True  #quando inserir recebe true
-                        ))
+                        id_obito,
+                        registro['FAMILIARES_A'],
+                        registro['FAMILIARES_B'],
+                        registro['FAMILIARES'],
+                    ))
 
                         return {
-                            "id": id_interpol,
+                            "ID_FAMILIAR": cursor.fetchone()[0],
                             "status": "sucesso",
-                            "person_sigla_unico": person_sigla_unico
-                        } 
+                            
+                    } 
             
             
                 except Exception as e:
                     ClassLogger.logger.error(f"falha em inserir os dados na base  insert_base_interpol - {repr(e)}")
                     return {
-                            "id": id_interpol,
+                            "id": id_obito,
                             "status": "erro",
-                            "person_sigla_unico": person_sigla_unico,
-                            'error': str(e)
+                            # "error": str(e),
+                            "error": traceback.format_exc()
                 }
-        # except Exception as e:
-        #     return {
-        #         "id": id_interpol,
-        #         "status": "existente", 
-        #         "person_sigla_unico": person_sigla_unico
-        #     }
+
 
 
 
@@ -393,30 +339,24 @@ def search_data_interpol(conn,idinterpol):
                      ClassLogger.logger.error(f"Falha em caputrar os dados o erro search_data_interpol {str(e)}")
            
 
-def exists_by_name(conn, person,falecimento):
-
-            print(conn)
+def exists_by_name(self, person,falecimento):
             print(person)
             print(falecimento)
             
-           
-            query = """SELECT EXISTS(SELECT 1 FROM public.cntobitocaptura WHERE UPPER(nome) = UPPER(%s) and data_falecimento = (%s)) as exists"""
+            query = """SELECT EXISTS(SELECT 1 FROM obito_captura.obito_dados WHERE UPPER(nome) = UPPER(%s) and data_falecimento = (%s)) as exists"""
             try:
-                with conn.cursor(cursor_factory=RealDictCursor) as cursor:
-                        cursor.execute(query, (person,falecimento))
-                        resultado = cursor.fetchall()
-                        resultado = cursor.fetchone()['exists']
-                        print(f"qual e o resultado {resultado}")
-                        return resultado
-            except Exception as e:              
+                with self.db.get_connection() as conn:
+                        with conn.cursor(cursor_factory=RealDictCursor) as cursor:
+                            cursor.execute(query, (person,falecimento))
+                                # resultado = cursor.fetchall()
+                            resultado = cursor.fetchone()['exists']
+                            print(f"qual e o resultado {resultado}")
+                            return resultado
+            except Exception as e: 
                 erro_detalhado = traceback.format_exc()
-        
-                # 2. Registra o erro completo no seu Logger
-                ClassLogger.logging.error(
-                    f"Falha em capturar os dados no cntobitocaptura.\n"
-                    f"Detalhes do Erro:\n{erro_detalhado}"
-                )
-                
+                erro_msg = f"Falha em capturar os dados no obito_captura.obito_dados {str(e)}"
+                ClassLogger.logging.error(erro_msg)
+                enviar_email_all(f"<h2>Erro processamento </h2><p>{erro_detalhado}</p>")
                 return False
                 
 def get_data_match_name_base(self) -> List[Dict]: 

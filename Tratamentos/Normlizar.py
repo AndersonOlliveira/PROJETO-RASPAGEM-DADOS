@@ -209,7 +209,8 @@ def arquivos_process(self):
                 #INICIA COMO SEM INFORMACAO
                 df['FAMILIARES_A'] =  auxliares.TEXTO_FAMILIARES
                 df['FAMILIARES_B'] =  auxliares.TEXTO_FAMILIARES
-                df['CONJUGE'] = auxliares.TEXTO_P
+                # df['CONJUGE'] = auxliares.TEXTO_P
+
 
                 if 'FAMILIARES' in df.columns:
                     df['FAMILIARES_A'] =  df['FAMILIARES'].apply(tratar_familiares_A).str.upper()
@@ -221,20 +222,19 @@ def arquivos_process(self):
                     if 'FILHOS' in df.columns:
                         df['FAMILIARES_B'] = df['FILHOS'].apply(tratar_familiares_array).str.upper()
                     if 'CONJUGE' in df.columns:
-                        df['CONJUGE'] = df['CONJUGE'].str.upper()
+                        df['FAMILIARES_A'] = df['CONJUGE'].str.upper()
                     else:
                         df['CONJUGE'] = auxliares.TEXTO_P
                     if 'FILIACAO_A' in df.columns:
                         df['FAMILIARES_A'] =  df['FILIACAO_A'].apply(remover).str.upper()
                         df['FAMILIARES_B'] =  df['FILIACAO_B'].apply(remover).str.upper()
-                    else:
-                        df['CONJUGE'] = auxliares.TEXTO_P
+                    # else:
+                    #     df['CONJUGE'] = auxliares.TEXTO_P
 
-                    
             
                 
                 # Aplica as funções nas colunas
-                df['CONJUGE'] = auxliares.TEXTO_P
+                # df['CONJUGE'] = auxliares.TEXTO_P
                 df['ANO_NASCIMENTO_ESTIMADO'] = df['IDADE'].apply(calcula_ano)
                 if 'DATA_NASCIMENTO' in df.columns:
                     df['ANO_NASCIMENTO_INFORMADO'] = df['DATA_NASCIMENTO'].apply(formatar_data)
@@ -263,17 +263,21 @@ def arquivos_process(self):
                     df['CIDADE'] = auxliares.TEXTO_P
 
                  # Filtra apenas as colunas desejadas para o resultado final
-                df_filtrado = df[['NOME', 'IDADE','DATA_FALECIMENTO','ANO_NASCIMENTO_ESTIMADO', 'LINK','DATA_CAPTURA','ANO_NASCIMENTO_INFORMADO','CIDADE','FAMILIARES_A','FAMILIARES_B','CONJUGE']].rename(columns={'LINK': 'LINK_FONTE'})
-                
+                df_filtrado = df[['NOME', 'IDADE','DATA_FALECIMENTO','ANO_NASCIMENTO_ESTIMADO', 'LINK','DATA_CAPTURA','ANO_NASCIMENTO_INFORMADO','CIDADE','FAMILIARES_A','FAMILIARES_B','FAMILIARES']].rename(columns={'LINK': 'LINK_FONTE'})
+                # df_filtrado = df[['NOME', 'IDADE','DATA_FALECIMENTO','ANO_NASCIMENTO_ESTIMADO', 'LINK','DATA_CAPTURA','ANO_NASCIMENTO_INFORMADO','CIDADE','FAMILIARES_A','FAMILIARES_B','CONJUGE','FAMILIARES']].rename(columns={'LINK': 'LINK_FONTE'})
+                dados_enviado = df_filtrado.reset_index(drop=True)
              
-                dados.append(df_filtrado)
+                dados.append(dados_enviado)
 
           
             df_final = pd.concat(dados, ignore_index=True)
             contador[arquivo]["QTINSERT"] = len(df_final)
-            # print(df_final)
+            dados_para_enviar = df_final.to_dict(orient="records")
+            # print(df_final.to_string(index=False))
+
+            # print(dados_para_enviar)
            
-        return dados
+        return dados_para_enviar
 
     except Exception as e:
          ClassLogger.logging.error(f"Erro fatal na execução para normalizar: {e}", exc_info=True)       
@@ -361,6 +365,7 @@ def achar_idade(nasc,falec):
         ClassLogger.logging.warning(f'Falha em achar os dados {e}' ,exc_info=True)
         return 0
 
+
 def tratar_familiares_A(textos):
     
     dados_extraidos = []
@@ -370,24 +375,89 @@ def tratar_familiares_A(textos):
         textos = str(textos)
 
     texto_limpo = re.sub(r'\(In Memoriam\)', '', textos, flags=re.IGNORECASE)
-    conjuges_pais = re.findall(r'(?:Sr\.|Sra\.|esposa Sra\.|esposo\.|Viúvo\.|Viúva\.)\s+([A-Z][a-zÀ-ÿ]+(?:\s+[A-Z][a-zÀ-ÿ]+)*)', texto_limpo)
-    # filhos_match = re.search(r'deixa (?:os filhos|as filhas|filhos)\s+([^,]+?)(?=\s*,\s*familiares|\s*$)', texto_limpo)
-        
-    # lista_filhos = []
-    # if filhos_match:
-    #     trecho_filhos = filhos_match.group(1).strip()
-         
-    #     lista_filhos = [f.strip() for f in re.split(r',|\s+e\s+', trecho_filhos) if f.strip()]
-        
-    #     dados_extraidos.append({
-    #         'Cônjuge ou Pais': ", ".join(conjuges_pais) if conjuges_pais else "Não informado",
-    #         'Filhos': ", ".join(lista_filhos) if lista_filhos else "Não informado"
-    #     })
+    conjuges_pais = re.findall(r'(?:Sr\.|Sra\.|esposa Sra\.|esposo\.|Viúvo\.|Viúva\.|Casado\.)\s+([A-Z][a-zÀ-ÿ]+(?:\s+[A-Z][a-zÀ-ÿ]+)*)', texto_limpo)
+
 
     return ", ".join(conjuges_pais) if conjuges_pais else auxliares.TEXTO_P 
 
 
 def tratar_familiares_B(textos):
+    
+    dados_extraidos = []
+    if textos is None or (isinstance(textos, float) and pd.isna(textos)):
+        textos = ""
+    elif not isinstance(textos, str):
+        textos = str(textos)
+
+    texto_limpo = re.sub(r'\(In Memoriam\)', '', textos, flags=re.IGNORECASE)
+    # conjuges_pais = re.findall(r'(?:Sr\.|Sra\.|esposa Sra\.|esposo\.|Viúvo\.|Viúva\.)\s+([A-Z][a-zÀ-ÿ]+(?:\s+[A-Z][a-zÀ-ÿ]+)*)', texto_limpo)
+    # filhos_match = re.search(r'deixa (?:os filhos|as filhas|filhos)\s+(.*?)(?=\s*,\s*(?:os filhos)\s+(.*?))(?=\s*,\s*(?:familiares|amigos|conhecidos|parentes)\b|\s*$)', 
+    # texto_limpo, 
+    # flags=re.IGNORECASE) 
+
+    filhos_match = re.search(
+    r'deixa\s+(?:os\s+filhos|as\s+filhas|o\s+filho|filhos?)\s+(.*?)(?=\s*,\s*(?:familiares|amigos|conhecidos|parentes|neto|bisneto)\b|\s*$)',
+    texto_limpo,
+    flags=re.IGNORECASE)
+
+    lista_filhos = []
+    if filhos_match:
+        trecho_filhos = filhos_match.group(1).strip()
+
+        trecho_filhos = re.sub(
+            r'\s*(?:\(\s*(?:In\s+Memoriam|neto|bisneto)\s*(?:[/*]\s*(?:neto|bisneto)\s*)*\)|\*\s*(?:neto|bisneto)\s*\*?)',
+            '',
+            trecho_filhos,
+            flags=re.IGNORECASE
+        )
+
+        lista_filhos = [f.strip() for f in re.split(r',|\s+e\s+', trecho_filhos) if f.strip()]
+    return ", ".join(lista_filhos) if lista_filhos else auxliares.TEXTO_P 
+
+def tratar_familiares_A_old(textos):
+    
+    dados_extraidos = []
+    conjue_pais = []
+    if textos is None or (isinstance(textos, float) and pd.isna(textos)):
+        textos = ""
+    elif not isinstance(textos, str):
+        textos = str(textos)
+
+    texto_limpo = re.sub(r'\(In Memoriam\)', '', textos, flags=re.IGNORECASE)
+    conjuges_pais = re.findall(r'(?:Sr\.|Sra\.|esposa Sra\.|esposo\.|Viúvo\.|Viúva\.)\s+([A-Z][a-zÀ-ÿ]+(?:\s+[A-Z][a-zÀ-ÿ]+)*)', texto_limpo)
+    filhos_match = re.search(r'deixa (?:os filhos|as filhas|filhos)\s+([^,]+?)(?=\s*,\s*familiares|\s*$)', texto_limpo)
+
+    lista_filhos = []
+    if filhos_match:
+        trecho_filhos = filhos_match.group(1).strip()
+         
+        lista_filhos = [f.strip() for f in re.split(r',|\s+e\s+', trecho_filhos) if f.strip()]
+
+
+    dados_extraidos.append({
+            'CONJUGE||PAIS': ", ".join(conjuges_pais) if conjuges_pais else auxliares.TEXTO_P,
+            'Filhos': ", ".join(lista_filhos) if lista_filhos else auxliares.TEXTO_P
+    })
+
+    for pessoa in dados_extraidos:
+        print(pessoa['CONJUGE||PAIS'])
+
+
+    # print(dados_extraidos['CONJUGE||PAIS'])
+
+    info_conjuge = ", ".join(conjuges_pais) if conjuges_pais else auxliares.TEXTO_P
+    
+    if not info_conjuge or info_conjuge == auxliares.TEXTO_P:
+        # print(f"estou saindo aqui {info_conjuge}")
+        tipo_info = auxliares.TEXTO_P
+    else:
+        tipo_info = auxliares.TEXTO_CONJU
+
+
+    return info_conjuge , tipo_info
+
+
+def tratar_familiares_B_old(textos):
     
     dados_extraidos = []
     if textos is None or (isinstance(textos, float) and pd.isna(textos)):
@@ -404,13 +474,19 @@ def tratar_familiares_B(textos):
         trecho_filhos = filhos_match.group(1).strip()
          
         lista_filhos = [f.strip() for f in re.split(r',|\s+e\s+', trecho_filhos) if f.strip()]
-        
-    #     dados_extraidos.append({
-    #         'Cônjuge ou Pais': ", ".join(conjuges_pais) if conjuges_pais else "Não informado",
-    #         'Filhos': ", ".join(lista_filhos) if lista_filhos else "Não informado"
-    #     })
 
-    return ", ".join(lista_filhos) if lista_filhos else auxliares.TEXTO_P 
+
+    info_ = ", ".join(lista_filhos) if lista_filhos else auxliares.TEXTO_P
+
+    if not info_ or info_ == auxliares.TEXTO_P:
+       
+        tipo_info = auxliares.TEXTO_P
+    else:
+        tipo_info = auxliares.TEXTO_FILHO
+
+   
+    return info_ , tipo_info
+    # return ", ".join(lista_filhos) if lista_filhos else auxliares.TEXTO_P 
 
 def tratar_familiares_array(lista):
     texto_limpo = re.sub(r'[\[\]]', '', lista).strip()

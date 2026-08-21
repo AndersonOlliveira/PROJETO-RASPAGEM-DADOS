@@ -38,7 +38,7 @@ class Processor:
     def __init__(self, max_workers: int = 10, batch_size: int = 1000):
         # self.config = ConectionClass.DbConfig()
         self.max_workers = max_workers
-        self.max_workers_conn = 2
+        self.max_workers_conn = 3
         self.batch_size = batch_size
         # self.client = RequestClient()
         self.stats = CrawlerStats()
@@ -160,7 +160,6 @@ class Processor:
         # self.todos_resultados = []
         self.batch_size_verify = 50
         self.lock = threading.Lock()
-        self.lock = threading.Lock()
                
         # # ADICIONANDO A CAPTURA DOS ERROS DENTRO DO CODIGO, PARA CONEXAO E QUERY QUE DEREM ERROS
         try:
@@ -180,7 +179,7 @@ class Processor:
             sys.exit(1)
         except Exception as e:
             erro_msg = f"Erro inesperado ao criar o Pool de Conexões: {str(e)}"
-            ClassLogger.logger.error(erro_msg)
+            ClassLogger.logging.error(erro_msg)
             enviar_email_all(f"<h2>Erro no Init</h2><p>{erro_msg}</p>")
             sys.exit(1)
     def executar(self):
@@ -235,8 +234,12 @@ class Processor:
             ClassLogger.logging.info(f"minha quantidade de dados processados :  {len(result_normalizar)}")
 
             if result_normalizar:
+                print("tenho o normalizar")
+                # print(result_normalizar)
                 #REALIZAR O PROCESSAMENTO PARA INSERIR AO BANCO
-                upDados(result_normalizar)
+                result_up = upDados(self,result_normalizar)
+
+                print(f"MEU RESULTADO {result_up}")
                   
             fim = datetime.now()
             duracao = (fim - inicio).total_seconds()

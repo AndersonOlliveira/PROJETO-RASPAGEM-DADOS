@@ -209168,3 +209168,2044 @@ Iniciando Processo para captura dos dados
 2026-08-18 15:33:34,248 - ERROR - Aplicação finalizada!
 2026-08-18 15:33:34,249 - INFO - 
 Iniciando Processo para captura dos dados
+2026-08-18 15:35:09,762 - INFO - ================================================================================
+2026-08-18 15:35:09,763 - INFO - Inicio proceso nomarlização dos dadose - 2026-08-18 15:35:09.762332
+2026-08-18 15:35:11,764 - INFO - ================================================================================
+2026-08-18 15:35:11,764 - INFO - ACESSANDO PAGINA PARA PROCESSAR OS DADOS
+2026-08-18 15:35:11,764 - INFO - REALIZAR A NORMALIZAR!!
+2026-08-18 15:35:12,022 - INFO - minha quantidade de dados processados :  1
+2026-08-18 15:35:12,035 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-18 15:35:12,035 - ERROR - Aplicação finalizada!
+2026-08-18 15:35:12,036 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-18 15:35:41,725 - INFO - ================================================================================
+2026-08-18 15:35:41,725 - INFO - Inicio proceso nomarlização dos dadose - 2026-08-18 15:35:41.725010
+2026-08-18 15:35:43,726 - INFO - ================================================================================
+2026-08-18 15:35:43,726 - INFO - ACESSANDO PAGINA PARA PROCESSAR OS DADOS
+2026-08-18 15:35:43,726 - INFO - REALIZAR A NORMALIZAR!!
+2026-08-18 15:35:44,147 - INFO - minha quantidade de dados processados :  1
+2026-08-18 15:35:44,174 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-18 15:35:44,175 - ERROR - Aplicação finalizada!
+2026-08-18 15:35:44,176 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-18 15:36:22,039 - INFO - ================================================================================
+2026-08-18 15:36:22,039 - INFO - Inicio proceso nomarlização dos dadose - 2026-08-18 15:36:22.039015
+2026-08-18 15:36:24,040 - INFO - ================================================================================
+2026-08-18 15:36:24,040 - INFO - ACESSANDO PAGINA PARA PROCESSAR OS DADOS
+2026-08-18 15:36:24,040 - INFO - REALIZAR A NORMALIZAR!!
+2026-08-18 15:36:24,299 - INFO - minha quantidade de dados processados :  1
+2026-08-18 15:36:24,333 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-18 15:36:24,334 - ERROR - Aplicação finalizada!
+2026-08-18 15:36:24,335 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-18 15:37:36,843 - INFO - ================================================================================
+2026-08-18 15:37:36,843 - INFO - Inicio proceso nomarlização dos dadose - 2026-08-18 15:37:36.843026
+2026-08-18 15:37:38,844 - INFO - ================================================================================
+2026-08-18 15:37:38,844 - INFO - ACESSANDO PAGINA PARA PROCESSAR OS DADOS
+2026-08-18 15:37:38,845 - INFO - REALIZAR A NORMALIZAR!!
+2026-08-18 15:37:39,980 - INFO - minha quantidade de dados processados :  1953
+2026-08-18 15:37:39,980 - ERROR - Erro fatal na execução: The truth value of a DataFrame is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
+2026-08-18 15:37:39,981 - ERROR - Aplicação finalizada!
+2026-08-18 15:37:39,982 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-18 15:37:55,656 - INFO - ================================================================================
+2026-08-18 15:37:55,656 - INFO - Inicio proceso nomarlização dos dadose - 2026-08-18 15:37:55.655947
+2026-08-18 15:37:57,657 - INFO - ================================================================================
+2026-08-18 15:37:57,657 - INFO - ACESSANDO PAGINA PARA PROCESSAR OS DADOS
+2026-08-18 15:37:57,657 - INFO - REALIZAR A NORMALIZAR!!
+2026-08-18 15:37:58,102 - INFO - minha quantidade de dados processados :  1953
+2026-08-18 15:37:58,102 - ERROR - Erro fatal na execução: The truth value of a DataFrame is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
+2026-08-18 15:37:58,103 - ERROR - Aplicação finalizada!
+2026-08-18 15:37:58,103 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-18 15:38:35,743 - INFO - ================================================================================
+2026-08-18 15:38:35,744 - INFO - Inicio proceso nomarlização dos dadose - 2026-08-18 15:38:35.743843
+2026-08-18 15:38:37,744 - INFO - ================================================================================
+2026-08-18 15:38:37,745 - INFO - ACESSANDO PAGINA PARA PROCESSAR OS DADOS
+2026-08-18 15:38:37,745 - INFO - REALIZAR A NORMALIZAR!!
+2026-08-18 15:38:38,130 - INFO - minha quantidade de dados processados :  1953
+2026-08-18 15:38:38,130 - ERROR - Erro fatal na execução: The truth value of a DataFrame is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
+2026-08-18 15:38:38,130 - ERROR - Aplicação finalizada!
+2026-08-18 15:38:38,131 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-18 15:39:58,585 - INFO - ================================================================================
+2026-08-18 15:39:58,586 - INFO - Inicio proceso nomarlização dos dadose - 2026-08-18 15:39:58.585572
+2026-08-18 15:40:00,586 - INFO - ================================================================================
+2026-08-18 15:40:00,586 - INFO - ACESSANDO PAGINA PARA PROCESSAR OS DADOS
+2026-08-18 15:40:00,586 - INFO - REALIZAR A NORMALIZAR!!
+2026-08-18 15:40:00,809 - INFO - minha quantidade de dados processados :  1953
+2026-08-18 15:40:00,809 - ERROR - Erro fatal na execução: The truth value of a DataFrame is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
+2026-08-18 15:40:00,809 - ERROR - Aplicação finalizada!
+2026-08-18 15:40:00,810 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-18 15:40:21,261 - INFO - ================================================================================
+2026-08-18 15:40:21,284 - INFO - Inicio proceso nomarlização dos dadose - 2026-08-18 15:40:21.261413
+2026-08-18 15:40:23,285 - INFO - ================================================================================
+2026-08-18 15:40:23,285 - INFO - ACESSANDO PAGINA PARA PROCESSAR OS DADOS
+2026-08-18 15:40:23,285 - INFO - REALIZAR A NORMALIZAR!!
+2026-08-18 15:40:23,554 - INFO - minha quantidade de dados processados :  1953
+2026-08-18 15:40:23,554 - ERROR - Erro fatal na execução: The truth value of a DataFrame is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
+2026-08-18 15:40:23,555 - ERROR - Aplicação finalizada!
+2026-08-18 15:40:23,555 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-18 15:41:05,122 - INFO - ================================================================================
+2026-08-18 15:41:05,122 - INFO - Inicio proceso nomarlização dos dadose - 2026-08-18 15:41:05.122428
+2026-08-18 15:41:07,123 - INFO - ================================================================================
+2026-08-18 15:41:07,124 - INFO - ACESSANDO PAGINA PARA PROCESSAR OS DADOS
+2026-08-18 15:41:07,124 - INFO - REALIZAR A NORMALIZAR!!
+2026-08-18 15:41:07,487 - INFO - minha quantidade de dados processados :  1953
+2026-08-18 15:41:07,488 - ERROR - Erro fatal na execução: The truth value of a DataFrame is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
+2026-08-18 15:41:07,488 - ERROR - Aplicação finalizada!
+2026-08-18 15:41:07,490 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-18 15:41:37,635 - INFO - ================================================================================
+2026-08-18 15:41:37,647 - INFO - Inicio proceso nomarlização dos dadose - 2026-08-18 15:41:37.635391
+2026-08-18 15:41:39,648 - INFO - ================================================================================
+2026-08-18 15:41:39,648 - INFO - ACESSANDO PAGINA PARA PROCESSAR OS DADOS
+2026-08-18 15:41:39,649 - INFO - REALIZAR A NORMALIZAR!!
+2026-08-18 15:41:39,932 - INFO - minha quantidade de dados processados :  1953
+2026-08-18 15:41:40,071 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-18 15:41:40,071 - ERROR - Aplicação finalizada!
+2026-08-18 15:41:40,073 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-18 15:41:57,139 - INFO - ================================================================================
+2026-08-18 15:41:57,140 - INFO - Inicio proceso nomarlização dos dadose - 2026-08-18 15:41:57.139661
+2026-08-18 15:41:59,140 - INFO - ================================================================================
+2026-08-18 15:41:59,140 - INFO - ACESSANDO PAGINA PARA PROCESSAR OS DADOS
+2026-08-18 15:41:59,141 - INFO - REALIZAR A NORMALIZAR!!
+2026-08-18 15:41:59,574 - INFO - minha quantidade de dados processados :  1953
+2026-08-18 15:41:59,576 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-18 15:41:59,576 - ERROR - Aplicação finalizada!
+2026-08-18 15:41:59,577 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-19 08:34:53,696 - INFO - ================================================================================
+2026-08-19 08:34:53,698 - INFO - Inicio proceso nomarlização dos dadose - 2026-08-19 08:34:53.696436
+2026-08-19 08:34:55,705 - INFO - ================================================================================
+2026-08-19 08:34:55,708 - INFO - ACESSANDO PAGINA PARA PROCESSAR OS DADOS
+2026-08-19 08:34:55,709 - INFO - REALIZAR A NORMALIZAR!!
+2026-08-19 08:35:00,402 - INFO - minha quantidade de dados processados :  1953
+2026-08-19 08:35:01,907 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-19 08:35:02,135 - ERROR - Aplicação finalizada!
+2026-08-19 08:35:02,292 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-19 08:40:12,385 - INFO - ================================================================================
+2026-08-19 08:40:12,409 - INFO - Inicio proceso nomarlização dos dadose - 2026-08-19 08:40:12.385694
+2026-08-19 08:40:14,410 - INFO - ================================================================================
+2026-08-19 08:40:14,418 - INFO - ACESSANDO PAGINA PARA PROCESSAR OS DADOS
+2026-08-19 08:40:14,425 - INFO - REALIZAR A NORMALIZAR!!
+2026-08-19 08:40:16,126 - INFO - minha quantidade de dados processados :  1953
+2026-08-19 08:40:16,126 - ERROR - Erro fatal na execução: upDados() missing 1 required positional argument: 'dados_tabela'
+2026-08-19 08:40:16,127 - ERROR - Aplicação finalizada!
+2026-08-19 08:40:16,129 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-19 08:40:45,285 - INFO - ================================================================================
+2026-08-19 08:40:45,286 - INFO - Inicio proceso nomarlização dos dadose - 2026-08-19 08:40:45.285431
+2026-08-19 08:40:47,286 - INFO - ================================================================================
+2026-08-19 08:40:47,287 - INFO - ACESSANDO PAGINA PARA PROCESSAR OS DADOS
+2026-08-19 08:40:47,288 - INFO - REALIZAR A NORMALIZAR!!
+2026-08-19 08:40:48,051 - INFO - minha quantidade de dados processados :  1953
+2026-08-19 08:40:48,170 - ERROR - Falha em capturar os dados no cntobitocaptura.
+Detalhes do Erro:
+Traceback (most recent call last):
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\Model\ClassModel.py", line 406, in exists_by_name
+    cursor.execute(query, (person,falecimento))
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\.venvFalecidos\Lib\site-packages\psycopg2\extras.py", line 236, in execute
+    return super().execute(query, vars)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+
+2026-08-19 08:40:48,172 - ERROR - Falha em capturar os dados no cntobitocaptura.
+Detalhes do Erro:
+Traceback (most recent call last):
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\Model\ClassModel.py", line 406, in exists_by_name
+    cursor.execute(query, (person,falecimento))
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\.venvFalecidos\Lib\site-packages\psycopg2\extras.py", line 236, in execute
+    return super().execute(query, vars)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+psycopg2.errors.UndefinedTable: relation "public.cntobitocaptura" does not exist
+LINE 1: SELECT EXISTS(SELECT 1 FROM public.cntobitocaptura WHERE UPP...
+                                    ^
+
+
+2026-08-19 08:40:48,207 - ERROR - Falha em capturar os dados no cntobitocaptura.
+Detalhes do Erro:
+Traceback (most recent call last):
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\Model\ClassModel.py", line 406, in exists_by_name
+    cursor.execute(query, (person,falecimento))
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\.venvFalecidos\Lib\site-packages\psycopg2\extras.py", line 236, in execute
+    return super().execute(query, vars)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+psycopg2.errors.UndefinedTable: relation "public.cntobitocaptura" does not exist
+LINE 1: SELECT EXISTS(SELECT 1 FROM public.cntobitocaptura WHERE UPP...
+                                    ^
+
+
+2026-08-19 08:40:48,219 - ERROR - Falha em capturar os dados no cntobitocaptura.
+Detalhes do Erro:
+Traceback (most recent call last):
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\Model\ClassModel.py", line 406, in exists_by_name
+    cursor.execute(query, (person,falecimento))
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\.venvFalecidos\Lib\site-packages\psycopg2\extras.py", line 236, in execute
+    return super().execute(query, vars)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+
+2026-08-19 08:40:48,233 - ERROR - Falha em capturar os dados no cntobitocaptura.
+Detalhes do Erro:
+Traceback (most recent call last):
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\Model\ClassModel.py", line 406, in exists_by_name
+    cursor.execute(query, (person,falecimento))
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\.venvFalecidos\Lib\site-packages\psycopg2\extras.py", line 236, in execute
+    return super().execute(query, vars)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+
+2026-08-19 08:40:48,251 - ERROR - Falha em capturar os dados no cntobitocaptura.
+Detalhes do Erro:
+Traceback (most recent call last):
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\Model\ClassModel.py", line 406, in exists_by_name
+    cursor.execute(query, (person,falecimento))
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\.venvFalecidos\Lib\site-packages\psycopg2\extras.py", line 236, in execute
+    return super().execute(query, vars)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+
+2026-08-19 08:40:48,267 - ERROR - Falha em capturar os dados no cntobitocaptura.
+Detalhes do Erro:
+Traceback (most recent call last):
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\Model\ClassModel.py", line 406, in exists_by_name
+    cursor.execute(query, (person,falecimento))
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\.venvFalecidos\Lib\site-packages\psycopg2\extras.py", line 236, in execute
+    return super().execute(query, vars)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+
+2026-08-19 08:40:48,284 - ERROR - Falha em capturar os dados no cntobitocaptura.
+Detalhes do Erro:
+Traceback (most recent call last):
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\Model\ClassModel.py", line 406, in exists_by_name
+    cursor.execute(query, (person,falecimento))
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\.venvFalecidos\Lib\site-packages\psycopg2\extras.py", line 236, in execute
+    return super().execute(query, vars)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+
+2026-08-19 08:40:48,304 - ERROR - Falha em capturar os dados no cntobitocaptura.
+Detalhes do Erro:
+Traceback (most recent call last):
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\Model\ClassModel.py", line 406, in exists_by_name
+    cursor.execute(query, (person,falecimento))
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\.venvFalecidos\Lib\site-packages\psycopg2\extras.py", line 236, in execute
+    return super().execute(query, vars)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+
+2026-08-19 08:40:48,331 - ERROR - Falha em capturar os dados no cntobitocaptura.
+Detalhes do Erro:
+Traceback (most recent call last):
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\Model\ClassModel.py", line 406, in exists_by_name
+    cursor.execute(query, (person,falecimento))
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\.venvFalecidos\Lib\site-packages\psycopg2\extras.py", line 236, in execute
+    return super().execute(query, vars)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+
+2026-08-19 08:40:48,333 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-19 08:40:48,333 - ERROR - Aplicação finalizada!
+2026-08-19 08:40:48,335 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-19 08:41:58,417 - INFO - ================================================================================
+2026-08-19 08:41:58,418 - INFO - Inicio proceso nomarlização dos dadose - 2026-08-19 08:41:58.417463
+2026-08-19 08:42:00,419 - INFO - ================================================================================
+2026-08-19 08:42:00,419 - INFO - ACESSANDO PAGINA PARA PROCESSAR OS DADOS
+2026-08-19 08:42:00,420 - INFO - REALIZAR A NORMALIZAR!!
+2026-08-19 08:42:01,015 - INFO - minha quantidade de dados processados :  1953
+2026-08-19 08:42:01,085 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-19 08:42:01,086 - ERROR - Aplicação finalizada!
+2026-08-19 08:42:01,089 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-19 08:44:05,573 - INFO - ================================================================================
+2026-08-19 08:44:05,574 - INFO - Inicio proceso nomarlização dos dadose - 2026-08-19 08:44:05.573311
+2026-08-19 08:44:07,575 - INFO - ================================================================================
+2026-08-19 08:44:07,576 - INFO - ACESSANDO PAGINA PARA PROCESSAR OS DADOS
+2026-08-19 08:44:07,577 - INFO - REALIZAR A NORMALIZAR!!
+2026-08-19 08:44:08,792 - INFO - minha quantidade de dados processados :  1953
+2026-08-19 08:44:08,955 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-19 08:44:08,956 - ERROR - Aplicação finalizada!
+2026-08-19 08:44:08,959 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-19 08:45:06,539 - INFO - ================================================================================
+2026-08-19 08:45:06,541 - INFO - Inicio proceso nomarlização dos dadose - 2026-08-19 08:45:06.539848
+2026-08-19 08:45:08,541 - INFO - ================================================================================
+2026-08-19 08:45:08,542 - INFO - ACESSANDO PAGINA PARA PROCESSAR OS DADOS
+2026-08-19 08:45:08,542 - INFO - REALIZAR A NORMALIZAR!!
+2026-08-19 08:45:09,172 - INFO - minha quantidade de dados processados :  1953
+2026-08-19 08:45:09,260 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-19 08:45:09,261 - ERROR - Aplicação finalizada!
+2026-08-19 08:45:09,262 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-19 08:47:25,515 - INFO - ================================================================================
+2026-08-19 08:47:25,523 - INFO - Inicio proceso nomarlização dos dadose - 2026-08-19 08:47:25.515624
+2026-08-19 08:47:27,525 - INFO - ================================================================================
+2026-08-19 08:47:27,526 - INFO - ACESSANDO PAGINA PARA PROCESSAR OS DADOS
+2026-08-19 08:47:27,527 - INFO - REALIZAR A NORMALIZAR!!
+2026-08-19 08:47:28,317 - INFO - minha quantidade de dados processados :  1953
+2026-08-19 08:47:28,389 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-19 08:47:28,390 - ERROR - Aplicação finalizada!
+2026-08-19 08:47:28,392 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-19 08:48:03,130 - INFO - ================================================================================
+2026-08-19 08:48:03,169 - INFO - Inicio proceso nomarlização dos dadose - 2026-08-19 08:48:03.130722
+2026-08-19 08:48:05,285 - INFO - ================================================================================
+2026-08-19 08:48:05,286 - INFO - ACESSANDO PAGINA PARA PROCESSAR OS DADOS
+2026-08-19 08:48:05,286 - INFO - REALIZAR A NORMALIZAR!!
+2026-08-19 08:48:06,061 - INFO - minha quantidade de dados processados :  1953
+2026-08-19 08:48:07,221 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-19 08:48:07,221 - ERROR - Aplicação finalizada!
+2026-08-19 08:48:07,223 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-19 08:55:28,250 - INFO - ================================================================================
+2026-08-19 08:55:28,252 - INFO - Inicio proceso nomarlização dos dadose - 2026-08-19 08:55:28.250523
+2026-08-19 08:55:30,253 - INFO - ================================================================================
+2026-08-19 08:55:30,272 - INFO - ACESSANDO PAGINA PARA PROCESSAR OS DADOS
+2026-08-19 08:55:30,285 - INFO - REALIZAR A NORMALIZAR!!
+2026-08-19 08:55:31,478 - INFO - minha quantidade de dados processados :  1953
+2026-08-19 08:55:32,274 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-19 08:55:32,308 - ERROR - Aplicação finalizada!
+2026-08-19 08:55:32,363 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-19 08:56:10,815 - INFO - ================================================================================
+2026-08-19 08:56:10,816 - INFO - Inicio proceso nomarlização dos dadose - 2026-08-19 08:56:10.815743
+2026-08-19 08:56:12,817 - INFO - ================================================================================
+2026-08-19 08:56:12,818 - INFO - ACESSANDO PAGINA PARA PROCESSAR OS DADOS
+2026-08-19 08:56:12,818 - INFO - REALIZAR A NORMALIZAR!!
+2026-08-19 08:56:13,679 - INFO - minha quantidade de dados processados :  1953
+2026-08-19 08:56:14,654 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-19 08:56:14,655 - ERROR - Aplicação finalizada!
+2026-08-19 08:56:14,659 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-19 08:56:51,008 - INFO - ================================================================================
+2026-08-19 08:56:51,020 - INFO - Inicio proceso nomarlização dos dadose - 2026-08-19 08:56:51.008671
+2026-08-19 08:56:53,021 - INFO - ================================================================================
+2026-08-19 08:56:53,023 - INFO - ACESSANDO PAGINA PARA PROCESSAR OS DADOS
+2026-08-19 08:56:53,024 - INFO - REALIZAR A NORMALIZAR!!
+2026-08-19 08:56:54,119 - INFO - minha quantidade de dados processados :  1953
+2026-08-19 08:56:55,019 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-19 08:56:55,019 - ERROR - Aplicação finalizada!
+2026-08-19 08:56:55,021 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-19 09:02:38,038 - INFO - ================================================================================
+2026-08-19 09:02:38,039 - INFO - Inicio proceso nomarlização dos dadose - 2026-08-19 09:02:38.037910
+2026-08-19 09:02:40,040 - INFO - ================================================================================
+2026-08-19 09:02:40,040 - INFO - ACESSANDO PAGINA PARA PROCESSAR OS DADOS
+2026-08-19 09:02:40,040 - INFO - REALIZAR A NORMALIZAR!!
+2026-08-19 09:02:40,635 - INFO - minha quantidade de dados processados :  1953
+2026-08-19 09:02:43,182 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-19 09:02:43,182 - ERROR - Aplicação finalizada!
+2026-08-19 09:02:43,185 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-19 09:03:39,287 - INFO - ================================================================================
+2026-08-19 09:03:39,288 - INFO - Inicio proceso nomarlização dos dadose - 2026-08-19 09:03:39.287541
+2026-08-19 09:03:41,289 - INFO - ================================================================================
+2026-08-19 09:03:41,290 - INFO - ACESSANDO PAGINA PARA PROCESSAR OS DADOS
+2026-08-19 09:03:41,290 - INFO - REALIZAR A NORMALIZAR!!
+2026-08-19 09:03:41,964 - INFO - minha quantidade de dados processados :  1953
+2026-08-19 09:03:43,284 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-19 09:03:43,285 - ERROR - Aplicação finalizada!
+2026-08-19 09:03:43,287 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-19 09:05:29,446 - INFO - ================================================================================
+2026-08-19 09:05:29,447 - INFO - Inicio proceso nomarlização dos dadose - 2026-08-19 09:05:29.446297
+2026-08-19 09:05:31,448 - INFO - ================================================================================
+2026-08-19 09:05:31,448 - INFO - ACESSANDO PAGINA PARA PROCESSAR OS DADOS
+2026-08-19 09:05:31,449 - INFO - REALIZAR A NORMALIZAR!!
+2026-08-19 09:05:32,015 - INFO - minha quantidade de dados processados :  1953
+2026-08-19 09:05:34,713 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-19 09:05:34,713 - ERROR - Aplicação finalizada!
+2026-08-19 09:05:34,714 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-19 09:06:11,046 - INFO - ================================================================================
+2026-08-19 09:06:11,047 - INFO - Inicio proceso nomarlização dos dadose - 2026-08-19 09:06:11.045937
+2026-08-19 09:06:13,048 - INFO - ================================================================================
+2026-08-19 09:06:13,049 - INFO - ACESSANDO PAGINA PARA PROCESSAR OS DADOS
+2026-08-19 09:06:13,049 - INFO - REALIZAR A NORMALIZAR!!
+2026-08-19 09:06:13,907 - INFO - minha quantidade de dados processados :  1953
+2026-08-19 09:06:14,879 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-19 09:06:14,902 - ERROR - Aplicação finalizada!
+2026-08-19 09:06:14,905 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-19 09:06:46,839 - INFO - ================================================================================
+2026-08-19 09:06:46,839 - INFO - Inicio proceso nomarlização dos dadose - 2026-08-19 09:06:46.839046
+2026-08-19 09:06:48,841 - INFO - ================================================================================
+2026-08-19 09:06:48,841 - INFO - ACESSANDO PAGINA PARA PROCESSAR OS DADOS
+2026-08-19 09:06:48,842 - INFO - REALIZAR A NORMALIZAR!!
+2026-08-19 09:06:50,149 - INFO - minha quantidade de dados processados :  1953
+2026-08-19 09:06:51,184 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-19 09:06:51,185 - ERROR - Aplicação finalizada!
+2026-08-19 09:06:51,187 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-19 09:07:48,946 - INFO - ================================================================================
+2026-08-19 09:07:48,948 - INFO - Inicio proceso nomarlização dos dadose - 2026-08-19 09:07:48.946031
+2026-08-19 09:07:50,950 - INFO - ================================================================================
+2026-08-19 09:07:50,952 - INFO - ACESSANDO PAGINA PARA PROCESSAR OS DADOS
+2026-08-19 09:07:50,954 - INFO - REALIZAR A NORMALIZAR!!
+2026-08-19 09:07:51,635 - INFO - minha quantidade de dados processados :  1953
+2026-08-19 09:07:52,725 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-19 09:07:52,726 - ERROR - Aplicação finalizada!
+2026-08-19 09:07:52,727 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-19 09:09:49,539 - INFO - ================================================================================
+2026-08-19 09:09:49,557 - INFO - Inicio proceso nomarlização dos dadose - 2026-08-19 09:09:49.539426
+2026-08-19 09:09:51,558 - INFO - ================================================================================
+2026-08-19 09:09:51,559 - INFO - ACESSANDO PAGINA PARA PROCESSAR OS DADOS
+2026-08-19 09:09:51,559 - INFO - REALIZAR A NORMALIZAR!!
+2026-08-19 09:09:52,162 - INFO - minha quantidade de dados processados :  1953
+2026-08-19 09:09:53,767 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-19 09:09:53,768 - ERROR - Aplicação finalizada!
+2026-08-19 09:09:53,770 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-19 09:13:19,393 - INFO - ================================================================================
+2026-08-19 09:13:19,394 - INFO - Inicio proceso nomarlização dos dadose - 2026-08-19 09:13:19.393274
+2026-08-19 09:13:21,395 - INFO - ================================================================================
+2026-08-19 09:13:21,396 - INFO - ACESSANDO PAGINA PARA PROCESSAR OS DADOS
+2026-08-19 09:13:21,397 - INFO - REALIZAR A NORMALIZAR!!
+2026-08-19 09:13:22,228 - INFO - minha quantidade de dados processados :  1953
+2026-08-19 09:13:22,666 - ERROR - Erro fatal na execução: list.append() takes exactly one argument (2 given)
+2026-08-19 09:13:22,667 - ERROR - Aplicação finalizada!
+2026-08-19 09:13:22,672 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-19 09:16:33,353 - INFO - ================================================================================
+2026-08-19 09:16:33,382 - INFO - Inicio proceso nomarlização dos dadose - 2026-08-19 09:16:33.353360
+2026-08-19 09:16:35,415 - INFO - ================================================================================
+2026-08-19 09:16:35,447 - INFO - ACESSANDO PAGINA PARA PROCESSAR OS DADOS
+2026-08-19 09:16:35,475 - INFO - REALIZAR A NORMALIZAR!!
+2026-08-19 09:16:37,278 - INFO - minha quantidade de dados processados :  1953
+2026-08-19 09:16:38,890 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-19 09:16:38,944 - ERROR - Aplicação finalizada!
+2026-08-19 09:16:38,980 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-19 09:17:13,803 - INFO - ================================================================================
+2026-08-19 09:17:13,804 - INFO - Inicio proceso nomarlização dos dadose - 2026-08-19 09:17:13.803413
+2026-08-19 09:17:15,805 - INFO - ================================================================================
+2026-08-19 09:17:15,806 - INFO - ACESSANDO PAGINA PARA PROCESSAR OS DADOS
+2026-08-19 09:17:15,807 - INFO - REALIZAR A NORMALIZAR!!
+2026-08-19 09:17:17,184 - INFO - minha quantidade de dados processados :  1953
+2026-08-19 09:17:18,057 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-19 09:17:18,061 - ERROR - Aplicação finalizada!
+2026-08-19 09:17:18,066 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-19 09:19:00,610 - INFO - ================================================================================
+2026-08-19 09:19:00,611 - INFO - Inicio proceso nomarlização dos dadose - 2026-08-19 09:19:00.609900
+2026-08-19 09:19:02,612 - INFO - ================================================================================
+2026-08-19 09:19:02,613 - INFO - ACESSANDO PAGINA PARA PROCESSAR OS DADOS
+2026-08-19 09:19:02,613 - INFO - REALIZAR A NORMALIZAR!!
+2026-08-19 09:19:03,589 - INFO - minha quantidade de dados processados :  1953
+2026-08-19 09:19:04,384 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-19 09:19:04,385 - ERROR - Aplicação finalizada!
+2026-08-19 09:19:04,388 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-19 09:20:45,248 - INFO - ================================================================================
+2026-08-19 09:20:45,250 - INFO - Inicio proceso nomarlização dos dadose - 2026-08-19 09:20:45.248739
+2026-08-19 09:20:47,250 - INFO - ================================================================================
+2026-08-19 09:20:47,251 - INFO - ACESSANDO PAGINA PARA PROCESSAR OS DADOS
+2026-08-19 09:20:47,251 - INFO - REALIZAR A NORMALIZAR!!
+2026-08-19 09:20:47,855 - INFO - minha quantidade de dados processados :  1953
+2026-08-19 09:20:48,779 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-19 09:20:48,779 - ERROR - Aplicação finalizada!
+2026-08-19 09:20:48,781 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-19 09:26:06,464 - INFO - ================================================================================
+2026-08-19 09:26:06,467 - INFO - Inicio proceso nomarlização dos dadose - 2026-08-19 09:26:06.464583
+2026-08-19 09:26:08,469 - INFO - ================================================================================
+2026-08-19 09:26:08,469 - INFO - ACESSANDO PAGINA PARA PROCESSAR OS DADOS
+2026-08-19 09:26:08,469 - INFO - REALIZAR A NORMALIZAR!!
+2026-08-19 09:26:08,791 - INFO - minha quantidade de dados processados :  1953
+2026-08-19 09:26:09,426 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-19 09:26:09,426 - ERROR - Aplicação finalizada!
+2026-08-19 09:26:09,428 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-19 09:26:40,834 - INFO - ================================================================================
+2026-08-19 09:26:40,835 - INFO - Inicio proceso nomarlização dos dadose - 2026-08-19 09:26:40.834607
+2026-08-19 09:26:42,836 - INFO - ================================================================================
+2026-08-19 09:26:42,836 - INFO - ACESSANDO PAGINA PARA PROCESSAR OS DADOS
+2026-08-19 09:26:42,837 - INFO - REALIZAR A NORMALIZAR!!
+2026-08-19 09:26:43,623 - INFO - minha quantidade de dados processados :  1953
+2026-08-19 09:26:44,274 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-19 09:26:44,274 - ERROR - Aplicação finalizada!
+2026-08-19 09:26:44,275 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-19 10:01:55,178 - INFO - ================================================================================
+2026-08-19 10:01:55,179 - INFO - Inicio proceso nomarlização dos dadose - 2026-08-19 10:01:55.178298
+2026-08-19 10:01:57,179 - INFO - ================================================================================
+2026-08-19 10:01:57,180 - INFO - ACESSANDO PAGINA PARA PROCESSAR OS DADOS
+2026-08-19 10:01:57,182 - INFO - REALIZAR A NORMALIZAR!!
+2026-08-19 10:01:57,514 - INFO - minha quantidade de dados processados :  1953
+2026-08-19 10:01:58,182 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-19 10:01:58,182 - ERROR - Aplicação finalizada!
+2026-08-19 10:01:58,183 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-19 10:06:08,810 - INFO - ================================================================================
+2026-08-19 10:06:08,812 - INFO - Inicio proceso nomarlização dos dadose - 2026-08-19 10:06:08.810684
+2026-08-19 10:06:10,813 - INFO - ================================================================================
+2026-08-19 10:06:10,813 - INFO - ACESSANDO PAGINA PARA PROCESSAR OS DADOS
+2026-08-19 10:06:10,813 - INFO - REALIZAR A NORMALIZAR!!
+2026-08-19 10:06:11,188 - INFO - minha quantidade de dados processados :  1953
+2026-08-19 10:06:11,827 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-19 10:06:11,827 - ERROR - Aplicação finalizada!
+2026-08-19 10:06:11,827 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-19 10:08:37,100 - INFO - ================================================================================
+2026-08-19 10:08:37,100 - INFO - Inicio proceso nomarlização dos dadose - 2026-08-19 10:08:37.100291
+2026-08-19 10:08:39,101 - INFO - ================================================================================
+2026-08-19 10:08:39,102 - INFO - ACESSANDO PAGINA PARA PROCESSAR OS DADOS
+2026-08-19 10:08:39,102 - INFO - REALIZAR A NORMALIZAR!!
+2026-08-19 10:08:39,334 - INFO - minha quantidade de dados processados :  1953
+2026-08-19 10:08:39,806 - ERROR - Erro fatal na execução: '>=' not supported between instances of 'TypeError' and 'int'
+2026-08-19 10:08:39,807 - ERROR - Aplicação finalizada!
+2026-08-19 10:08:39,807 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-19 10:09:53,195 - INFO - ================================================================================
+2026-08-19 10:09:53,195 - INFO - Inicio proceso nomarlização dos dadose - 2026-08-19 10:09:53.195202
+2026-08-19 10:09:55,196 - INFO - ================================================================================
+2026-08-19 10:09:55,196 - INFO - ACESSANDO PAGINA PARA PROCESSAR OS DADOS
+2026-08-19 10:09:55,196 - INFO - REALIZAR A NORMALIZAR!!
+2026-08-19 10:09:55,449 - INFO - minha quantidade de dados processados :  1953
+2026-08-19 10:09:55,886 - ERROR - ERRO LINHA PROCESSAMENTO RESULT EXISTS '>=' not supported between instances of 'UndefinedTable' and 'int'
+2026-08-19 10:09:56,052 - ERROR - ERRO LINHA PROCESSAMENTO RESULT EXISTS '>=' not supported between instances of 'InFailedSqlTransaction' and 'int'
+2026-08-19 10:09:56,205 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-19 10:09:56,205 - ERROR - Aplicação finalizada!
+2026-08-19 10:09:56,205 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-19 10:10:26,812 - INFO - ================================================================================
+2026-08-19 10:10:26,813 - INFO - Inicio proceso nomarlização dos dadose - 2026-08-19 10:10:26.812562
+2026-08-19 10:10:28,813 - INFO - ================================================================================
+2026-08-19 10:10:28,813 - INFO - ACESSANDO PAGINA PARA PROCESSAR OS DADOS
+2026-08-19 10:10:28,813 - INFO - REALIZAR A NORMALIZAR!!
+2026-08-19 10:10:29,059 - INFO - minha quantidade de dados processados :  1953
+2026-08-19 10:10:29,382 - ERROR - Falha em capturar os dados no obito_captura.obito_dados.
+ relation "obito_captura.obito_dadoss" does not exist
+LINE 1: SELECT EXISTS(SELECT 1 FROM obito_captura.obito_dadoss WHERE...
+                                    ^
+
+2026-08-19 10:10:29,383 - ERROR - Falha em capturar os dados no obito_captura.obito_dados.
+ relation "obito_captura.obito_dadoss" does not exist
+LINE 1: SELECT EXISTS(SELECT 1 FROM obito_captura.obito_dadoss WHERE...
+                                    ^
+
+2026-08-19 10:10:32,047 - ERROR - Falha em capturar os dados no cntobitocaptura.
+Detalhes do Erro:
+Traceback (most recent call last):
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\Model\ClassModel.py", line 404, in exists_by_name
+    cursor.execute(query, (person,falecimento))
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\.venvFalecidos\Lib\site-packages\psycopg2\extras.py", line 236, in execute
+    return super().execute(query, vars)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+psycopg2.errors.UndefinedTable: relation "obito_captura.obito_dadoss" does not exist
+LINE 1: SELECT EXISTS(SELECT 1 FROM obito_captura.obito_dadoss WHERE...
+                                    ^
+
+
+2026-08-19 10:10:32,211 - ERROR - Falha em capturar os dados no obito_captura.obito_dados.
+ current transaction is aborted, commands ignored until end of transaction block
+
+2026-08-19 10:10:32,212 - ERROR - Falha em capturar os dados no obito_captura.obito_dados.
+ current transaction is aborted, commands ignored until end of transaction block
+
+2026-08-19 10:10:33,727 - ERROR - Falha em capturar os dados no cntobitocaptura.
+Detalhes do Erro:
+Traceback (most recent call last):
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\Model\ClassModel.py", line 404, in exists_by_name
+    cursor.execute(query, (person,falecimento))
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\.venvFalecidos\Lib\site-packages\psycopg2\extras.py", line 236, in execute
+    return super().execute(query, vars)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+psycopg2.errors.InFailedSqlTransaction: current transaction is aborted, commands ignored until end of transaction block
+
+
+2026-08-19 10:10:33,889 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-19 10:10:33,889 - ERROR - Aplicação finalizada!
+2026-08-19 10:10:33,890 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-19 10:15:37,464 - INFO - ================================================================================
+2026-08-19 10:15:37,465 - INFO - Inicio proceso nomarlização dos dadose - 2026-08-19 10:15:37.464598
+2026-08-19 10:15:39,466 - INFO - ================================================================================
+2026-08-19 10:15:39,466 - INFO - ACESSANDO PAGINA PARA PROCESSAR OS DADOS
+2026-08-19 10:15:39,466 - INFO - REALIZAR A NORMALIZAR!!
+2026-08-19 10:15:39,758 - INFO - minha quantidade de dados processados :  1953
+2026-08-19 10:15:40,387 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-19 10:15:40,388 - ERROR - Aplicação finalizada!
+2026-08-19 10:15:40,391 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-19 10:19:39,938 - INFO - ================================================================================
+2026-08-19 10:19:39,942 - INFO - Inicio proceso nomarlização dos dadose - 2026-08-19 10:19:39.938266
+2026-08-19 10:19:41,943 - INFO - ================================================================================
+2026-08-19 10:19:41,943 - INFO - ACESSANDO PAGINA PARA PROCESSAR OS DADOS
+2026-08-19 10:19:41,943 - INFO - REALIZAR A NORMALIZAR!!
+2026-08-19 10:19:42,050 - ERROR - Erro fatal na execução para normalizar: too many values to unpack (expected 2)
+Traceback (most recent call last):
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\Tratamentos\Normlizar.py", line 215, in arquivos_process
+    df['FAMILIARES_A'] , df['TIPO_RELACAO'] = df['FAMILIARES'].apply(tratar_familiares_A).str.upper()
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: too many values to unpack (expected 2)
+2026-08-19 10:19:42,052 - ERROR - Erro fatal na execução: object of type 'NoneType' has no len()
+2026-08-19 10:19:42,052 - ERROR - Aplicação finalizada!
+2026-08-19 10:19:42,052 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-19 10:21:19,841 - INFO - ================================================================================
+2026-08-19 10:21:19,842 - INFO - Inicio proceso nomarlização dos dadose - 2026-08-19 10:21:19.841636
+2026-08-19 10:21:21,842 - INFO - ================================================================================
+2026-08-19 10:21:21,843 - INFO - ACESSANDO PAGINA PARA PROCESSAR OS DADOS
+2026-08-19 10:21:21,843 - INFO - REALIZAR A NORMALIZAR!!
+2026-08-19 10:21:21,941 - ERROR - Erro fatal na execução para normalizar: too many values to unpack (expected 2)
+Traceback (most recent call last):
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\Tratamentos\Normlizar.py", line 215, in arquivos_process
+    df['FAMILIARES_A'] , df['TIPO_RELACAO'] = df['FAMILIARES'].apply(tratar_familiares_A).str.upper()
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: too many values to unpack (expected 2)
+2026-08-19 10:21:21,943 - ERROR - Erro fatal na execução: object of type 'NoneType' has no len()
+2026-08-19 10:21:21,943 - ERROR - Aplicação finalizada!
+2026-08-19 10:21:21,943 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-19 10:22:38,057 - INFO - ================================================================================
+2026-08-19 10:22:38,057 - INFO - Inicio proceso nomarlização dos dadose - 2026-08-19 10:22:38.057192
+2026-08-19 10:22:40,058 - INFO - ================================================================================
+2026-08-19 10:22:40,058 - INFO - ACESSANDO PAGINA PARA PROCESSAR OS DADOS
+2026-08-19 10:22:40,058 - INFO - REALIZAR A NORMALIZAR!!
+2026-08-19 10:22:40,189 - ERROR - Erro fatal na execução para normalizar: too many values to unpack (expected 2)
+Traceback (most recent call last):
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\Tratamentos\Normlizar.py", line 215, in arquivos_process
+    df['FAMILIARES_A'] , df['TIPO_RELACAO'] = df['FAMILIARES'].apply(tratar_familiares_A).str.upper()
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: too many values to unpack (expected 2)
+2026-08-19 10:22:40,191 - ERROR - Erro fatal na execução: object of type 'NoneType' has no len()
+2026-08-19 10:22:40,191 - ERROR - Aplicação finalizada!
+2026-08-19 10:22:40,191 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-19 10:23:52,001 - INFO - ================================================================================
+2026-08-19 10:23:52,002 - INFO - Inicio proceso nomarlização dos dadose - 2026-08-19 10:23:52.001848
+2026-08-19 10:23:54,003 - INFO - ================================================================================
+2026-08-19 10:23:54,003 - INFO - ACESSANDO PAGINA PARA PROCESSAR OS DADOS
+2026-08-19 10:23:54,003 - INFO - REALIZAR A NORMALIZAR!!
+2026-08-19 10:23:54,136 - ERROR - Erro fatal na execução para normalizar: too many values to unpack (expected 2)
+Traceback (most recent call last):
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\Tratamentos\Normlizar.py", line 216, in arquivos_process
+    df['FAMILIARES_A'] , df['TIPO_RELACAO'] = df['FAMILIARES'].apply(tratar_familiares_A).str.upper()
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: too many values to unpack (expected 2)
+2026-08-19 10:23:54,138 - ERROR - Erro fatal na execução: object of type 'NoneType' has no len()
+2026-08-19 10:23:54,138 - ERROR - Aplicação finalizada!
+2026-08-19 10:23:54,138 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-19 10:25:18,443 - INFO - ================================================================================
+2026-08-19 10:25:18,443 - INFO - Inicio proceso nomarlização dos dadose - 2026-08-19 10:25:18.443552
+2026-08-19 10:25:20,444 - INFO - ================================================================================
+2026-08-19 10:25:20,444 - INFO - ACESSANDO PAGINA PARA PROCESSAR OS DADOS
+2026-08-19 10:25:20,444 - INFO - REALIZAR A NORMALIZAR!!
+2026-08-19 10:25:20,855 - INFO - minha quantidade de dados processados :  1953
+2026-08-19 10:25:21,980 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-19 10:25:21,980 - ERROR - Aplicação finalizada!
+2026-08-19 10:25:21,981 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-19 10:27:40,916 - INFO - ================================================================================
+2026-08-19 10:27:40,917 - INFO - Inicio proceso nomarlização dos dadose - 2026-08-19 10:27:40.916719
+2026-08-19 10:27:42,918 - INFO - ================================================================================
+2026-08-19 10:27:42,918 - INFO - ACESSANDO PAGINA PARA PROCESSAR OS DADOS
+2026-08-19 10:27:42,918 - INFO - REALIZAR A NORMALIZAR!!
+2026-08-19 10:27:43,337 - INFO - minha quantidade de dados processados :  1953
+2026-08-19 10:27:44,040 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-19 10:27:44,041 - ERROR - Aplicação finalizada!
+2026-08-19 10:27:44,042 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-19 10:29:36,178 - INFO - ================================================================================
+2026-08-19 10:29:36,178 - INFO - Inicio proceso nomarlização dos dadose - 2026-08-19 10:29:36.178223
+2026-08-19 10:29:38,179 - INFO - ================================================================================
+2026-08-19 10:29:38,180 - INFO - ACESSANDO PAGINA PARA PROCESSAR OS DADOS
+2026-08-19 10:29:38,181 - INFO - REALIZAR A NORMALIZAR!!
+2026-08-19 10:29:38,669 - INFO - minha quantidade de dados processados :  1953
+2026-08-19 10:29:39,306 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-19 10:29:39,307 - ERROR - Aplicação finalizada!
+2026-08-19 10:29:39,307 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-19 10:31:45,717 - INFO - ================================================================================
+2026-08-19 10:31:45,717 - INFO - Inicio proceso nomarlização dos dadose - 2026-08-19 10:31:45.717010
+2026-08-19 10:31:47,718 - INFO - ================================================================================
+2026-08-19 10:31:47,718 - INFO - ACESSANDO PAGINA PARA PROCESSAR OS DADOS
+2026-08-19 10:31:47,719 - INFO - REALIZAR A NORMALIZAR!!
+2026-08-19 10:31:48,292 - INFO - minha quantidade de dados processados :  1953
+2026-08-19 10:31:49,395 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-19 10:31:49,395 - ERROR - Aplicação finalizada!
+2026-08-19 10:31:49,396 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-19 10:36:43,993 - INFO - ================================================================================
+2026-08-19 10:36:43,994 - INFO - Inicio proceso nomarlização dos dadose - 2026-08-19 10:36:43.993841
+2026-08-19 10:36:45,994 - INFO - ================================================================================
+2026-08-19 10:36:45,995 - INFO - ACESSANDO PAGINA PARA PROCESSAR OS DADOS
+2026-08-19 10:36:45,995 - INFO - REALIZAR A NORMALIZAR!!
+2026-08-19 10:36:46,588 - INFO - minha quantidade de dados processados :  1953
+2026-08-19 10:36:47,278 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-19 10:36:47,278 - ERROR - Aplicação finalizada!
+2026-08-19 10:36:47,279 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-19 10:38:30,250 - INFO - ================================================================================
+2026-08-19 10:38:30,250 - INFO - Inicio proceso nomarlização dos dadose - 2026-08-19 10:38:30.250413
+2026-08-19 10:38:32,251 - INFO - ================================================================================
+2026-08-19 10:38:32,252 - INFO - ACESSANDO PAGINA PARA PROCESSAR OS DADOS
+2026-08-19 10:38:32,252 - INFO - REALIZAR A NORMALIZAR!!
+2026-08-19 10:38:32,415 - ERROR - Erro fatal na execução para normalizar: 'float' object is not subscriptable
+Traceback (most recent call last):
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\Tratamentos\Normlizar.py", line 225, in arquivos_process
+    df['FAMILIARES'] = familiares_processados_b.map(
+                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        lambda resultado: str(resultado[0]).upper()
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\.venvFalecidos\Lib\site-packages\pandas\core\series.py", line 4675, in map
+    new_values = self._map_values(func, na_action=na_action)
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\.venvFalecidos\Lib\site-packages\pandas\core\base.py", line 1022, in _map_values
+    return algorithms.map_array(arr, mapper, na_action=na_action)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\.venvFalecidos\Lib\site-packages\pandas\core\algorithms.py", line 1715, in map_array
+    return lib.map_infer(values, mapper)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "pandas/_libs/lib.pyx", line 3071, in pandas._libs.lib.map_infer
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\Tratamentos\Normlizar.py", line 226, in <lambda>
+    lambda resultado: str(resultado[0]).upper()
+                          ~~~~~~~~~^^^
+TypeError: 'float' object is not subscriptable
+2026-08-19 10:38:32,464 - ERROR - Erro fatal na execução: object of type 'NoneType' has no len()
+2026-08-19 10:38:32,465 - ERROR - Aplicação finalizada!
+2026-08-19 10:38:32,465 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-19 10:39:16,175 - INFO - ================================================================================
+2026-08-19 10:39:16,176 - INFO - Inicio proceso nomarlização dos dadose - 2026-08-19 10:39:16.175271
+2026-08-19 10:39:18,179 - INFO - ================================================================================
+2026-08-19 10:39:18,179 - INFO - ACESSANDO PAGINA PARA PROCESSAR OS DADOS
+2026-08-19 10:39:18,179 - INFO - REALIZAR A NORMALIZAR!!
+2026-08-19 10:39:18,370 - ERROR - Erro fatal na execução para normalizar: 'float' object is not subscriptable
+Traceback (most recent call last):
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\Tratamentos\Normlizar.py", line 225, in arquivos_process
+    df['FAMILIARES'] = familiares_processados_b.map(
+                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        lambda resultado: str(resultado[0]).upper()
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\.venvFalecidos\Lib\site-packages\pandas\core\series.py", line 4675, in map
+    new_values = self._map_values(func, na_action=na_action)
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\.venvFalecidos\Lib\site-packages\pandas\core\base.py", line 1022, in _map_values
+    return algorithms.map_array(arr, mapper, na_action=na_action)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\.venvFalecidos\Lib\site-packages\pandas\core\algorithms.py", line 1715, in map_array
+    return lib.map_infer(values, mapper)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "pandas/_libs/lib.pyx", line 3071, in pandas._libs.lib.map_infer
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\Tratamentos\Normlizar.py", line 226, in <lambda>
+    lambda resultado: str(resultado[0]).upper()
+                          ~~~~~~~~~^^^
+TypeError: 'float' object is not subscriptable
+2026-08-19 10:39:18,377 - ERROR - Erro fatal na execução: object of type 'NoneType' has no len()
+2026-08-19 10:39:18,377 - ERROR - Aplicação finalizada!
+2026-08-19 10:39:18,377 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-19 10:41:50,383 - INFO - ================================================================================
+2026-08-19 10:41:50,384 - INFO - Inicio proceso nomarlização dos dadose - 2026-08-19 10:41:50.383653
+2026-08-19 10:41:52,384 - INFO - ================================================================================
+2026-08-19 10:41:52,385 - INFO - ACESSANDO PAGINA PARA PROCESSAR OS DADOS
+2026-08-19 10:41:52,386 - INFO - REALIZAR A NORMALIZAR!!
+2026-08-19 10:41:53,020 - INFO - minha quantidade de dados processados :  1953
+2026-08-19 10:41:53,668 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-19 10:41:53,668 - ERROR - Aplicação finalizada!
+2026-08-19 10:41:53,669 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-19 10:42:59,100 - INFO - ================================================================================
+2026-08-19 10:42:59,100 - INFO - Inicio proceso nomarlização dos dadose - 2026-08-19 10:42:59.099983
+2026-08-19 10:43:01,101 - INFO - ================================================================================
+2026-08-19 10:43:01,101 - INFO - ACESSANDO PAGINA PARA PROCESSAR OS DADOS
+2026-08-19 10:43:01,101 - INFO - REALIZAR A NORMALIZAR!!
+2026-08-19 10:43:01,511 - INFO - minha quantidade de dados processados :  1953
+2026-08-19 10:43:02,122 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-19 10:43:02,122 - ERROR - Aplicação finalizada!
+2026-08-19 10:43:02,123 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-19 10:44:17,825 - INFO - ================================================================================
+2026-08-19 10:44:17,826 - INFO - Inicio proceso nomarlização dos dadose - 2026-08-19 10:44:17.825795
+2026-08-19 10:44:19,827 - INFO - ================================================================================
+2026-08-19 10:44:19,827 - INFO - ACESSANDO PAGINA PARA PROCESSAR OS DADOS
+2026-08-19 10:44:19,827 - INFO - REALIZAR A NORMALIZAR!!
+2026-08-19 10:44:20,097 - INFO - minha quantidade de dados processados :  1953
+2026-08-19 10:44:20,731 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-19 10:44:20,733 - ERROR - Aplicação finalizada!
+2026-08-19 10:44:20,736 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-19 10:44:57,449 - INFO - ================================================================================
+2026-08-19 10:44:57,450 - INFO - Inicio proceso nomarlização dos dadose - 2026-08-19 10:44:57.449453
+2026-08-19 10:44:59,450 - INFO - ================================================================================
+2026-08-19 10:44:59,451 - INFO - ACESSANDO PAGINA PARA PROCESSAR OS DADOS
+2026-08-19 10:44:59,451 - INFO - REALIZAR A NORMALIZAR!!
+2026-08-19 10:44:59,872 - INFO - minha quantidade de dados processados :  1953
+2026-08-19 10:45:00,552 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-19 10:45:00,553 - ERROR - Aplicação finalizada!
+2026-08-19 10:45:00,556 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-19 10:45:41,892 - INFO - ================================================================================
+2026-08-19 10:45:41,892 - INFO - Inicio proceso nomarlização dos dadose - 2026-08-19 10:45:41.892597
+2026-08-19 10:45:43,893 - INFO - ================================================================================
+2026-08-19 10:45:43,893 - INFO - ACESSANDO PAGINA PARA PROCESSAR OS DADOS
+2026-08-19 10:45:43,893 - INFO - REALIZAR A NORMALIZAR!!
+2026-08-19 10:45:44,309 - INFO - minha quantidade de dados processados :  1953
+2026-08-19 10:45:45,551 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-19 10:45:45,552 - ERROR - Aplicação finalizada!
+2026-08-19 10:45:45,554 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-19 10:46:11,363 - INFO - ================================================================================
+2026-08-19 10:46:11,363 - INFO - Inicio proceso nomarlização dos dadose - 2026-08-19 10:46:11.362948
+2026-08-19 10:46:13,364 - INFO - ================================================================================
+2026-08-19 10:46:13,364 - INFO - ACESSANDO PAGINA PARA PROCESSAR OS DADOS
+2026-08-19 10:46:13,364 - INFO - REALIZAR A NORMALIZAR!!
+2026-08-19 10:46:13,777 - INFO - minha quantidade de dados processados :  1953
+2026-08-19 10:46:14,397 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-19 10:46:14,397 - ERROR - Aplicação finalizada!
+2026-08-19 10:46:14,398 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-19 10:46:58,134 - INFO - ================================================================================
+2026-08-19 10:46:58,134 - INFO - Inicio proceso nomarlização dos dadose - 2026-08-19 10:46:58.134461
+2026-08-19 10:47:00,135 - INFO - ================================================================================
+2026-08-19 10:47:00,135 - INFO - ACESSANDO PAGINA PARA PROCESSAR OS DADOS
+2026-08-19 10:47:00,136 - INFO - REALIZAR A NORMALIZAR!!
+2026-08-19 10:47:04,302 - ERROR - Aplicação finalizada!
+2026-08-19 10:47:04,303 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-08-19 10:48:33,154 - INFO - ================================================================================
+2026-08-19 10:48:33,166 - INFO - Inicio proceso nomarlização dos dadose - 2026-08-19 10:48:33.154580
+2026-08-19 10:48:35,172 - INFO - ================================================================================
+2026-08-19 10:48:35,172 - INFO - ACESSANDO PAGINA PARA PROCESSAR OS DADOS
+2026-08-19 10:48:35,172 - INFO - REALIZAR A NORMALIZAR!!
+2026-08-19 10:48:36,080 - INFO - minha quantidade de dados processados :  1953
+2026-08-19 10:48:36,715 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-19 10:48:36,716 - ERROR - Aplicação finalizada!
+2026-08-19 10:48:36,717 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-19 10:49:58,205 - INFO - ================================================================================
+2026-08-19 10:49:58,206 - INFO - Inicio proceso nomarlização dos dadose - 2026-08-19 10:49:58.205719
+2026-08-19 10:50:00,207 - INFO - ================================================================================
+2026-08-19 10:50:00,211 - INFO - ACESSANDO PAGINA PARA PROCESSAR OS DADOS
+2026-08-19 10:50:00,212 - INFO - REALIZAR A NORMALIZAR!!
+2026-08-19 10:50:00,918 - INFO - minha quantidade de dados processados :  1953
+2026-08-19 10:50:01,609 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-19 10:50:01,610 - ERROR - Aplicação finalizada!
+2026-08-19 10:50:01,610 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-19 10:58:31,274 - INFO - ================================================================================
+2026-08-19 10:58:31,275 - INFO - Inicio proceso nomarlização dos dadose - 2026-08-19 10:58:31.274366
+2026-08-19 10:58:33,275 - INFO - ================================================================================
+2026-08-19 10:58:33,276 - INFO - ACESSANDO PAGINA PARA PROCESSAR OS DADOS
+2026-08-19 10:58:33,276 - INFO - REALIZAR A NORMALIZAR!!
+2026-08-19 10:58:33,866 - INFO - minha quantidade de dados processados :  1953
+2026-08-19 10:58:36,445 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-19 10:58:36,445 - ERROR - Aplicação finalizada!
+2026-08-19 10:58:36,446 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-19 11:03:42,931 - INFO - ================================================================================
+2026-08-19 11:03:42,932 - INFO - Inicio proceso nomarlização dos dadose - 2026-08-19 11:03:42.931669
+2026-08-19 11:03:44,934 - INFO - ================================================================================
+2026-08-19 11:03:44,934 - INFO - ACESSANDO PAGINA PARA PROCESSAR OS DADOS
+2026-08-19 11:03:44,934 - INFO - REALIZAR A NORMALIZAR!!
+2026-08-19 11:03:45,791 - INFO - minha quantidade de dados processados :  1953
+2026-08-19 11:03:46,469 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-19 11:03:46,469 - ERROR - Aplicação finalizada!
+2026-08-19 11:03:46,470 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-19 11:07:00,925 - INFO - ================================================================================
+2026-08-19 11:07:00,934 - INFO - Inicio proceso nomarlização dos dadose - 2026-08-19 11:07:00.925244
+2026-08-19 11:07:02,936 - INFO - ================================================================================
+2026-08-19 11:07:02,948 - INFO - ACESSANDO PAGINA PARA PROCESSAR OS DADOS
+2026-08-19 11:07:02,957 - INFO - REALIZAR A NORMALIZAR!!
+2026-08-19 11:07:04,846 - ERROR - Erro fatal na execução para normalizar: The truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
+Traceback (most recent call last):
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\Tratamentos\Normlizar.py", line 225, in arquivos_process
+    if familiares_processados:
+       ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\.venvFalecidos\Lib\site-packages\pandas\core\generic.py", line 1501, in __bool__
+    raise ValueError(
+    ...<2 lines>...
+    )
+ValueError: The truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
+2026-08-19 11:07:04,860 - ERROR - Erro fatal na execução: object of type 'NoneType' has no len()
+2026-08-19 11:07:04,861 - ERROR - Aplicação finalizada!
+2026-08-19 11:07:04,862 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-19 11:07:44,483 - INFO - ================================================================================
+2026-08-19 11:07:44,483 - INFO - Inicio proceso nomarlização dos dadose - 2026-08-19 11:07:44.483255
+2026-08-19 11:07:46,484 - INFO - ================================================================================
+2026-08-19 11:07:46,485 - INFO - ACESSANDO PAGINA PARA PROCESSAR OS DADOS
+2026-08-19 11:07:46,485 - INFO - REALIZAR A NORMALIZAR!!
+2026-08-19 11:07:46,692 - ERROR - Erro fatal na execução para normalizar: The truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
+Traceback (most recent call last):
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\Tratamentos\Normlizar.py", line 225, in arquivos_process
+    if familiares_processados:
+       ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\.venvFalecidos\Lib\site-packages\pandas\core\generic.py", line 1501, in __bool__
+    raise ValueError(
+    ...<2 lines>...
+    )
+ValueError: The truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
+2026-08-19 11:07:46,702 - ERROR - Erro fatal na execução: object of type 'NoneType' has no len()
+2026-08-19 11:07:46,702 - ERROR - Aplicação finalizada!
+2026-08-19 11:07:46,703 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-19 11:08:22,269 - INFO - ================================================================================
+2026-08-19 11:08:22,269 - INFO - Inicio proceso nomarlização dos dadose - 2026-08-19 11:08:22.269114
+2026-08-19 11:08:24,270 - INFO - ================================================================================
+2026-08-19 11:08:24,271 - INFO - ACESSANDO PAGINA PARA PROCESSAR OS DADOS
+2026-08-19 11:08:24,271 - INFO - REALIZAR A NORMALIZAR!!
+2026-08-19 11:08:24,562 - ERROR - Erro fatal na execução para normalizar: The truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
+Traceback (most recent call last):
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\Tratamentos\Normlizar.py", line 225, in arquivos_process
+    if familiares_processados:
+       ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\.venvFalecidos\Lib\site-packages\pandas\core\generic.py", line 1501, in __bool__
+    raise ValueError(
+    ...<2 lines>...
+    )
+ValueError: The truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
+2026-08-19 11:08:24,569 - ERROR - Erro fatal na execução: object of type 'NoneType' has no len()
+2026-08-19 11:08:24,570 - ERROR - Aplicação finalizada!
+2026-08-19 11:08:24,570 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-19 11:09:49,778 - INFO - ================================================================================
+2026-08-19 11:09:49,781 - INFO - Inicio proceso nomarlização dos dadose - 2026-08-19 11:09:49.777950
+2026-08-19 11:09:51,782 - INFO - ================================================================================
+2026-08-19 11:09:51,782 - INFO - ACESSANDO PAGINA PARA PROCESSAR OS DADOS
+2026-08-19 11:09:51,783 - INFO - REALIZAR A NORMALIZAR!!
+2026-08-19 11:09:51,899 - ERROR - Erro fatal na execução para normalizar: The truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
+Traceback (most recent call last):
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\Tratamentos\Normlizar.py", line 225, in arquivos_process
+    if familiares_processados:
+       ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\.venvFalecidos\Lib\site-packages\pandas\core\generic.py", line 1501, in __bool__
+    raise ValueError(
+    ...<2 lines>...
+    )
+ValueError: The truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
+2026-08-19 11:09:51,905 - ERROR - Erro fatal na execução: object of type 'NoneType' has no len()
+2026-08-19 11:09:51,905 - ERROR - Aplicação finalizada!
+2026-08-19 11:09:51,905 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-19 11:10:13,365 - INFO - ================================================================================
+2026-08-19 11:10:13,366 - INFO - Inicio proceso nomarlização dos dadose - 2026-08-19 11:10:13.365871
+2026-08-19 11:10:15,367 - INFO - ================================================================================
+2026-08-19 11:10:15,367 - INFO - ACESSANDO PAGINA PARA PROCESSAR OS DADOS
+2026-08-19 11:10:15,367 - INFO - REALIZAR A NORMALIZAR!!
+2026-08-19 11:10:15,470 - ERROR - Erro fatal na execução para normalizar: The truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
+Traceback (most recent call last):
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\Tratamentos\Normlizar.py", line 225, in arquivos_process
+    if not familiares_processados:
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\.venvFalecidos\Lib\site-packages\pandas\core\generic.py", line 1501, in __bool__
+    raise ValueError(
+    ...<2 lines>...
+    )
+ValueError: The truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
+2026-08-19 11:10:15,475 - ERROR - Erro fatal na execução: object of type 'NoneType' has no len()
+2026-08-19 11:10:15,475 - ERROR - Aplicação finalizada!
+2026-08-19 11:10:15,476 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-19 11:10:36,017 - INFO - ================================================================================
+2026-08-19 11:10:36,017 - INFO - Inicio proceso nomarlização dos dadose - 2026-08-19 11:10:36.016973
+2026-08-19 11:10:38,017 - INFO - ================================================================================
+2026-08-19 11:10:38,018 - INFO - ACESSANDO PAGINA PARA PROCESSAR OS DADOS
+2026-08-19 11:10:38,018 - INFO - REALIZAR A NORMALIZAR!!
+2026-08-19 11:10:38,445 - INFO - minha quantidade de dados processados :  1953
+2026-08-19 11:10:39,074 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-19 11:10:39,074 - ERROR - Aplicação finalizada!
+2026-08-19 11:10:39,076 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-19 11:10:48,661 - INFO - ================================================================================
+2026-08-19 11:10:48,692 - INFO - Inicio proceso nomarlização dos dadose - 2026-08-19 11:10:48.661856
+2026-08-19 11:10:50,707 - INFO - ================================================================================
+2026-08-19 11:10:50,707 - INFO - ACESSANDO PAGINA PARA PROCESSAR OS DADOS
+2026-08-19 11:10:50,707 - INFO - REALIZAR A NORMALIZAR!!
+2026-08-19 11:10:51,075 - INFO - minha quantidade de dados processados :  1953
+2026-08-19 11:10:51,691 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-19 11:10:51,692 - ERROR - Aplicação finalizada!
+2026-08-19 11:10:51,692 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-19 11:12:20,088 - INFO - ================================================================================
+2026-08-19 11:12:20,090 - INFO - Inicio proceso nomarlização dos dadose - 2026-08-19 11:12:20.088711
+2026-08-19 11:12:22,093 - INFO - ================================================================================
+2026-08-19 11:12:22,093 - INFO - ACESSANDO PAGINA PARA PROCESSAR OS DADOS
+2026-08-19 11:12:22,094 - INFO - REALIZAR A NORMALIZAR!!
+2026-08-19 11:12:22,197 - ERROR - Erro fatal na execução para normalizar: The truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
+Traceback (most recent call last):
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\Tratamentos\Normlizar.py", line 225, in arquivos_process
+    if familiares_processados:
+       ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\.venvFalecidos\Lib\site-packages\pandas\core\generic.py", line 1501, in __bool__
+    raise ValueError(
+    ...<2 lines>...
+    )
+ValueError: The truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
+2026-08-19 11:12:22,206 - ERROR - Erro fatal na execução: object of type 'NoneType' has no len()
+2026-08-19 11:12:22,207 - ERROR - Aplicação finalizada!
+2026-08-19 11:12:22,207 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-19 11:14:25,272 - INFO - ================================================================================
+2026-08-19 11:14:25,273 - INFO - Inicio proceso nomarlização dos dadose - 2026-08-19 11:14:25.272637
+2026-08-19 11:14:27,273 - INFO - ================================================================================
+2026-08-19 11:14:27,273 - INFO - ACESSANDO PAGINA PARA PROCESSAR OS DADOS
+2026-08-19 11:14:27,274 - INFO - REALIZAR A NORMALIZAR!!
+2026-08-19 11:14:27,508 - INFO - minha quantidade de dados processados :  1953
+2026-08-19 11:14:28,196 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-19 11:14:28,196 - ERROR - Aplicação finalizada!
+2026-08-19 11:14:28,196 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-19 11:17:25,951 - INFO - ================================================================================
+2026-08-19 11:17:25,952 - INFO - Inicio proceso nomarlização dos dadose - 2026-08-19 11:17:25.951922
+2026-08-19 11:17:27,952 - INFO - ================================================================================
+2026-08-19 11:17:27,953 - INFO - ACESSANDO PAGINA PARA PROCESSAR OS DADOS
+2026-08-19 11:17:27,953 - INFO - REALIZAR A NORMALIZAR!!
+2026-08-19 11:17:28,044 - ERROR - Erro fatal na execução para normalizar: The truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
+Traceback (most recent call last):
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\Tratamentos\Normlizar.py", line 228, in arquivos_process
+    if  info_familiares:
+        ^^^^^^^^^^^^^^^
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\.venvFalecidos\Lib\site-packages\pandas\core\generic.py", line 1501, in __bool__
+    raise ValueError(
+    ...<2 lines>...
+    )
+ValueError: The truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().
+2026-08-19 11:17:28,052 - ERROR - Erro fatal na execução: object of type 'NoneType' has no len()
+2026-08-19 11:17:28,052 - ERROR - Aplicação finalizada!
+2026-08-19 11:17:28,052 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-19 11:18:46,954 - INFO - ================================================================================
+2026-08-19 11:18:46,955 - INFO - Inicio proceso nomarlização dos dadose - 2026-08-19 11:18:46.954173
+2026-08-19 11:18:48,956 - INFO - ================================================================================
+2026-08-19 11:18:48,956 - INFO - ACESSANDO PAGINA PARA PROCESSAR OS DADOS
+2026-08-19 11:18:48,956 - INFO - REALIZAR A NORMALIZAR!!
+2026-08-19 11:18:49,092 - ERROR - Erro fatal na execução para normalizar: 'float' object is not subscriptable
+Traceback (most recent call last):
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\Tratamentos\Normlizar.py", line 233, in arquivos_process
+    df['FAMILIARES'] = familiares_processados_b.map(
+                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        lambda resultado: str(resultado[0]).upper()
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\.venvFalecidos\Lib\site-packages\pandas\core\series.py", line 4675, in map
+    new_values = self._map_values(func, na_action=na_action)
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\.venvFalecidos\Lib\site-packages\pandas\core\base.py", line 1022, in _map_values
+    return algorithms.map_array(arr, mapper, na_action=na_action)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\.venvFalecidos\Lib\site-packages\pandas\core\algorithms.py", line 1715, in map_array
+    return lib.map_infer(values, mapper)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "pandas/_libs/lib.pyx", line 3071, in pandas._libs.lib.map_infer
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\Tratamentos\Normlizar.py", line 234, in <lambda>
+    lambda resultado: str(resultado[0]).upper()
+                          ~~~~~~~~~^^^
+TypeError: 'float' object is not subscriptable
+2026-08-19 11:18:49,105 - ERROR - Erro fatal na execução: object of type 'NoneType' has no len()
+2026-08-19 11:18:49,106 - ERROR - Aplicação finalizada!
+2026-08-19 11:18:49,106 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-19 11:19:35,081 - INFO - ================================================================================
+2026-08-19 11:19:35,081 - INFO - Inicio proceso nomarlização dos dadose - 2026-08-19 11:19:35.081649
+2026-08-19 11:19:37,082 - INFO - ================================================================================
+2026-08-19 11:19:37,082 - INFO - ACESSANDO PAGINA PARA PROCESSAR OS DADOS
+2026-08-19 11:19:37,082 - INFO - REALIZAR A NORMALIZAR!!
+2026-08-19 11:19:37,193 - ERROR - Erro fatal na execução para normalizar: 'float' object is not subscriptable
+Traceback (most recent call last):
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\Tratamentos\Normlizar.py", line 235, in arquivos_process
+    df['FAMILIARES'] = familiares_processados_b.map(
+                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        lambda resultado: str(resultado[0]).upper()
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\.venvFalecidos\Lib\site-packages\pandas\core\series.py", line 4675, in map
+    new_values = self._map_values(func, na_action=na_action)
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\.venvFalecidos\Lib\site-packages\pandas\core\base.py", line 1022, in _map_values
+    return algorithms.map_array(arr, mapper, na_action=na_action)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\.venvFalecidos\Lib\site-packages\pandas\core\algorithms.py", line 1715, in map_array
+    return lib.map_infer(values, mapper)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "pandas/_libs/lib.pyx", line 3071, in pandas._libs.lib.map_infer
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\Tratamentos\Normlizar.py", line 236, in <lambda>
+    lambda resultado: str(resultado[0]).upper()
+                          ~~~~~~~~~^^^
+TypeError: 'float' object is not subscriptable
+2026-08-19 11:19:37,199 - ERROR - Erro fatal na execução: object of type 'NoneType' has no len()
+2026-08-19 11:19:37,200 - ERROR - Aplicação finalizada!
+2026-08-19 11:19:37,200 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-19 11:23:15,713 - INFO - ================================================================================
+2026-08-19 11:23:15,713 - INFO - Inicio proceso nomarlização dos dadose - 2026-08-19 11:23:15.712991
+2026-08-19 11:23:17,714 - INFO - ================================================================================
+2026-08-19 11:23:17,714 - INFO - ACESSANDO PAGINA PARA PROCESSAR OS DADOS
+2026-08-19 11:23:17,714 - INFO - REALIZAR A NORMALIZAR!!
+2026-08-19 11:23:17,830 - ERROR - Erro fatal na execução para normalizar: 'float' object is not subscriptable
+Traceback (most recent call last):
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\Tratamentos\Normlizar.py", line 235, in arquivos_process
+    df['FAMILIARES'] = familiares_processados_b.map(
+                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        lambda resultado: str(resultado[0]).upper()
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\.venvFalecidos\Lib\site-packages\pandas\core\series.py", line 4675, in map
+    new_values = self._map_values(func, na_action=na_action)
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\.venvFalecidos\Lib\site-packages\pandas\core\base.py", line 1022, in _map_values
+    return algorithms.map_array(arr, mapper, na_action=na_action)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\.venvFalecidos\Lib\site-packages\pandas\core\algorithms.py", line 1715, in map_array
+    return lib.map_infer(values, mapper)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "pandas/_libs/lib.pyx", line 3071, in pandas._libs.lib.map_infer
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\Tratamentos\Normlizar.py", line 236, in <lambda>
+    lambda resultado: str(resultado[0]).upper()
+                          ~~~~~~~~~^^^
+TypeError: 'float' object is not subscriptable
+2026-08-19 11:23:17,837 - ERROR - Erro fatal na execução: object of type 'NoneType' has no len()
+2026-08-19 11:23:17,837 - ERROR - Aplicação finalizada!
+2026-08-19 11:23:17,837 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-19 11:24:22,785 - INFO - ================================================================================
+2026-08-19 11:24:22,785 - INFO - Inicio proceso nomarlização dos dadose - 2026-08-19 11:24:22.785383
+2026-08-19 11:24:24,787 - INFO - ================================================================================
+2026-08-19 11:24:24,787 - INFO - ACESSANDO PAGINA PARA PROCESSAR OS DADOS
+2026-08-19 11:24:24,787 - INFO - REALIZAR A NORMALIZAR!!
+2026-08-19 11:24:24,888 - ERROR - Erro fatal na execução para normalizar: 'float' object is not subscriptable
+Traceback (most recent call last):
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\Tratamentos\Normlizar.py", line 235, in arquivos_process
+    df['FAMILIARES'] = familiares_processados_b.map(
+                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        lambda resultado: str(resultado[0]).upper()
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\.venvFalecidos\Lib\site-packages\pandas\core\series.py", line 4675, in map
+    new_values = self._map_values(func, na_action=na_action)
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\.venvFalecidos\Lib\site-packages\pandas\core\base.py", line 1022, in _map_values
+    return algorithms.map_array(arr, mapper, na_action=na_action)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\.venvFalecidos\Lib\site-packages\pandas\core\algorithms.py", line 1715, in map_array
+    return lib.map_infer(values, mapper)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "pandas/_libs/lib.pyx", line 3071, in pandas._libs.lib.map_infer
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\Tratamentos\Normlizar.py", line 236, in <lambda>
+    lambda resultado: str(resultado[0]).upper()
+                          ~~~~~~~~~^^^
+TypeError: 'float' object is not subscriptable
+2026-08-19 11:24:24,894 - ERROR - Erro fatal na execução: object of type 'NoneType' has no len()
+2026-08-19 11:24:24,894 - ERROR - Aplicação finalizada!
+2026-08-19 11:24:24,895 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-19 11:25:17,961 - INFO - ================================================================================
+2026-08-19 11:25:17,964 - INFO - Inicio proceso nomarlização dos dadose - 2026-08-19 11:25:17.961437
+2026-08-19 11:25:19,965 - INFO - ================================================================================
+2026-08-19 11:25:19,966 - INFO - ACESSANDO PAGINA PARA PROCESSAR OS DADOS
+2026-08-19 11:25:19,966 - INFO - REALIZAR A NORMALIZAR!!
+2026-08-19 11:25:22,659 - INFO - minha quantidade de dados processados :  1953
+2026-08-19 11:25:23,724 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-19 11:25:23,724 - ERROR - Aplicação finalizada!
+2026-08-19 11:25:23,726 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-19 11:26:30,326 - INFO - ================================================================================
+2026-08-19 11:26:30,326 - INFO - Inicio proceso nomarlização dos dadose - 2026-08-19 11:26:30.326260
+2026-08-19 11:26:32,327 - INFO - ================================================================================
+2026-08-19 11:26:32,327 - INFO - ACESSANDO PAGINA PARA PROCESSAR OS DADOS
+2026-08-19 11:26:32,327 - INFO - REALIZAR A NORMALIZAR!!
+2026-08-19 11:26:32,884 - INFO - minha quantidade de dados processados :  1953
+2026-08-19 11:26:34,694 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-19 11:26:34,694 - ERROR - Aplicação finalizada!
+2026-08-19 11:26:34,695 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-19 11:27:15,787 - INFO - ================================================================================
+2026-08-19 11:27:15,788 - INFO - Inicio proceso nomarlização dos dadose - 2026-08-19 11:27:15.787506
+2026-08-19 11:27:17,789 - INFO - ================================================================================
+2026-08-19 11:27:17,792 - INFO - ACESSANDO PAGINA PARA PROCESSAR OS DADOS
+2026-08-19 11:27:17,793 - INFO - REALIZAR A NORMALIZAR!!
+2026-08-19 11:27:21,370 - INFO - minha quantidade de dados processados :  1953
+2026-08-19 11:27:21,999 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-19 11:27:22,000 - ERROR - Aplicação finalizada!
+2026-08-19 11:27:22,001 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-19 11:29:06,737 - INFO - ================================================================================
+2026-08-19 11:29:06,738 - INFO - Inicio proceso nomarlização dos dadose - 2026-08-19 11:29:06.737439
+2026-08-19 11:29:08,739 - INFO - ================================================================================
+2026-08-19 11:29:08,739 - INFO - ACESSANDO PAGINA PARA PROCESSAR OS DADOS
+2026-08-19 11:29:08,739 - INFO - REALIZAR A NORMALIZAR!!
+2026-08-19 11:29:08,991 - INFO - minha quantidade de dados processados :  1953
+2026-08-19 11:29:09,622 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-19 11:29:09,622 - ERROR - Aplicação finalizada!
+2026-08-19 11:29:09,624 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-19 11:30:01,353 - INFO - ================================================================================
+2026-08-19 11:30:01,353 - INFO - Inicio proceso nomarlização dos dadose - 2026-08-19 11:30:01.353276
+2026-08-19 11:30:03,354 - INFO - ================================================================================
+2026-08-19 11:30:03,354 - INFO - ACESSANDO PAGINA PARA PROCESSAR OS DADOS
+2026-08-19 11:30:03,354 - INFO - REALIZAR A NORMALIZAR!!
+2026-08-19 11:30:03,462 - ERROR - Erro fatal na execução para normalizar: 'float' object is not subscriptable
+Traceback (most recent call last):
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\Tratamentos\Normlizar.py", line 235, in arquivos_process
+    df['FAMILIARES'] = familiares_processados_b.map(
+                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        lambda resultado: str(resultado[0]).upper()
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\.venvFalecidos\Lib\site-packages\pandas\core\series.py", line 4675, in map
+    new_values = self._map_values(func, na_action=na_action)
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\.venvFalecidos\Lib\site-packages\pandas\core\base.py", line 1022, in _map_values
+    return algorithms.map_array(arr, mapper, na_action=na_action)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\.venvFalecidos\Lib\site-packages\pandas\core\algorithms.py", line 1715, in map_array
+    return lib.map_infer(values, mapper)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "pandas/_libs/lib.pyx", line 3071, in pandas._libs.lib.map_infer
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\Tratamentos\Normlizar.py", line 236, in <lambda>
+    lambda resultado: str(resultado[0]).upper()
+                          ~~~~~~~~~^^^
+TypeError: 'float' object is not subscriptable
+2026-08-19 11:30:03,467 - ERROR - Erro fatal na execução: object of type 'NoneType' has no len()
+2026-08-19 11:30:03,467 - ERROR - Aplicação finalizada!
+2026-08-19 11:30:03,467 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-19 11:32:26,637 - INFO - ================================================================================
+2026-08-19 11:32:26,672 - INFO - Inicio proceso nomarlização dos dadose - 2026-08-19 11:32:26.637793
+2026-08-19 11:32:28,674 - INFO - ================================================================================
+2026-08-19 11:32:28,674 - INFO - ACESSANDO PAGINA PARA PROCESSAR OS DADOS
+2026-08-19 11:32:28,674 - INFO - REALIZAR A NORMALIZAR!!
+2026-08-19 11:32:28,965 - INFO - minha quantidade de dados processados :  1953
+2026-08-19 11:32:29,598 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-19 11:32:29,599 - ERROR - Aplicação finalizada!
+2026-08-19 11:32:29,600 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-19 11:33:02,142 - INFO - ================================================================================
+2026-08-19 11:33:02,143 - INFO - Inicio proceso nomarlização dos dadose - 2026-08-19 11:33:02.142509
+2026-08-19 11:33:04,143 - INFO - ================================================================================
+2026-08-19 11:33:04,143 - INFO - ACESSANDO PAGINA PARA PROCESSAR OS DADOS
+2026-08-19 11:33:04,143 - INFO - REALIZAR A NORMALIZAR!!
+2026-08-19 11:33:04,517 - INFO - minha quantidade de dados processados :  1953
+2026-08-19 11:33:05,413 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-19 11:33:05,413 - ERROR - Aplicação finalizada!
+2026-08-19 11:33:05,414 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-19 11:37:23,599 - INFO - ================================================================================
+2026-08-19 11:37:23,608 - INFO - Inicio proceso nomarlização dos dadose - 2026-08-19 11:37:23.599085
+2026-08-19 11:37:25,617 - INFO - ================================================================================
+2026-08-19 11:37:25,617 - INFO - ACESSANDO PAGINA PARA PROCESSAR OS DADOS
+2026-08-19 11:37:25,617 - INFO - REALIZAR A NORMALIZAR!!
+2026-08-19 11:37:26,122 - INFO - minha quantidade de dados processados :  1953
+2026-08-19 11:37:35,634 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-19 11:37:35,634 - ERROR - Aplicação finalizada!
+2026-08-19 11:37:35,636 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-19 11:53:25,033 - INFO - ================================================================================
+2026-08-19 11:53:25,034 - INFO - Inicio proceso nomarlização dos dadose - 2026-08-19 11:53:25.033494
+2026-08-19 11:53:27,035 - INFO - ================================================================================
+2026-08-19 11:53:27,035 - INFO - ACESSANDO PAGINA PARA PROCESSAR OS DADOS
+2026-08-19 11:53:27,038 - INFO - REALIZAR A NORMALIZAR!!
+2026-08-19 11:53:27,672 - INFO - minha quantidade de dados processados :  1953
+2026-08-19 11:53:39,551 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-19 11:53:39,552 - ERROR - Aplicação finalizada!
+2026-08-19 11:53:39,555 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-19 12:04:37,283 - INFO - ================================================================================
+2026-08-19 12:04:37,284 - INFO - Inicio proceso nomarlização dos dadose - 2026-08-19 12:04:37.283663
+2026-08-19 12:04:39,285 - INFO - ================================================================================
+2026-08-19 12:04:39,285 - INFO - ACESSANDO PAGINA PARA PROCESSAR OS DADOS
+2026-08-19 12:04:39,285 - INFO - REALIZAR A NORMALIZAR!!
+2026-08-19 12:04:39,372 - ERROR - Erro fatal na execução para normalizar: list indices must be integers or slices, not str
+Traceback (most recent call last):
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\Tratamentos\Normlizar.py", line 219, in arquivos_process
+    familiares_processados = df['FAMILIARES_BRUTO'].apply(tratar_familiares_A)
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\.venvFalecidos\Lib\site-packages\pandas\core\series.py", line 5084, in apply
+    ).apply()
+      ~~~~~^^
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\.venvFalecidos\Lib\site-packages\pandas\core\apply.py", line 1520, in apply
+    return self.apply_standard()
+           ~~~~~~~~~~~~~~~~~~~^^
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\.venvFalecidos\Lib\site-packages\pandas\core\apply.py", line 1578, in apply_standard
+    mapped = obj._map_values(mapper=curried)
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\.venvFalecidos\Lib\site-packages\pandas\core\base.py", line 1020, in _map_values
+    return arr.map(mapper, na_action=na_action)
+           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\.venvFalecidos\Lib\site-packages\pandas\core\arrays\base.py", line 2745, in map
+    return map_array(self, mapper, na_action=na_action)
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\.venvFalecidos\Lib\site-packages\pandas\core\algorithms.py", line 1715, in map_array
+    return lib.map_infer(values, mapper)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "pandas/_libs/lib.pyx", line 3071, in pandas._libs.lib.map_infer
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\Tratamentos\Normlizar.py", line 416, in tratar_familiares_A
+    print(dados_extraidos['CONJUGE||PAIS'])
+          ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+TypeError: list indices must be integers or slices, not str
+2026-08-19 12:04:39,390 - ERROR - Erro fatal na execução: object of type 'NoneType' has no len()
+2026-08-19 12:04:39,390 - ERROR - Aplicação finalizada!
+2026-08-19 12:04:39,390 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-19 12:05:50,987 - INFO - ================================================================================
+2026-08-19 12:05:51,009 - INFO - Inicio proceso nomarlização dos dadose - 2026-08-19 12:05:50.987572
+2026-08-19 12:05:53,010 - INFO - ================================================================================
+2026-08-19 12:05:53,011 - INFO - ACESSANDO PAGINA PARA PROCESSAR OS DADOS
+2026-08-19 12:05:53,011 - INFO - REALIZAR A NORMALIZAR!!
+2026-08-19 12:05:53,631 - INFO - minha quantidade de dados processados :  1953
+2026-08-19 12:05:54,746 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-19 12:05:54,746 - ERROR - Aplicação finalizada!
+2026-08-19 12:05:54,747 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-19 12:17:27,040 - INFO - ================================================================================
+2026-08-19 12:17:27,040 - INFO - Inicio proceso nomarlização dos dadose - 2026-08-19 12:17:27.040031
+2026-08-19 12:17:29,041 - INFO - ================================================================================
+2026-08-19 12:17:29,041 - INFO - ACESSANDO PAGINA PARA PROCESSAR OS DADOS
+2026-08-19 12:17:29,041 - INFO - REALIZAR A NORMALIZAR!!
+2026-08-19 12:17:29,387 - INFO - minha quantidade de dados processados :  1953
+2026-08-19 12:17:30,485 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-19 12:17:30,485 - ERROR - Aplicação finalizada!
+2026-08-19 12:17:30,487 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-19 12:17:44,338 - INFO - ================================================================================
+2026-08-19 12:17:44,339 - INFO - Inicio proceso nomarlização dos dadose - 2026-08-19 12:17:44.338823
+2026-08-19 12:17:46,339 - INFO - ================================================================================
+2026-08-19 12:17:46,340 - INFO - ACESSANDO PAGINA PARA PROCESSAR OS DADOS
+2026-08-19 12:17:46,340 - INFO - REALIZAR A NORMALIZAR!!
+2026-08-19 12:17:46,615 - INFO - minha quantidade de dados processados :  1953
+2026-08-19 12:17:47,229 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-19 12:17:47,229 - ERROR - Aplicação finalizada!
+2026-08-19 12:17:47,230 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-19 12:22:08,198 - INFO - ================================================================================
+2026-08-19 12:22:08,198 - INFO - Inicio proceso nomarlização dos dadose - 2026-08-19 12:22:08.198387
+2026-08-19 12:22:10,199 - INFO - ================================================================================
+2026-08-19 12:22:10,199 - INFO - ACESSANDO PAGINA PARA PROCESSAR OS DADOS
+2026-08-19 12:22:10,199 - INFO - REALIZAR A NORMALIZAR!!
+2026-08-19 12:22:10,493 - INFO - minha quantidade de dados processados :  1953
+2026-08-19 12:22:11,110 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-19 12:22:11,111 - ERROR - Aplicação finalizada!
+2026-08-19 12:22:11,112 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-19 12:26:01,268 - INFO - ================================================================================
+2026-08-19 12:26:01,268 - INFO - Inicio proceso nomarlização dos dadose - 2026-08-19 12:26:01.268170
+2026-08-19 12:26:03,269 - INFO - ================================================================================
+2026-08-19 12:26:03,269 - INFO - ACESSANDO PAGINA PARA PROCESSAR OS DADOS
+2026-08-19 12:26:03,269 - INFO - REALIZAR A NORMALIZAR!!
+2026-08-19 12:26:03,516 - INFO - minha quantidade de dados processados :  1953
+2026-08-19 12:26:04,128 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-19 12:26:04,129 - ERROR - Aplicação finalizada!
+2026-08-19 12:26:04,130 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-19 12:27:07,890 - INFO - ================================================================================
+2026-08-19 12:27:07,892 - INFO - Inicio proceso nomarlização dos dadose - 2026-08-19 12:27:07.890569
+2026-08-19 12:27:09,893 - INFO - ================================================================================
+2026-08-19 12:27:09,893 - INFO - ACESSANDO PAGINA PARA PROCESSAR OS DADOS
+2026-08-19 12:27:09,894 - INFO - REALIZAR A NORMALIZAR!!
+2026-08-19 12:27:10,144 - INFO - minha quantidade de dados processados :  1953
+2026-08-19 12:27:10,773 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-19 12:27:10,773 - ERROR - Aplicação finalizada!
+2026-08-19 12:27:10,774 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-19 12:30:56,055 - INFO - ================================================================================
+2026-08-19 12:30:56,055 - INFO - Inicio proceso nomarlização dos dadose - 2026-08-19 12:30:56.055503
+2026-08-19 12:30:58,056 - INFO - ================================================================================
+2026-08-19 12:30:58,056 - INFO - ACESSANDO PAGINA PARA PROCESSAR OS DADOS
+2026-08-19 12:30:58,056 - INFO - REALIZAR A NORMALIZAR!!
+2026-08-19 12:30:58,319 - INFO - minha quantidade de dados processados :  1953
+2026-08-19 12:30:58,936 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-19 12:30:58,937 - ERROR - Aplicação finalizada!
+2026-08-19 12:30:58,938 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-19 12:37:19,159 - INFO - ================================================================================
+2026-08-19 12:37:19,160 - INFO - Inicio proceso nomarlização dos dadose - 2026-08-19 12:37:19.159841
+2026-08-19 12:37:21,160 - INFO - ================================================================================
+2026-08-19 12:37:21,161 - INFO - ACESSANDO PAGINA PARA PROCESSAR OS DADOS
+2026-08-19 12:37:21,161 - INFO - REALIZAR A NORMALIZAR!!
+2026-08-19 12:37:21,396 - INFO - minha quantidade de dados processados :  1953
+2026-08-19 12:37:22,146 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-19 12:37:22,146 - ERROR - Aplicação finalizada!
+2026-08-19 12:37:22,147 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-19 12:47:00,668 - INFO - ================================================================================
+2026-08-19 12:47:00,670 - INFO - Inicio proceso nomarlização dos dadose - 2026-08-19 12:47:00.668304
+2026-08-19 12:47:02,671 - INFO - ================================================================================
+2026-08-19 12:47:02,671 - INFO - ACESSANDO PAGINA PARA PROCESSAR OS DADOS
+2026-08-19 12:47:02,671 - INFO - REALIZAR A NORMALIZAR!!
+2026-08-19 12:47:03,034 - INFO - minha quantidade de dados processados :  1953
+2026-08-19 12:47:03,664 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-19 12:47:03,664 - ERROR - Aplicação finalizada!
+2026-08-19 12:47:03,665 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-19 12:50:43,530 - INFO - ================================================================================
+2026-08-19 12:50:43,531 - INFO - Inicio proceso nomarlização dos dadose - 2026-08-19 12:50:43.530470
+2026-08-19 12:50:45,531 - INFO - ================================================================================
+2026-08-19 12:50:45,531 - INFO - ACESSANDO PAGINA PARA PROCESSAR OS DADOS
+2026-08-19 12:50:45,532 - INFO - REALIZAR A NORMALIZAR!!
+2026-08-19 12:50:45,837 - INFO - minha quantidade de dados processados :  1953
+2026-08-19 12:50:46,450 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-19 12:50:46,451 - ERROR - Aplicação finalizada!
+2026-08-19 12:50:46,452 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-19 12:51:20,537 - INFO - ================================================================================
+2026-08-19 12:51:20,542 - INFO - Inicio proceso nomarlização dos dadose - 2026-08-19 12:51:20.537589
+2026-08-19 12:51:22,544 - INFO - ================================================================================
+2026-08-19 12:51:22,545 - INFO - ACESSANDO PAGINA PARA PROCESSAR OS DADOS
+2026-08-19 12:51:22,545 - INFO - REALIZAR A NORMALIZAR!!
+2026-08-19 12:51:22,848 - INFO - minha quantidade de dados processados :  1953
+2026-08-19 12:51:24,280 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-19 12:51:24,280 - ERROR - Aplicação finalizada!
+2026-08-19 12:51:24,282 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-19 12:52:10,369 - INFO - ================================================================================
+2026-08-19 12:52:10,370 - INFO - Inicio proceso nomarlização dos dadose - 2026-08-19 12:52:10.369748
+2026-08-19 12:52:12,370 - INFO - ================================================================================
+2026-08-19 12:52:12,371 - INFO - ACESSANDO PAGINA PARA PROCESSAR OS DADOS
+2026-08-19 12:52:12,371 - INFO - REALIZAR A NORMALIZAR!!
+2026-08-19 12:52:12,681 - INFO - minha quantidade de dados processados :  1953
+2026-08-19 12:52:13,939 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-19 12:52:13,939 - ERROR - Aplicação finalizada!
+2026-08-19 12:52:13,940 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-19 12:53:36,154 - INFO - ================================================================================
+2026-08-19 12:53:36,154 - INFO - Inicio proceso nomarlização dos dadose - 2026-08-19 12:53:36.154141
+2026-08-19 12:53:38,155 - INFO - ================================================================================
+2026-08-19 12:53:38,155 - INFO - ACESSANDO PAGINA PARA PROCESSAR OS DADOS
+2026-08-19 12:53:38,155 - INFO - REALIZAR A NORMALIZAR!!
+2026-08-19 12:53:38,414 - INFO - minha quantidade de dados processados :  1953
+2026-08-19 12:53:41,089 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-19 12:53:41,089 - ERROR - Aplicação finalizada!
+2026-08-19 12:53:41,090 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-19 12:56:43,666 - INFO - ================================================================================
+2026-08-19 12:56:43,666 - INFO - Inicio proceso nomarlização dos dadose - 2026-08-19 12:56:43.666486
+2026-08-19 12:56:45,667 - INFO - ================================================================================
+2026-08-19 12:56:45,667 - INFO - ACESSANDO PAGINA PARA PROCESSAR OS DADOS
+2026-08-19 12:56:45,667 - INFO - REALIZAR A NORMALIZAR!!
+2026-08-19 12:56:45,912 - INFO - minha quantidade de dados processados :  1953
+2026-08-19 12:56:47,340 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-19 12:56:47,341 - ERROR - Aplicação finalizada!
+2026-08-19 12:56:47,344 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-19 14:07:00,632 - INFO - ================================================================================
+2026-08-19 14:07:00,633 - INFO - Inicio proceso nomarlização dos dadose - 2026-08-19 14:07:00.631906
+2026-08-19 14:07:02,634 - INFO - ================================================================================
+2026-08-19 14:07:02,635 - INFO - ACESSANDO PAGINA PARA PROCESSAR OS DADOS
+2026-08-19 14:07:02,636 - INFO - REALIZAR A NORMALIZAR!!
+2026-08-19 14:07:03,312 - INFO - minha quantidade de dados processados :  1953
+2026-08-19 14:07:05,128 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-19 14:07:05,129 - ERROR - Aplicação finalizada!
+2026-08-19 14:07:05,133 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-19 14:08:54,929 - INFO - ================================================================================
+2026-08-19 14:08:54,930 - INFO - Inicio proceso nomarlização dos dadose - 2026-08-19 14:08:54.929670
+2026-08-19 14:08:56,931 - INFO - ================================================================================
+2026-08-19 14:08:56,932 - INFO - ACESSANDO PAGINA PARA PROCESSAR OS DADOS
+2026-08-19 14:08:56,932 - INFO - REALIZAR A NORMALIZAR!!
+2026-08-19 14:08:57,529 - INFO - minha quantidade de dados processados :  1953
+2026-08-19 14:08:59,199 - ERROR - falha em inserir os dados na base  insert_base_interpol - AttributeError("'psycopg2.extensions.connection' object has no attribute 'db'")
+2026-08-19 14:08:59,202 - ERROR - falha em inserir os dados na base  insert_base_interpol - AttributeError("'psycopg2.extensions.connection' object has no attribute 'db'")
+2026-08-19 14:08:59,203 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-19 14:08:59,203 - ERROR - Aplicação finalizada!
+2026-08-19 14:08:59,206 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-19 14:09:36,082 - INFO - ================================================================================
+2026-08-19 14:09:36,083 - INFO - Inicio proceso nomarlização dos dadose - 2026-08-19 14:09:36.082378
+2026-08-19 14:09:38,084 - INFO - ================================================================================
+2026-08-19 14:09:38,085 - INFO - ACESSANDO PAGINA PARA PROCESSAR OS DADOS
+2026-08-19 14:09:38,086 - INFO - REALIZAR A NORMALIZAR!!
+2026-08-19 14:09:38,745 - INFO - minha quantidade de dados processados :  1953
+2026-08-19 14:09:41,292 - ERROR - falha em inserir os dados na base  insert_base_interpol - NameError("name 'self' is not defined")
+2026-08-19 14:09:41,293 - ERROR - falha em inserir os dados na base  insert_base_interpol - NameError("name 'self' is not defined")
+2026-08-19 14:09:41,295 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-19 14:09:41,296 - ERROR - Aplicação finalizada!
+2026-08-19 14:09:41,300 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-19 14:10:42,833 - INFO - ================================================================================
+2026-08-19 14:10:42,834 - INFO - Inicio proceso nomarlização dos dadose - 2026-08-19 14:10:42.833557
+2026-08-19 14:10:44,835 - INFO - ================================================================================
+2026-08-19 14:10:44,836 - INFO - ACESSANDO PAGINA PARA PROCESSAR OS DADOS
+2026-08-19 14:10:44,837 - INFO - REALIZAR A NORMALIZAR!!
+2026-08-19 14:10:45,680 - INFO - minha quantidade de dados processados :  1953
+2026-08-19 14:10:47,321 - ERROR - falha em inserir os dados na base  insert_base_interpol - IndexError('tuple index out of range')
+2026-08-19 14:10:47,322 - ERROR - falha em inserir os dados na base  insert_base_interpol - IndexError('tuple index out of range')
+2026-08-19 14:10:47,324 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-19 14:10:47,324 - ERROR - Aplicação finalizada!
+2026-08-19 14:10:47,326 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-19 14:11:40,994 - INFO - ================================================================================
+2026-08-19 14:11:40,996 - INFO - Inicio proceso nomarlização dos dadose - 2026-08-19 14:11:40.994196
+2026-08-19 14:11:42,997 - INFO - ================================================================================
+2026-08-19 14:11:42,998 - INFO - ACESSANDO PAGINA PARA PROCESSAR OS DADOS
+2026-08-19 14:11:42,998 - INFO - REALIZAR A NORMALIZAR!!
+2026-08-19 14:11:44,251 - INFO - minha quantidade de dados processados :  1953
+2026-08-19 14:11:46,730 - ERROR - falha em inserir os dados na base  insert_base_interpol - UndefinedColumn('column "id" does not exist\nLINE 3: ...consonifunerais\', \'1937/10/18\', \'ARARAS - SP\') RETURNING id;\n                                                                    ^\n')
+2026-08-19 14:11:47,242 - ERROR - falha em inserir os dados na base  insert_base_interpol - UndefinedColumn('column "id" does not exist\nLINE 3: ...consonifunerais\', \'1924/03/20\', \'ARARAS - SP\') RETURNING id;\n                                                                    ^\n')
+2026-08-19 14:11:47,244 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-19 14:11:47,245 - ERROR - Aplicação finalizada!
+2026-08-19 14:11:47,248 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-19 14:12:09,207 - INFO - ================================================================================
+2026-08-19 14:12:09,208 - INFO - Inicio proceso nomarlização dos dadose - 2026-08-19 14:12:09.207535
+2026-08-19 14:12:11,208 - INFO - ================================================================================
+2026-08-19 14:12:11,209 - INFO - ACESSANDO PAGINA PARA PROCESSAR OS DADOS
+2026-08-19 14:12:11,210 - INFO - REALIZAR A NORMALIZAR!!
+2026-08-19 14:12:12,014 - INFO - minha quantidade de dados processados :  1953
+2026-08-19 14:12:14,993 - ERROR - falha em inserir os dados na base  insert_base_interpol - InterfaceError('cursor already closed')
+2026-08-19 14:12:15,813 - ERROR - falha em inserir os dados na base  insert_base_interpol - InterfaceError('cursor already closed')
+2026-08-19 14:12:15,816 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-19 14:12:15,818 - ERROR - Aplicação finalizada!
+2026-08-19 14:12:15,822 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-19 14:13:54,627 - INFO - ================================================================================
+2026-08-19 14:13:54,628 - INFO - Inicio proceso nomarlização dos dadose - 2026-08-19 14:13:54.627615
+2026-08-19 14:13:56,629 - INFO - ================================================================================
+2026-08-19 14:13:56,629 - INFO - ACESSANDO PAGINA PARA PROCESSAR OS DADOS
+2026-08-19 14:13:56,629 - INFO - REALIZAR A NORMALIZAR!!
+2026-08-19 14:13:57,239 - INFO - minha quantidade de dados processados :  1953
+2026-08-19 14:13:59,856 - ERROR - falha em inserir os dados na base  insert_base_interpol - AttributeError("'builtin_function_or_method' object has no attribute 'fetchone'")
+2026-08-19 14:14:00,367 - ERROR - falha em inserir os dados na base  insert_base_interpol - AttributeError("'builtin_function_or_method' object has no attribute 'fetchone'")
+2026-08-19 14:14:00,369 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-19 14:14:00,369 - ERROR - Aplicação finalizada!
+2026-08-19 14:14:00,371 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-19 14:14:26,717 - INFO - ================================================================================
+2026-08-19 14:14:26,720 - INFO - Inicio proceso nomarlização dos dadose - 2026-08-19 14:14:26.717312
+2026-08-19 14:14:28,722 - INFO - ================================================================================
+2026-08-19 14:14:28,754 - INFO - ACESSANDO PAGINA PARA PROCESSAR OS DADOS
+2026-08-19 14:14:28,785 - INFO - REALIZAR A NORMALIZAR!!
+2026-08-19 14:14:30,709 - INFO - minha quantidade de dados processados :  1953
+2026-08-19 14:14:33,641 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-19 14:14:33,642 - ERROR - Aplicação finalizada!
+2026-08-19 14:14:33,643 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-19 14:25:09,209 - INFO - ================================================================================
+2026-08-19 14:25:09,210 - INFO - Inicio proceso nomarlização dos dadose - 2026-08-19 14:25:09.209464
+2026-08-19 14:25:11,211 - INFO - ================================================================================
+2026-08-19 14:25:11,211 - INFO - ACESSANDO PAGINA PARA PROCESSAR OS DADOS
+2026-08-19 14:25:11,211 - INFO - REALIZAR A NORMALIZAR!!
+2026-08-19 14:25:11,867 - INFO - minha quantidade de dados processados :  1953
+2026-08-19 14:25:12,834 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-19 14:25:12,835 - ERROR - Aplicação finalizada!
+2026-08-19 14:25:12,838 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-19 14:27:12,439 - INFO - ================================================================================
+2026-08-19 14:27:12,440 - INFO - Inicio proceso nomarlização dos dadose - 2026-08-19 14:27:12.439122
+2026-08-19 14:27:14,441 - INFO - ================================================================================
+2026-08-19 14:27:14,441 - INFO - ACESSANDO PAGINA PARA PROCESSAR OS DADOS
+2026-08-19 14:27:14,441 - INFO - REALIZAR A NORMALIZAR!!
+2026-08-19 14:27:15,029 - INFO - minha quantidade de dados processados :  1953
+2026-08-19 14:27:16,022 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-19 14:27:16,023 - ERROR - Aplicação finalizada!
+2026-08-19 14:27:16,024 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-19 14:27:54,535 - INFO - ================================================================================
+2026-08-19 14:27:54,536 - INFO - Inicio proceso nomarlização dos dadose - 2026-08-19 14:27:54.535653
+2026-08-19 14:27:56,537 - INFO - ================================================================================
+2026-08-19 14:27:56,538 - INFO - ACESSANDO PAGINA PARA PROCESSAR OS DADOS
+2026-08-19 14:27:56,538 - INFO - REALIZAR A NORMALIZAR!!
+2026-08-19 14:27:57,651 - INFO - minha quantidade de dados processados :  1953
+2026-08-19 14:27:58,416 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-19 14:27:58,416 - ERROR - Aplicação finalizada!
+2026-08-19 14:27:58,418 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-19 14:28:22,736 - INFO - ================================================================================
+2026-08-19 14:28:22,737 - INFO - Inicio proceso nomarlização dos dadose - 2026-08-19 14:28:22.736198
+2026-08-19 14:28:24,738 - INFO - ================================================================================
+2026-08-19 14:28:24,738 - INFO - ACESSANDO PAGINA PARA PROCESSAR OS DADOS
+2026-08-19 14:28:24,739 - INFO - REALIZAR A NORMALIZAR!!
+2026-08-19 14:28:25,641 - INFO - minha quantidade de dados processados :  1953
+2026-08-19 14:28:26,472 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-19 14:28:26,472 - ERROR - Aplicação finalizada!
+2026-08-19 14:28:26,475 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-19 14:30:03,457 - INFO - ================================================================================
+2026-08-19 14:30:03,458 - INFO - Inicio proceso nomarlização dos dadose - 2026-08-19 14:30:03.457711
+2026-08-19 14:30:05,459 - INFO - ================================================================================
+2026-08-19 14:30:05,459 - INFO - ACESSANDO PAGINA PARA PROCESSAR OS DADOS
+2026-08-19 14:30:05,460 - INFO - REALIZAR A NORMALIZAR!!
+2026-08-19 14:30:06,313 - INFO - minha quantidade de dados processados :  1953
+2026-08-19 14:30:07,140 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-19 14:30:07,141 - ERROR - Aplicação finalizada!
+2026-08-19 14:30:07,143 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-19 14:30:36,008 - INFO - ================================================================================
+2026-08-19 14:30:36,008 - INFO - Inicio proceso nomarlização dos dadose - 2026-08-19 14:30:36.008219
+2026-08-19 14:30:38,009 - INFO - ================================================================================
+2026-08-19 14:30:38,010 - INFO - ACESSANDO PAGINA PARA PROCESSAR OS DADOS
+2026-08-19 14:30:38,011 - INFO - REALIZAR A NORMALIZAR!!
+2026-08-19 14:30:38,600 - INFO - minha quantidade de dados processados :  1953
+2026-08-19 14:30:42,737 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-19 14:30:42,738 - ERROR - Aplicação finalizada!
+2026-08-19 14:30:42,743 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-19 14:32:16,411 - INFO - ================================================================================
+2026-08-19 14:32:16,412 - INFO - Inicio proceso nomarlização dos dadose - 2026-08-19 14:32:16.411565
+2026-08-19 14:32:18,413 - INFO - ================================================================================
+2026-08-19 14:32:18,413 - INFO - ACESSANDO PAGINA PARA PROCESSAR OS DADOS
+2026-08-19 14:32:18,413 - INFO - REALIZAR A NORMALIZAR!!
+2026-08-19 14:32:19,136 - INFO - minha quantidade de dados processados :  1953
+2026-08-19 14:32:21,102 - ERROR - Erro fatal na execução: 'list' object has no attribute 'result'
+2026-08-19 14:32:21,102 - ERROR - Aplicação finalizada!
+2026-08-19 14:32:21,105 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-19 14:43:06,155 - INFO - ================================================================================
+2026-08-19 14:43:06,156 - INFO - Inicio proceso nomarlização dos dadose - 2026-08-19 14:43:06.155554
+2026-08-19 14:43:08,157 - INFO - ================================================================================
+2026-08-19 14:43:08,157 - INFO - ACESSANDO PAGINA PARA PROCESSAR OS DADOS
+2026-08-19 14:43:08,158 - INFO - REALIZAR A NORMALIZAR!!
+2026-08-19 14:43:08,766 - INFO - minha quantidade de dados processados :  1953
+2026-08-19 14:43:08,767 - ERROR - Erro fatal na execução: 'list' object has no attribute 'iloc'
+2026-08-19 14:43:08,767 - ERROR - Aplicação finalizada!
+2026-08-19 14:43:08,769 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-19 14:44:38,169 - INFO - ================================================================================
+2026-08-19 14:44:38,170 - INFO - Inicio proceso nomarlização dos dadose - 2026-08-19 14:44:38.169731
+2026-08-19 14:44:40,172 - INFO - ================================================================================
+2026-08-19 14:44:40,172 - INFO - ACESSANDO PAGINA PARA PROCESSAR OS DADOS
+2026-08-19 14:44:40,173 - INFO - REALIZAR A NORMALIZAR!!
+2026-08-19 14:44:40,720 - INFO - minha quantidade de dados processados :  1953
+2026-08-19 14:44:43,079 - ERROR - Erro fatal na execução: 'list' object has no attribute 'result'
+2026-08-19 14:44:43,079 - ERROR - Aplicação finalizada!
+2026-08-19 14:44:43,081 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-19 14:52:53,380 - INFO - ================================================================================
+2026-08-19 14:52:53,381 - INFO - Inicio proceso nomarlização dos dadose - 2026-08-19 14:52:53.380693
+2026-08-19 14:52:55,382 - INFO - ================================================================================
+2026-08-19 14:52:55,383 - INFO - ACESSANDO PAGINA PARA PROCESSAR OS DADOS
+2026-08-19 14:52:55,383 - INFO - REALIZAR A NORMALIZAR!!
+2026-08-19 14:52:56,047 - INFO - minha quantidade de dados processados :  1953
+2026-08-19 14:52:58,507 - ERROR - Erro fatal na execução: 'list' object has no attribute 'result'
+2026-08-19 14:52:58,508 - ERROR - Aplicação finalizada!
+2026-08-19 14:52:58,510 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-19 14:56:28,738 - INFO - ================================================================================
+2026-08-19 14:56:28,739 - INFO - Inicio proceso nomarlização dos dadose - 2026-08-19 14:56:28.737922
+2026-08-19 14:56:30,740 - INFO - ================================================================================
+2026-08-19 14:56:30,740 - INFO - ACESSANDO PAGINA PARA PROCESSAR OS DADOS
+2026-08-19 14:56:30,741 - INFO - REALIZAR A NORMALIZAR!!
+2026-08-19 14:56:30,943 - ERROR - Erro fatal na execução para normalizar: missing ), unterminated subpattern at position 44
+Traceback (most recent call last):
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\Tratamentos\Normlizar.py", line 217, in arquivos_process
+    df['FAMILIARES_B'] =  df['FAMILIARES'].apply(tratar_familiares_B).str.upper()
+                          ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\.venvFalecidos\Lib\site-packages\pandas\core\series.py", line 5084, in apply
+    ).apply()
+      ~~~~~^^
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\.venvFalecidos\Lib\site-packages\pandas\core\apply.py", line 1520, in apply
+    return self.apply_standard()
+           ~~~~~~~~~~~~~~~~~~~^^
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\.venvFalecidos\Lib\site-packages\pandas\core\apply.py", line 1578, in apply_standard
+    mapped = obj._map_values(mapper=curried)
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\.venvFalecidos\Lib\site-packages\pandas\core\base.py", line 1020, in _map_values
+    return arr.map(mapper, na_action=na_action)
+           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\.venvFalecidos\Lib\site-packages\pandas\core\arrays\base.py", line 2745, in map
+    return map_array(self, mapper, na_action=na_action)
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\.venvFalecidos\Lib\site-packages\pandas\core\algorithms.py", line 1715, in map_array
+    return lib.map_infer(values, mapper)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "pandas/_libs/lib.pyx", line 3071, in pandas._libs.lib.map_infer
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\Tratamentos\Normlizar.py", line 394, in tratar_familiares_B
+    filhos_match = re.search(r'deixa (?:os filhos|as filhas|filhos)\s+(.*?)(?=\s*,\s*(?:os filhos)\s+(.*?)(?=\s*,\s*(?:familiares|amigos|conhecidos|parentes)\b|\s*$)', texto_limpo, flags=re.IGNORECASE)
+  File "C:\Users\proScore_25\.pyenv\pyenv-win\versions\3.13.3\Lib\re\__init__.py", line 177, in search
+    return _compile(pattern, flags).search(string)
+           ~~~~~~~~^^^^^^^^^^^^^^^^
+  File "C:\Users\proScore_25\.pyenv\pyenv-win\versions\3.13.3\Lib\re\__init__.py", line 350, in _compile
+    p = _compiler.compile(pattern, flags)
+  File "C:\Users\proScore_25\.pyenv\pyenv-win\versions\3.13.3\Lib\re\_compiler.py", line 748, in compile
+    p = _parser.parse(p, flags)
+  File "C:\Users\proScore_25\.pyenv\pyenv-win\versions\3.13.3\Lib\re\_parser.py", line 980, in parse
+    p = _parse_sub(source, state, flags & SRE_FLAG_VERBOSE, 0)
+  File "C:\Users\proScore_25\.pyenv\pyenv-win\versions\3.13.3\Lib\re\_parser.py", line 459, in _parse_sub
+    itemsappend(_parse(source, state, verbose, nested + 1,
+                ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                       not nested and not items))
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\proScore_25\.pyenv\pyenv-win\versions\3.13.3\Lib\re\_parser.py", line 779, in _parse
+    raise source.error("missing ), unterminated subpattern",
+                       source.tell() - start)
+re.PatternError: missing ), unterminated subpattern at position 44
+2026-08-19 14:56:31,264 - ERROR - Erro fatal na execução: object of type 'NoneType' has no len()
+2026-08-19 14:56:31,265 - ERROR - Aplicação finalizada!
+2026-08-19 14:56:31,265 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-19 14:58:33,898 - INFO - ================================================================================
+2026-08-19 14:58:33,906 - INFO - Inicio proceso nomarlização dos dadose - 2026-08-19 14:58:33.897987
+2026-08-19 14:58:35,907 - INFO - ================================================================================
+2026-08-19 14:58:35,908 - INFO - ACESSANDO PAGINA PARA PROCESSAR OS DADOS
+2026-08-19 14:58:35,908 - INFO - REALIZAR A NORMALIZAR!!
+2026-08-19 14:58:36,522 - INFO - minha quantidade de dados processados :  1953
+2026-08-19 14:58:43,021 - ERROR - Falha em capturar os dados no obito_captura.obito_dados.
+ connection already closed
+2026-08-19 14:58:43,025 - ERROR - Falha em capturar os dados no obito_captura.obito_dados.
+ cursor already closed
+2026-08-19 14:58:45,301 - ERROR - Falha em capturar os dados no obito_captura.obito_dados.
+ connection already closed
+2026-08-19 14:58:47,135 - ERROR - Erro fatal na execução: 'list' object has no attribute 'result'
+2026-08-19 14:58:47,135 - ERROR - Aplicação finalizada!
+2026-08-19 14:58:47,138 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-19 15:06:48,266 - INFO - ================================================================================
+2026-08-19 15:06:48,271 - INFO - Inicio proceso nomarlização dos dadose - 2026-08-19 15:06:48.266559
+2026-08-19 15:06:50,275 - INFO - ================================================================================
+2026-08-19 15:06:50,276 - INFO - ACESSANDO PAGINA PARA PROCESSAR OS DADOS
+2026-08-19 15:06:50,277 - INFO - REALIZAR A NORMALIZAR!!
+2026-08-19 15:06:51,185 - INFO - minha quantidade de dados processados :  1953
+2026-08-19 15:06:55,180 - ERROR - Falha em capturar os dados no obito_captura.obito_dados 'psycopg2.extensions.connection' object has no attribute 'db'
+2026-08-19 15:06:55,184 - ERROR - Falha em capturar os dados no obito_captura.obito_dados 'psycopg2.extensions.connection' object has no attribute 'db'
+2026-08-19 15:06:57,940 - ERROR - Falha em capturar os dados no obito_captura.obito_dados 'psycopg2.extensions.connection' object has no attribute 'db'
+2026-08-19 15:06:58,606 - ERROR - Falha em capturar os dados no obito_captura.obito_dados 'psycopg2.extensions.connection' object has no attribute 'db'
+2026-08-19 15:07:00,012 - ERROR - Falha em capturar os dados no obito_captura.obito_dados 'psycopg2.extensions.connection' object has no attribute 'db'
+2026-08-19 15:07:00,683 - ERROR - Falha em capturar os dados no obito_captura.obito_dados 'psycopg2.extensions.connection' object has no attribute 'db'
+2026-08-19 15:07:03,196 - ERROR - Erro fatal na execução: 'list' object has no attribute 'result'
+2026-08-19 15:07:03,197 - ERROR - Aplicação finalizada!
+2026-08-19 15:07:03,198 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-19 15:10:10,097 - INFO - ================================================================================
+2026-08-19 15:10:10,098 - INFO - Inicio proceso nomarlização dos dadose - 2026-08-19 15:10:10.097612
+2026-08-19 15:10:12,099 - INFO - ================================================================================
+2026-08-19 15:10:12,100 - INFO - ACESSANDO PAGINA PARA PROCESSAR OS DADOS
+2026-08-19 15:10:12,100 - INFO - REALIZAR A NORMALIZAR!!
+2026-08-19 15:10:12,674 - INFO - minha quantidade de dados processados :  1953
+2026-08-19 15:10:17,471 - ERROR - Erro fatal na execução: 'list' object has no attribute 'result'
+2026-08-19 15:10:17,472 - ERROR - Aplicação finalizada!
+2026-08-19 15:10:17,474 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-19 15:11:15,324 - INFO - ================================================================================
+2026-08-19 15:11:15,325 - INFO - Inicio proceso nomarlização dos dadose - 2026-08-19 15:11:15.324440
+2026-08-19 15:11:17,326 - INFO - ================================================================================
+2026-08-19 15:11:17,332 - INFO - ACESSANDO PAGINA PARA PROCESSAR OS DADOS
+2026-08-19 15:11:17,333 - INFO - REALIZAR A NORMALIZAR!!
+2026-08-19 15:11:18,345 - INFO - minha quantidade de dados processados :  1953
+2026-08-19 15:11:23,419 - ERROR - Erro fatal na execução: 'list' object has no attribute 'result'
+2026-08-19 15:11:23,420 - ERROR - Aplicação finalizada!
+2026-08-19 15:11:23,422 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-19 15:12:37,554 - INFO - ================================================================================
+2026-08-19 15:12:37,555 - INFO - Inicio proceso nomarlização dos dadose - 2026-08-19 15:12:37.554072
+2026-08-19 15:12:39,556 - INFO - ================================================================================
+2026-08-19 15:12:39,557 - INFO - ACESSANDO PAGINA PARA PROCESSAR OS DADOS
+2026-08-19 15:12:39,557 - INFO - REALIZAR A NORMALIZAR!!
+2026-08-19 15:12:40,131 - INFO - minha quantidade de dados processados :  1953
+2026-08-19 15:12:47,587 - ERROR - Erro fatal na execução: 'list' object has no attribute 'result'
+2026-08-19 15:12:47,588 - ERROR - Aplicação finalizada!
+2026-08-19 15:12:47,591 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-19 15:14:06,205 - INFO - ================================================================================
+2026-08-19 15:14:06,206 - INFO - Inicio proceso nomarlização dos dadose - 2026-08-19 15:14:06.205553
+2026-08-19 15:14:08,208 - INFO - ================================================================================
+2026-08-19 15:14:08,209 - INFO - ACESSANDO PAGINA PARA PROCESSAR OS DADOS
+2026-08-19 15:14:08,210 - INFO - REALIZAR A NORMALIZAR!!
+2026-08-19 15:14:08,972 - INFO - minha quantidade de dados processados :  1953
+2026-08-19 15:14:14,527 - ERROR - Erro fatal na execução: 'list' object has no attribute 'result'
+2026-08-19 15:14:14,527 - ERROR - Aplicação finalizada!
+2026-08-19 15:14:14,529 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-19 15:17:35,240 - INFO - ================================================================================
+2026-08-19 15:17:35,241 - INFO - Inicio proceso nomarlização dos dadose - 2026-08-19 15:17:35.239969
+2026-08-19 15:17:37,242 - INFO - ================================================================================
+2026-08-19 15:17:37,243 - INFO - ACESSANDO PAGINA PARA PROCESSAR OS DADOS
+2026-08-19 15:17:37,244 - INFO - REALIZAR A NORMALIZAR!!
+2026-08-19 15:17:37,861 - INFO - minha quantidade de dados processados :  1953
+2026-08-19 15:17:43,942 - ERROR - Erro fatal na execução: 'list' object has no attribute 'result'
+2026-08-19 15:17:43,943 - ERROR - Aplicação finalizada!
+2026-08-19 15:17:43,945 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-19 15:19:40,545 - INFO - ================================================================================
+2026-08-19 15:19:40,546 - INFO - Inicio proceso nomarlização dos dadose - 2026-08-19 15:19:40.545401
+2026-08-19 15:19:42,547 - INFO - ================================================================================
+2026-08-19 15:19:42,596 - INFO - ACESSANDO PAGINA PARA PROCESSAR OS DADOS
+2026-08-19 15:19:42,641 - INFO - REALIZAR A NORMALIZAR!!
+2026-08-19 15:19:42,985 - ERROR - Erro fatal na execução para normalizar: unbalanced parenthesis at position 29
+Traceback (most recent call last):
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\Tratamentos\Normlizar.py", line 217, in arquivos_process
+    df['FAMILIARES_B'] =  df['FAMILIARES'].apply(tratar_familiares_B).str.upper()
+                          ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\.venvFalecidos\Lib\site-packages\pandas\core\series.py", line 5084, in apply
+    ).apply()
+      ~~~~~^^
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\.venvFalecidos\Lib\site-packages\pandas\core\apply.py", line 1520, in apply
+    return self.apply_standard()
+           ~~~~~~~~~~~~~~~~~~~^^
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\.venvFalecidos\Lib\site-packages\pandas\core\apply.py", line 1578, in apply_standard
+    mapped = obj._map_values(mapper=curried)
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\.venvFalecidos\Lib\site-packages\pandas\core\base.py", line 1020, in _map_values
+    return arr.map(mapper, na_action=na_action)
+           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\.venvFalecidos\Lib\site-packages\pandas\core\arrays\base.py", line 2745, in map
+    return map_array(self, mapper, na_action=na_action)
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\.venvFalecidos\Lib\site-packages\pandas\core\algorithms.py", line 1715, in map_array
+    return lib.map_infer(values, mapper)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "pandas/_libs/lib.pyx", line 3071, in pandas._libs.lib.map_infer
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\Tratamentos\Normlizar.py", line 407, in tratar_familiares_B
+    trecho_filhos = re.sub(r'\s*\(In Memoriam\neto\bisneto)', '', trecho_filhos)
+  File "C:\Users\proScore_25\.pyenv\pyenv-win\versions\3.13.3\Lib\re\__init__.py", line 208, in sub
+    return _compile(pattern, flags).sub(repl, string, count)
+           ~~~~~~~~^^^^^^^^^^^^^^^^
+  File "C:\Users\proScore_25\.pyenv\pyenv-win\versions\3.13.3\Lib\re\__init__.py", line 350, in _compile
+    p = _compiler.compile(pattern, flags)
+  File "C:\Users\proScore_25\.pyenv\pyenv-win\versions\3.13.3\Lib\re\_compiler.py", line 748, in compile
+    p = _parser.parse(p, flags)
+  File "C:\Users\proScore_25\.pyenv\pyenv-win\versions\3.13.3\Lib\re\_parser.py", line 985, in parse
+    raise source.error("unbalanced parenthesis")
+re.PatternError: unbalanced parenthesis at position 29
+2026-08-19 15:19:43,021 - ERROR - Erro fatal na execução: object of type 'NoneType' has no len()
+2026-08-19 15:19:43,021 - ERROR - Aplicação finalizada!
+2026-08-19 15:19:43,022 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-19 15:20:45,381 - INFO - ================================================================================
+2026-08-19 15:20:45,382 - INFO - Inicio proceso nomarlização dos dadose - 2026-08-19 15:20:45.381620
+2026-08-19 15:20:47,383 - INFO - ================================================================================
+2026-08-19 15:20:47,383 - INFO - ACESSANDO PAGINA PARA PROCESSAR OS DADOS
+2026-08-19 15:20:47,383 - INFO - REALIZAR A NORMALIZAR!!
+2026-08-19 15:20:47,583 - ERROR - Erro fatal na execução para normalizar: unbalanced parenthesis at position 29
+Traceback (most recent call last):
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\Tratamentos\Normlizar.py", line 217, in arquivos_process
+    df['FAMILIARES_B'] =  df['FAMILIARES'].apply(tratar_familiares_B).str.upper()
+                          ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\.venvFalecidos\Lib\site-packages\pandas\core\series.py", line 5084, in apply
+    ).apply()
+      ~~~~~^^
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\.venvFalecidos\Lib\site-packages\pandas\core\apply.py", line 1520, in apply
+    return self.apply_standard()
+           ~~~~~~~~~~~~~~~~~~~^^
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\.venvFalecidos\Lib\site-packages\pandas\core\apply.py", line 1578, in apply_standard
+    mapped = obj._map_values(mapper=curried)
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\.venvFalecidos\Lib\site-packages\pandas\core\base.py", line 1020, in _map_values
+    return arr.map(mapper, na_action=na_action)
+           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\.venvFalecidos\Lib\site-packages\pandas\core\arrays\base.py", line 2745, in map
+    return map_array(self, mapper, na_action=na_action)
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\.venvFalecidos\Lib\site-packages\pandas\core\algorithms.py", line 1715, in map_array
+    return lib.map_infer(values, mapper)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "pandas/_libs/lib.pyx", line 3071, in pandas._libs.lib.map_infer
+  File "C:\xampp_backup\htdocs\projeto74\FALECIDOS\Tratamentos\Normlizar.py", line 407, in tratar_familiares_B
+    trecho_filhos = re.sub(r'\s*\(In Memoriam\neto\bisneto)', '', trecho_filhos)
+  File "C:\Users\proScore_25\.pyenv\pyenv-win\versions\3.13.3\Lib\re\__init__.py", line 208, in sub
+    return _compile(pattern, flags).sub(repl, string, count)
+           ~~~~~~~~^^^^^^^^^^^^^^^^
+  File "C:\Users\proScore_25\.pyenv\pyenv-win\versions\3.13.3\Lib\re\__init__.py", line 350, in _compile
+    p = _compiler.compile(pattern, flags)
+  File "C:\Users\proScore_25\.pyenv\pyenv-win\versions\3.13.3\Lib\re\_compiler.py", line 748, in compile
+    p = _parser.parse(p, flags)
+  File "C:\Users\proScore_25\.pyenv\pyenv-win\versions\3.13.3\Lib\re\_parser.py", line 985, in parse
+    raise source.error("unbalanced parenthesis")
+re.PatternError: unbalanced parenthesis at position 29
+2026-08-19 15:20:47,600 - ERROR - Erro fatal na execução: object of type 'NoneType' has no len()
+2026-08-19 15:20:47,601 - ERROR - Aplicação finalizada!
+2026-08-19 15:20:47,601 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-19 15:23:01,466 - INFO - ================================================================================
+2026-08-19 15:23:01,466 - INFO - Inicio proceso nomarlização dos dadose - 2026-08-19 15:23:01.466173
+2026-08-19 15:23:03,467 - INFO - ================================================================================
+2026-08-19 15:23:03,468 - INFO - ACESSANDO PAGINA PARA PROCESSAR OS DADOS
+2026-08-19 15:23:03,468 - INFO - REALIZAR A NORMALIZAR!!
+2026-08-19 15:23:03,749 - INFO - minha quantidade de dados processados :  1953
+2026-08-19 15:23:05,307 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-19 15:23:05,307 - ERROR - Aplicação finalizada!
+2026-08-19 15:23:05,309 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-19 15:23:28,750 - INFO - ================================================================================
+2026-08-19 15:23:28,750 - INFO - Inicio proceso nomarlização dos dadose - 2026-08-19 15:23:28.750434
+2026-08-19 15:23:30,751 - INFO - ================================================================================
+2026-08-19 15:23:30,751 - INFO - ACESSANDO PAGINA PARA PROCESSAR OS DADOS
+2026-08-19 15:23:30,751 - INFO - REALIZAR A NORMALIZAR!!
+2026-08-19 15:23:31,145 - INFO - minha quantidade de dados processados :  1953
+2026-08-19 15:23:32,707 - ERROR - Erro fatal na execução: 'list' object has no attribute 'result'
+2026-08-19 15:23:32,708 - ERROR - Aplicação finalizada!
+2026-08-19 15:23:32,709 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-19 15:24:31,652 - INFO - ================================================================================
+2026-08-19 15:24:31,660 - INFO - Inicio proceso nomarlização dos dadose - 2026-08-19 15:24:31.652555
+2026-08-19 15:24:33,661 - INFO - ================================================================================
+2026-08-19 15:24:33,661 - INFO - ACESSANDO PAGINA PARA PROCESSAR OS DADOS
+2026-08-19 15:24:33,661 - INFO - REALIZAR A NORMALIZAR!!
+2026-08-19 15:24:33,955 - INFO - minha quantidade de dados processados :  1953
+2026-08-19 15:24:37,027 - ERROR - Erro fatal na execução: 'list' object has no attribute 'result'
+2026-08-19 15:24:37,028 - ERROR - Aplicação finalizada!
+2026-08-19 15:24:37,028 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-19 15:27:52,745 - INFO - ================================================================================
+2026-08-19 15:27:52,746 - INFO - Inicio proceso nomarlização dos dadose - 2026-08-19 15:27:52.745898
+2026-08-19 15:27:54,746 - INFO - ================================================================================
+2026-08-19 15:27:54,746 - INFO - ACESSANDO PAGINA PARA PROCESSAR OS DADOS
+2026-08-19 15:27:54,747 - INFO - REALIZAR A NORMALIZAR!!
+2026-08-19 15:27:55,078 - INFO - minha quantidade de dados processados :  1953
+2026-08-19 15:27:58,917 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-19 15:27:58,918 - ERROR - Aplicação finalizada!
+2026-08-19 15:27:58,920 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-19 15:29:35,792 - INFO - ================================================================================
+2026-08-19 15:29:35,792 - INFO - Inicio proceso nomarlização dos dadose - 2026-08-19 15:29:35.792164
+2026-08-19 15:29:37,792 - INFO - ================================================================================
+2026-08-19 15:29:37,793 - INFO - ACESSANDO PAGINA PARA PROCESSAR OS DADOS
+2026-08-19 15:29:37,793 - INFO - REALIZAR A NORMALIZAR!!
+2026-08-19 15:29:38,176 - INFO - minha quantidade de dados processados :  1953
+2026-08-19 15:29:42,377 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-19 15:29:42,377 - ERROR - Aplicação finalizada!
+2026-08-19 15:29:42,380 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-19 15:30:16,525 - INFO - ================================================================================
+2026-08-19 15:30:16,525 - INFO - Inicio proceso nomarlização dos dadose - 2026-08-19 15:30:16.525249
+2026-08-19 15:30:18,526 - INFO - ================================================================================
+2026-08-19 15:30:18,526 - INFO - ACESSANDO PAGINA PARA PROCESSAR OS DADOS
+2026-08-19 15:30:18,526 - INFO - REALIZAR A NORMALIZAR!!
+2026-08-19 15:30:18,791 - INFO - minha quantidade de dados processados :  1953
+2026-08-19 15:32:03,910 - ERROR - Falha em capturar os dados no obito_captura.obito_dados connection pool exhausted
+2026-08-19 15:34:06,581 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-19 15:34:06,581 - ERROR - Aplicação finalizada!
+2026-08-19 15:34:06,583 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-19 15:39:04,588 - INFO - ================================================================================
+2026-08-19 15:39:04,591 - INFO - Inicio proceso nomarlização dos dadose - 2026-08-19 15:39:04.588124
+2026-08-19 15:39:06,593 - INFO - ================================================================================
+2026-08-19 15:39:06,594 - INFO - ACESSANDO PAGINA PARA PROCESSAR OS DADOS
+2026-08-19 15:39:06,595 - INFO - REALIZAR A NORMALIZAR!!
+2026-08-19 15:39:07,796 - INFO - minha quantidade de dados processados :  1953
+2026-08-19 15:39:30,724 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-19 15:39:30,724 - ERROR - Aplicação finalizada!
+2026-08-19 15:39:30,725 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-19 15:39:54,164 - INFO - ================================================================================
+2026-08-19 15:39:54,165 - INFO - Inicio proceso nomarlização dos dadose - 2026-08-19 15:39:54.164878
+2026-08-19 15:39:56,166 - INFO - ================================================================================
+2026-08-19 15:39:56,166 - INFO - ACESSANDO PAGINA PARA PROCESSAR OS DADOS
+2026-08-19 15:39:56,166 - INFO - REALIZAR A NORMALIZAR!!
+2026-08-19 15:39:56,423 - INFO - minha quantidade de dados processados :  1953
+2026-08-19 15:43:40,510 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-19 15:43:40,510 - ERROR - Aplicação finalizada!
+2026-08-19 15:43:40,512 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-19 15:48:02,477 - INFO - ================================================================================
+2026-08-19 15:48:02,478 - INFO - Inicio proceso nomarlização dos dadose - 2026-08-19 15:48:02.477804
+2026-08-19 15:48:04,479 - INFO - ================================================================================
+2026-08-19 15:48:04,479 - INFO - ACESSANDO PAGINA PARA PROCESSAR OS DADOS
+2026-08-19 15:48:04,479 - INFO - REALIZAR A NORMALIZAR!!
+2026-08-19 15:48:04,727 - INFO - minha quantidade de dados processados :  1953
+2026-08-19 15:49:43,917 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-19 15:49:43,917 - ERROR - Aplicação finalizada!
+2026-08-19 15:49:43,918 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-19 15:53:17,081 - INFO - ================================================================================
+2026-08-19 15:53:17,082 - INFO - Inicio proceso nomarlização dos dadose - 2026-08-19 15:53:17.081662
+2026-08-19 15:53:19,082 - INFO - ================================================================================
+2026-08-19 15:53:19,082 - INFO - ACESSANDO PAGINA PARA PROCESSAR OS DADOS
+2026-08-19 15:53:19,083 - INFO - REALIZAR A NORMALIZAR!!
+2026-08-19 15:53:19,360 - INFO - minha quantidade de dados processados :  1953
+2026-08-19 15:53:19,360 - ERROR - Erro fatal na execução: 'list' object has no attribute 'iloc'
+2026-08-19 15:53:19,360 - ERROR - Aplicação finalizada!
+2026-08-19 15:53:19,361 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-19 15:55:22,438 - INFO - ================================================================================
+2026-08-19 15:55:22,439 - INFO - Inicio proceso nomarlização dos dadose - 2026-08-19 15:55:22.438378
+2026-08-19 15:55:24,439 - INFO - ================================================================================
+2026-08-19 15:55:24,439 - INFO - ACESSANDO PAGINA PARA PROCESSAR OS DADOS
+2026-08-19 15:55:24,439 - INFO - REALIZAR A NORMALIZAR!!
+2026-08-19 15:55:24,728 - INFO - minha quantidade de dados processados :  1953
+2026-08-19 15:55:24,729 - ERROR - Erro fatal na execução: 'list' object has no attribute 'iloc'
+2026-08-19 15:55:24,729 - ERROR - Aplicação finalizada!
+2026-08-19 15:55:24,730 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-19 16:01:23,980 - INFO - ================================================================================
+2026-08-19 16:01:23,981 - INFO - Inicio proceso nomarlização dos dadose - 2026-08-19 16:01:23.980598
+2026-08-19 16:01:25,981 - INFO - ================================================================================
+2026-08-19 16:01:25,982 - INFO - ACESSANDO PAGINA PARA PROCESSAR OS DADOS
+2026-08-19 16:01:25,982 - INFO - REALIZAR A NORMALIZAR!!
+2026-08-19 16:01:26,241 - INFO - minha quantidade de dados processados :  1953
+2026-08-19 16:01:26,242 - ERROR - Erro fatal na execução: 'list' object has no attribute 'iloc'
+2026-08-19 16:01:26,242 - ERROR - Aplicação finalizada!
+2026-08-19 16:01:26,243 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-19 16:06:16,428 - INFO - ================================================================================
+2026-08-19 16:06:16,428 - INFO - Inicio proceso nomarlização dos dadose - 2026-08-19 16:06:16.428125
+2026-08-19 16:06:18,429 - INFO - ================================================================================
+2026-08-19 16:06:18,429 - INFO - ACESSANDO PAGINA PARA PROCESSAR OS DADOS
+2026-08-19 16:06:18,430 - INFO - REALIZAR A NORMALIZAR!!
+2026-08-19 16:06:18,674 - INFO - minha quantidade de dados processados :  1953
+2026-08-19 16:06:20,062 - ERROR - Aplicação finalizada!
+2026-08-19 16:06:20,063 - INFO - 
+Encerrando loop por comando do usuário (Ctrl+C).
+2026-08-19 16:10:33,865 - INFO - ================================================================================
+2026-08-19 16:10:33,866 - INFO - Inicio proceso nomarlização dos dadose - 2026-08-19 16:10:33.865642
+2026-08-19 16:10:35,866 - INFO - ================================================================================
+2026-08-19 16:10:35,867 - INFO - ACESSANDO PAGINA PARA PROCESSAR OS DADOS
+2026-08-19 16:10:35,867 - INFO - REALIZAR A NORMALIZAR!!
+2026-08-19 16:10:36,235 - INFO - minha quantidade de dados processados :  1953
+2026-08-19 16:10:45,911 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-19 16:10:45,911 - ERROR - Aplicação finalizada!
+2026-08-19 16:10:45,912 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-19 16:11:27,545 - INFO - ================================================================================
+2026-08-19 16:11:27,546 - INFO - Inicio proceso nomarlização dos dadose - 2026-08-19 16:11:27.545071
+2026-08-19 16:11:29,546 - INFO - ================================================================================
+2026-08-19 16:11:29,547 - INFO - ACESSANDO PAGINA PARA PROCESSAR OS DADOS
+2026-08-19 16:11:29,547 - INFO - REALIZAR A NORMALIZAR!!
+2026-08-19 16:11:29,821 - INFO - minha quantidade de dados processados :  1953
+2026-08-19 16:11:36,245 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-19 16:11:36,245 - ERROR - Aplicação finalizada!
+2026-08-19 16:11:36,246 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-19 16:13:02,549 - INFO - ================================================================================
+2026-08-19 16:13:02,557 - INFO - Inicio proceso nomarlização dos dadose - 2026-08-19 16:13:02.549233
+2026-08-19 16:13:04,558 - INFO - ================================================================================
+2026-08-19 16:13:04,558 - INFO - ACESSANDO PAGINA PARA PROCESSAR OS DADOS
+2026-08-19 16:13:04,558 - INFO - REALIZAR A NORMALIZAR!!
+2026-08-19 16:13:04,946 - INFO - minha quantidade de dados processados :  1953
+2026-08-19 16:13:05,628 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-19 16:13:05,628 - ERROR - Aplicação finalizada!
+2026-08-19 16:13:05,629 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-19 16:13:42,483 - INFO - ================================================================================
+2026-08-19 16:13:42,484 - INFO - Inicio proceso nomarlização dos dadose - 2026-08-19 16:13:42.483585
+2026-08-19 16:13:44,484 - INFO - ================================================================================
+2026-08-19 16:13:44,484 - INFO - ACESSANDO PAGINA PARA PROCESSAR OS DADOS
+2026-08-19 16:13:44,485 - INFO - REALIZAR A NORMALIZAR!!
+2026-08-19 16:13:44,771 - INFO - minha quantidade de dados processados :  1953
+2026-08-19 16:14:31,824 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-19 16:14:31,824 - ERROR - Aplicação finalizada!
+2026-08-19 16:14:31,825 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-19 16:15:09,898 - INFO - ================================================================================
+2026-08-19 16:15:09,898 - INFO - Inicio proceso nomarlização dos dadose - 2026-08-19 16:15:09.898286
+2026-08-19 16:15:11,899 - INFO - ================================================================================
+2026-08-19 16:15:11,899 - INFO - ACESSANDO PAGINA PARA PROCESSAR OS DADOS
+2026-08-19 16:15:11,899 - INFO - REALIZAR A NORMALIZAR!!
+2026-08-19 16:15:12,279 - INFO - minha quantidade de dados processados :  1953
+2026-08-19 16:17:00,848 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-19 16:17:00,849 - ERROR - Aplicação finalizada!
+2026-08-19 16:17:00,849 - INFO - 
+Iniciando Processo para captura dos dados
+2026-08-19 16:54:15,576 - INFO - ================================================================================
+2026-08-19 16:54:15,580 - INFO - Inicio proceso nomarlização dos dadose - 2026-08-19 16:54:15.576072
+2026-08-19 16:54:17,581 - INFO - ================================================================================
+2026-08-19 16:54:17,581 - INFO - ACESSANDO PAGINA PARA PROCESSAR OS DADOS
+2026-08-19 16:54:17,581 - INFO - REALIZAR A NORMALIZAR!!
+2026-08-19 16:54:17,932 - INFO - minha quantidade de dados processados :  1953
+2026-08-19 16:56:07,948 - INFO - ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2026-08-19 16:56:07,949 - ERROR - Aplicação finalizada!
+2026-08-19 16:56:07,952 - INFO - 
+Iniciando Processo para captura dos dados
