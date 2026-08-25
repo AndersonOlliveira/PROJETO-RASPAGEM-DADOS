@@ -40,11 +40,6 @@ class Processor:
         self.max_workers = max_workers
         self.max_workers_conn = 3
         self.batch_size = batch_size
-        # self.client = RequestClient()
-        self.stats = CrawlerStats()
-        self.client = RequestClient(self.stats)
-        # self.client.salvar_erros(pasta)
-        # self.idProcesso = idProcesso
         self.servidor = 'https://obituario.grupoangelus.com.br/g/4'
         self.consonifunerais = 'https://consonifunerais.com.br/falecidos/'
         self.servidores = {
@@ -54,7 +49,8 @@ class Processor:
                         "parser": parser_grupo,
                         "pagination": True,
                         "pagin": angeleus,
-                        "parametros": False
+                        "parametros": False,
+                        "chave":1
                     },
 
                     2: {
@@ -63,7 +59,8 @@ class Processor:
                         "parser": parser_consoni,
                         "pagination": True,
                         "pagin": parser_consoni_div,
-                        "parametros": False
+                        "parametros": False,
+                        "chave":2
                     },
                     3: {
                         "nome": "vidaprev",
@@ -71,7 +68,8 @@ class Processor:
                         "parser": parser_vdprev,
                         "pagination": True,
                         "pagin": parser_vida_href,
-                        "parametros": False
+                        "parametros": False,
+                        "chave":3
                     },
 
                     4: {
@@ -80,7 +78,8 @@ class Processor:
                         "parser": parser_ossel,
                         "pagination": True,
                         "pagin": parse_ossel_link,
-                        "parametros": False
+                        "parametros": False,
+                        "chave":4
                     }, 
                         5: {
                         "nome": "14news",
@@ -88,7 +87,8 @@ class Processor:
                         "parser": parser_news,
                         "pagination": True,
                         "pagin": parser_consoni_div,
-                        "parametros": False
+                        "parametros": False,
+                        "chave":5
                     },
                     6: {
                         "nome": "ggo-interno",
@@ -96,7 +96,8 @@ class Processor:
                         "parser": parser_ggo,
                         "pagination": True,
                         "pagin": parse_gg_link,
-                        "parametros": True
+                        "parametros": True,
+                        "chave":6
                     }, 
                     7: {
                         "nome": "arvorespelavida",
@@ -104,7 +105,8 @@ class Processor:
                         "parser": parser_arvore,
                         "pagination": True,
                         "pagin": parse_arvore_div,
-                        "parametros": False
+                        "parametros": False,
+                        "chave":7
                     },
                     8: {
                         "nome": "pmfi",
@@ -112,7 +114,8 @@ class Processor:
                         "parser": parser_pmfi,
                         "pagination": False,
                         "pagin": parse_arvore_div,
-                        "parametros": False
+                        "parametros": False,
+                        "chave":8
                     },
                     9: {
                         "nome": "orsola",
@@ -120,15 +123,18 @@ class Processor:
                         "parser": parser_ors,
                         "pagination": True,
                         "pagin": orsolaPage,
-                        "parametros": False
-                    } , 10: {
+                        "parametros": False,
+                        "chave":9
+                    } , 
+                    10: {
                         "nome": "pontaGrossa",
                         "url": "https://app.pontagrossa.pr.gov.br/sisppg/servico_funerario/internet/mostra_hoje.php",
                         "parser": parser_ponta,
                         "pagination": False,
                         "pagin": PontaGrossaPage,
                         "parametros": False,
-                        "tdados": parser_ponta_dados
+                        "tdados": parser_ponta_dados,
+                        "chave":10
                     }, 11: {
                         "nome": "dlcorconvenios",
                         "url": "https://dlcorconvenios.com.br/obituario/",
@@ -136,7 +142,8 @@ class Processor:
                         "pagination": False,
                         "pagin": PontaGrossaPage,
                         "parametros": False,
-                        "tdados": parser_ponta_dados
+                        "tdados": parser_ponta_dados,
+                        "chave":11
                     },
                       12: {
                         "nome": "aracatuba",
@@ -147,7 +154,8 @@ class Processor:
                         "pagin": False,
                         "parametros": False,
                         "tdados": False,
-                        "baixar": True
+                        "baixar": True,
+                        "chave":12
                     } 
                     } 
         self.servidor_headers = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36'}
@@ -157,6 +165,7 @@ class Processor:
         self.true = True
         self.false =False
         self.parar = False
+        self.periodo = 'SEMANAL'
         # self.todos_resultados = []
         self.batch_size_verify = 50
         self.lock = threading.Lock()
@@ -164,6 +173,9 @@ class Processor:
         # # ADICIONANDO A CAPTURA DOS ERROS DENTRO DO CODIGO, PARA CONEXAO E QUERY QUE DEREM ERROS
         try:
            self.db = ConectionPool.DbPool(maxconn=self.max_workers)
+           self.stats = CrawlerStats(self.db)
+        #    self.stats = CrawlerStats(self.db, self.lock)
+           self.client = RequestClient(self.stats)
         except psycopg2.OperationalError as err_db:
             erro_msg = f"Erro operacional na inicialização do PostgreSQL (Timeout/Rede):\n{err_db}"
             ClassLogger.logging.error(f"Erro capturado no init: {erro_msg}")
@@ -191,7 +203,7 @@ class Processor:
 
         try:
             # print(obter_servidores(self,[1, 7, 12]))
-            registros = obter_servidores(self,[13])
+            registros = obter_servidores(self,[9])
 
             total_processados = Process(self,registros)
 
@@ -200,11 +212,16 @@ class Processor:
                 dados_relatorio = self.stats.todos_resultados
             except Exception:
                 if isinstance(self.stats, list):
-                    dados_relatorio = self.stats
+                    dados_relatorio = self.stats 
                 else:
                     dados_relatorio = getattr(self.stats, 'todos_resultados', self.stats)
 
-            enviar_relatorio_email(dados_relatorio)
+
+            retorno_envido_email = enviar_relatorio_email(self,dados_relatorio)
+
+            print(f"QUAL RETORNO TIVE PARA PROCESSAR O E-MAL E ATUALIZAR OS DADOS {retorno_envido_email}")
+            #chamo funcao para normalizar e inserir 
+            self.processar_arquivos(retorno_envido_email)
 
             
             fim = datetime.now()
@@ -214,13 +231,13 @@ class Processor:
 
         except Exception as e:
             ClassLogger.logging.error(f"Erro fatal na execução: {str(e)}")
-            error = f"Erro fatal na execução: process_api {str(e)}"
+            error = f"Erro fatal na execução: {str(e)}"
             corpo = f"""<h2 style="color:red;">Falha no processo de Captura e tratamento dos dados</h2> <p>{datetime.now().strftime('%Y-%m-%d %H:%M:%S')} Mensagem:: {error}</p>"""
             enviar_email_all(corpo)
 
         pass
              
-    def processar_arquivos(self):
+    def processar_arquivos(self,chave):
         inicio = datetime.now()
         ClassLogger.logging.info("=" * 80)
         ClassLogger.logging.info(f"Inicio proceso nomarlização dos dadose - {inicio}")
@@ -229,7 +246,7 @@ class Processor:
         try:
             # print(obter_servidores(self,[1, 7, 12]))
                     
-            result_normalizar = arquivos_process(self)
+            result_normalizar = arquivos_process(self,chave_servidor=chave)
         
             ClassLogger.logging.info(f"minha quantidade de dados processados :  {len(result_normalizar)}")
 
@@ -262,7 +279,7 @@ class Processor:
     def executar_ciclo(self):
         # self.executar() 
         # PROCESSAR OS DADOS CAPTURADOS
-        self.processar_arquivos() 
+        self.processar_arquivos(9) 
 
        
         

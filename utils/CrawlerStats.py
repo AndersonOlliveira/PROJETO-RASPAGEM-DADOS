@@ -1,17 +1,25 @@
+import traceback
 import pandas as pd
 from pathlib import Path
+from Logs import ClassLogger
 from datetime import datetime
 from Mail.ClassMail import enviar_email_all
 from utils.info_pastas import abrir_arquivos
+from Model.ClassModel import update_info_fontes
 
 
 
 class CrawlerStats:
 
-    def __init__(self):
+    def __init__(self,db):
+    # def __init__(self,db,lock):
 
+        self.db = db # RECEBE A CLASSE DE CONEXAO COM O BANCO
+        # self.lock = lock
         self.inicio = datetime.now()
         self.todos_resultados = []
+        self.processo_id = None
+        self.chave = None
 
         self.stats = {
             "urls_processadas": 0,
@@ -40,11 +48,15 @@ class CrawlerStats:
     def outros_erros(self):
         self.stats["outros_erros"] += 1
 
-    def salvar(self, pasta, nome):
+    # def id_processo(self,idRertornado):
+    #     self.stats["processo_id"] = idRertornado
+
+    def salvar(self, pasta, nome, id_processo,chaves):
         fim = datetime.now()
         dados = self.stats.copy() # copio e vou inteirando
-
         dados["servidor"] = nome
+        dados["id_processo"] = id_processo
+        dados["chaves"] = chaves
 
         dados["inicio"] = self.inicio.strftime(
             "%d/%m/%Y %H:%M:%S"
@@ -65,6 +77,7 @@ class CrawlerStats:
             dados["qta_registro_anteriores"]
         ) = abrir_arquivos(pasta)
 
+        
         df = pd.DataFrame([dados])
 
         df.to_csv(
@@ -77,13 +90,44 @@ class CrawlerStats:
         # guarda somente o resultado deste servidor
         self.todos_resultados.append(df)
 
-def enviar_relatorio_email(self):
+def enviar_relatorio_email(self, relatorio):
+
+    print(f"o que vem no self {self}")
+    print(f"relaroio? -> {relatorio}")
+    
 
     if not self:
         print("Nenhum resultado para enviar.")
         return
+
+     #ENVIO OS DADOS PARA ATUALIZAR O PROCESSAMENTO NO BANCO DE FALSE PARA TRUE, JUNTO COM A QAUANTIDADE
+  
+       
+    df_consolidado = pd.concat(relatorio, ignore_index=False)
+    try:
+        for _, linha in df_consolidado.iterrows():
         
-    df_consolidado = pd.concat(self, ignore_index=False)
+            processo_id = linha["id_processo"]
+            qta_registros = linha["qta_registros"]
+            key_servidores = linha["chaves"]
+        
+            print(
+                f"Atualizando processo: {processo_id}"
+                )
+        
+            retorno_update = update_info_fontes(
+                    self,
+                    processo_id,
+                    qta_registros,
+            )
+            # DEPOIS DO SUCESSO A WEB SCRAPPING, VOU REALIZAR O INSERT?
+            if retorno_update:
+                return key_servidores
+    except Exception as e:
+        erro_detalhado = traceback.format_exc()
+        print(f"Falha em acessar o consolidado. {erro_detalhado}")
+        ClassLogger.logging.error(f"Falha em acessar o consolidado {str(e)}")
+        
     convert = df_consolidado.to_html(index=False, border=1, justify='center')
     enviar_email_all(convert)
     # self.clear()

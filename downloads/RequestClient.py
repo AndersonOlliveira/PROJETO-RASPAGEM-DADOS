@@ -2,10 +2,10 @@ import random
 import time
 import requests
 import pandas as pd
-from utils.erros import salvar_erros
+from Logs import ClassLogger
 from datetime import datetime
 from bs4 import BeautifulSoup
-from Logs import ClassLogger
+from utils.erros import salvar_erros
 from Processor.ClassResquest import RateLimiter
 
 
@@ -33,6 +33,7 @@ class RequestClient:
         ])
 
     def get(self,url):
+
         for tentativa in range(5):
             try:
                 self.rate_limiter.wait()
