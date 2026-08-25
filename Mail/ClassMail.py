@@ -1,7 +1,9 @@
-import smtplib
-from email.message import EmailMessage
-from dotenv import load_dotenv
 import os
+import smtplib
+import traceback
+from Logs import ClassLogger
+from dotenv import load_dotenv
+from email.message import EmailMessage
 
 load_dotenv()
 
@@ -19,13 +21,11 @@ def enviar_email_all(corpo):
 
             return True
     except smtplib.SMTPException as e:
-          print(f"Erro ao enviar e-mail: {e}" , exc_info=True) # Captura erros de SMTP
+             ClassLogger.logging.info(f"Erro ao enviar e-mail: {e}" , exc_info=True) # Captura erros de SMTP
     
     except Exception as e:
+          print(traceback.format_exc())
+          ClassLogger.logging.warning(f"ERRO no envio do e-mail {traceback.format_exc()}")
           print(f"Erro inesperado: {e}", exc_info=True)
           raise
 
-    
-    # except Exception as e:
-    #     print(f"Erro ao enviar email: {e}")
-    #     raise

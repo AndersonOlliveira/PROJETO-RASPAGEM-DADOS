@@ -17,7 +17,30 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 
 
 
-def arquivos_process(self,chave_servidor):
+def arquivos_process(self, chave_servidor):
+    """Processa todos os IDs de servidor recebidos."""
+    if chave_servidor is None:
+        return []
+
+    if isinstance(chave_servidor, (str, int)):
+        chave_servidor = [chave_servidor]
+
+    dados_enviados = []
+    for chave in chave_servidor:
+        if chave not in self.servidores:
+            ClassLogger.logging.warning(
+                f"Servidor não encontrado para a chave: {chave}"
+            )
+            continue
+
+        resultado = _arquivos_process_servidor(self, chave)
+        if resultado:
+            dados_enviados.extend(resultado)
+
+    return dados_enviados
+
+
+def _arquivos_process_servidor(self, chave_servidor):
 
     contador = defaultdict(lambda: {
         "ACHADAS": 0,
@@ -29,12 +52,13 @@ def arquivos_process(self,chave_servidor):
     ClassLogger.logging.info("ACESSANDO PAGINA PARA PROCESSAR OS DADOS")
     ClassLogger.logging.info("REALIZAR A NORMALIZAR!!")
 
-
-    # print(obter_servidores(self,[1, 7, 12]))
-
-    # return
-    # 
     registros = self.servidores.get(chave_servidor)
+
+    if not registros:
+        ClassLogger.logging.warning(
+            f"Servidor não encontrado para a chave: {chave_servidor}"
+        )
+        return []
 
     print(registros)
     arquivos = f"arquivos/{registros['nome']}"
@@ -178,6 +202,9 @@ def arquivos_process(self,chave_servidor):
 
             print(df.columns)
 
+            if 'NOME' in df.columns:
+                df = df[~df['NOME'].astype(str).str.strip().isin(['CANCELADO/TESTE', '.','TESTE', '********','CANCELADO'])].copy()
+
             
             if 'NOME' in df.columns:
 
@@ -185,8 +212,9 @@ def arquivos_process(self,chave_servidor):
 
 
                 if 'IDADE' in df.columns:
+                   
                     df['IDADE'] = df['IDADE'].apply(lambda x: re.findall(r'\d+', str(x))[0] if re.findall(r'\d+', str(x)) else 0)
-
+                  
                     if 'DATA_NASCIMENTO' in df.columns:
                         mascara =( 
                             (df['IDADE'] == 0) & 
@@ -204,7 +232,7 @@ def arquivos_process(self,chave_servidor):
                     if 'DATA_NASCIMENTO' in df.columns:
                          df['IDADE'] = df.apply(lambda row: achar_idade(row['DATA_NASCIMENTO'], row['DATA_FALECIMENTO']), axis=1)
                     else:
-                        df['IDADE'] = 0
+                        df['IDADE'] = auxliares.A_IDADE # TROCADO DE 0 PARA NONE
 
                 #INICIA COMO SEM INFORMACAO
                 df['FAMILIARES_A'] =  auxliares.TEXTO_FAMILIARES
@@ -276,7 +304,7 @@ def arquivos_process(self,chave_servidor):
             dados_para_enviar = df_final.to_dict(orient="records")
             # print(df_final.to_string(index=False))
 
-            # print(dados_para_enviar)
+            print(dados_para_enviar)
            
         return dados_para_enviar
 
@@ -286,7 +314,24 @@ def arquivos_process(self,chave_servidor):
 
 def calcula_ano(idade_enviada):
 
-        nasc_str = int(idade_enviada)
+        print(idade_enviada)
+        if idade_enviada is None:
+            return auxliares.IDADE
+
+        if isinstance(idade_enviada, float) and pd.isna(idade_enviada):
+            return auxliares.IDADE
+
+        if isinstance(idade_enviada, (np.floating, np.integer)) and pd.isna(idade_enviada):
+            return auxliares.IDADE
+
+        if str(idade_enviada).strip().lower() in ['nan', '', 'none', '0', '{}']:
+            return auxliares.IDADE
+
+        try:
+            nasc_str = int(idade_enviada)
+        except (TypeError, ValueError):
+            return auxliares.IDADE
+
         if nasc_str in [0]:
             return auxliares.IDADE
         try:
@@ -297,11 +342,14 @@ def calcula_ano(idade_enviada):
             return auxliares.IDADE
 
 def formatar_data(data_envida):
-    # print(f"ESTOU SAINDO NO FORMATAR DATA  SEM A HORA ENVIADA :: {data_envida}")
-    if isinstance(data_envida, float) or data_envida is None or str(data_envida).lower() == 'nan' or str(data_envida) == auxliares.DATA_PARAO:
+    print(f"ESTOU SAINDO NO FORMATAR DATA  SEM A HORA ENVIADA :: {data_envida}")
+    if isinstance(data_envida, float) or data_envida is None or str(data_envida).lower() == 'nan' or str(data_envida) == auxliares.DATA_PARAO or str(data_envida) == auxliares.DATA_ENVIADA:
         return auxliares.DATA_PARAO
 
-    if data_envida in ['nan', '', 'none', '0', '{}']:
+    if isinstance(data_envida, float) and pd.isna(data_envida):
+         return auxliares.IDADE
+
+    if data_envida in ['nan', '', 'none', '0', '{}','0000/00/00','0000-00-00']:
         return auxliares.DATA_PARAO
 
     data_str = str(data_envida).strip()
@@ -342,18 +390,23 @@ def formatar_data_hora(data_envida):
         ClassLogger.logging.info(f"Erro em formatar a data: {e}", exc_info=True)
         return auxliares.DATA_PARAO
 
+# PASSA DOIS PARAMENTROS DATA DE NASCIMENTO E FALECIMENTO
 def achar_idade(nasc,falec):
+    print(f"ESTOU CHEGANDO AQUI POR NÃO TEM IDADE")
+   
 
     nasc_str = str(nasc).strip().lower()
     falec_str = str(falec).strip().lower()
 
+    if isinstance(falec_str, float) and pd.isna(falec_str):
+        return  auxliares.IDADE
 
     falec_str = re.sub(r'-', '', falec_str)
     nasc_str = re.sub(r'-', '', nasc_str)
     
     # Verifica se os valores são nulos, vazios ou 'nan'
-    if nasc_str in ['nan', '', 'none', '0', '{}'] or falec_str in ['nan', '', 'none', '0', '{}']:
-        return 0 
+    if nasc_str in ['nan', '', 'none', '0', '{}','0000/00/00'] or falec_str in ['nan', '', 'none', '0', '{}','0000/00/00']:
+        return auxliares.IDADE
         
     try:
         # datetime.strptime() funciona apenas em strings individuais
@@ -364,7 +417,7 @@ def achar_idade(nasc,falec):
         return data_objeto_falec.year - data_objeto_nas.year
     except Exception as e:
         ClassLogger.logging.warning(f'Falha em achar os dados {e}' ,exc_info=True)
-        return 0
+        return auxliares.IDADE
 
 
 def tratar_familiares_A(textos):
@@ -603,6 +656,8 @@ def pegar_registros_novos(arquivo_atual, arquivo_antigo):
         arquivo_atual,
         sep=";"
     )
+
+    df_atual = df_atual.drop_duplicates()
 
     # Não existe arquivo anterior
     if arquivo_antigo is None:
