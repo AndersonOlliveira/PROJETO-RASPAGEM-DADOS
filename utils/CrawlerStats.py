@@ -92,42 +92,79 @@ class CrawlerStats:
 
 def enviar_relatorio_email(self, relatorio):
 
-    print(f"o que vem no self {self}")
-    print(f"relaroio? -> {relatorio}")
-    
+    print(f"o que vem no self DO RELATORIO? FINAL? {self}")
 
-    if not self:
+    if not relatorio:
         print("Nenhum resultado para enviar.")
-        return
+        return None
 
-     #ENVIO OS DADOS PARA ATUALIZAR O PROCESSAMENTO NO BANCO DE FALSE PARA TRUE, JUNTO COM A QAUANTIDADE
-  
-       
-    df_consolidado = pd.concat(relatorio, ignore_index=False)
     try:
+        # Junta todos os DataFrames recebidos
+        df_consolidado = pd.concat(relatorio, ignore_index=False)
+
+        print("======================================")
+        print("DATAFRAME CONSOLIDADO")
+        print(df_consolidado)
+        print("======================================")
+
+        chaves_servidores = []
+
+        # Atualiza cada processo
         for _, linha in df_consolidado.iterrows():
-        
+
             processo_id = linha["id_processo"]
             qta_registros = linha["qta_registros"]
             key_servidores = linha["chaves"]
-        
-            print(
-                f"Atualizando processo: {processo_id}"
-                )
-        
+
+            print(f"Atualizando processo: {processo_id}")
+            print(f"Quantidade de registros: {qta_registros}")
+            print(f"Chaves: {key_servidores}")
+
             retorno_update = update_info_fontes(
-                    self,
-                    processo_id,
-                    qta_registros,
+                self,
+                processo_id,
+                qta_registros
             )
-            # DEPOIS DO SUCESSO A WEB SCRAPPING, VOU REALIZAR O INSERT?
+
             if retorno_update:
-                return key_servidores
+                chaves_servidores.append(key_servidores)
+
+        print("======================================")
+        print("PROCESSAMENTO DOS UPDATES FINALIZADO")
+        print(f"Chaves processadas: {chaves_servidores}")
+        print("======================================")
+
+        # Só gera o HTML depois de terminar os updates
+        if not df_consolidado.empty:
+
+            convert = df_consolidado.to_html(
+                index=False,
+                border=1,
+                justify="center"
+            )
+
+            print(f"CHEGANDO AQUI? {type(convert)}")
+
+           
+            enviar_email_all(convert)
+
+        else:
+            print("DataFrame consolidado está vazio.")
+
+        return chaves_servidores
+
     except Exception as e:
+
         erro_detalhado = traceback.format_exc()
-        print(f"Falha em acessar o consolidado. {erro_detalhado}")
-        ClassLogger.logging.error(f"Falha em acessar o consolidado {str(e)}")
-        
-    convert = df_consolidado.to_html(index=False, border=1, justify='center')
-    enviar_email_all(convert)
+
+        print(
+            f"Falha em acessar o consolidado. {erro_detalhado}"
+        )
+
+        ClassLogger.logging.error(
+            f"Falha em acessar o consolidado: {str(e)}"
+        )
+
+        return None
+    
     # self.clear()

@@ -1,7 +1,9 @@
 import sys
 import time
+import traceback
 import threading
 import psycopg2
+import pandas as pd
 from src.pushdados import upDados
 from Logs import ClassLogger
 from datetime import datetime
@@ -162,6 +164,7 @@ class Processor:
         self.batch_counter_status1 = 0
         self.batch_counter_status2 = 0
         self.batch_counter_status4 = 0
+        self.lista_dataframes_global = [] # RECEBE OS DADOS DE FORMA GLOBAL
         self.true = True
         self.false =False
         self.parar = False
@@ -203,11 +206,11 @@ class Processor:
 
         try:
             # print(obter_servidores(self,[1, 7, 12]))
-            registros = obter_servidores(self,[9])
+            registros = obter_servidores(self,[4,9])
 
             total_processados = Process(self,registros)
 
-            # ENVIA 
+             # PEGAR OS DADOS PARA ENVIAR OS RESULTADO DE FORMA UNICA
             try:
                 dados_relatorio = self.stats.todos_resultados
             except Exception:
@@ -217,16 +220,28 @@ class Processor:
                     dados_relatorio = getattr(self.stats, 'todos_resultados', self.stats)
 
 
-            retorno_envido_email = enviar_relatorio_email(self,dados_relatorio)
+            retorno_chave = enviar_relatorio_email(self,dados_relatorio)
 
-            print(f"QUAL RETORNO TIVE PARA PROCESSAR O E-MAL E ATUALIZAR OS DADOS {retorno_envido_email}")
+            
             #chamo funcao para normalizar e inserir 
-            self.processar_arquivos(retorno_envido_email)
+            for chaves in retorno_chave:
+                self.processar_arquivos(chaves)
+             
+
+            if self.lista_dataframes_global:  # Verifica se a lista não está vazia
+          
+                df_consolidado = pd.concat(self.lista_dataframes_global, ignore_index=True)
+                convert_tabela = df_consolidado.to_html(index=False, border=1, classes='table table-striped')
+                enviar_email_all(convert_tabela)
+            else:
+                ClassLogger.logging.info(f"Nenhum dado a ser processado para enviar")
 
             
             fim = datetime.now()
             duracao = (fim - inicio).total_seconds()
+            print(duracao)
             ClassLogger.logging.info("---" * 80)
+            ClassLogger.logging.info("PROCESSO DUROU {duracao}")
           
 
         except Exception as e:
@@ -245,7 +260,9 @@ class Processor:
         ClassLogger.logging.info("=" * 80)
         try:
             # print(obter_servidores(self,[1, 7, 12]))
-                    
+
+            # print(f"chave enviadas {chave}")
+            # for chaves in chave:
             result_normalizar = arquivos_process(self,chave_servidor=chave)
         
             ClassLogger.logging.info(f"minha quantidade de dados processados :  {len(result_normalizar)}")
@@ -264,6 +281,8 @@ class Processor:
                   
         
         except Exception as e:
+            erro_detalhado = traceback.format_exc()
+            print(f"TENHO ERRO NESTE PONTO PARA ACESSAR O REGISTRO {erro_detalhado}")
             ClassLogger.logging.error(f"Erro fatal na execução: {str(e)}")
             error = f"Erro fatal na execução: process_api {str(e)}"
             corpo = f"""<h2 style="color:red;">Falha no processo de Captura e tratamento dos dados</h2> <p>{datetime.now().strftime('%Y-%m-%d %H:%M:%S')} Mensagem:: {error}</p>"""
@@ -277,9 +296,9 @@ class Processor:
 
 
     def executar_ciclo(self):
-        # self.executar() 
+        self.executar() 
         # PROCESSAR OS DADOS CAPTURADOS
-        self.processar_arquivos(9) 
+        # self.processar_arquivos([4,9]) 
 
        
         

@@ -52,9 +52,16 @@ def fontes_inserts(self,urls):
 # def insert_base_interpol(self, registro: dict, conn, falha_ids):
 def insert_base_obito(self,registro):
     # exits = False
-    # exits = exists_by_name(self,registro['NOME'],registro['DATA_FALECIMENTO'])
+    exits = exists_by_name(self,registro['NOME'],registro['DATA_FALECIMENTO'])
 
-    # if not exits:
+    print(f"MEUS DADSOS {exits}")
+
+    if not exits:
+        print(f"NOME INFORMADO  {registro}")
+        if registro['DATA_FALECIMENTO'] == "0000-00-00":
+            registro['DATA_FALECIMENTO'] = None
+        if registro['ANO_NASCIMENTO_INFORMADO'] == "0000-00-00":
+            registro['ANO_NASCIMENTO_INFORMADO'] = None
    
         try:
             query = """INSERT INTO obito_captura.obito_dados(
@@ -101,28 +108,39 @@ def insert_base_obito(self,registro):
 
                         return {
                                 "nome": registro['NOME'],
+                                "LINK_FONTE" : registro['LINK_FONTE'],
                                 "id_obito": novo_id,
                                 "status": "sucesso",
                                 "info_familiar": return_info_familiar if return_info_familiar else auxliares.INFO_INSERT
                                
                         } 
             except Exception as e:
-                    print(traceback.format_exc())
+                    print( traceback.format_exc())
                     ClassLogger.logging.error(f"Falha ao inserir os dados na tabela  obito_dados - {repr(e)}")
                     return {
                         "nome": registro['nome'],
                         "status": "erro",
-                        "fonte": registro['LINK_FONTE'],
+                        "LINK_FONTE": registro['LINK_FONTE'],
                         "error": traceback.format_exc()
                 }
+            
         except Exception as e:
             print(traceback.format_exc())
             print(f"ERRRO NO SEGUNDO TRY")
+            # print(f"{registro['nome']}")
             return {
-               "nome": registro['nome'],
-               "status": "existente", 
-               "fonte": registro['LINK_FONTE']
+               "nome": registro,
+               "status": "ERRO_FATAL", 
+               "LINK_FONTE": registro['LINK_FONTE']
             }
+    else: 
+        print(f"SAINDO NO ELSE DA VERIFICACO DOS DADOS")
+        return {
+               "nome": registro,
+               "status": "existes", 
+               "LINK_FONTE": registro['LINK_FONTE']
+            }
+              
 
 
 def inser_familiares(self,conn,registro,id_obito):
@@ -340,13 +358,26 @@ def search_data_interpol(conn,idinterpol):
 def exists_by_name(self, person,falecimento):
             print(person)
             print(falecimento)
-            
-            query = """SELECT EXISTS(SELECT 1 FROM obito_captura.obito_dados WHERE UPPER(nome) = UPPER(%s) and data_falecimento = (%s)) as exists"""
+
+            if falecimento is None or str(falecimento).strip() in ['', 'NaN', '0000-00-00', '0000-00-00 00:00:00']:
+                return False
+
+            try:
+                # FORMATA A DATA PARA O PADRÃO DO BANCO E EVITA ERROS COM VALORES INVÁLIDOS
+                data_falecimento_formatad = datetime.strptime(str(falecimento).strip(), "%Y/%m/%d").strftime("%Y-%m-%d")
+            except ValueError:
+                try:
+                    data_falecimento_formatad = datetime.strptime(str(falecimento).strip(), "%d/%m/%Y").strftime("%Y-%m-%d")
+                except ValueError:
+                    return False
+
+            print(f"DATA FORMATAD? {data_falecimento_formatad}")
+
+            query = """SELECT EXISTS(SELECT 1 FROM obito_captura.obito_dados WHERE UPPER(nome) = UPPER(%s) AND NULLIF(data_falecimento::TEXT, '') = %s) AS exists"""
             try:
                 with self.db.get_connection() as conn:
                         with conn.cursor(cursor_factory=RealDictCursor) as cursor:
-                            cursor.execute(query, (person,falecimento))
-                                # resultado = cursor.fetchall()
+                            cursor.execute(query, (person, data_falecimento_formatad))
                             resultado = cursor.fetchone()['exists']
                             print(f"qual e o resultado {resultado}")
                             return resultado
@@ -355,7 +386,16 @@ def exists_by_name(self, person,falecimento):
                 erro_msg = f"Falha em capturar os dados no obito_captura.obito_dados {str(e)}"
                 ClassLogger.logging.error(erro_msg)
                 enviar_email_all(f"<h2>Erro processamento </h2><p>{erro_detalhado}</p>")
-                return False
+                
+                return {
+                    "status": "erro_conexao",
+                    "error": erro_detalhado,
+                    "COLUNA_ERROR": ",".join(str(valor) for valor in [person, falecimento] if valor is not None),
+                    "dados_error": {
+                        "person": person,
+                        "falecimento": falecimento,
+                    }
+                }
                 
 def get_data_match_name_base(self) -> List[Dict]: 
      
