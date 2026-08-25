@@ -17,7 +17,7 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 
 
 
-def arquivos_process(self):
+def arquivos_process(self,chave_servidor):
 
     contador = defaultdict(lambda: {
         "ACHADAS": 0,
@@ -34,7 +34,7 @@ def arquivos_process(self):
 
     # return
     # 
-    registros = self.servidores.get(2)
+    registros = self.servidores.get(chave_servidor)
 
     print(registros)
     arquivos = f"arquivos/{registros['nome']}"
@@ -209,6 +209,7 @@ def arquivos_process(self):
                 #INICIA COMO SEM INFORMACAO
                 df['FAMILIARES_A'] =  auxliares.TEXTO_FAMILIARES
                 df['FAMILIARES_B'] =  auxliares.TEXTO_FAMILIARES
+                df['FAMILIARES'] =  auxliares.TEXTO_FAMILIARES
                 # df['CONJUGE'] = auxliares.TEXTO_P
 
 

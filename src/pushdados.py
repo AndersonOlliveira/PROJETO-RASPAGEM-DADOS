@@ -50,7 +50,7 @@ def upDados(self,dados_tabela):
             print(type(dados_tabela))
 
             dados_tabela = pd.DataFrame(dados_tabela)
-            subset = dados_tabela.iloc[:206, :]
+            subset = dados_tabela.iloc[:207, :]
 
             for start in range(0, len(subset), batch_size):
                     bloco = subset.iloc[start:start + batch_size]

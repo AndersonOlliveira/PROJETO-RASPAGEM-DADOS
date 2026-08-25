@@ -9,44 +9,43 @@ from Mail.ClassMail import enviar_email_all
 from utils.auxliares import auxliares
 
 
-def insert_interpol(self,registro: Dict, cursor, connection):
+def fontes_inserts(self,urls):
+
+    print(f"ESTOU SAINDO PARA INSERIR A URL DE BUSCA?")
+
+    # print(f"SELF ENVIADO {self.db} ")
+    # return
+
     
     query = """
-           INSERT INTO fontes_download.interpol_download 
-               (periodizacao, data_captura, link_captura,parametros_captura)
+           INSERT INTO fontes_download.obito_download
+               (periodizacao, data_captura, link_captura)
            VALUES 
-               (%s, %s, %s,%s) RETURNING id; """
+               (%s, %s, %s) RETURNING id; """
 
     try:
-        cursor.execute(query, (
-            registro['periodizacao'],
-            registro['data_captura'],
-            registro['url'],
-            registro['siglas']
-            # registro['sucesso']
-        ))
-     
-        
-       
-      
-        with self.lock:
-          
-            self.batch_counter_status1 += 1
-           
-            if self.batch_counter_status1 >= 1:
-               connection.commit()
-               self.batch_counter_status1 = 0
+        with self.db.get_connection() as conn:
+            with conn.cursor() as cursor:
+                    cursor.execute(query, (
+                        self.periodo,
+                        datetime.now().strftime("%Y-%m-%d"),
+                        urls
+                        ))
+                    # The cursor is closed when this context exits.
+                    novo_id = cursor.fetchone()[0]
+            with self.lock:
+            
+                self.batch_counter_status1 += 1
+            
+                if self.batch_counter_status1 >= 1:
+                     conn.commit()
+                self.batch_counter_status1 = 0
 
-               # RETORNO DO ID PARA REALIZAR O UPDATE
-               novo_id = cursor.fetchone()[0]
-
-
-               ClassLogger.logger.info(f"Status atualizado para ::  - id retornado {novo_id} ")
-
-
-               return novo_id
+                ClassLogger.logging.info(f"id Retornano vindo do insert {novo_id} ")
+                return novo_id
     except Exception as e:
-      ClassLogger.logger.error(f"Erro ao atualizar status para  id retornado ::  - {str(e)}")
+      print(traceback.format_exc())
+      ClassLogger.logging.error(f"Erro ao caputura id retornado :: - {repr(e)}")
 
 
 #inserir o lote dos registos
@@ -69,10 +68,15 @@ def insert_base_obito(self,registro):
                 registro['ANO_NASCIMENTO_ESTIMADO'],
                 registro['LINK_FONTE'],
                 registro['ANO_NASCIMENTO_INFORMADO'],
-                registro['CIDADE'],
+                registro['CIDADE']
             
                 ))
-                
+            # if 'DATA NÃO INFORMADA' in registro['ANO_NASCIMENTO_ESTIMADO']:
+            #     registro['ANO_NASCIMENTO_ESTIMADO'] = 0000   
+
+            # if 0 in registro['ANO_NASCIMENTO_INFORMADO']:
+            #     registro['ANO_NASCIMENTO_INFORMADO'] = 0000  
+
             try:
                 with self.db.get_connection() as conn:
                         with conn.cursor() as cursor:
@@ -104,7 +108,7 @@ def insert_base_obito(self,registro):
                         } 
             except Exception as e:
                     print(traceback.format_exc())
-                    ClassLogger.logging.error(f"falha em inserir os dados na base  insert_base_interpol - {repr(e)}")
+                    ClassLogger.logging.error(f"Falha ao inserir os dados na tabela  obito_dados - {repr(e)}")
                     return {
                         "nome": registro['nome'],
                         "status": "erro",
@@ -112,6 +116,8 @@ def insert_base_obito(self,registro):
                         "error": traceback.format_exc()
                 }
         except Exception as e:
+            print(traceback.format_exc())
+            print(f"ERRRO NO SEGUNDO TRY")
             return {
                "nome": registro['nome'],
                "status": "existente", 
@@ -154,7 +160,7 @@ def inser_familiares(self,conn,registro,id_obito):
             
             
                 except Exception as e:
-                    ClassLogger.logger.error(f"falha em inserir os dados na base  insert_base_interpol - {repr(e)}")
+                    ClassLogger.logger.error(f"falha em inserir os dados na base  obito_captura.obito_familiares- {repr(e)}")
                     return {
                             "id": id_obito,
                             "status": "erro",
@@ -253,39 +259,31 @@ def update_id_interpol_status(self,id,new_status,data):
 
        
               
+def update_info_fontes(self,idProcesso,qta):
 
-
-
-
-def update_info_process(self,registro: Dict, cursor, connection):
-
-
-
-    query = """UPDATE fontes_download.interpol_download  SET 
-                  naturalidade = %s  WHERE id = %s ;"""
+    query = """UPDATE fontes_download.obito_download  SET 
+                  processado = %s , quantidade = %s, data_captura = %s  WHERE id = %s ;"""
     
-    set_parts = ["processado = %s"]
-    params = [registro['status']]
-    if registro['obs'] is not None:
-        set_parts.append("obs = %s")
-        params.append(registro['obs'])
-    query = f"UPDATE fontes_download.interpol_download SET {', '.join(set_parts)} WHERE id = %s"
-    params.append(registro['alter_id'])
-    
+
+    params = [True, qta, datetime.now().strftime('%Y-%m-%d %H:%M:'), idProcesso]
+    print(f"{params}")
     try:
-        cursor.execute(query, tuple(params))
-        with self.lock:
-          
-            self.batch_counter_status1 += 1
-           
-            if self.batch_counter_status1 >= 1:
-               connection.commit()
-               self.batch_counter_status1 = 0
 
-            ClassLogger.logger.info(f"Status atualizado do id {registro['alter_id']}  com o Status {registro['status']} {datetime.now().strftime('%d/%m/%Y %H:%M')} ")
+        
+        with self.db.get_connection() as conn:
+               with conn.cursor(cursor_factory=RealDictCursor) as cursor:
+                     with conn.cursor() as cursor:
+                           cursor.execute(query, tuple(params))
+                           return {
+                                  "status": "sucesso"
+                            }
+              
+                     ClassLogger.logging.info(f"Processo finalizado do id {registro['processo_id']} com o Status {True} {datetime.now().strftime('%d/%m/%Y')} ")
 
-    except Exception as  e:
-     ClassLogger.logger.error(f"Erro ao atualizar status para :: update_info_process  - {str(e)}")
+    except Exception as e:
+          ClassLogger.logging.warning(traceback.format_exc())
+          enviar_email_all(traceback.format_exc())
+          ClassLogger.logging.error(f"Erro ao atualizar status True :: update_info_process  - {str(e)}")
 
 
 
