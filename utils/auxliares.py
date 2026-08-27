@@ -6,6 +6,7 @@ class auxliares:
     A_NASCIMENTO = None
     A_IDADE = None
     IDADE = None
+    CPF_LEN = 11
     DATA_PARAO = '0000-00-00'
     DATA_ENVIADA = '0000/00/00'
     DATA_C = '00/00/0000'

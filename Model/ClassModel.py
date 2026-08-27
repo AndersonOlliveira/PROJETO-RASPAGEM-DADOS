@@ -20,7 +20,7 @@ def fontes_inserts(self,urls):
                (%s, %s, %s) RETURNING id; """
 
     try:
-        with self.db.get_connection() as conn:
+        with self.pool_raspagem.get_connection() as conn:
             with conn.cursor() as cursor:
                     cursor.execute(query, (
                         self.periodo,
@@ -99,7 +99,7 @@ def insert_base_obito(self,registro):
          
             # return
             try:
-                with self.db.get_connection() as conn:
+                with self.pool_raspagem.get_connection() as conn:
                         with conn.cursor() as cursor:
                             cursor.execute(query, (
                                 registro['NOME'],
@@ -128,7 +128,7 @@ def insert_base_obito(self,registro):
                         } 
             except Exception as e:
                     ClassLogger.logging.error(f"Falha ao inserir os dados na tabela  obito_dados - {repr(e)}")
-                    print(f"nome o erro {registro['NOME']}\m")
+                    print(f"nome o erro {registro['NOME']}")
                     return {
                         "nome": registro['NOME'],
                         "status": "ERRO_FATAL",
@@ -212,7 +212,7 @@ def update_info_fontes(self,idProcesso,qta):
     try:
 
         
-        with self.db.get_connection() as conn:
+        with self.pool_raspagem.get_connection() as conn:
                with conn.cursor(cursor_factory=RealDictCursor) as cursor:
                      with conn.cursor() as cursor:
                            cursor.execute(query, tuple(params))
@@ -254,7 +254,7 @@ def exists_by_name(self, person,falecimento):
 
             query = """SELECT EXISTS(SELECT 1 FROM obito_captura.obito_dados WHERE UPPER(nome) = UPPER(%s) AND NULLIF(data_falecimento::TEXT, '') = %s) AS exists"""
             try:
-                with self.db.get_connection() as conn:
+                with self.pool_raspagem.get_connection() as conn:
                         with conn.cursor(cursor_factory=RealDictCursor) as cursor:
                             cursor.execute(query, (person, data_falecimento_formatad))
                             resultado = cursor.fetchone()['exists']
@@ -286,7 +286,7 @@ def get_data_match_name_base(self) -> List[Dict]:
       
       try:
                     
-            with self.db.get_connection() as conn:
+            with self.pool_raspagem.get_connection() as conn:
                  with conn.cursor(cursor_factory=RealDictCursor) as cursor:
                       cursor.execute(query,)
                       registros = cursor.fetchall()
@@ -314,7 +314,7 @@ def get_lista_name_base_interpol(self) -> List[Dict]:
       params = (datetime.now().strftime("%Y-%m-%d"),)
       try:
                     
-            with self.db.get_connection() as conn:
+            with self.pool_raspagem.get_connection() as conn:
                  with conn.cursor(cursor_factory=RealDictCursor) as cursor:
                       cursor.execute(query,params)
                       registros = cursor.fetchall()
@@ -338,7 +338,7 @@ def list_interpol(self) -> List[Dict]:
       
       try:
                     
-            with self.db.get_connection() as conn:
+            with self.pool_raspagem.get_connection() as conn:
                  with conn.cursor(cursor_factory=RealDictCursor) as cursor:
                       cursor.execute(query,)
                       registros = cursor.fetchall()
@@ -349,62 +349,55 @@ def list_interpol(self) -> List[Dict]:
                  return [dict(registro) for registro in registros]
                                     
       except Exception as e:
-                    ClassLogger.logger.error(f"Falha em caputrar os dados o erro list_interpol - {str(e)}")
+             ClassLogger.logging.error(f"Falha em caputrar os dados o erro list_interpol - {str(e)}")
         
 
 
-def search_from_name_interpol(self, nome_busca, idade_busca, idi_interpol,id_tabela):
+def search_from_name_obito(self, nome_busca, data_nascimento,obito_id,registro):
 
-        
-      
-        query = """SELECT cntcpfcgc as cpf FROM 
-                    cnt, cntfis 
-                    WHERE 
-                    cntid = cntfiscnt
-                    AND 
-                    UPPER(cntnom) = %s  
-                    AND 
-                    length(cntcpfcgc) = 11 
-                    AND cntfisncm = %s"""
+        query = """SELECT cntcpfcgc as cpf FROM  cnt, cntfis WHERE cntid = cntfiscnt AND UPPER(cntnom) = %s AND length(cntcpfcgc) = %s AND cntfisncm = %s LIMIT 2"""
         
         try:
-           
-                with self.db.get_connection() as conn:
-                    with conn.cursor(cursor_factory=RealDictCursor) as cursor:
-                        cursor.execute(query, (nome_busca,idade_busca))
-                        resultado = cursor.fetchall()
-                            
-                        if cursor.rowcount:
-                            
+            #PROCURO EM PRODUDCAO
+            with self.pool_producao.get_connection() as conn:
+                with conn.cursor(cursor_factory=RealDictCursor) as cursor:
+                    cursor.execute(query, (nome_busca,auxliares.CPF_LEN,data_nascimento))
+                    resultado = cursor.fetchall()
+                    print(f"Encontrados {len(resultado)} registros para {nome_busca}")
+
+                    if resultado:
+                        total_resultado = len(resultado)
+                        if total_resultado > 1:
                             return {
-                                    "status": "sucesso",
-                                    "CPF": resultado[0]['cpf'],
-                                    "INTERPOL": idi_interpol,
-                                    "ID_COLUNA_INTERPOL": id_tabela
+                                  "status": "homonimo", 
+                                  "dados": resultado, 
+                                  "id_obito": obito_id,
+                                  "registro": registro
                                 }
                         else:
-                                print(f"TIVE FALHA EM CONSULTAR OS DADOS")
-                                return {
-                                    "status": "erro",
-                                    "error": "NÃO ENCONTRADO NA BASE DA PROSCORE",
-                                    "INTERPOL": idi_interpol,
-                                    "ID_COLUNA_INTERPOL": id_tabela
+                            if cursor.rowcount:
+                                 return {
+                                      "status": "sucesso",
+                                      "CPF": resultado[0]['cpf'],
+                                      "id_obito": obito_id,
+                                      "registro": registro
                                 }
-            
-                        
-                     
-                                        
+                            else:
+                                 return {
+                                      "status": "n_encontrado",
+                                      "id_obito": obito_id,
+                                      "registro": registro
+                                    }
         except Exception as e:
-                ClassLogger.logger.error(f"Falha em consultar os dados? - {str(e)}")
+                erro_detalhado = traceback.format_exc()
+                ClassLogger.logging.error(f"Falha em consultar os dados? - {str(erro_detalhado)}")
                 return {
                 "status": "erro_conexao",
                 "error": str(e),
-                "INTERPOL": idi_interpol,
-                "ID_COLUNA_INTERPOL": id_tabela
+                "id_obito": obito_id,
+               
             }
-        # finally:
-        #         if conn:
-        #            self.db.put_connection(conn)
+        
 
 
 
@@ -418,7 +411,7 @@ def push_cpf(self,cpf, idcolunaInterpol):
     
      
     try:
-         with self.db.get_connection() as conn:
+         with self.pool_raspagem.get_connection() as conn:
              with conn.cursor(cursor_factory=RealDictCursor) as cursor:
                  cursor.execute(query, (cpf,idcolunaInterpol))
                  
@@ -435,8 +428,33 @@ def push_cpf(self,cpf, idcolunaInterpol):
                     "id_interpol"  : idcolunaInterpol
                 }
 
+
+def full_dados(self)-> List[Dict]:
+
+        query = """SELECT trim(UPPER(nome)) as nome, trim(to_char(data_nascimento, 'YYYY-MM-DD')) as data_nascimento ,obito_id FROM  obito_captura.obito_dados
+                 where data_nascimento is not null ORDER BY nome ASC LIMIT 10"""
+
+        try:
+                        
+                with self.pool_raspagem.get_connection() as conn:
+                    with conn.cursor(cursor_factory=RealDictCursor) as cursor:
+                        cursor.execute(query)
+                        registros = cursor.fetchall()
+                    
+                        if not registros:
+                            return None
+                    return [dict(registro) for registro in registros]
+                                        
+        except Exception as e:
+                print(traceback.format_exc())
+                error = traceback.format_exc()
+                ClassLogger.logging.error(f"Lista com o processamento de busca dos dados error: {error}")
+                 
+
+
+#funcao para sanatizar
 def sanitize(value):
-    print(f"CHEGANDO ATÉ AQUI? {value}")
+   
     if isinstance(value, float) and math.isnan(value):
         return None
     return value

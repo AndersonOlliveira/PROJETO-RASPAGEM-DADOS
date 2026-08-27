@@ -13,6 +13,7 @@ from downloads.RequestClient import RequestClient
 from Conexao import ConectionClass, ConectionPool
 from Tratamentos.ProcessoDados import Process
 from Tratamentos.Normlizar import arquivos_process
+from Tratamentos.Mathc import mathc_process
 from parserPagina.Angelus import extrair_links as angeleus
 from parser.grupoangelus import extrair_cards as parser_grupo
 from parser.vidaPrev import extrair_cards as parser_vdprev
@@ -35,6 +36,7 @@ from parserPagina.arvoreVida import extrair_links as parse_arvore_div
 from parserPagina.orsolaPage import extrair_links as orsolaPage
 from parserPagina.pontaGrossa import extrair_links as PontaGrossaPage
 from utils.CrawlerStats import enviar_relatorio_email,enviar_email_all
+from Conexao.ConectionClass import DbConfig
 
 class Processor:
     def __init__(self, max_workers: int = 10, batch_size: int = 1000):
@@ -173,13 +175,26 @@ class Processor:
         # self.todos_resultados = []
         self.batch_size_verify = 50
         self.lock = threading.Lock()
+        self.db_producao = DbConfig("PROD")
+        self.db_raspagem = DbConfig("RASPAGEM")
                
         # # ADICIONANDO A CAPTURA DOS ERROS DENTRO DO CODIGO, PARA CONEXAO E QUERY QUE DEREM ERROS
         try:
-           self.db = ConectionPool.DbPool(maxconn=self.max_workers)
-           self.stats = CrawlerStats(self.db)
+            self.pool_producao = ConectionPool.DbPool(
+                config=self.db_producao,
+                maxconn=self.max_workers
+            )
+
+            self.pool_raspagem = ConectionPool.DbPool(
+                config=self.db_raspagem,
+                maxconn=self.max_workers
+            )
+
+            self.stats = CrawlerStats(self.pool_raspagem)
+
+            self.client = RequestClient(self.stats)
         #    self.stats = CrawlerStats(self.db, self.lock)
-           self.client = RequestClient(self.stats)
+        #    self.client = RequestClient(self.stats)
         except psycopg2.OperationalError as err_db:
             erro_msg = f"Erro operacional na inicialização do PostgreSQL (Timeout/Rede):\n{err_db}"
             ClassLogger.logging.error(f"Erro capturado no init: {erro_msg}")
@@ -198,6 +213,8 @@ class Processor:
             ClassLogger.logging.error(erro_msg)
             enviar_email_all(f"<h2>Erro no Init</h2><p>{erro_msg}</p>")
             sys.exit(1)
+
+
     def executar(self):
         inicio = datetime.now()
         ClassLogger.logging.info("=" * 80)
@@ -207,7 +224,7 @@ class Processor:
 
         try:
             # print(obter_servidores(self,[1, 7, 12]))
-            registros = obter_servidores(self,[6])
+            registros = obter_servidores(self,[1,2])
             # registros = obter_servidores(self,[1,2,3,4,5,6,7,8,9,10,11])
 
             total_processados = Process(self,registros)
@@ -300,30 +317,17 @@ class Processor:
             error = f"Erro fatal na execução: process_api {str(e)}"
             corpo = f"""<h2 style="color:red;">Falha no processo de Captura e tratamento dos dados</h2> <p>{datetime.now().strftime('%Y-%m-%d %H:%M:%S')} Mensagem:: {error}</p>"""
 
+        pass
 
-    def process_macht_name(self,chave):
+    def process_macht_name(self):
         inicio = datetime.now()
         ClassLogger.logging.info("=" * 80)
         ClassLogger.logging.info(f"Inicio proceso nomarlização dos dadose - {inicio}")
         time.sleep(2)
         ClassLogger.logging.info("=" * 80)
         try:
-            # print(obter_servidores(self,[1, 7, 12]))
-
-            # print(f"chave enviadas {chave}")
-            # for chaves in chave:
-            result_normalizar = arquivos_process(self,chave_servidor=chave)
+            result_match = mathc_process(self)
         
-            ClassLogger.logging.info(f"minha quantidade de dados processados :  {len(result_normalizar)}")
-
-            # if result_normalizar:
-            #     print("tenho o normalizar")
-            #     # print(result_normalizar)
-            #     #REALIZAR O PROCESSAMENTO PARA INSERIR AO BANCO
-            #     result_up = upDados(self,result_normalizar)
-
-            #     print(f"MEU RESULTADO {result_up}")
-                  
             fim = datetime.now()
             duracao = (fim - inicio).total_seconds()
             ClassLogger.logging.info("---" * 80)
@@ -347,8 +351,8 @@ class Processor:
     def executar_ciclo(self):
         # self.executar() 
         # PROCESSAR OS DADOS CAPTURADOS
-        self.processar_arquivos([11]) 
-        # self.process_macht_name()
+        # self.processar_arquivos([11]) 
+        self.process_macht_name()
 
        
         

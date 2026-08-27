@@ -1,3 +1,4 @@
+import re
 import unicodedata
 from typing import Optional
 
@@ -68,3 +69,18 @@ class texto:
         return (self.value or "").capitalize()
 
 
+
+def limpar_nome_rn(nome):
+    if not nome:
+        return nome
+        
+    # Expressão regular para identificar as variações (ignora maiúsculas/minúsculas)
+    padrao = r"\b(RN\s+DE|RN|RECÉ?M\s*NASCIDO|RECÉ?N\s*NASCIDO|RECÉ?M|RECÉ?N)\b"
+    
+    # 1. Substitui o padrão por nada
+    nome_limpo = re.sub(padrao, "", nome, flags=re.IGNORECASE)
+    
+    # 2. Remove espaços extras que sobraram nas pontas ou no meio
+    nome_limpo = re.sub(r"\s+", " ", nome_limpo).strip()
+    
+    return nome_limpo
