@@ -266,12 +266,19 @@ def iniciar(self,servidor):
         fila = []
         # SE EXISTIR MONTO OS RARAMETROS 
         if parametros:
-            fila.extend(gerar_urls_ggo(url_base))
+            # Mantém a ordem das URLs, mas não permite que a fila contenha
+            # entradas duplicadas.
+            fila.extend(dict.fromkeys(gerar_urls_ggo(url_base)))
         else:
-            fila.append(url_base)
+            if url_base not in fila:
+                fila.append(url_base)
 
         visitadas = set()
+
+        print(url_base)
+        print(fila)
         
+        # return 
         while fila:
             try:
                 if self.parar:

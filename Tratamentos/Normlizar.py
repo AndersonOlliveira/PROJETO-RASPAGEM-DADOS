@@ -8,7 +8,7 @@ from collections import Counter, defaultdict
 from Logs import ClassLogger
 from utils.auxliares import auxliares
 from utils.unicode import remover
-from datetime import time,datetime
+from datetime import time,datetime, timedelta
 from services.crawler import iniciar
 from Model.ClassModel import insert_base_obito,exists_by_name
 from concurrent.futures import ThreadPoolExecutor, as_completed
@@ -201,6 +201,9 @@ def _arquivos_process_servidor(self, chave_servidor):
             # df.rename(columns={'FALECIMENTO':  auxliares.TEXTO_FALECIMENTO ,'DATA_NACIMENTO': 'DATA_NASCIMENTO','FILIACAO_A': 'FAMILIARES_A','FILIACAO_B': 'FAMILIARES_B'}, inplace=True)
 
             print(df.columns)
+            # df = df.drop_duplicates(subset=['NOME'])
+            df = df.drop_duplicates(subset=['NOME', 'DATA_FALECIMENTO'])
+            # print(df)
 
             if 'NOME' in df.columns:
                 df = df[~df['NOME'].astype(str).str.strip().isin(['CANCELADO/TESTE', '.','TESTE', '********','CANCELADO'])].copy()
@@ -227,7 +230,7 @@ def _arquivos_process_servidor(self, chave_servidor):
                         .apply(
                             lambda row: achar_idade(row['DATA_NASCIMENTO'],
                                                         row['DATA_FALECIMENTO']),axis=1))
-                        df['IDADE'] = df['IDADE']
+                        df['IDADE'] = df['IDADE'] 
                 else:
                     if 'DATA_NASCIMENTO' in df.columns:
                          df['IDADE'] = df.apply(lambda row: achar_idade(row['DATA_NASCIMENTO'], row['DATA_FALECIMENTO']), axis=1)
@@ -244,19 +247,19 @@ def _arquivos_process_servidor(self, chave_servidor):
                 if 'FAMILIARES' in df.columns:
                     df['FAMILIARES_A'] =  df['FAMILIARES'].apply(tratar_familiares_A).str.upper()
                     df['FAMILIARES_B'] =  df['FAMILIARES'].apply(tratar_familiares_B).str.upper()
-                else:
+                # else:
                     # Se não tem a coluna unificada 'FAMILIARES', verifica as colunas individuais
-                    if 'PAIS' in df.columns:
-                        df['FAMILIARES_A'] = df['PAIS'].apply(tratar_familiares_array).str.upper()
-                    if 'FILHOS' in df.columns:
-                        df['FAMILIARES_B'] = df['FILHOS'].apply(tratar_familiares_array).str.upper()
-                    if 'CONJUGE' in df.columns:
-                        df['FAMILIARES_A'] = df['CONJUGE'].str.upper()
-                    else:
-                        df['CONJUGE'] = auxliares.TEXTO_P
-                    if 'FILIACAO_A' in df.columns:
-                        df['FAMILIARES_A'] =  df['FILIACAO_A'].apply(remover).str.upper()
-                        df['FAMILIARES_B'] =  df['FILIACAO_B'].apply(remover).str.upper()
+                if 'PAIS' in df.columns:
+                    df['FAMILIARES_A'] = df['PAIS'].apply(tratar_familiares_array).str.upper()
+                if 'FILHOS' in df.columns:
+                    df['FAMILIARES_B'] = df['FILHOS'].apply(tratar_familiares_array).str.upper()
+                if 'CONJUGE' in df.columns:
+                    df['FAMILIARES_A'] = df['CONJUGE'].str.upper()
+                else:
+                    df['CONJUGE'] = auxliares.TEXTO_P
+                if 'FILIACAO_A' in df.columns:
+                    df['FAMILIARES_A'] =  df['FILIACAO_A'].apply(remover).str.upper()
+                    df['FAMILIARES_B'] =  df['FILIACAO_B'].apply(remover).str.upper()
                     # else:
                     #     df['CONJUGE'] = auxliares.TEXTO_P
 
@@ -269,18 +272,25 @@ def _arquivos_process_servidor(self, chave_servidor):
                     df['ANO_NASCIMENTO_INFORMADO'] = df['DATA_NASCIMENTO'].apply(formatar_data)
                 else:
                     df['ANO_NASCIMENTO_INFORMADO'] = auxliares.A_NASCIMENTO
+
                 if 'DATA_FALECIMENTO' in df.columns:
                     df['DATA_FALECIMENTO'] = df['DATA_FALECIMENTO'].astype(str).str.strip("()', ")
+                    if 'DATA_SEPULTAMENTO' in df.columns:
+                        df['DATA_FALECIMENTO'] = df['DATA_SEPULTAMENTO'].apply(formatar_data_ontem)
+                    
                     df['DATA_FALECIMENTO'] = df['DATA_FALECIMENTO'].apply(formatar_data)
                 else:
+                    print('SAIO NO NESTE IF?')
+                   
                     df['DATA_FALECIMENTO'] = auxliares.FALECIMENTO # CASO NÃO TENHA DATA
-
+                print(f"DATA LOCALIZADA {df['DATA_FALECIMENTO']}")
+                # if df['']
                 df['NOME'] = df['NOME'].apply(remover).str.upper()
                 if 'DATA_CAPTURA' in df.columns:
                     df['DATA_CAPTURA'] = df['DATA_CAPTURA'].astype(str).str.strip("()', ")
                     df['DATA_CAPTURA'] = df['DATA_CAPTURA'].apply(formatar_data_hora)
                 else:
-                    df['DATA_CAPTURA'] = auxliares.DATA_CAPTURA # CASO NÃO TENHA DATA
+                    df['DATA_CAPTURA'] = formatar_data(datetime.now().strftime("%d/%m/%Y %H:%M")) # CASO NÃO TENHA DATA
                 if 'LINK' in df.columns:
                     df['LINK'] = df['LINK']
                 else:
@@ -300,13 +310,20 @@ def _arquivos_process_servidor(self, chave_servidor):
 
           
             df_final = pd.concat(dados, ignore_index=True)
+            # print(df_final)
             contador[arquivo]["QTINSERT"] = len(df_final)
             dados_para_enviar = df_final.to_dict(orient="records")
             # print(df_final.to_string(index=False))
 
+            print("COLUNA FINAL{}")
+
             print(dados_para_enviar)
-           
-        return dados_para_enviar
+            if 'dados_para_enviar' in locals():
+                return dados_para_enviar
+            else:
+                return []
+                    
+        # return dados_para_enviar
 
     except Exception as e:
          ClassLogger.logging.error(f"Erro fatal na execução para normalizar: {e}", exc_info=True)       
@@ -338,11 +355,11 @@ def calcula_ano(idade_enviada):
             ano_atual = datetime.now().strftime("%Y")
             return  int(ano_atual) - int(nasc_str)
         except Exception as e:
-            print(f"nasc_str estou saindo aqui  no {e}")
+            ClassLogger.logging.info(f"nasc_str estou saindo aqui  no {e}")
             return auxliares.IDADE
 
 def formatar_data(data_envida):
-    print(f"ESTOU SAINDO NO FORMATAR DATA  SEM A HORA ENVIADA :: {data_envida}")
+    
     if isinstance(data_envida, float) or data_envida is None or str(data_envida).lower() == 'nan' or str(data_envida) == auxliares.DATA_PARAO or str(data_envida) == auxliares.DATA_ENVIADA:
         return auxliares.DATA_PARAO
 
@@ -378,46 +395,74 @@ def formatar_data(data_envida):
     except Exception as e:
         ClassLogger.logging.info(f"Erro em formatar a data com o nan: {e}", exc_info=True)
         return auxliares.DATA_PARAO
-
 def formatar_data_hora(data_envida):
-    # print(f"ESTOU SAINDO NO FORMATAR DATA  COM HORA ENVIADA :: {data_envida}")
-    data_str_formmat = re.sub(r'-', '', data_envida)
+    print(f"ESTOU SAINDO NO FORMATAR DATA  COM HORA ENVIADA :: {data_envida}")
+    
+    # 1. Verifica se é NaN do Pandas/Float ou se está na lista de inválidos
+    if pd.isna(data_envida) or str(data_envida).lower().strip() in ['nan', '', 'none', '0', '{}', '0000/00/00', '0000-00-00']:
+        return auxliares.DATA_PARAO
+        
+    # 2. Garante que o dado virou string antes do regex
+    data_str = str(data_envida).strip()
+    data_str_formmat = re.sub(r'-', '', data_str)
+    
     try:
-        data_objeto  = datetime.strptime(data_str_formmat,"%d/%m/%Y %H:%M")
+        data_objeto = datetime.strptime(data_str_formmat, "%d/%m/%Y %H:%M")
         data_formatada = data_objeto.strftime("%Y/%m/%d")
         return data_formatada
     except Exception as e:
         ClassLogger.logging.info(f"Erro em formatar a data: {e}", exc_info=True)
-        return auxliares.DATA_PARAO
+        return auxliares.DATA_PARA
 
-# PASSA DOIS PARAMENTROS DATA DE NASCIMENTO E FALECIMENTO
-def achar_idade(nasc,falec):
-    print(f"ESTOU CHEGANDO AQUI POR NÃO TEM IDADE")
-   
-
-    nasc_str = str(nasc).strip().lower()
-    falec_str = str(falec).strip().lower()
-
-    if isinstance(falec_str, float) and pd.isna(falec_str):
-        return  auxliares.IDADE
-
-    falec_str = re.sub(r'-', '', falec_str)
-    nasc_str = re.sub(r'-', '', nasc_str)
     
-    # Verifica se os valores são nulos, vazios ou 'nan'
-    if nasc_str in ['nan', '', 'none', '0', '{}','0000/00/00'] or falec_str in ['nan', '', 'none', '0', '{}','0000/00/00']:
-        return auxliares.IDADE
-        
+def achar_idade(nasc, falec):
+
     try:
-        # datetime.strptime() funciona apenas em strings individuais
-        data_objeto_nas = datetime.strptime(nasc_str, "%d/%m/%Y")
-        data_objeto_falec = datetime.strptime(falec_str, "%d/%m/%Y")
-        
-        # Correção: Ano de Falecimento menos o Ano de Nascimento
-        return data_objeto_falec.year - data_objeto_nas.year
+        if pd.isna(nasc) or pd.isna(falec):
+            return None
+
+        nasc_str = str(nasc).strip()
+        falec_str = str(falec).strip()
+
+        if nasc_str.lower() in ['nan', '', 'none', '0', '{}']:
+            return None
+
+        if falec_str.lower() in ['nan', '', 'none', '0', '{}']:
+            return None
+
+        data_nascimento = datetime.strptime(
+            nasc_str,
+            "%d/%m/%Y"
+        )
+
+        data_falecimento = datetime.strptime(
+            falec_str,
+            "%d/%m/%Y"
+        )
+
+        idade = (
+            data_falecimento.year
+            - data_nascimento.year
+            - (
+                (data_falecimento.month, data_falecimento.day)
+                <
+                (data_nascimento.month, data_nascimento.day)
+            )
+        )
+
+        if idade < 0:
+            return None
+
+        return int(idade)
+
     except Exception as e:
-        ClassLogger.logging.warning(f'Falha em achar os dados {e}' ,exc_info=True)
-        return auxliares.IDADE
+
+        ClassLogger.logging.warning(
+            f"Falha em achar os dados: {e}",
+            exc_info=True
+        )
+
+        return None
 
 
 def tratar_familiares_A(textos):
@@ -429,7 +474,7 @@ def tratar_familiares_A(textos):
         textos = str(textos)
 
     texto_limpo = re.sub(r'\(In Memoriam\)', '', textos, flags=re.IGNORECASE)
-    conjuges_pais = re.findall(r'(?:Sr\.|Sra\.|esposa Sra\.|esposo\.|Viúvo\.|Viúva\.|Casado\.)\s+([A-Z][a-zÀ-ÿ]+(?:\s+[A-Z][a-zÀ-ÿ]+)*)', texto_limpo)
+    conjuges_pais = re.findall(r'(?:Sr\.|Sra\.|esposa Sra\.|esposo\.|Viúvo\.|Viúva\.|Casado\.|casado\.)\s+([A-Z][a-zÀ-ÿ]+(?:\s+[A-Z][a-zÀ-ÿ]+)*)', texto_limpo)
 
 
     return ", ".join(conjuges_pais) if conjuges_pais else auxliares.TEXTO_P 
@@ -450,7 +495,7 @@ def tratar_familiares_B(textos):
     # flags=re.IGNORECASE) 
 
     filhos_match = re.search(
-    r'deixa\s+(?:os\s+filhos|as\s+filhas|o\s+filho|filhos?)\s+(.*?)(?=\s*,\s*(?:familiares|amigos|conhecidos|parentes|neto|bisneto)\b|\s*$)',
+    r'deixa\s+(?:os\s+filhos|as\s+filhas|o\s+filho|filhos?)\s+(.*?)(?=\s*,\s*(?:familiares|amigos|conhecidos|parentes|neto|bisneto|deixando)\b|\s*$)',
     texto_limpo,
     flags=re.IGNORECASE)
 
@@ -543,6 +588,7 @@ def tratar_familiares_B_old(textos):
     # return ", ".join(lista_filhos) if lista_filhos else auxliares.TEXTO_P 
 
 def tratar_familiares_array(lista):
+    print(f"LISTA ENVIADO ?{lista}")
     texto_limpo = re.sub(r'[\[\]]', '', lista).strip()
     texto_anos = re.sub(r'\s*\(\d+\s+anos\)', '', texto_limpo).strip()
     if not texto_anos:
@@ -561,7 +607,7 @@ def tratar_familiares_array(lista):
 def verificar_data(data):
   
     if isinstance(data, float) or data is None or str(data).lower() == 'nan' or str(data).strip() in ('', auxliares.DATA_PARAO) or str(data).strip() == auxliares.DATA_C:
-            return auxliares.DATA_PARAO
+        return auxliares.DATA_PARAO
     data_str = str(data).strip()
 
     if ',' in data_str:
@@ -698,3 +744,7 @@ def pegar_registros_novos(arquivo_atual, arquivo_antigo):
     return novos
 
 
+def formatar_data_ontem(data_sepultamento):
+    data_objeto = datetime.strptime(data_sepultamento, "%d/%m/%Y")
+    data_anterior = data_objeto - timedelta(days=1)
+    return data_anterior.strftime("%d/%m/%Y")

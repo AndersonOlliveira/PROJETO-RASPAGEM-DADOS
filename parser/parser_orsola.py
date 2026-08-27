@@ -23,9 +23,13 @@ def extrair_cards(self,soup):
                 data_hora = re.search(r"Ocorrido às ([\d:]+) do dia ([\d/]+)", descricao_completa).group(1)
                
                 pais = re.search(r"filho de (.*?) e ([^,]+)", descricao_completa)
+                estado_civil = re.search(
+                    r"(Era casado|Era vi(?:u|ú)vo(?:\(a\))?)\s*(?:com|de)?\s*(.*?)(?:,|\.|;)",
+                    descricao_completa,
+                    re.IGNORECASE,
+                )
                 filhos = re.search(r"deixando os filhos:\s*(.*?)\.", descricao_completa)
                 residencia = re.search(r"Residia no (.*?) em ([^\n\.]+)", descricao_completa)
-
 
                 texto = descricao.get_text()
                 idade = re.search(r"(\d+)\s+anos", descricao.get_text()).group(1)
@@ -35,9 +39,15 @@ def extrair_cards(self,soup):
                 registros['DATA_CAPTURA'] =  datetime.now().strftime("%d/%m/%Y %H:%M")
                 registros['DATA_HORA'] = data_hora
                 registros['PAIS'] = [pais.group(1).strip(), pais.group(2).strip()] if pais else []
+                if estado_civil:
+                    registros['ESTADO_CIVIL'] = estado_civil.group(1).strip()
+                    registros['CONJUGE'] = estado_civil.group(2).strip() if estado_civil.group(2).strip() else None
+                else:
+                    registros['ESTADO_CIVIL'] = None
+                    registros['CONJUGE'] = None
                 registros['FILHOS'] =  [f.strip() for f in filhos.group(1).replace(" e ", ",").split(",")] if filhos else []
                 registros['RESIDENCIA'] = {"bairro": residencia.group(1).strip() if residencia else None, "cidade": residencia.group(2).strip() if residencia else None}
-
+                # registro['FAMILIARES'] = descricao_completa.get_text()
                 registro.append(registros)
 
 

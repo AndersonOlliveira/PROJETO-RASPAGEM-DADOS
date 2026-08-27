@@ -1,11 +1,14 @@
 import re 
 from Logs import ClassLogger
 from datetime import datetime
-
+from utils.montarParametros import gerar_urls_ggo
 def extrair_cards(self,soup):
     print(f"VOU SAIR AQUI COM O RESULTADO DA CONSULTA? DO GG INTERNO")
     registros = []
 
+    # url_base = "https://ggo-interno.com.br/obituario/?"
+    # fila.extend(dict.fromkeys(gerar_urls_ggo(url_base)))
+    
     try:
         cards = soup.find_all('div', class_="card-body p-4")
 
