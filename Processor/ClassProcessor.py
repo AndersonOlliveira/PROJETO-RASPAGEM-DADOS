@@ -169,6 +169,7 @@ class Processor:
         self.false =False
         self.parar = False
         self.periodo = 'SEMANAL'
+        self.process_lote = 100
         # self.todos_resultados = []
         self.batch_size_verify = 50
         self.lock = threading.Lock()
@@ -206,7 +207,8 @@ class Processor:
 
         try:
             # print(obter_servidores(self,[1, 7, 12]))
-            registros = obter_servidores(self,[4,9])
+            registros = obter_servidores(self,[6])
+            # registros = obter_servidores(self,[1,2,3,4,5,6,7,8,9,10,11])
 
             total_processados = Process(self,registros)
 
@@ -223,9 +225,20 @@ class Processor:
             retorno_chave = enviar_relatorio_email(self,dados_relatorio)
 
             
-            #chamo funcao para normalizar e inserir 
-            for chaves in retorno_chave:
-                self.processar_arquivos(chaves)
+            if retorno_chave:
+
+                chaves_processadas = set()
+
+                for chave in retorno_chave:
+
+                    if chave in chaves_processadas:
+                        continue
+
+                    chaves_processadas.add(chave)
+
+                    print(f"vou processar a chave chave: {chave}")
+
+                    self.processar_arquivos(chave)
              
 
             if self.lista_dataframes_global:  # Verifica se a lista não está vazia
@@ -286,19 +299,56 @@ class Processor:
             ClassLogger.logging.error(f"Erro fatal na execução: {str(e)}")
             error = f"Erro fatal na execução: process_api {str(e)}"
             corpo = f"""<h2 style="color:red;">Falha no processo de Captura e tratamento dos dados</h2> <p>{datetime.now().strftime('%Y-%m-%d %H:%M:%S')} Mensagem:: {error}</p>"""
+
+
+    def process_macht_name(self,chave):
+        inicio = datetime.now()
+        ClassLogger.logging.info("=" * 80)
+        ClassLogger.logging.info(f"Inicio proceso nomarlização dos dadose - {inicio}")
+        time.sleep(2)
+        ClassLogger.logging.info("=" * 80)
+        try:
+            # print(obter_servidores(self,[1, 7, 12]))
+
+            # print(f"chave enviadas {chave}")
+            # for chaves in chave:
+            result_normalizar = arquivos_process(self,chave_servidor=chave)
+        
+            ClassLogger.logging.info(f"minha quantidade de dados processados :  {len(result_normalizar)}")
+
+            # if result_normalizar:
+            #     print("tenho o normalizar")
+            #     # print(result_normalizar)
+            #     #REALIZAR O PROCESSAMENTO PARA INSERIR AO BANCO
+            #     result_up = upDados(self,result_normalizar)
+
+            #     print(f"MEU RESULTADO {result_up}")
+                  
+            fim = datetime.now()
+            duracao = (fim - inicio).total_seconds()
+            ClassLogger.logging.info("---" * 80)
+                  
+        
+        except Exception as e:
+            erro_detalhado = traceback.format_exc()
+            print(f"TENHO ERRO NESTE PONTO PARA ACESSAR O REGISTRO {erro_detalhado}")
+            ClassLogger.logging.error(f"Erro fatal na execução: {str(e)}")
+            error = f"Erro fatal na execução: process_api {str(e)}"
+            corpo = f"""<h2 style="color:red;">Falha no processo de Captura e tratamento dos dados</h2> <p>{datetime.now().strftime('%Y-%m-%d %H:%M:%S')} Mensagem:: {error}</p>"""
                   
         
         finally:
-            ClassLogger.logging.error(f"Aplicação finalizada!")
+            ClassLogger.logging.info(f"Todos os processos finalizados!")
         
              
  
 
 
     def executar_ciclo(self):
-        self.executar() 
+        # self.executar() 
         # PROCESSAR OS DADOS CAPTURADOS
-        # self.processar_arquivos([4,9]) 
+        self.processar_arquivos([11]) 
+        # self.process_macht_name()
 
        
         

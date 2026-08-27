@@ -5,7 +5,7 @@ import traceback
 
 import numpy as np
 import pandas as pd
-
+from utils.csv import salvar_csv_error
 from pathlib import Path
 from collections import Counter, defaultdict
 from Logs import ClassLogger
@@ -26,6 +26,7 @@ def upDados(self,dados_tabela):
     retorno_insert =[]
     lista_error =[]
     tabela_atualizar =[]
+
     fontes_atualizadas = set()
     contador_por_fonte = defaultdict(lambda: {
         "INSERT": 0,
@@ -41,18 +42,9 @@ def upDados(self,dados_tabela):
         return None
    
     with ThreadPoolExecutor(max_workers=self.max_workers) as executor:
-        # with self.db.get_connection() as conn:
-
-                # quantidade_registros = min(4, len(dados_tabela))
-                # indices_aleatorios = random.sample(
-                # range(len(dados_tabela)), quantidade_registros
-                #             )
-                
-                # for indice in indices_aleatorios:
-                #     registro = dados_tabela.iloc[indice]
-            # processa em blocos de 100 registros
-            batch_size = 10
-            print(type(dados_tabela))
+        
+            batch_size = self.process_lote
+            
 
             dados_tabela = pd.DataFrame(dados_tabela)
             # subset = dados_tabela.iloc[:50, :]
@@ -69,22 +61,40 @@ def upDados(self,dados_tabela):
                         f"de {total}"
                     )
                     for _, registro in bloco.iterrows():
-                        # print(registro)
-                        print(registro['NOME'])
                         # futures.append(executor.submit(exists_by_name,conn,registro['NOME'],registro['DATA_FALECIMENTO']))
                         result_exists = executor.submit(exists_by_name,self,registro['NOME'],registro['DATA_FALECIMENTO'])
-
+                        
+                        # ADICIONO DENTRO DA FONTE, E VERIFICO SE JÁ EXITE PARA NÃO INSERIR NOVAMENTE!
                         fonte = registro['LINK_FONTE']
                         if fonte not in fontes_atualizadas:
                             tabela_atualizar.append({'LINK_FONTE': fonte})
                             fontes_atualizadas.add(fonte)
 
-                        print(f"f result_exists {result_exists}")
+                       
                         try:
                             resultado = result_exists.result() # PEGO O RETORNO VINDO DA VERIFICAR DO REGISTRO O QUE FOR FALSE SOMENTE
-                            #  print(f"Future: {future}")
-                            #  print(f"Retorno do future: {resultado}")
-                            #  print(f"Retorno do future: {registro}")
+                            print(f"RETORNO DO EXISTIS {resultado}")
+                            if (
+                                isinstance(resultado, dict)
+                                and resultado.get('status') == 'erro_conexao'
+                            ):
+                                print(f"Error vindo na procura dos dados {resultado}")
+                                contador_por_fonte[registro['LINK_FONTE']]["JB"] += 1
+                                ClassLogger.logging.error(
+                                    f"Error vindo na procura dos dados {resultado}"
+                                )
+                                continue 
+                            if (
+                                isinstance(resultado, dict)
+                                and resultado.get('status') == 'data_falecimento'
+                            ):
+                                contador_por_fonte[registro['LINK_FONTE']]["ERROR"] += 1
+                                lista_error.append(resultado)
+                                ClassLogger.logging.error(
+                                    f"DADOS NÃO FORMATADO {resultado}"
+                                )
+                                continue
+
                             if resultado is True:
                                 contador_por_fonte[registro['LINK_FONTE']]["JB"] += 1
                             elif resultado is False:
@@ -95,25 +105,6 @@ def upDados(self,dados_tabela):
                                 print(f"TENHO ERRO NESTE PONTO PARA ACESSAR O REGISTRO {erro_detalhado}")
                                 ClassLogger.logging.error(f"ERRO LINHA PROCESSAMENTO RESULT EXISTS {str(e)}")
 
-
-
-                
-
-        # try:
-        #     for future in as_completed(futures):
-        #         resultado = future.result()
-        #         print(f"Future: {future}")
-        #         print(f"Retorno do future: {resultado}")
-        #         print(f"Retorno do future: {registro}")
-
-        #         if resultado is True:
-        #             print("RESULTADO DO FUTURE: True")
-        #         elif resultado is False:
-        #             print("RESULTADO DO FUTURE: False")
-        # except Exception as e:
-        #     print(f"TENHO ERRO NESTE PONTO PARA ACESSAR O REGISTRO {e}")
- 
-    # print(f"MEU FUTURE POPULAOD {futures}")
     # return
     if futures:
         
@@ -158,10 +149,16 @@ def upDados(self,dados_tabela):
             #  print(f"RETORNO VINDO DO INSERT DO OBITO {resultado}")
     try:
         if lista_error:
-            df_erros = pd.DataFrame(lista_error)
+            erros_para_enviar = list(lista_error)
+            df_erros = pd.DataFrame(erros_para_enviar)
             #  html_tabela = df_erros.to_html(index=False, classes='table table-striped')
             convert = df_erros.to_html(index=False, border=1, justify='center')
+            # COM OS ERROS VOU CRIAR UM CSV PARA
+            pasta = 'arquivos/error'
+            documento = f'documento_erros'
+            salvar_csv_error(erros_para_enviar, pasta, documento)
             enviar_email_all(convert)
+            lista_error.clear()  # limpa após enviar, para não duplicar em execuções futuras
         else:
             print('NEHUM DADO A SER ENVIADO')
     except Exception as e:
@@ -171,11 +168,6 @@ def upDados(self,dados_tabela):
 
     print(f"contator populado {contador_por_fonte}")
     if contador_por_fonte:
-        todas_as_linhas = []
-        # df_contador = pd.DataFrame(contador_por_fonte)
-        # convert = df_contador.to_html(index=False, border=1, classes='table table-striped')
-
-        print(f"MINHA TABELA {tabela_atualizar}")
         for linha in tabela_atualizar:
             fonte = linha['LINK_FONTE']
             linha['QTA A INSERIR'] = contador_por_fonte[fonte]["INSERT"]
@@ -183,12 +175,13 @@ def upDados(self,dados_tabela):
             linha['QTA ERROR'] = contador_por_fonte[fonte]["ERROR"]
             linha['QTA INSERIDO'] = contador_por_fonte[fonte]["INSERT"]
 
-            # todas_as_linhas.append(linha)
+            
         
         df_da_fonte_atual = pd.DataFrame(tabela_atualizar)
+        #ADICIONO O RESULTADO TABELA, NA VARIAVEL GLOBAL PAR ENIVAR NO FINAL
         self.lista_dataframes_global.append(df_da_fonte_atual)
 
-
+        #RETONRO PROCESSO GERAL
         return True
 
 

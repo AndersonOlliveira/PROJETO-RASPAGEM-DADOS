@@ -1,6 +1,7 @@
 import re
 from Logs import ClassLogger
 from datetime import datetime
+from urllib.parse import urlparse, parse_qs
 
 def extrair_cards(self,soup):
 
@@ -26,8 +27,11 @@ def extrair_cards(self,soup):
             informacoes = re.search(r"(\d+) anos", p_idade).group(0)
             # Busca o link da notícia individual caso precise mapear posteriormente
             data_falecimento = retorno_procura.find('span', class_="elementor-post-date")
-             
-    
+            links = retorno_procura.find("a")["href"] if retorno_procura.find("a") else ""
+            resultado = urlparse(links)
+            
+            url_base = f"{resultado.scheme}://{resultado.netloc}"
+
             if nome:
                 registro = {
                     "NOME": nome,
@@ -35,7 +39,8 @@ def extrair_cards(self,soup):
                     "IDADE": idade,
                     "INFORMACOES": p_idade,
                     "DATA_CAPTURA": datetime.now().strftime("%d/%m/%Y %H:%M"),
-                    "LINK": retorno_procura.find("a")["href"] if retorno_procura.find("a") else ""
+                    "LINK": url_base, 
+                    "LINK_COMPLEMENTO": retorno_procura.find("a")["href"] if retorno_procura.find("a") else ""
             
             }   
 

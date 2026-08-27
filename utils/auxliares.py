@@ -5,7 +5,7 @@ class auxliares:
     FALECIMENTO = "SEM DATA DE FALECIMENTO INFORMADA"   
     A_NASCIMENTO = None
     A_IDADE = None
-    IDADE = 0
+    IDADE = None
     DATA_PARAO = '0000-00-00'
     DATA_ENVIADA = '0000/00/00'
     DATA_C = '00/00/0000'

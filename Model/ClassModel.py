@@ -1,4 +1,6 @@
+import math
 import traceback
+import pandas as pd
 from Logs import ClassLogger
 from tabulate import tabulate
 from datetime import datetime
@@ -11,12 +13,6 @@ from utils.auxliares import auxliares
 
 def fontes_inserts(self,urls):
 
-    print(f"ESTOU SAINDO PARA INSERIR A URL DE BUSCA?")
-
-    # print(f"SELF ENVIADO {self.db} ")
-    # return
-
-    
     query = """
            INSERT INTO fontes_download.obito_download
                (periodizacao, data_captura, link_captura)
@@ -49,7 +45,6 @@ def fontes_inserts(self,urls):
 
 
 #inserir o lote dos registos
-# def insert_base_interpol(self, registro: dict, conn, falha_ids):
 def insert_base_obito(self,registro):
     # exits = False
     exits = exists_by_name(self,registro['NOME'],registro['DATA_FALECIMENTO'])
@@ -58,11 +53,31 @@ def insert_base_obito(self,registro):
 
     if not exits:
         print(f"NOME INFORMADO  {registro}")
+        # TRATAMENTO PARA INSERIR OS DADOS DENTRO DO BANCO 
+
         if registro['DATA_FALECIMENTO'] == "0000-00-00":
             registro['DATA_FALECIMENTO'] = None
         if registro['ANO_NASCIMENTO_INFORMADO'] == "0000-00-00":
             registro['ANO_NASCIMENTO_INFORMADO'] = None
-   
+        if registro['IDADE'] == "nan":
+           registro['IDADE'] = None
+
+        idade = registro['IDADE']
+        if isinstance(idade, float):
+            idade = int(idade) if not math.isnan(idade) else None
+        # valor = registro.get("ANO_NASCIMENTO_INFORMADO")
+
+        # if pd.isna(valor):
+        #     registro["ANO_NASCIMENTO_INFORMADO"] = None
+        # else:
+        #     try:
+        #         registro["ANO_NASCIMENTO_INFORMADO"] = int(
+        #             str(valor)[:4]
+        #         )
+        #     except (ValueError, TypeError):
+        #         registro["ANO_NASCIMENTO_INFORMADO"] = None
+            
+        # return
         try:
             query = """INSERT INTO obito_captura.obito_dados(
 	                nome, idade, data_falecimento, ano_nascimento_estimado, link_fonte, data_nascimento, cidade,data_captura)
@@ -75,27 +90,26 @@ def insert_base_obito(self,registro):
                 registro['ANO_NASCIMENTO_ESTIMADO'],
                 registro['LINK_FONTE'],
                 registro['ANO_NASCIMENTO_INFORMADO'],
-                registro['CIDADE']
+                registro['CIDADE'],
+                type(registro['IDADE']),
+                type(registro['ANO_NASCIMENTO_INFORMADO']),
             
                 ))
-            # if 'DATA NÃO INFORMADA' in registro['ANO_NASCIMENTO_ESTIMADO']:
-            #     registro['ANO_NASCIMENTO_ESTIMADO'] = 0000   
-
-            # if 0 in registro['ANO_NASCIMENTO_INFORMADO']:
-            #     registro['ANO_NASCIMENTO_INFORMADO'] = 0000  
-
+            
+         
+            # return
             try:
                 with self.db.get_connection() as conn:
                         with conn.cursor() as cursor:
                             cursor.execute(query, (
                                 registro['NOME'],
-                                registro['IDADE'],
+                                idade,
                                 registro['DATA_FALECIMENTO'],
-                                registro['ANO_NASCIMENTO_ESTIMADO'],
+                                sanitize(registro['ANO_NASCIMENTO_ESTIMADO']),
                                 registro['LINK_FONTE'],
-                                registro['ANO_NASCIMENTO_INFORMADO'],
+                                sanitize(registro['ANO_NASCIMENTO_INFORMADO']),
                                 registro['CIDADE'],
-                                registro['DATA_CAPTURA'],
+                                registro['DATA_CAPTURA']
                                  ))
                             
                             novo_id = cursor.fetchone()[0]
@@ -103,8 +117,6 @@ def insert_base_obito(self,registro):
                             if novo_id:
                                 return_info_familiar = inser_familiares(self,conn,registro,novo_id)
                                   # INSERIR OS COMPLEMENTOS NA OUTRA TABELA  COM O ID
-                            
-                        print(f"ID RERTORNADO PARA O ÓBITO {novo_id}")
 
                         return {
                                 "nome": registro['NOME'],
@@ -115,26 +127,28 @@ def insert_base_obito(self,registro):
                                
                         } 
             except Exception as e:
-                    print( traceback.format_exc())
                     ClassLogger.logging.error(f"Falha ao inserir os dados na tabela  obito_dados - {repr(e)}")
+                    print(f"nome o erro {registro['NOME']}\m")
                     return {
-                        "nome": registro['nome'],
-                        "status": "erro",
+                        "nome": registro['NOME'],
+                        "status": "ERRO_FATAL",
                         "LINK_FONTE": registro['LINK_FONTE'],
                         "error": traceback.format_exc()
                 }
             
         except Exception as e:
+            print(f"erro sendo apresentado {e}")
             print(traceback.format_exc())
-            print(f"ERRRO NO SEGUNDO TRY")
-            # print(f"{registro['nome']}")
+            error = traceback.format_exc()
+            ClassLogger.logging.error(f"Segundo try ao inserir os dados na tabela obito_dados - {error}")
+            print(f"nome o erro{registro['NOME']}")
             return {
                "nome": registro,
                "status": "ERRO_FATAL", 
                "LINK_FONTE": registro['LINK_FONTE']
             }
     else: 
-        print(f"SAINDO NO ELSE DA VERIFICACO DOS DADOS")
+        #PEGAR O QUE JÁ EXISTE E TRATAR
         return {
                "nome": registro,
                "status": "existes", 
@@ -187,96 +201,6 @@ def inser_familiares(self,conn,registro,id_obito):
                 }
 
 
-
-
-def update_data_interpol(conn,id, nat, thumb,country_wanted,data_captura):
-    
-    query = """UPDATE public.interpol_dados SET 
-                  naturalidade = %s , foto = %s , pais_procurado = %s , data_hora_consulta = %s WHERE id_interpol = trim(%s) ;"""
-                #   naturalidade = %s , foto = %s WHERE nome_buscado = %s ;"""
-     
-    try:
-         
-         with conn.cursor(cursor_factory=RealDictCursor) as cursor:
-                cursor.execute(query, (nat,thumb,country_wanted,data_captura,id))
-
-                if cursor.rowcount > 0:
-                    print(f"TIVE SUCESSO EM ATUALIZAR")
-                    return {
-                        "status": "sucesso"
-                    }
-                else:
-                    print(f"TIVE FALHA EM ATUALIZAR")
-                    return {
-                        "status": "erro",
-                        "error": "No rows updated"
-                    }
-    
-    except Exception as e:
-            ClassLogger.logger.error(f"Erro ao atualizar a NATURALIDADE :: {str(e)}")
-           
-            return {
-                    "status": "erro",
-                    "error": str(e)
-                }
-
-       
-def update_id_interpol(conn,name_person, id):
-    
-    query = """UPDATE public.interpol_dados SET 
-                  id_interpol = %s  WHERE nome = %s ;"""
-                #   nome_buscado = %s  WHERE nome = %s ;"""
-
-     
-    try:
-         
-          with conn.cursor(cursor_factory=RealDictCursor) as cursor:
-                cursor.execute(query, (id,name_person))
-             
-           
-                return {
-                    "status": "sucesso"
-                }
-    
-    except Exception as e:
-            ClassLogger.logger.error(f"Erro ao atualizar o campo nome Buscado :: {str(e)}")
-           
-            return {
-                    "status": "erro",
-                    "error": str(e)
-                }
-
-       
-              
-
-
-      
-def update_id_interpol_status(self,id,new_status,data):
-    
-    query = """UPDATE public.interpol_dados SET 
-                  situacao = %s, data_baixa = %s  WHERE id_interpol = %s ;"""
-                #   nome_buscado = %s  WHERE nome = %s ;"""
-     
-    try:
-         with self.db.get_connection() as conn:
-             with conn.cursor(cursor_factory=RealDictCursor) as cursor:
-                 cursor.execute(query, (new_status,data,id))
-                 
-                 return {
-                    "status": "sucesso"
-                }
-    
-    except Exception as e:
-            ClassLogger.logger.error(f"Erro ao atualizar Baixa do id {id} :: {str(e)}")
-           
-            return {
-                    "status": "erro",
-                    "error": str(e),
-                    "id_interpol"  : id
-                }
-
-       
-              
 def update_info_fontes(self,idProcesso,qta):
 
     query = """UPDATE fontes_download.obito_download  SET 
@@ -304,63 +228,18 @@ def update_info_fontes(self,idProcesso,qta):
           ClassLogger.logging.error(f"Erro ao atualizar status True :: update_info_process  - {str(e)}")
 
 
-
-
-def buscar_teste(self):
-
-            query = ("""SELECT * FROM fontes_download.interpol_download""")
-            
-           
-
-            try:
-                
-                ClassLogger.logger.warn(f"[DEBUG SQL] Parâmetros: ")
-            
-                with ConectionClass.DbConnect(self.config) as conn:
-                    with conn.cursor(cursor_factory=RealDictCursor) as cursor:
-                        cursor.execute(query)
-                        registros = cursor.fetchall()
-                       
-                        return [dict(registro) for registro in registros]
-            
-         
-            except Exception as e:
-                   ClassLogger.logger.error(f"Falha em caputrar os dados buscar_teste - {str(e)}")
-
-
-            
-            
-                
-
-
-# def search_data_interpol(self,idinterpol, cursor,conection):
-def search_data_interpol(conn,idinterpol):
-            print('CONSIGO PASSAR O ID')
-
-           
-            
-            #retornando um boleano
-#CAMPO VAI SER TROCADO PARA ID INTERPOL
-            query = ("""SELECT EXISTS(SELECT 1 FROM public.interpol_dados WHERE id_interpol = trim(%s)) as exists""") 
-              # SELECT 1 FROM public.interpol_dados WHERE nome_buscado = %s) as exists""")
-            
-            
-
-            try:
-                # with self.db.get_connection() as conn:
-                  with conn.cursor(cursor_factory=RealDictCursor) as cursor:
-                    cursor.execute(query, (idinterpol.strip(),))
-                    return cursor.fetchone()['exists']
-            except Exception as e:
-                     ClassLogger.logger.error(f"Falha em caputrar os dados o erro search_data_interpol {str(e)}")
-           
-
 def exists_by_name(self, person,falecimento):
             print(person)
             print(falecimento)
 
             if falecimento is None or str(falecimento).strip() in ['', 'NaN', '0000-00-00', '0000-00-00 00:00:00']:
-                return False
+                return { "status": "data_falecimento",
+                                    "COLUNA_ERROR": ",".join(str(valor) for valor in [person, falecimento] if valor is not None),
+                                    "dados_error": {
+                                    "person": person,
+                                    "falecimento": falecimento,
+                                    }
+                }
 
             try:
                 # FORMATA A DATA PARA O PADRÃO DO BANCO E EVITA ERROS COM VALORES INVÁLIDOS
@@ -555,3 +434,9 @@ def push_cpf(self,cpf, idcolunaInterpol):
                     "error": str(e),
                     "id_interpol"  : idcolunaInterpol
                 }
+
+def sanitize(value):
+    print(f"CHEGANDO ATÉ AQUI? {value}")
+    if isinstance(value, float) and math.isnan(value):
+        return None
+    return value
