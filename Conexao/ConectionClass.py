@@ -8,11 +8,19 @@ load_dotenv()
   
   
 class DbConfig:
-    HOST = os.getenv("DB_HOST")
-    PORT = port = os.getenv("DB_PORT")
-    DATABASE = os.getenv("DB_DATA_BASE")
-    USER = os.getenv("DB_USER")
-    PASSWORD = os.getenv("DB_PASSWORD")
+    def __init__(self,prefix):
+        print(f"PREFIX ENVIADO {prefix}")
+        self.HOST = os.getenv(f"DB_HOST_{prefix}")
+        self.PORT = os.getenv(f"DB_PORT_{prefix}")
+        self.DATABASE = os.getenv(f"DB_DATA_BASE_{prefix}")
+        self.USER = os.getenv(f"DB_USER_{prefix}")
+        self.PASSWORD = os.getenv(f"DB_PASSWORD_{prefix}")
+        # pass
+    # HOST = os.getenv("DB_HOST")
+    # PORT = port = os.getenv("DB_PORT")
+    # DATABASE = os.getenv("DB_DATA_BASE")
+    # USER = os.getenv("DB_USER")
+    # PASSWORD = os.getenv("DB_PASSWORD")
 
 
 
