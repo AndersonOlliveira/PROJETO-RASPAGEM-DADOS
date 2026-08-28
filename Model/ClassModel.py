@@ -363,7 +363,8 @@ def search_from_name_obito(self, nome_busca, data_nascimento,obito_id,registro):
                 with conn.cursor(cursor_factory=RealDictCursor) as cursor:
                     cursor.execute(query, (nome_busca,auxliares.CPF_LEN,data_nascimento))
                     resultado = cursor.fetchall()
-                    print(f"Encontrados {len(resultado)} registros para {nome_busca}")
+                    print(f"TOTAL A SER PROCESSADO {len(resultado)} registros para {nome_busca}")
+                    print(f"LISTA COM OS ENCONTRADOS: {(resultado)}")
 
                     if resultado:
                         total_resultado = len(resultado)
@@ -375,19 +376,18 @@ def search_from_name_obito(self, nome_busca, data_nascimento,obito_id,registro):
                                   "registro": registro
                                 }
                         else:
-                            if cursor.rowcount:
-                                 return {
+                            return {
                                       "status": "sucesso",
                                       "CPF": resultado[0]['cpf'],
                                       "id_obito": obito_id,
                                       "registro": registro
-                                }
-                            else:
-                                 return {
-                                      "status": "n_encontrado",
-                                      "id_obito": obito_id,
-                                      "registro": registro
-                                    }
+                            }
+                    else:
+                        return {
+                                "status": "n_encontrado",
+                                "id_obito": obito_id,
+                                "registro": registro
+                            }
         except Exception as e:
                 erro_detalhado = traceback.format_exc()
                 ClassLogger.logging.error(f"Falha em consultar os dados? - {str(erro_detalhado)}")
@@ -401,38 +401,34 @@ def search_from_name_obito(self, nome_busca, data_nascimento,obito_id,registro):
 
 
 
-def push_cpf(self,cpf, idcolunaInterpol):
+def push_cpf_obito(self,cpf, idObito):
       
-    query = """UPDATE public.interpol_dados SET 
-                  cpf = %s  WHERE id = %s ;"""
-            
+    query = """UPDATE obito_captura.obito_dados SET 
+                  cpf = %s  WHERE obito_id = %s ;"""
 
-  
-    
-     
     try:
          with self.pool_raspagem.get_connection() as conn:
              with conn.cursor(cursor_factory=RealDictCursor) as cursor:
-                 cursor.execute(query, (cpf,idcolunaInterpol))
-                 
+                 cursor.execute(query, (cpf,idObito))
                  return {
-                    "status": "sucesso"
+                    "status": "sucesso",
+                    "msg": "sucesso em atualizar",
+                    "id_obito": idObito
                 }
-    
     except Exception as e:
-            ClassLogger.logger.error(f"Erro ao atualizar Baixa do id {idcolunaInterpol} :: {str(e)}")
-           
-            return {
-                    "status": "erro",
-                    "error": str(e),
-                    "id_interpol"  : idcolunaInterpol
-                }
+        erro_detalhado = traceback.format_exc()
+        ClassLogger.logger.error(f"Erro ao atualizar Baixa do id {idObito} :: {str(erro_detalhado)}")
+        return {
+             "status": "erro",
+             "error": str(e),
+             "id_obito"  : idObito
+        }
 
 
 def full_dados(self)-> List[Dict]:
 
         query = """SELECT trim(UPPER(nome)) as nome, trim(to_char(data_nascimento, 'YYYY-MM-DD')) as data_nascimento ,obito_id FROM  obito_captura.obito_dados
-                 where data_nascimento is not null ORDER BY nome ASC LIMIT 10"""
+                 where data_nascimento is not null and cpf is null ORDER BY nome ASC LIMIT 10 """
 
         try:
                         
