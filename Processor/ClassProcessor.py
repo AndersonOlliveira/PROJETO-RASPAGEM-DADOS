@@ -339,6 +339,33 @@ class Processor:
             ClassLogger.logging.error(f"Erro fatal na execução: {str(e)}")
             error = f"Erro fatal na execução: process_api {str(e)}"
             corpo = f"""<h2 style="color:red;">Falha no processo de Captura e tratamento dos dados</h2> <p>{datetime.now().strftime('%Y-%m-%d %H:%M:%S')} Mensagem:: {error}</p>"""
+
+            pass 
+        
+        # finally:
+        #     ClassLogger.logging.info(f"Todos os processos finalizados!")
+
+
+    def process_cnt_obito(self):
+        inicio = datetime.now()
+        ClassLogger.logging.info("=" * 80)
+        ClassLogger.logging.info(f"Inicio proceso nomarlização dos dadose - {inicio}")
+        time.sleep(2)
+        ClassLogger.logging.info("=" * 80)
+        try:
+            result_match = verify_cnt_obito(self)
+        
+            fim = datetime.now()
+            duracao = (fim - inicio).total_seconds()
+            ClassLogger.logging.info("---" * 80)
+                  
+        
+        except Exception as e:
+            erro_detalhado = traceback.format_exc()
+            print(f"TENHO ERRO NESTE PONTO PARA ACESSAR O REGISTRO {erro_detalhado}")
+            ClassLogger.logging.error(f"Erro fatal na execução: {str(e)}")
+            error = f"Erro fatal na execução: process_api {str(e)}"
+            corpo = f"""<h2 style="color:red;">Falha no processo de Captura e tratamento dos dados</h2> <p>{datetime.now().strftime('%Y-%m-%d %H:%M:%S')} Mensagem:: {error}</p>"""
                   
         
         finally:
@@ -352,7 +379,8 @@ class Processor:
         # self.executar() 
         # PROCESSAR OS DADOS CAPTURADOS
         # self.processar_arquivos([11]) 
-        self.process_macht_name()
+        # self.process_macht_name()
+        self.process_cnt_obito()
 
        
         
