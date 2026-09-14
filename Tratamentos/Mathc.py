@@ -85,7 +85,8 @@ def mathc_process(self):
                 list_found.append(result_lista)
             # elif resultado is False:
             #     futures.append(registro)
-        # print(contador_macth)
+        
+        print(f"LISTA DE SUCESSO : {list_found}")
 
 
         print(f"MINHA LISTA COM OS DADOS DE NÃO ENCONTRADO {len(lista_n_found)}")
@@ -98,8 +99,8 @@ def mathc_process(self):
         
 
         ## ENVIO A LISTA PARA PROCESSAR ATUALIZAR OS DADOS 
-        # if list_found:
-        #     contado , lista_error  = process_found(self,list_found)
+        if list_found:
+            contado , lista_error  = process_found(self,list_found)
         
 
         # print(f"lista com os ids não encontrados {lista_n_found}")
@@ -138,6 +139,9 @@ def process_found(self, lista_found):
     if not lista_found:
         return None
 
+    dados_tabela_found = pd.DataFrame(lista_found)
+    # print(f"MINHA LISTA COM OS DADOS DE ENCONTRADO {dados_tabela_found}")
+    # return
     try:
         with ThreadPoolExecutor(max_workers=self.max_workers) as executor_found:
             dados_tabela_found = pd.DataFrame(lista_found)
@@ -150,7 +154,7 @@ def process_found(self, lista_found):
                 for _, registro_bloco in bloco_found.iterrows():
                     print("LISTA PARA PROCESSAR")
                     # print(registro_bloco)
-                    result_exists =  executor_found.submit(push_cpf_obito,self,registro_bloco['CPF'],registro_bloco['id_obito'])
+                    result_exists =  executor_found.submit(push_cpf_obito,self,registro_bloco['CPF'],registro_bloco['id_obito'],registro_bloco)
                     list_info_update.append(result_exists.result())
 
             # executor.submit(search_from_name_obito,self,limpar_nome_rn(registro['nome']),registro['data_nascimento'],registro['obito_id'],registro)
@@ -179,8 +183,6 @@ def process_found(self, lista_found):
                 print(f"ESTAOU SAINDO NO SUCESSO AO ATUALIZAR")
                 contador_['sucesso']["SUCESS_UPDATE"] += 1
                 update_ob_localizado.append(result_sucesso)
-
-
 
         return contador_, list_error
     except Exception as e:
@@ -213,7 +215,7 @@ def process_nfound(self,lista_notFound):
         dados_estruturados.append(linha)
 
 
-    print(f"lista atuaalizad  {dados_estruturados}")
+    # print(f"lista atualizada  {dados_estruturados}")
 
     df = pd.DataFrame(dados_estruturados)
 

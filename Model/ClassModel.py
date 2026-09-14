@@ -355,16 +355,16 @@ def list_interpol(self) -> List[Dict]:
 
 def search_from_name_obito(self, nome_busca, data_nascimento,obito_id,registro):
 
-        query = """SELECT cntcpfcgc as cpf FROM  cnt, cntfis WHERE cntid = cntfiscnt AND UPPER(cntnom) = %s AND length(cntcpfcgc) = %s AND cntfisncm = %s LIMIT 2"""
+        query = """SELECT cntcpfcgc as cpf , cntid FROM  cnt, cntfis WHERE cntid = cntfiscnt AND UPPER(cntnom) = %s AND length(cntcpfcgc) = %s AND cntfisncm = %s LIMIT 2"""
         
         try:
             #PROCURO EM PRODUDCAO
             with self.pool_producao.get_connection() as conn:
                 with conn.cursor(cursor_factory=RealDictCursor) as cursor:
-                    cursor.execute(query, (nome_busca,auxliares.CPF_LEN,data_nascimento))
+                    cursor.execute(query, (nome_busca.strip(),auxliares.CPF_LEN,data_nascimento.strip()))
                     resultado = cursor.fetchall()
-                    print(f"TOTAL A SER PROCESSADO {len(resultado)} registros para {nome_busca}")
-                    print(f"LISTA COM OS ENCONTRADOS: {(resultado)}")
+                    # print(f"TOTAL A SER PROCESSADO {len(resultado)} registros para {nome_busca}")
+                    # print(f"LISTA COM OS ENCONTRADOS: {(resultado)}")
 
                     if resultado:
                         total_resultado = len(resultado)
@@ -380,7 +380,8 @@ def search_from_name_obito(self, nome_busca, data_nascimento,obito_id,registro):
                                       "status": "sucesso",
                                       "CPF": resultado[0]['cpf'],
                                       "id_obito": obito_id,
-                                      "registro": registro
+                                      "registro": registro,
+                                      "cntid":  resultado[0]['cntid']
                             }
                     else:
                         return {
@@ -401,7 +402,7 @@ def search_from_name_obito(self, nome_busca, data_nascimento,obito_id,registro):
 
 
 
-def push_cpf_obito(self,cpf, idObito):
+def push_cpf_obito(self,cpf, idObito,registro_bloco):
       
     query = """UPDATE obito_captura.obito_dados SET 
                   cpf = %s  WHERE obito_id = %s ;"""
@@ -413,7 +414,8 @@ def push_cpf_obito(self,cpf, idObito):
                  return {
                     "status": "sucesso",
                     "msg": "sucesso em atualizar",
-                    "id_obito": idObito
+                    "id_obito": idObito,
+                    "registros_atualizados": registro_bloco.get('cntid')
                 }
     except Exception as e:
         erro_detalhado = traceback.format_exc()
@@ -428,7 +430,7 @@ def push_cpf_obito(self,cpf, idObito):
 def full_dados(self)-> List[Dict]:
 
         query = """SELECT trim(UPPER(nome)) as nome, trim(to_char(data_nascimento, 'YYYY-MM-DD')) as data_nascimento ,obito_id FROM  obito_captura.obito_dados
-                 where data_nascimento is not null and cpf is null ORDER BY nome ASC LIMIT 10 """
+                 where data_nascimento is not null and cpf is null ORDER BY RANDOM() ASC LIMIT 2 """
 
         try:
                         
