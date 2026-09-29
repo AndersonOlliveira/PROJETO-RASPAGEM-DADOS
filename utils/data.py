@@ -16,3 +16,12 @@ def obter_ultimos_dias():
     print(f"MEUS ULTIMOS 15 DIAS: {lista_dias[0]} até {lista_dias[-1]}")
     return lista_dias
 
+
+def formartar_data(data):
+    
+    try:
+        ano_atual =  datetime.strptime(data ,"%Y-%m-%d")
+        return  ano_atual.year
+    except Exception as e:
+        return None
+

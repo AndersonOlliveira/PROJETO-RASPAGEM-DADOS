@@ -1,3 +1,5 @@
+import os
+import io
 import sys
 import time
 import traceback
@@ -14,6 +16,8 @@ from Conexao import ConectionClass, ConectionPool
 from Tratamentos.ProcessoDados import Process
 from Tratamentos.Normlizar import arquivos_process
 from Tratamentos.Mathc import mathc_process
+from Tratamentos.Process_obito import verify_cnt_obito
+from Tratamentos.Process_Homonimos import verify_homonimos
 from parserPagina.Angelus import extrair_links as angeleus
 from parser.grupoangelus import extrair_cards as parser_grupo
 from parser.vidaPrev import extrair_cards as parser_vdprev
@@ -37,6 +41,7 @@ from parserPagina.orsolaPage import extrair_links as orsolaPage
 from parserPagina.pontaGrossa import extrair_links as PontaGrossaPage
 from utils.CrawlerStats import enviar_relatorio_email,enviar_email_all
 from Conexao.ConectionClass import DbConfig
+from Mail.ClassMail import enviar_email_all_anexo
 
 class Processor:
     def __init__(self, max_workers: int = 10, batch_size: int = 1000):
@@ -320,13 +325,42 @@ class Processor:
         pass
 
     def process_macht_name(self):
+        # dados_csv_bytes = None
         inicio = datetime.now()
         ClassLogger.logging.info("=" * 80)
-        ClassLogger.logging.info(f"Inicio proceso nomarlização dos dadose - {inicio}")
+        ClassLogger.logging.info(f"Inicio processo nomarlização dos dados obitos - {inicio}")
         time.sleep(2)
         ClassLogger.logging.info("=" * 80)
         try:
-            result_match = mathc_process(self)
+            contador_match , lista_erros = mathc_process(self)
+            print(f"DADOS LACALIZADOS? {contador_match}")
+
+            if lista_erros:
+                df = pd.DataFrame(lista_erros)
+                # corpo_html_string = df.to_html(index=False, border=1, justify="center")
+                # corpo_html_bytes = corpo_html_string.encode('utf-8')
+                            
+                buffer_memoria = io.StringIO()
+                df.to_csv(buffer_memoria, index=False, sep=';', encoding='utf-8-sig')
+                dados_csv_bytes = buffer_memoria.getvalue().encode('utf-8-sig')
+            else:
+                dados_csv_bytes = None
+
+
+
+            pd.set_option('display.max_rows', 100)
+            pd.set_option('display.max_columns', None)
+            pd.set_option('display.max_colwidth', None)  
+                
+            minha_tabela_montada = pd.DataFrame(contador_match)
+            minha_tabela_montada = minha_tabela_montada.fillna(0)
+            print(f"Minha quantidade a ser processada {len(minha_tabela_montada)}")
+            print(f"MINHA TABELA PARA ATUALIZAR {minha_tabela_montada}")
+         
+            convertidas =  minha_tabela_montada.to_html(index=True, border=1, justify='center')
+            corpo = f"Resultado do machtname:<br> {convertidas}"
+            
+            enviar_email_all_anexo(corpo, dados_csv_bytes, 'dados_macth_name')
         
             fim = datetime.now()
             duracao = (fim - inicio).total_seconds()
@@ -335,11 +369,9 @@ class Processor:
         
         except Exception as e:
             erro_detalhado = traceback.format_exc()
-            print(f"TENHO ERRO NESTE PONTO PARA ACESSAR O REGISTRO {erro_detalhado}")
             ClassLogger.logging.error(f"Erro fatal na execução: {str(e)}")
-            error = f"Erro fatal na execução: process_api {str(e)}"
-            corpo = f"""<h2 style="color:red;">Falha no processo de Captura e tratamento dos dados</h2> <p>{datetime.now().strftime('%Y-%m-%d %H:%M:%S')} Mensagem:: {error}</p>"""
-
+            corpo = f"""<h2 style="color:red;">Falha no processo de machtname </h2> <p>{datetime.now().strftime('%Y-%m-%d %H:%M:%S')} Mensagem:: {erro_detalhado}</p>"""
+            enviar_email_all(corpo)
             pass 
         
         # finally:
@@ -353,7 +385,32 @@ class Processor:
         time.sleep(2)
         ClassLogger.logging.info("=" * 80)
         try:
-            result_match = verify_cnt_obito(self)
+            contador_macth_cntobito ,result = verify_cnt_obito(self)
+
+            if result:
+                
+                df = pd.DataFrame(result)
+                # corpo_html_string = df.to_html(index=False, border=1, justify="center")
+                # corpo_html_bytes = corpo_html_string.encode('utf-8')
+                
+                buffer_memoria = io.StringIO()
+                df.to_csv(buffer_memoria, index=False, sep=';', encoding='utf-8-sig')
+                dados_csv_bytes = buffer_memoria.getvalue().encode('utf-8-sig')
+            
+            
+            quantidade_inserida = contador_macth_cntobito['INSERIDOS']
+            quantidade_erros = contador_macth_cntobito['ERROR']
+            quantidade_atualizada = contador_macth_cntobito.get('UPDATE', 0)
+            quantidade_nao_atualizada = contador_macth_cntobito.get('N_ALTERAR', 0)
+            
+            msg = (
+                    f"Quantidade de linhas inseridas com sucesso na cntobito PROSCORE: {quantidade_inserida}\n"
+                    f"Quantidade de registros com falha: {quantidade_erros}\n"
+                    f"Quantidade de linhas atualizadas: {quantidade_atualizada}\n"
+                    f"Quantidade de linhas não atualizadas: {quantidade_nao_atualizada}\n"
+                )
+            enviar_email_all_anexo(msg, dados_csv_bytes, 'dados_obitos')
+                #         # enviar_email_all_anexo(msg, corpo_html_bytes) #original
         
             fim = datetime.now()
             duracao = (fim - inicio).total_seconds()
@@ -365,6 +422,34 @@ class Processor:
             print(f"TENHO ERRO NESTE PONTO PARA ACESSAR O REGISTRO {erro_detalhado}")
             ClassLogger.logging.error(f"Erro fatal na execução: {str(e)}")
             error = f"Erro fatal na execução: process_api {str(e)}"
+            corpo = f"""<h2 style="color:red;">Falha no processo de Captura e tratamento dos dados</h2> <p>{datetime.now().strftime('%Y-%m-%d %H:%M:%S')} Mensagem:: {error}</p>"""
+
+            pass
+    
+    
+    
+    
+    def process_homonimos(self):
+        inicio = datetime.now()
+        ClassLogger.logging.info("=" * 80)
+        ClassLogger.logging.info(f"Inicio proceso nomarlização dos dadose - {inicio}")
+        time.sleep(2)
+        ClassLogger.logging.info("=" * 80)
+        try:
+            print(f"ESTOU SAINDO PARA A LISTA DE HOMONIMOS")
+
+            retorno = verify_homonimos(self)
+           
+            fim = datetime.now()
+            duracao = (fim - inicio).total_seconds()
+            ClassLogger.logging.info("---" * 80)
+                  
+        
+        except Exception as e:
+            erro_detalhado = traceback.format_exc()
+            print(f"TENHO ERRO NESTE PONTO PARA ACESSAR O HOMONIMOS {erro_detalhado}")
+            ClassLogger.logging.error(f"Erro fatal na execução HOMONIMOS: {str(e)}")
+            error = f"Erro fatal na execução: HOMONIMOS {str(e)}"
             corpo = f"""<h2 style="color:red;">Falha no processo de Captura e tratamento dos dados</h2> <p>{datetime.now().strftime('%Y-%m-%d %H:%M:%S')} Mensagem:: {error}</p>"""
                   
         
@@ -380,7 +465,8 @@ class Processor:
         # PROCESSAR OS DADOS CAPTURADOS
         # self.processar_arquivos([11]) 
         # self.process_macht_name()
-        self.process_cnt_obito()
+        # self.process_cnt_obito()
+        self.process_homonimos()
 
        
         

@@ -14,4 +14,10 @@ class auxliares:
     TEXTO_CONJU = "CONJUGE"
     TEXTO_FILHO = "FILHOS",
     INFO_INSERT = "INSERT_NÃO_CONCLUIDO"
+    LISTA_FONTES = [
+        'FONTE',
+        'PROSCORE-BLK',
+        'FONTE-CNF'
+    ]
+    INFO_DADO = [""]
     # TEXTO_CONJUGE = "NÃO INFORMADO"

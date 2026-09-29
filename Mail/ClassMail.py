@@ -30,18 +30,19 @@ def enviar_email_all(corpo):
           raise
 
 
-def enviar_email_all_anexo(corpo,arquivo):
+def enviar_email_all_anexo(corpo,arquivo,nome_arquivo):
     msg = EmailMessage()
     msg['Subject'] = os.getenv('SMTP_SUBJECT')
     msg['From'] = os.getenv('SMTP_USER')
     msg['To'] = os.getenv('SMTP_DESTINATION')
     msg.set_content(corpo,subtype='html')  # Define o conteúdo como HTML
-    msg.add_attachment(
-        arquivo, 
-        maintype='application', 
-        subtype='csv', 
-        filename='relatorio_lista_n_encontrado.csv'
-    )
+    if arquivo is not None:
+        msg.add_attachment(
+            arquivo, 
+            maintype='application', 
+            subtype='csv', 
+            filename=f"{nome_arquivo}.csv"
+        )
     try:
         with smtplib.SMTP(os.getenv('SMTP_HOST'), os.getenv('SMTP_PORT')) as server:
             server.starttls()

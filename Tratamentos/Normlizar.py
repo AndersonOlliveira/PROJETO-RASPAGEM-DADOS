@@ -8,7 +8,7 @@ from collections import Counter, defaultdict
 from Logs import ClassLogger
 from utils.auxliares import auxliares
 from utils.unicode import remover
-from datetime import time,datetime, timedelta
+from datetime import time,datetime, timedelta,date
 from services.crawler import iniciar
 from Model.ClassModel import insert_base_obito,exists_by_name
 from concurrent.futures import ThreadPoolExecutor, as_completed
@@ -352,6 +352,7 @@ def calcula_ano(idade_enviada):
         if nasc_str in [0]:
             return auxliares.IDADE
         try:
+            print(f"VINDO AQUI???")
             ano_atual = datetime.now().strftime("%Y")
             return  int(ano_atual) - int(nasc_str)
         except Exception as e:
@@ -748,3 +749,5 @@ def formatar_data_ontem(data_sepultamento):
     data_objeto = datetime.strptime(data_sepultamento, "%d/%m/%Y")
     data_anterior = data_objeto - timedelta(days=1)
     return data_anterior.strftime("%d/%m/%Y")
+
+

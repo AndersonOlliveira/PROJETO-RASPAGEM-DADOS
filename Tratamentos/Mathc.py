@@ -18,9 +18,12 @@ from Model.ClassModel import full_dados, search_from_name_obito, push_cpf_obito
 
 
 def mathc_process(self):
+    info_tipo_ = 1 #heterônimo
+    info_tipo = 2 #homônimo
+    retorno_dados =[]
     list_found = []
-    lista_homonimos =[]
     lista_n_found =[]
+    lista_homonimos =[]
     lista_cnt_localizado = []
     contador_macth = defaultdict(lambda: {
         "FOUND": 0,
@@ -90,18 +93,32 @@ def mathc_process(self):
 
 
         print(f"MINHA LISTA COM OS DADOS DE NÃO ENCONTRADO {len(lista_n_found)}")
-        # print(f"Lista COM HOMONIMOS :: {lista_homonimos}")
+        print(f"Lista COM HOMONIMOS :: {lista_homonimos}")
+        lista_error_he = []
+        lista_error_ho = []
 
         if lista_n_found:
             #VOU PRECESSAR OS NOMES NÃO LOCALIZADO INSERI NA BASE E ENVIAR UM E-MAIL COM ANEXO
             process_nfound(self,lista_n_found)
             # print(f"Lista NÃO ENCONTRADOS NA BASE PROSCORE :: {lista_n_found}")
-        
+        if lista_homonimos:
 
+           contador_homonimos , lista_error_ho = process_homonimos(self, lista_homonimos)
+           print(f"dados {contador_homonimos}")
+           retorno_dados.append({'homonimos' : contador_homonimos.get('sucesso_homonimos')})
         ## ENVIO A LISTA PARA PROCESSAR ATUALIZAR OS DADOS 
         if list_found:
-            contado , lista_error  = process_found(self,list_found)
+            contador_heteronimo , lista_error_he  = process_found(self,list_found)
+            retorno_dados.append({'heteronimo' : contador_heteronimo.get('sucesso_heteronimo')})
         
+        
+        print(f"RETORNO DO UPDATE???? {retorno_dados}")
+
+        lista_error_he.extend(lista_error_ho) 
+
+        return retorno_dados, lista_error_he
+
+
 
         # print(f"lista com os ids não encontrados {lista_n_found}")
     except Exception as e:
@@ -128,16 +145,14 @@ def process_found(self, lista_found):
     list_error = []
     update_ob_localizado = []
     contador_ = defaultdict(lambda: {
-           "SUCESS_UPDATE": 0,
-           "N_EN": 0, #JA NA BASE
-           "ERROR_UPDATE":0,
-           "QTPUSH": 0,
-          
+           "ATUALIZADO": 0,
+           "N_ENCOTRATO": 0, #JA NA BASE
+           "ERROR_ATUALIZAR":0
     })
     print("ESTOU ACESSANDO O MATCH NAME")
 
     if not lista_found:
-        return None
+        return contador_, list_error
 
     dados_tabela_found = pd.DataFrame(lista_found)
     # print(f"MINHA LISTA COM OS DADOS DE ENCONTRADO {dados_tabela_found}")
@@ -154,7 +169,7 @@ def process_found(self, lista_found):
                 for _, registro_bloco in bloco_found.iterrows():
                     print("LISTA PARA PROCESSAR")
                     # print(registro_bloco)
-                    result_exists =  executor_found.submit(push_cpf_obito,self,registro_bloco['CPF'],registro_bloco['id_obito'],registro_bloco)
+                    result_exists =  executor_found.submit(push_cpf_obito,self,registro_bloco['CPF'],registro_bloco['id_obito'],registro_bloco,1)
                     list_info_update.append(result_exists.result())
 
             # executor.submit(search_from_name_obito,self,limpar_nome_rn(registro['nome']),registro['data_nascimento'],registro['obito_id'],registro)
@@ -166,7 +181,7 @@ def process_found(self, lista_found):
 
     try:
         if not list_info_update:
-            return None
+            return contador_, list_error
         
         for result_sucesso in list_info_update:
             if not isinstance(result_sucesso, dict):
@@ -175,13 +190,13 @@ def process_found(self, lista_found):
                 continue
             if result_sucesso.get('status') == 'erro':
                 print(f"TENHO ERRO PARA REALIZAR O UPDATE  {list_info_update}")
-                contador_['erro']["ERROR_UPDATE"] += 1
+                contador_['erro_heteronimo']["ERROR_ATUALIZAR"] += 1
                 list_error.append({"obito_id": result_sucesso.get('id_obito')})
                 ClassLogger.logging.error(f"TENHO ERRO PARA REALIZAR O UPDATE  {list_info_update}")
                 continue 
             if result_sucesso.get('status') == 'sucesso':
                 print(f"ESTAOU SAINDO NO SUCESSO AO ATUALIZAR")
-                contador_['sucesso']["SUCESS_UPDATE"] += 1
+                contador_['sucesso_heteronimo']["ATUALIZADO"] += 1
                 update_ob_localizado.append(result_sucesso)
 
         return contador_, list_error
@@ -190,10 +205,94 @@ def process_found(self, lista_found):
             ClassLogger.logging.error(f"ERRO LINHA PROCESSAMENTO NO UPDATE DOS CPF {str(e)}")
 
 
+def process_homonimos(self, l_homonimos):
 
+    list_info_update = []
+    list_error = []
+    update_ob_localizado = []
+    contador_ = defaultdict(lambda: {
+            "ATUALIZADO": 0,
+            "N_ENCOTRATO": 0, #JA NA BASE
+            "ERROR_ATUALIZAR":0
+               
+    })
+    print("ESTOU ACESSANDO O MATCH NAME")
+     
+    if not l_homonimos:
+        return contador_, list_error
+     
+    dados_tabela_found = pd.DataFrame(l_homonimos)
+    
+    try:
+        with ThreadPoolExecutor(max_workers=self.max_workers) as executor_found:
+            dados_tabela_found = pd.DataFrame(l_homonimos)
+            batch_size_found = self.process_lote
+            total_found = len(dados_tabela_found)
+            print(f"Total de registros para processar: {total_found}")
+            for start in range(0, total_found, batch_size_found):
+                bloco_found = dados_tabela_found.iloc[start:start + batch_size_found]
+                print(f"Processando registros "f"{start + 1} até {min(start + batch_size_found, total_found)} "f"de {total_found}")
+                for _, registro_bloco in bloco_found.iterrows():
+                        result_exists =  executor_found.submit(push_cpf_obito,self,None,registro_bloco['id_obito'],registro_bloco,2)
+                        list_info_update.append(result_exists.result())
+     
+                 # executor.submit(search_from_name_obito,self,limpar_nome_rn(registro['nome']),registro['data_nascimento'],registro['obito_id'],registro)
+                 # resultado_update =  push_cpf_obito
+    except Exception as e:
+             erro_detalhado = traceback.format_exc()
+             print(f"Falha ao processar update nos nomes: {erro_detalhado}")
+             ClassLogger.logging.error(f"ERRO LINHA PROCESSAMENTO NO UPDATE DOS CPF {str(e)}")
+     
+    try:
+        if not list_info_update:
+             return contador_, list_error
+
+        print(f"MINHA LISTA COM OS DADOS DE SUCESSO PARA ATUALIAZR {list_info_update}")
+             
+        for result_sucesso in list_info_update:
+            if not isinstance(result_sucesso, dict):
+                     ClassLogger.logging.error(
+                    f"Resultado inválido na busca: {result_sucesso!r}")
+                     continue
+            if result_sucesso.get('status') == 'erro':
+                     print(f"TENHO ERRO PARA REALIZAR O UPDATE  {list_info_update}")
+                     contador_['erro_homonimos']["ERROR_ATUALIZAR"] += 1
+                     list_error.append({"obito_id": result_sucesso.get('id_obito')})
+                     ClassLogger.logging.error(f"TENHO ERRO PARA REALIZAR O UPDATE  {list_info_update}")
+                     continue 
+            if result_sucesso.get('status') == 'sucesso':
+                    print(f"ESTAOU SAINDO NO SUCESSO AO ATUALIZAR")
+                    contador_['sucesso_homonimos']["ATUALIZADO"] += 1
+                    update_ob_localizado.append(result_sucesso)
+     
+        return contador_, list_error
+    
+    except Exception as e:
+                 print(f"Falha ao processar update nos nomes: {erro_detalhado}")
+                 ClassLogger.logging.error(f"ERRO LINHA PROCESSAMENTO NO UPDATE DOS CPF {str(e)}")
 
 def process_nfound(self,lista_notFound):
+    list_up_n_encontrado = []
     print(f"ESTOU ACESSANDO A LISTA PARA PROCESSAR O NOT FOUND NA BASE PROSCORE")
+
+    try:
+            with ThreadPoolExecutor(max_workers=self.max_workers) as executor_found:
+                dados_tabela_found = pd.DataFrame(lista_notFound)
+                batch_size_found = self.process_lote
+                total_found = len(dados_tabela_found)
+                print(f"Total de registros para processar: {total_found}")
+                for start in range(0, total_found, batch_size_found):
+                    bloco_found = dados_tabela_found.iloc[start:start + batch_size_found]
+                    print(f"Processando registros "f"{start + 1} até {min(start + batch_size_found, total_found)} "f"de {total_found}")
+                    for _, registro_bloco in bloco_found.iterrows():
+                            result_exists =  executor_found.submit(push_cpf_obito,self,None,registro_bloco['id_obito'],registro_bloco,3)
+                            list_up_n_encontrado.append(result_exists.result())
+         
+
+    except Exception as e:
+        erro_detalhado = traceback.format_exc()
+        print(f"Falha ao processar update nos nomes: {erro_detalhado}")
+        ClassLogger.logging.error(f"ERRO LINHA PROCESSAMENTO NO UPDATE DOS CPF {str(e)}")
 
     dados_estruturados = []
 
@@ -227,5 +326,5 @@ def process_nfound(self,lista_notFound):
     dados_csv_bytes = buffer_memoria.getvalue().encode('utf-8-sig')
     msg = f"LISTA COM DADOS NÃO ENCONTRADO NA PROSCORE\n com a quantidade de {len(dados_estruturados)}"
 
-    # enviar_email_all_anexo(msg, dados_csv_bytes)
+    enviar_email_all_anexo(msg, dados_csv_bytes, 'relatorio_n_encontrato')
  
