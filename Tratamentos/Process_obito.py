@@ -46,8 +46,6 @@ def verify_cnt_obito(self):
         "TOTAL": 0,
         "N_ALTERAR":0
     }
-    print(f"VOU PEGAR O RETORNO PARA VALIDAR OS DADOS")
-
     #LISTA COM O NOME E DATA DE NASCIMENTO
     retorno_list_cpf = get_list_cpf(self)
 
@@ -69,6 +67,7 @@ def verify_cnt_obito(self):
                     bloco = dados_tabela.iloc[start:start + batch_size]
                     print(f"Processando registros "f"{start + 1} até {min(start + batch_size, total)} "f"de {total}")
                     for _, registro in bloco.iterrows():
+                       print(registro)
                        result_exists =  executor.submit(get_list_cpf_cntid,self,registro['cpf'],registro['link_fonte'],registro['ano'])
                        lista_cnt_id_localizado.append(result_exists.result())
     except Exception as e:
@@ -136,11 +135,7 @@ def verify_cnt_obito(self):
                 
                 for n_found in lista_n_found:
                     fonte_tratada = e_url_valida(n_found['fontes'])
-                    ano_flecimento =  formartar_data(n_found['ano'])
-
-                    print(ano_flecimento)
-                 
-                    
+                    ano_flecimento =  formartar_data(n_found['ano'])   
                     futuro = executor.submit(cnt_obitos_inserts, self, n_found['cntid'], fonte_tratada, n_found['ano'],ano_flecimento)
                     futures.append(futuro)
                 
@@ -171,7 +166,6 @@ def verify_cnt_obito(self):
         try:
             with ThreadPoolExecutor(max_workers=self.max_workers) as executor:
                 futures = []
-                
                 for found in list_found:
                     registros = found.get('registros', [])
                     if isinstance(registros, dict):
@@ -199,7 +193,6 @@ def verify_cnt_obito(self):
                                     print(f"Falha ao processar update cntobito: {erro_detalhado}")
                                     ClassLogger.logging.error(f"FALHA EM PROCESSAR UPDATES {str(e)}")
                             else:
-                                    # ClassLogger.logging.info(f"DADOS PARA NÃO ATUALIAZR {list_found}")
                                 contador_macth_cntobito['N_ALTERAR'] += 1
         except Exception as e:
             erro_detalhado = traceback.format_exc()

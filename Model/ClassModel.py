@@ -530,7 +530,7 @@ def list_obitos_with(self) -> List[Dict]:
 
 
 def search_from_name_obito(self, nome_busca, data_nascimento,obito_id,registro):
-        query = """SELECT cntcpfcgc AS cpf, cntid
+        query = """SELECT cntcpfcgc AS cpf, cntid , trim(to_char(cntfisncm, 'YYYY')) as ano_nascimentos
                    FROM cnt, cntfis
                    WHERE cntid = cntfiscnt
                      AND UPPER(cntnom) = %s
@@ -556,7 +556,8 @@ def search_from_name_obito(self, nome_busca, data_nascimento,obito_id,registro):
                                   "status": "homonimo", 
                                   "dados": resultado, 
                                   "id_obito": obito_id,
-                                  "registro": registro
+                                  "registro": registro,
+                                   "ano_nascimentos": resultado[0]['ano_nascimentos']
                                 }
                         else:
                             return {
@@ -564,13 +565,74 @@ def search_from_name_obito(self, nome_busca, data_nascimento,obito_id,registro):
                                       "CPF": resultado[0]['cpf'],
                                       "id_obito": obito_id,
                                       "registro": registro,
-                                      "cntid":  resultado[0]['cntid']
+                                      "cntid":  resultado[0]['cntid'],
+                                      "ano_nascimentos": resultado[0]['ano_nascimentos']
                             }
                     else:
                         return {
                                 "status": "n_encontrado",
                                 "id_obito": obito_id,
                                 "registro": registro
+                                
+                            }
+        except Exception as e:
+                erro_detalhado = traceback.format_exc()
+                ClassLogger.logging.error(f"Falha em consultar os dados? - {str(erro_detalhado)}")
+                return {
+                "status": "erro_conexao",
+                "error": str(e),
+                "id_obito": obito_id,
+               
+            }
+
+def search_from_name_cidade(self, nome_busca, cidade,estado,obito_id,registro):
+        query = """SELECT *,cntcpfcgc AS cpf
+                   FROM cnt
+        JOIN cntfisend
+            ON cntid = cntfisendcnt
+        WHERE
+            UPPER(cntnom) LIKE %s
+            AND length(cntcpfcgc) = %s
+            AND UPPER(cntfisendcid) = %s"""
+        params = [nome_busca.strip().upper(), auxliares.CPF_LEN,cidade]
+        if estado:
+            query += " AND cntfisendest = %s"
+            params.append(estado.strip())
+        query += " LIMIT 2"
+        try:
+            #PROCURO EM PRODUDCAO
+            with self.pool_producao.get_connection() as conn:
+                with conn.cursor(cursor_factory=RealDictCursor) as cursor:
+                    cursor.execute(query, tuple(params))
+                    resultado = cursor.fetchall()
+                    # print(f"TOTAL A SER PROCESSADO {len(resultado)} registros para {nome_busca}")
+                    # print(f"LISTA COM OS ENCONTRADOS POR CIDADE......: {(resultado)}")
+
+                    if resultado:
+                        total_resultado = len(resultado)
+                        if total_resultado > 1:
+                            return {
+                                  "status": "homonimo", 
+                                  "dados": resultado, 
+                                  "id_obito": obito_id,
+                                  "registro": registro,
+                                #    "ano_nascimentos": resultado[0]['ano_nascimentos']
+                                }
+                        else:
+                            return {
+                                      "status": "sucesso",
+                                      "CPF": resultado[0]['cpf'],
+                                      "id_obito": obito_id,
+                                      "registro": registro,
+                                      "cntid":  resultado[0]['cntid'],
+                                    #   "ano_nascimentos": resultado[0]['ano_nascimentos']
+                            }
+                    else:
+                        return {
+                                "status": "n_encontrado",
+                                "id_obito": obito_id,
+                                "registro": registro
+                                
                             }
         except Exception as e:
                 erro_detalhado = traceback.format_exc()
@@ -679,7 +741,7 @@ def push_cpf_obito(self,cpf, idObito,registro_bloco,tipo):
 
 def full_dados(self)-> List[Dict]:
 
-        query = """SELECT trim(UPPER(nome)) as nome, trim(to_char(data_nascimento, 'YYYY-MM-DD')) as data_nascimento ,obito_id FROM  obito_captura.obito_dados
+        query = """SELECT trim(UPPER(nome)) as nome, trim(to_char(data_nascimento, 'YYYY-MM-DD')) as data_nascimento ,obito_id FROM obito_captura.obito_dados
                  where data_nascimento is not null and cpf is null and tipo_obito is null"""
                 #  where data_nascimento is not null and cpf is null ORDER BY RANDOM() ASC LIMIT 2 """
 

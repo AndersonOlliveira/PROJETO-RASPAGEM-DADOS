@@ -381,7 +381,7 @@ class Processor:
     def process_cnt_obito(self):
         inicio = datetime.now()
         ClassLogger.logging.info("=" * 80)
-        ClassLogger.logging.info(f"Inicio proceso nomarlização dos dadose - {inicio}")
+        ClassLogger.logging.info(f"Inicio proceso nomarlização dos process_cnt_obito - {inicio}")
         time.sleep(2)
         ClassLogger.logging.info("=" * 80)
         try:
@@ -396,6 +396,8 @@ class Processor:
                 buffer_memoria = io.StringIO()
                 df.to_csv(buffer_memoria, index=False, sep=';', encoding='utf-8-sig')
                 dados_csv_bytes = buffer_memoria.getvalue().encode('utf-8-sig')
+            else:
+                dados_csv_bytes = None
             
             
             quantidade_inserida = contador_macth_cntobito['INSERIDOS']
@@ -432,7 +434,7 @@ class Processor:
     def process_homonimos(self):
         inicio = datetime.now()
         ClassLogger.logging.info("=" * 80)
-        ClassLogger.logging.info(f"Inicio proceso nomarlização dos dadose - {inicio}")
+        ClassLogger.logging.info(f"Inicio proceso nomarlização dos dado de homonimos.. - {inicio}")
         time.sleep(2)
         ClassLogger.logging.info("=" * 80)
         try:
@@ -464,8 +466,8 @@ class Processor:
         # self.executar() 
         # PROCESSAR OS DADOS CAPTURADOS
         # self.processar_arquivos([11]) 
-        # self.process_macht_name()
-        # self.process_cnt_obito()
+        self.process_macht_name()
+        self.process_cnt_obito()
         self.process_homonimos()
 
        

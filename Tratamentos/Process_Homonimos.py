@@ -15,7 +15,8 @@ from utils.unicode import remover,limpar_nome_rn
 from utils.tratar_url import e_url_valida
 from utils.data import formartar_data
 from concurrent.futures import ThreadPoolExecutor, as_completed
-from Model.ClassModel import full_dados_homonimos,search_from_name_obito
+from Model.ClassModel import full_dados_homonimos,search_from_name_obito,search_from_name_obito_nome,search_from_name_cidade
+from Tratamentos.Mathc import process_found ,process_ano_n_bate,process_nfound
 
 
 
@@ -91,41 +92,117 @@ def verify_homonimos(self):
                 continue
                  
             if result_lista.get('status') == 'n_encontrado':
-                    print(f"Lista com os dados não encotrado  {lista_localizados}")
+                    # print(f"Lista com os dados não encotrado  {lista_localizados}")
                     contador_macth['n_encontrado']["N_EN"] += 1
                     lista_n_found.append(result_lista)
                        # lista_n_found.append({"obito_id": result_lista.get('id_obito')})
-                    ClassLogger.logging.error(f"Lista com os dados não encotrado  {lista_localizados}")
+                    # ClassLogger.logging.error(f"Lista com os dados não encotrado  {lista_localizados}")
                     continue 
             if result_lista.get('status') == 'homonimo':
-                       contador_macth['homonimo']["ERROR"] += 1
-                       lista_homonimos.append(result_lista)
-                       ClassLogger.logging.error(f"Lista com os homonimos {result_lista}")
-                       continue
+                    contador_macth['homonimo']["ERROR"] += 1
+                    lista_homonimos.append(result_lista)
+                    #    ClassLogger.logging.error(f"Lista com os homonimos {result_lista}")
+                    continue
             if result_lista.get('status') == 'sucesso':
-                       contador_macth['sucesso']["FOUND"] += 1
-                       list_found.append(result_lista)
+                    contador_macth['sucesso']["FOUND"] += 1
+                    list_found.append(result_lista)
             
-        # print(f"LISTA DE SUCESSO : {list_found}")
+      
         
     except Exception as e:
         erro_detalhado = traceback.format_exc()
         print(f"Falha ao processar update nos nomes: {erro_detalhado}")
         ClassLogger.logging.error(f"FALHA NO PROCESSAMENTO HOMONIMOS {str(e)}")
 
+    if lista_n_found:
+        print(f"AQUI VAI CAIR TODOS NÃO LOCALIZADOS\n")
+        process_nfound(self,lista_n_found)
+
     if list_found:
         retorno_found = processa_found(self,list_found)
+    if lista_homonimos:  #busco por CIDADE 
+        lista_localizados_cidade_homonimos = []
+        lista_process_homonimos = []
+        try:
+            for homonimo in lista_homonimos:
+                registro = homonimo.get('registro')
+                if registro is None:
+                    ClassLogger.logging.error(f"Homonimo sem registro associado: {homonimo!r}")
+                    continue
+
+                partes = [parte.strip() for parte in remover(registro['cidade']).split("-")]
+                cidade = partes[0]
+                estado = partes[1] if len(partes) > 1 else None
+
+                if cidade not in auxliares.INFO_CIDADE:
+                    result_exists = executor.submit(search_from_name_cidade, self, limpar_nome_rn(registro['nome']), cidade, estado, registro['obito_id'], registro)
+                    lista_localizados_cidade_homonimos.append(result_exists.result())
+                else:
+                    lista_process_homonimos.append(homonimo)
+                            
+        except Exception as e:
+            erro_detalhado = traceback.format_exc()
+            print(f"Falha ao processar nomes: {erro_detalhado}")
+            ClassLogger.logging.error(f"ERRO LINHA PROCESSAMENTO DA BUSCA DOS DADOS {str(e)}")
+
+    
+
+        lista_homonimos_cidade =[]
+        lista_sucesso_cidade =[]
+         # PROCESSAR LISTA DE SUCESSO LOCALIZADO SOMENTE  UM REGISTRO 
+        try:
+            for result_lista in lista_localizados_cidade_homonimos:
+                if not isinstance(result_lista, dict):
+                    ClassLogger.logging.error(f"Resultado inválido na busca: {result_lista!r}")
+                    continue
+              
+                if result_lista.get('status') == 'homonimo':
+                    contador_macth['homonimo']["ERROR"] += 1
+                    lista_homonimos_cidade.append(result_lista)
+                            #    ClassLogger.logging.error(f"Lista com os homonimos {result_lista}")
+                    continue
+                if result_lista.get('status') == 'sucesso':
+                    contador_macth['sucesso']["FOUND"] += 1
+                    lista_sucesso_cidade.append(result_lista)
+                    
+           
+        
+                
+        except Exception as e:
+                erro_detalhado = traceback.format_exc()
+                print(f"Falha ao processar update nos nomes: {erro_detalhado}")
+                ClassLogger.logging.error(f"FALHA NO PROCESSAMENTO HOMONIMOS {str(e)}")
 
 
+        resultad_ = []
 
+        if lista_localizados_cidade_homonimos:
+            try:
+                with ThreadPoolExecutor(max_workers=self.max_workers) as executor_found:
+                    result_dados_atualizado =  executor_found.submit(process_found,self,lista_localizados_cidade_homonimos)
+                    resultad_.append(result_dados_atualizado.result())
+            except Exception as e:
+                erro_detalhado = traceback.format_exc()
+                print(f"Falha ao processar update lista_localizados_cidade_homonimos: {erro_detalhado}")
+                ClassLogger.logging.error(f"ERRO LINHA PROCESSAMENTO NO UPDATE DOS lista_localizados_cidade_homonimos {str(e)}")
 
-
-
-
+        if lista_process_homonimos:
+            try:
+                with ThreadPoolExecutor(max_workers=self.max_workers) as executor_found:
+                    result_dados_atualizado = executor_found.submit(processa_found, self, lista_process_homonimos)
+                    result_dados_atualizado.result()
+             
+            except Exception as e:
+                erro_detalhado = traceback.format_exc()
+                print(f"Falha ao processar lista_process_homonimos:: {erro_detalhado}")
+                ClassLogger.logging.error(f"ERRO LINHA PROCESSAMENTO lista_process_homonimos {str(e)}")
 
 def processa_found(self,list_found):
-    # print(f"ENVIANDO A MINHA LISTA DE FOUND {list_found}")
-
+    retorno_dados = []
+    list_up_n_encontrado =[]
+    lista_registros_zero =[]
+    lista_menor_ou_maior =[]
+    
     try:
         with ThreadPoolExecutor(max_workers=self.max_workers) as executor_found:
             dados_tabela_found = pd.DataFrame(list_found)
@@ -137,28 +214,48 @@ def processa_found(self,list_found):
                 print(f"Processando registros "f"{start + 1} até {min(start + batch_size_found, total_found)} "f"de {total_found}")
                 for _, registro_bloco in bloco_found.iterrows():
                     ano_estimado = registro_bloco['registro']['ano_nascimento_estimado']
-                    # print(f"LISTA COM REGISTRO {registro_bloco['registro']['ano_nascimento_estimado']}")
-                    if pd.notna(ano_estimado):
+                    ano_nascimentos = registro_bloco['ano_nascimentos']
+                    if pd.notna(ano_estimado) and pd.notna(ano_nascimentos):
                         try:
                             ano_estimado = int(float(ano_estimado))
+                            ano_nascimentos = int(float(ano_nascimentos))
                         except (TypeError, ValueError):
-                            pass
-                        print(ano_estimado)
+                            continue
                         
-        
+                        anos_brutos = ano_nascimentos - ano_estimado
+                       
+                        #  COM BASE NO QUE FOI ACHAADO  ENTRE AS DATAS DA PARA ASSUMIR QUE O QUE FOR 0 BATE COM A DATA CALCULADA COM BASE A IDADE LOCALIZADO NAS FONTES
+                        if anos_brutos == auxliares.DIFERENCA_ANOS:
+                            lista_registros_zero.append(registro_bloco)
+                        else:
+                            lista_menor_ou_maior.append(registro_bloco)
+                            
+                            
+            if lista_registros_zero:
+                result_dados_atualizado =  executor_found.submit(process_found,self,lista_registros_zero)
+                list_up_n_encontrado.append(result_dados_atualizado.result())
 
-                    
+           
+            for contador_heteronimo in list_up_n_encontrado:
+                # process_found returns (counter, details), so use its counter.
+                if isinstance(contador_heteronimo, tuple) and contador_heteronimo:
+                    contador_heteronimo = contador_heteronimo[0]
+                if not isinstance(contador_heteronimo, dict):
+                    ClassLogger.logging.error(f"Resultado inválido na busca: {contador_heteronimo!r}")
+                    continue
+                
+                retorno_dados.append({'heteronimo' : contador_heteronimo.get('sucesso_heteronimo')})
 
-
-                    # print(f"ANO ESTIAMADO  {ano_estimado}")
-                     
-                    # result_exists =  executor_found.submit(push_cpf_obito,self,None,registro_bloco['id_obito'],registro_bloco,3)
-                    # list_up_n_encontrado.append(result_exists.result())
-              
-     
+            if lista_menor_ou_maior:
+                result_dados_atualizado =  executor_found.submit(process_ano_n_bate,self,lista_menor_ou_maior)
+                list_up_n_encontrado.append(result_dados_atualizado.result())
+                
     except Exception as e:
-             erro_detalhado = traceback.format_exc()
-             print(f"Falha ao processar update nos nomes: {erro_detalhado}")
-             ClassLogger.logging.error(f"ERRO LINHA PROCESSAMENTO NO UPDATE DOS CPF {str(e)}")
+        erro_detalhado = traceback.format_exc()
+        print(f"Falha ao processar update nos nomes: {erro_detalhado}")
+        ClassLogger.logging.error(f"ERRO LINHA PROCESSAMENTO NO UPDATE DOS CPF {str(e)}")
+
+
+    
       
 
