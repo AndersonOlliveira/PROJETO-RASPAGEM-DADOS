@@ -115,6 +115,8 @@ def mathc_process(self):
         
 
 def process_found(self, lista_found):
+    print(f"----------------------***----------")
+    # return
     list_info_update = []
     list_error = []
     update_ob_localizado = []
@@ -123,10 +125,10 @@ def process_found(self, lista_found):
            "N_ENCOTRATO": 0, #JA NA BASE
            "ERROR_ATUALIZAR":0
     })
-    print("ESTOU ACESSANDO O MATCH NAME")
-
+    
     if not lista_found:
         return contador_, list_error
+
 
     dados_tabela_found = pd.DataFrame(lista_found)
     # print(f"MINHA LISTA COM OS DADOS DE ENCONTRADO {dados_tabela_found}")
@@ -141,16 +143,20 @@ def process_found(self, lista_found):
                 bloco_found = dados_tabela_found.iloc[start:start + batch_size_found]
                 print(f"Processando registros "f"{start + 1} até {min(start + batch_size_found, total_found)} "f"de {total_found}")
                 for _, registro_bloco in bloco_found.iterrows():
-                    print("LISTA PARA PROCESSAR")
-                    # print(registro_bloco)
+                    print("LISTA PARA PROCESSAR OS DADOS APROVEITADOSS....")
+                    print(f"QUE LISTA EU TENHO {registro_bloco}")
+                    print(f"QUE LISTA EU TENHO {registro_bloco['CPF']}")
+                    if registro_bloco['CPF'] is None or pd.isna(registro_bloco['CPF']):
+                        print(f"CPF ausente para o registro: {registro_bloco}")
+                        ClassLogger.logging.error(f"CPF ausente para o registro: {registro_bloco}")
+                        contador_['erro_heteronimo']["ERROR_ATUALIZAR"] += 1
+                        list_error.append({"obito_id": registro_bloco.get('id_obito')})
+                        continue
                     result_exists =  executor_found.submit(push_cpf_obito,self,registro_bloco['CPF'],registro_bloco['id_obito'],registro_bloco,auxliares.HETERENOMIO)
                     list_info_update.append(result_exists.result())
-
-            # executor.submit(search_from_name_obito,self,limpar_nome_rn(registro['nome']),registro['data_nascimento'],registro['obito_id'],registro)
-            # resultado_update =  push_cpf_obito
     except Exception as e:
         erro_detalhado = traceback.format_exc()
-        print(f"Falha ao processar update nos nomes: {erro_detalhado}")
+        print(f"Falha ao processar update nos nomes NO PROCESSO FOUND: {erro_detalhado}")
         ClassLogger.logging.error(f"ERRO LINHA PROCESSAMENTO NO UPDATE DOS CPF {str(e)}")
 
     try:
@@ -175,8 +181,8 @@ def process_found(self, lista_found):
 
         return contador_, list_error
     except Exception as e:
-            print(f"Falha ao processar update nos nomes: {erro_detalhado}")
-            ClassLogger.logging.error(f"ERRO LINHA PROCESSAMENTO NO UPDATE DOS CPF {str(e)}")
+        print(f"Falha ao processar update nos nomes: {erro_detalhado}")
+        ClassLogger.logging.error(f"ERRO LINHA PROCESSAMENTO NO UPDATE DOS CPF {str(e)}")
 
 
 def process_homonimos(self, l_homonimos):
@@ -305,8 +311,7 @@ def process_ano_n_bate(self, lista_found):
            "ERROR_ATUALIZAR":0
     })
     print("ESTOU ACESSANDO O MATCH NAME")
-    print(f"ESTOU ACESSANDO O MATCH NAME {lista_found}")
-
+    
     if not lista_found:
         return contador_, list_error
 
