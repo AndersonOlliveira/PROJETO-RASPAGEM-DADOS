@@ -176,7 +176,7 @@ class Processor:
         self.false =False
         self.parar = False
         self.periodo = 'SEMANAL'
-        self.process_lote = 100
+        self.process_lote = 300
         # self.todos_resultados = []
         self.batch_size_verify = 50
         self.lock = threading.Lock()
@@ -309,6 +309,14 @@ class Processor:
                 result_up = upDados(self,result_normalizar)
 
                 print(f"MEU RESULTADO {result_up}")
+            
+            if self.lista_dataframes_global:  # Verifica se a lista não está vazia
+          
+                df_consolidado = pd.concat(self.lista_dataframes_global, ignore_index=True)
+                convert_tabela = df_consolidado.to_html(index=False, border=1, classes='table table-striped')
+                enviar_email_all(convert_tabela)
+            else:
+                ClassLogger.logging.info(f"Nenhum dado a ser processado para enviar")
                   
             fim = datetime.now()
             duracao = (fim - inicio).total_seconds()
@@ -444,7 +452,7 @@ class Processor:
             contador_macth_cntobito ,result ,contador_ano_bases,erros_ano_base = verify_homonimos(self)
 
 
-            return
+            # return
             # print(f"ESTOU SAINDO PARA A LISTA DE CONTADOR FINALLLLL >>>>> {contador_macth_cntobito.get('sucesso_heteronimo')}")
             # print(f"ESTOU SAINDO PARA A LISTA DE LISTA COM ERROS FINALLLLLL >>>>>> {result}")
 
@@ -469,7 +477,7 @@ class Processor:
                             )
 
             print(f"MENSAGEM ç::: {msg}")
-            # enviar_email_all_anexo(msg, dados_csv_bytes, 'dados_obitos')
+            enviar_email_all_anexo(msg, dados_csv_bytes, 'dados_obitos')
 
 
 
@@ -487,13 +495,13 @@ class Processor:
             ClassLogger.logging.error(f"Erro fatal na execução HOMONIMOS: {str(e)}")
             error = f"Erro fatal na execução: HOMONIMOS {str(e)}"
             corpo = f"""<h2 style="color:red;">Falha no processo de Captura e tratamento dos dados</h2> <p>{datetime.now().strftime('%Y-%m-%d %H:%M:%S')} Mensagem:: {error}</p>"""
-            # enviar_email_all(corpo)
+            enviar_email_all(corpo)
             pass  
         
         finally:
             ClassLogger.logging.info(f"Todos os processos finalizados!")
             corpo = f"""<h2 style="color:green;">Todos os processo concluídos</h2> <p>{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}</p>"""
-            # enviar_email_all(corpo)
+            enviar_email_all(corpo)
         
              
  
@@ -504,8 +512,8 @@ class Processor:
         # PROCESSAR OS DADOS CAPTURADOS
         # self.processar_arquivos([11]) 
         self.process_macht_name()
-        # self.process_cnt_obito()
-        self.process_homonimos()
+        #self.process_cnt_obito()
+        #self.process_homonimos()
 
        
         

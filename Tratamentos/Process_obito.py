@@ -182,8 +182,8 @@ def verify_cnt_obito(self):
                                 try:
                                     with ThreadPoolExecutor(max_workers=self.max_workers) as executor:
                                         futures_update = []
-                                        futuro = executor.submit(update_cntobito, self, url_valida, ano_flecimento, found['ano'],found['cntid'])
-                                        futures_update.append(futuro)
+                                        # futuro = executor.submit(update_cntobito, self, url_valida, ano_flecimento, found['ano'],found['cntid'])
+                                        # futures_update.append(futuro)
                                         
                                         for futuro in futures_update:
                                             result_update_cntobito.append(futuro.result())

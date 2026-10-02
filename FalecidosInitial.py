@@ -6,7 +6,7 @@ from Processor.ClassProcessor import Processor
 
 
 if __name__ == "__main__":
-    instance = Processor(max_workers=3, batch_size=5)
+    instance = Processor(max_workers=5, batch_size=4)
     try:
             resultado_fluxo = instance.executar_ciclo()
             ClassLogger.logging.info("\nIniciando Processo para captura dos dados")

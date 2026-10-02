@@ -350,31 +350,31 @@ def iniciar(self,servidor):
                 salvar_csv(registros=registros,pasta=pasta,nome=nome)
 
                 # links = extrair_links(soup,url_base)
-                # if paginacao:
-                #     with ThreadPoolExecutor(max_workers=self.max_workers) as executor:
-                #         try:
-                #             links = executor.submit(nav, soup, url_base).result()
-                #             print(f"links {links}")
-                #             if self.parar:
-                #                  break
-                #             for link in links:
-                #                 # if link not in visitadas and len(visitadas) == 100:
-                #                 if link not in visitadas:
-                #                     fila.append(link)
+                if paginacao:
+                    with ThreadPoolExecutor(max_workers=self.max_workers) as executor:
+                        try:
+                            links = executor.submit(nav, soup, url_base).result()
+                            print(f"links {links}")
+                            if self.parar:
+                                 break
+                            for link in links:
+                                # if link not in visitadas and len(visitadas) == 100:
+                                if link not in visitadas:
+                                    fila.append(link)
 
-                #         except Exception as e:
-                #             ClassLogger.logging.error(f"Erro ao processar paginas para localizar as páginas: {e}", exc_info=True)
-                #             links = None
+                        except Exception as e:
+                            ClassLogger.logging.error(f"Erro ao processar paginas para localizar as páginas: {e}", exc_info=True)
+                            links = None
 
 
-                        # links = nav(soup,url_base)
-                        # # print(f"links {links}")
+                        links = nav(soup,url_base)
+                        # print(f"links {links}")
 
-                        # for link in links:
+                        for link in links:
 
-                        #     if link not in visitadas:
+                            if link not in visitadas:
 
-                        #         fila.append(link)
+                                fila.append(link)
             self.client.salvar_erros(pasta)
             ClassLogger.logging.info(f"Processo Finalizado para {nome} Finalizado")
             # ClassLogger.logging.info(f"Com o id  {self.} Finalizado")
