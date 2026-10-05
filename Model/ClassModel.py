@@ -346,37 +346,10 @@ def exists_by_name(self, person,falecimento):
                     }
                 }
                 
-def get_data_match_name_base(self) -> List[Dict]: 
-     
-     
-      query = """SELECT UPPER(nome) as nome, to_char(nascimento, 'YYYY-MM-DD') AS data_nascimento , id_interpol AS id_interpol, nacionalidade, id as id_tabela FROM public.interpol_dados where nacionalidade  
-                  LIKE '%BRAZIL%' and cpf is null 
-                  GROUP BY nome,nascimento,id_interpol,nacionalidade,id ORDER BY nome"""
-      
-      
-      try:
-                    
-            with self.pool_raspagem.get_connection() as conn:
-                 with conn.cursor(cursor_factory=RealDictCursor) as cursor:
-                      cursor.execute(query,)
-                      registros = cursor.fetchall()
-                
-                      if not registros:
-                        return None
-            
-            
-                
-                
-                 return [dict(registro) for registro in registros]
-                                    
-      except Exception as e:
-                    ClassLogger.logger.error(f"Falha em caputrar os dados o erro get_data_match_name_base - {str(e)}")
-                  
-
 def get_list_cpf(self) -> List[Dict]: 
      
      
-      query = """SELECT cpf, link_fonte ,TO_CHAR(data_falecimento , 'YYYY-MM-DD') as ano FROM obito_captura.obito_dados where cpf is not null order by obito_id desc"""
+      query = """SELECT cpf, link_fonte ,TO_CHAR(data_falecimento , 'YYYY-MM-DD') as ano FROM obito_captura.obito_dados where cpf is not null order by obito_id desc limit 50"""
       
       try:
                     
@@ -438,7 +411,7 @@ def get_list_cpf_cntid(self,cpf, link,ano) -> List[Dict]:
 def get_list_cntobito(self,cpf,cntid,link,ano) -> List[Dict]: 
      
     
-      query = """SELECT * FROM cntobito WHERE cntobitocnt = %s"""
+      query = """SELECT cntobitocnt,cntobitoflag,cntobitofcm,cntobitoano FROM cntobito WHERE cntobitocnt = %s"""
       try:
                     
             with self.pool_producao.get_connection() as conn:
@@ -641,7 +614,7 @@ def search_from_cpf_ano_nacimento(self, nome_busca, ano ,obito_id,registro):
             }
 
 def search_from_name_cidade(self, nome_busca, cidade,estado,obito_id,registro):
-        query = """SELECT *,cntcpfcgc AS cpf
+        query = """SELECT cntid,cntcpfcgc AS cpf
                    FROM cnt
         JOIN cntfisend
             ON cntid = cntfisendcnt
@@ -820,7 +793,7 @@ def full_dados(self)-> List[Dict]:
 
 def full_dados_homonimos(self)-> List[Dict]:
 
-        query = """SELECT trim(UPPER(nome)) as nome, trim(to_char(data_nascimento, 'YYYY-MM-DD')) as data_nascimento , obito_id , cidade , data_falecimento , ano_nascimento_estimado FROM obito_captura.obito_dados where cpf is null"""
+        query = """SELECT trim(UPPER(nome)) as nome, trim(to_char(data_nascimento, 'YYYY-MM-DD')) as data_nascimento , obito_id , cidade , data_falecimento , ano_nascimento_estimado FROM obito_captura.obito_dados where cpf is null limit 10"""
                
 
         try:

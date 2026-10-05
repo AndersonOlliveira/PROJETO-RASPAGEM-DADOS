@@ -26,10 +26,10 @@ from Tratamentos.Mathc import process_found ,process_ano_n_bate,process_nfound
 
 def verify_homonimos(self):
     lista_localizados = []
-    lista_n_found = []
+    lista_n_found =[]
     list_found = []
-    lista_n_found_cidade = []
-    lista_homonimos = []
+    lista_n_found_cidade =[]
+    lista_homonimos =[]
     contador_macth = defaultdict(lambda: {
            "N_EN": 0,
            "ERROR": 0, #JA NA BASE
@@ -38,10 +38,6 @@ def verify_homonimos(self):
            "UPDATE": 0,
            "UPDATE_NAME": 0,
     })
-
-    contador_ano_base = {}
-    contador_ano_bases = {}
-    erros_ano_base = []
     
     #LISTA COM O NOME E DATA DE NASCIMENTO
     retorno_list_homonimos = full_dados_homonimos(self)
@@ -50,63 +46,37 @@ def verify_homonimos(self):
     # return 
     # return None,None,None,None
     if retorno_list_homonimos is None:
-
-        contador_macth_cntobito = {
-            'ERROR': 0,
-            'UPDATE': 0,
-            'N_ALTERAR': 0,
-            'FOUND': 0
-        }
-
-        return contador_macth_cntobito, []
+        return 0,0,0,0
     try:
         with ThreadPoolExecutor(max_workers=self.max_workers) as executor:
                 dados_tabela = pd.DataFrame(retorno_list_homonimos)
                 batch_size = self.process_lote
                 total = len(dados_tabela)
-                concluidos_total = 0
-                print(f"Total de registros para processar: {total}", flush=True)
+                print(f"Total de registros para processar: {total}")
                 for start in range(0, total, batch_size):
                     bloco = dados_tabela.iloc[start:start + batch_size]
-                    inicio_lote = start + 1
-                    fim_lote = min(start + batch_size, total)
-                    print(f"\nProcessando registros {inicio_lote} até {fim_lote} de {total}", flush=True)
-                    futures = {}
-
+                    print(f"Processando registros "f"{start + 1} até {min(start + batch_size, total)} "f"de {total}")
                     for _, registro in bloco.iterrows():
+                        # print(f"PROCESSANDO O REGISTRO {registro['nome']} COM A DATA DE NASCIMENTO {registro['data_nascimento']}")
                         nasc_str = str(registro['data_nascimento']).strip()
+                        print(f"tipo do type {type(nasc_str)}")
+                        print(f"DATA {nasc_str}")
 
                         if nasc_str in ['nan']:
-                            print(f"[INICIO] in nan {registro['nome']} | obito_id={registro['obito_id']} | sem data", flush=True)
-                            result_exists = executor.submit(search_from_name_obito, self, limpar_nome_rn(registro['nome']), None, registro['obito_id'], registro)
+                            print(f"PROCESSANDO O REGISTRO NO NAN {registro['nome']} COM A DATA DE NASCIMENTO {registro['data_nascimento']}")
+                            result_exists =  executor.submit(search_from_name_obito,self,limpar_nome_rn(registro['nome']),None,registro['obito_id'],registro)
+                            lista_localizados.append(result_exists.result())
                         else:
-                            print(f"[INICIO] {registro['nome']} | obito_id={registro['obito_id']} | data={registro['data_nascimento']}", flush=True)
-                            result_exists = executor.submit(search_from_name_obito, self, limpar_nome_rn(registro['nome']), str(registro['data_nascimento']), registro['obito_id'], registro)
-
-                        futures[result_exists] = registro['obito_id']
-
-                    concluidos_lote = 0
-                    total_lote = len(futures)
-                    for result_exists in as_completed(futures):
-                        obito_id = futures[result_exists]
-                        try:
-                            resultado = result_exists.result()
-                            lista_localizados.append(resultado)
-                            concluidos_lote += 1
-                            concluidos_total += 1
-                            print(f"[OK] {concluidos_lote}/{total_lote} | total {concluidos_total}/{total} | obito_id={obito_id}", flush=True)
-                        except Exception as e:
-                            concluidos_lote += 1
-                            concluidos_total += 1
-                            print(f"[ERRO] {concluidos_lote}/{total_lote} | total {concluidos_total}/{total} | obito_id={obito_id} | {e}", flush=True)
-                            ClassLogger.logging.error(f"Erro no obito_id {obito_id}:\n{traceback.format_exc()}")
+                            print(f"PROCESSANDO O REGISTRO {registro['nome']} COM A DATA DE NASCIMENTO {registro['data_nascimento']}")
+                            result_exists =  executor.submit(search_from_name_obito,self,limpar_nome_rn(registro['nome']),str(registro['data_nascimento']),registro['obito_id'],registro)
+                            lista_localizados.append(result_exists.result())
     
     except Exception as e:
         erro_detalhado = traceback.format_exc()
         print(f"Falha ao processar nomes: {erro_detalhado}")
         ClassLogger.logging.error(f"ERRO LINHA PROCESSAMENTO DA BUSCA DOS DADOS {str(e)}")
 
-    print(f"QTA {len(lista_localizados)} hom", flush=True)
+    print(f"QTA {len(lista_localizados)} jhom")
 
     try:
         for result_lista in lista_localizados:
@@ -144,9 +114,9 @@ def verify_homonimos(self):
 
 
 
-    print(f"LISTA SUCESSO QTA {len(list_found)}\n", flush=True)
-    print(f"LISTA HOMINIMOS QTA {len(lista_homonimos)}\n", flush=True)
-    print(f"LISTA NÃO ENCONTRADO QTA {len(lista_n_found)}\n", flush=True)
+    print(f"LISTA SUCESSO QTA {len(list_found)}\n")
+    print(f"LISTA HOMINIMOS QTA {len(lista_homonimos)}\n")
+    print(f"LISTA NÃO ENCONTRADO QTA {len(lista_n_found)}\n")
 
     # return None,None,None,None
 
@@ -168,7 +138,6 @@ def verify_homonimos(self):
         lista_process_homonimos = []
         try:
             with ThreadPoolExecutor(max_workers=self.max_workers) as executor:
-                futures = {}
                 for homonimo in lista_homonimos:
                     registro = homonimo.get('registro')
                     if registro is None:
@@ -180,24 +149,15 @@ def verify_homonimos(self):
                     estado = partes[1] if len(partes) > 1 else None
 
                     if cidade not in auxliares.INFO_CIDADE:
-                        print(f"[CIDADE] Processando {registro['nome']} | cidade={cidade} | estado={estado} | obito_id={registro['obito_id']}", flush=True)
+                        print(f"Cidade não encontrada na lista INFO_CIDADE:: {cidade}")
+                        print(f"Cidade não encontrada na lista estado:: {estado}")
+                        print(f"Cidade não encontrada na lista registro['nome']:: {registro['nome']}")
+                        print(f"Cidade não encontrada na lista registro['obito_id']:: {registro['obito_id']}")
+
                         result_exists = executor.submit(search_from_name_cidade, self, limpar_nome_rn(registro['nome']), cidade, estado, registro['obito_id'], registro)
-                        futures[result_exists] = registro['obito_id']
+                        lista_localizados_cidade_homonimos.append(result_exists.result())
                     else:
                         lista_process_homonimos.append(homonimo)
-
-                concluidos_lote = 0
-                total_lote = len(futures)
-                for result_exists in as_completed(futures):
-                    obito_id = futures[result_exists]
-                    try:
-                        lista_localizados_cidade_homonimos.append(result_exists.result())
-                        concluidos_lote += 1
-                        print(f"[CIDADE OK] {concluidos_lote}/{total_lote} | obito_id={obito_id}", flush=True)
-                    except Exception as e:
-                        concluidos_lote += 1
-                        print(f"[CIDADE ERRO] {concluidos_lote}/{total_lote} | obito_id={obito_id} | {e}", flush=True)
-                        ClassLogger.logging.error(f"Erro search_from_name_cidade obito_id={obito_id}:\n{traceback.format_exc()}")
                             
         except Exception as e:
             erro_detalhado = traceback.format_exc()
@@ -209,7 +169,8 @@ def verify_homonimos(self):
             print(f'Ocorreu um erro na linha {linha}')
         
 
-   
+    # return None,None,None,None
+
     
 
         lista_homonimos_cidade =[]
@@ -250,10 +211,11 @@ def verify_homonimos(self):
         # if lista_localizados_cidade_homonimos and lista_localizados_cidade_homonimos.get('status') == 'sucesso':
             # print(f"LISTA LOCALIZADO CIDADE HOMONIMOS : {lista_localizados_cidade_homonimos}")
             try:
-                print(f"ESTOU ACESSANDO O process_found PARA LISTA LOCALIZADOS CIDADE HOMONIMOS", flush=True)
-                print(f"LISTA DA CIDADE HOMONIMOS {lista_localizados_cidade_homonimos}", flush=True)
-                result_dados_atualizado = process_found(self, lista_localizados_cidade_homonimos)
-                resultad_.append(result_dados_atualizado)
+                with ThreadPoolExecutor(max_workers=self.max_workers) as executor_found:
+                    print(f"ESTOU ACESSANDO O process_found PARA LISTA LOCALIZADOS CIDADE HOMONIMOS")
+                    print(f"LISTA DA CIDADE HOMONIMOS {lista_localizados_cidade_homonimos}")
+                    result_dados_atualizado =  executor_found.submit(process_found,self,lista_localizados_cidade_homonimos)
+                    resultad_.append(result_dados_atualizado.result())
                 
             except Exception as e:
                 erro_detalhado = traceback.format_exc()
@@ -262,10 +224,12 @@ def verify_homonimos(self):
         print(f"LISTA COM OS RESULTADOS ? {resultad_}")
         if lista_process_homonimos:
             try:
-                print(f"ESTOU ACESSANDO O process_found PARA LISTA LOCALIZADOS HOMONIMOS {lista_process_homonimos}", flush=True)
-                contador_ano_bases, erros_ano_base = processa_found(self, lista_process_homonimos)
-                print(f"ESTOU SAINDO PARA A LISTA DE CONTADOR >>>>> {contador_ano_bases} >>>>> processa_found >>>>>>> {list_found}", flush=True)
-                print(f"ESTOU SAINDO PARA A LISTA DE LISTA COM ERROS>>>>>> {erros_ano_base}", flush=True)
+                with ThreadPoolExecutor(max_workers=self.max_workers) as executor_found:
+                # processa_found( self, lista_process_homonimos)
+                    print(f"ESTOU ACESSANDO O process_found PARA LISTA LOCALIZADOS HOMONIMOS {lista_process_homonimos}")
+                    contador_ano_bases, erros_ano_base = executor_found.submit(processa_found, self, lista_process_homonimos).result()
+                    print(f"ESTOU SAINDO PARA A LISTA DE CONTADOR >>>>> {contador_ano_bases} >>>>> processa_found >>>>>>> {list_found}")
+                    print(f"ESTOU SAINDO PARA A LISTA DE LISTA COM ERROS>>>>>> {erros_ano_base}")
 
               
                     
@@ -275,98 +239,8 @@ def verify_homonimos(self):
                 print(f"Falha ao processar lista_process_homonimos:: {erro_detalhado}")
                 ClassLogger.logging.error(f"ERRO LINHA PROCESSAMENTO lista_process_homonimos {str(e)}")
 
-   # ==========================================================
-    # CONSOLIDAÇÃO FINAL DOS CONTADORES
-    # ==========================================================
-
-    contador_macth_cntobito = {
-        'ERROR': 0,
-        'UPDATE': 0,
-        'N_ALTERAR': 0,
-        'FOUND': 0
-    }
-
-    lista_erros_final = []
-
-    # ----------------------------------------------------------
-    # Resultado do processamento dos encontrados
-    # ----------------------------------------------------------
-    if 'contador_ano_base' in locals() and contador_ano_base:
-
-        sucesso_heteronimo = contador_ano_base.get(
-            'sucesso_heteronimo',
-            {}
-        )
-
-        contador_macth_cntobito['UPDATE'] += sucesso_heteronimo.get(
-            'ATUALIZADO',
-            0
-        )
-
-        contador_macth_cntobito['N_ALTERAR'] += sucesso_heteronimo.get(
-            'N_ENCOTRATO',
-            0
-        )
-
-        contador_macth_cntobito['ERROR'] += sucesso_heteronimo.get(
-            'ERROR_ATUALIZAR',
-            0
-        )
-
-    # ----------------------------------------------------------
-    # Resultado do processamento dos homônimos por cidade/ano
-    # ----------------------------------------------------------
-    if 'contador_ano_bases' in locals() and contador_ano_bases:
-
-        sucesso_heteronimo = contador_ano_bases.get(
-            'sucesso_heteronimo',
-            {}
-        )
-
-        contador_macth_cntobito['UPDATE'] += sucesso_heteronimo.get(
-            'ATUALIZADO',
-            0
-        )
-
-        contador_macth_cntobito['N_ALTERAR'] += sucesso_heteronimo.get(
-            'N_ENCOTRATO',
-            0
-        )
-
-        contador_macth_cntobito['ERROR'] += sucesso_heteronimo.get(
-            'ERROR_ATUALIZAR',
-            0
-        )
-
-    # ----------------------------------------------------------
-    # Quantidade encontrada
-    # ----------------------------------------------------------
-    contador_macth_cntobito['FOUND'] = (
-        contador_macth_cntobito['UPDATE']
-        + contador_macth_cntobito['N_ALTERAR']
-    )
-
-    # ----------------------------------------------------------
-    # Erros retornados pelos processos
-    # ----------------------------------------------------------
-    if 'erros_ano_base' in locals() and erros_ano_base:
-        lista_erros_final.extend(erros_ano_base)
-
-    print(
-        "ESTOU SAINDO DA VERIFY_HOMONIMOS >>>>> {}".format(
-            contador_macth_cntobito
-        ),
-        flush=True
-    )
-
-    print(
-        "ERROS FINAIS HOMONIMOS >>>>> {}".format(
-            lista_erros_final
-        ),
-        flush=True
-    )
-
-    return contador_macth_cntobito, lista_erros_final
+    # return 
+    return contador_ano_base, erros_ano_base ,contador_ano_bases,erros_ano_base
 
 def processa_found(self,list_found):
     retorno_dados = []
@@ -457,9 +331,9 @@ def processa_found(self,list_found):
 
             if lista_menor_ou_maior:
                 print(f"LISTA COM OS REGISTROS QUE TEM DIFERENCA DE ANOS MAIOR OU MENOR {lista_menor_ou_maior}")
-                contador_ano_base, erros_ano_base = process_ano_n_bate(
-                    self, lista_menor_ou_maior
-                )
+                contador_ano_base, erros_ano_base = executor_found.submit(
+                    process_ano_n_bate, self, lista_menor_ou_maior
+                ).result()
 
 
     

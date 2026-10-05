@@ -60,17 +60,12 @@ def _arquivos_process_servidor(self, chave_servidor):
         )
         return []
 
-    print(registros)
     arquivos = f"arquivos/{registros['nome']}"
-    # print(arquivos)
-
-    # return
-
+    
     try:
         dados = []
         arquivos_data = []
-        # df_filtrado = {}
-
+    
         caminho_arquivos = Path(arquivos)
         nome = registros["nome"]
 
@@ -280,11 +275,8 @@ def _arquivos_process_servidor(self, chave_servidor):
                     
                     df['DATA_FALECIMENTO'] = df['DATA_FALECIMENTO'].apply(formatar_data)
                 else:
-                    print('SAIO NO NESTE IF?')
-                   
                     df['DATA_FALECIMENTO'] = auxliares.FALECIMENTO # CASO NÃO TENHA DATA
-                print(f"DATA LOCALIZADA {df['DATA_FALECIMENTO']}")
-                # if df['']
+               
                 df['NOME'] = df['NOME'].apply(remover).str.upper()
                 if 'DATA_CAPTURA' in df.columns:
                     df['DATA_CAPTURA'] = df['DATA_CAPTURA'].astype(str).str.strip("()', ")
@@ -310,21 +302,15 @@ def _arquivos_process_servidor(self, chave_servidor):
 
           
             df_final = pd.concat(dados, ignore_index=True)
-            # print(df_final)
             contador[arquivo]["QTINSERT"] = len(df_final)
             dados_para_enviar = df_final.to_dict(orient="records")
-            # print(df_final.to_string(index=False))
-
-            print("COLUNA FINAL{}")
-
-            print(dados_para_enviar)
+            
             if 'dados_para_enviar' in locals():
                 return dados_para_enviar
             else:
                 return []
                     
-        # return dados_para_enviar
-
+        
     except Exception as e:
          ClassLogger.logging.error(f"Erro fatal na execução para normalizar: {e}", exc_info=True)       
 
@@ -397,13 +383,9 @@ def formatar_data(data_envida):
         ClassLogger.logging.info(f"Erro em formatar a data com o nan: {e}", exc_info=True)
         return auxliares.DATA_PARAO
 def formatar_data_hora(data_envida):
-    print(f"ESTOU SAINDO NO FORMATAR DATA  COM HORA ENVIADA :: {data_envida}")
-    
-    # 1. Verifica se é NaN do Pandas/Float ou se está na lista de inválidos
     if pd.isna(data_envida) or str(data_envida).lower().strip() in ['nan', '', 'none', '0', '{}', '0000/00/00', '0000-00-00']:
         return auxliares.DATA_PARAO
         
-    # 2. Garante que o dado virou string antes do regex
     data_str = str(data_envida).strip()
     data_str_formmat = re.sub(r'-', '', data_str)
     
@@ -490,11 +472,7 @@ def tratar_familiares_B(textos):
         textos = str(textos)
 
     texto_limpo = re.sub(r'\(In Memoriam\)', '', textos, flags=re.IGNORECASE)
-    # conjuges_pais = re.findall(r'(?:Sr\.|Sra\.|esposa Sra\.|esposo\.|Viúvo\.|Viúva\.)\s+([A-Z][a-zÀ-ÿ]+(?:\s+[A-Z][a-zÀ-ÿ]+)*)', texto_limpo)
-    # filhos_match = re.search(r'deixa (?:os filhos|as filhas|filhos)\s+(.*?)(?=\s*,\s*(?:os filhos)\s+(.*?))(?=\s*,\s*(?:familiares|amigos|conhecidos|parentes)\b|\s*$)', 
-    # texto_limpo, 
-    # flags=re.IGNORECASE) 
-
+   
     filhos_match = re.search(
     r'deixa\s+(?:os\s+filhos|as\s+filhas|o\s+filho|filhos?)\s+(.*?)(?=\s*,\s*(?:familiares|amigos|conhecidos|parentes|neto|bisneto|deixando)\b|\s*$)',
     texto_limpo,
@@ -543,12 +521,9 @@ def tratar_familiares_A_old(textos):
         print(pessoa['CONJUGE||PAIS'])
 
 
-    # print(dados_extraidos['CONJUGE||PAIS'])
-
     info_conjuge = ", ".join(conjuges_pais) if conjuges_pais else auxliares.TEXTO_P
     
     if not info_conjuge or info_conjuge == auxliares.TEXTO_P:
-        # print(f"estou saindo aqui {info_conjuge}")
         tipo_info = auxliares.TEXTO_P
     else:
         tipo_info = auxliares.TEXTO_CONJU
@@ -566,7 +541,6 @@ def tratar_familiares_B_old(textos):
         textos = str(textos)
 
     texto_limpo = re.sub(r'\(In Memoriam\)', '', textos, flags=re.IGNORECASE)
-    # conjuges_pais = re.findall(r'(?:Sr\.|Sra\.|esposa Sra\.|esposo\.|Viúvo\.|Viúva\.)\s+([A-Z][a-zÀ-ÿ]+(?:\s+[A-Z][a-zÀ-ÿ]+)*)', texto_limpo)
     filhos_match = re.search(r'deixa (?:os filhos|as filhas|filhos)\s+([^,]+?)(?=\s*,\s*familiares|\s*$)', texto_limpo)
         
     lista_filhos = []
@@ -586,10 +560,8 @@ def tratar_familiares_B_old(textos):
 
    
     return info_ , tipo_info
-    # return ", ".join(lista_filhos) if lista_filhos else auxliares.TEXTO_P 
 
 def tratar_familiares_array(lista):
-    print(f"LISTA ENVIADO ?{lista}")
     texto_limpo = re.sub(r'[\[\]]', '', lista).strip()
     texto_anos = re.sub(r'\s*\(\d+\s+anos\)', '', texto_limpo).strip()
     if not texto_anos:
@@ -597,7 +569,6 @@ def tratar_familiares_array(lista):
 
     texto_limpo_regex = re.sub(r'\..*', ".'", texto_anos)
     texto_limpo_regex = texto_limpo_regex.replace("'", "")
-    # texto_limpo = texto_limpo.split('.')[0] + ".'"
     return remover(texto_limpo_regex)
 
     
@@ -615,14 +586,12 @@ def verificar_data(data):
         ClassLogger.logging.error(f"Múltiplas datas detectadas, rejeitando: {data_str}")
         return auxliares.DATA_PARAO
         
-    # 3. Tratamento se já for a string zerada
     if data_str in (auxliares.DATA_PARAO, ''):
         return auxliares.DATA_PARAO
 
     try:
         formato = "%d/%m/%Y"
         data_convertida = datetime.strptime(data, formato)
-        # print(f"Data válida! {data_convertida}")
         return data
 
     except ValueError as e:
@@ -633,7 +602,6 @@ def verificar_data(data):
 
     except Exception as e:
         print(f"Data inválida ou formato incorreto {data}")
-        print("Data inválida ou formato incorreto.")
         ClassLogger.logging.info(f"Data inválida ou formato incorreto {e} {data}", exc_info=True)
         return auxliares.DATA_PARAO
 

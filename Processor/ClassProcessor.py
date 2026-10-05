@@ -440,69 +440,197 @@ class Processor:
     
     
     def process_homonimos(self):
-        inicio = datetime.now()
-        ClassLogger.logging.info("=" * 80)
-        ClassLogger.logging.info(f"Inicio processo nomarlização dos dado de homonimos.. - {inicio}")
-        time.sleep(2)
-        ClassLogger.logging.info("=" * 80)
-        try:
-            print(f"ESTOU SAINDO PARA A LISTA DE HOMONIMOS")
 
-            # verify_homonimos(self)
-            contador_macth_cntobito ,result ,contador_ano_bases,erros_ano_base = verify_homonimos(self)
+            inicio = datetime.now()
 
+            ClassLogger.logging.info("=" * 80)
+            ClassLogger.logging.info(
+                f"Inicio processo nomarlização dos dado de homonimos.. - {inicio}"
+            )
 
-            # return
-            # print(f"ESTOU SAINDO PARA A LISTA DE CONTADOR FINALLLLL >>>>> {contador_macth_cntobito.get('sucesso_heteronimo')}")
-            # print(f"ESTOU SAINDO PARA A LISTA DE LISTA COM ERROS FINALLLLLL >>>>>> {result}")
+            time.sleep(2)
 
-            if result:
-                df = pd.DataFrame(result)
-                buffer_memoria = io.StringIO()
-                df.to_csv(buffer_memoria, index=False, sep=';', encoding='utf-8-sig')
-                dados_csv_bytes = buffer_memoria.getvalue().encode('utf-8-sig')
-            else:
-                dados_csv_bytes = None
-                        
-            quantidade_inserida = contador_macth_cntobito['INSERIDOS']
-            quantidade_erros = contador_macth_cntobito['ERROR']
-            quantidade_atualizada = contador_macth_cntobito.get('UPDATE', 0)
-            quantidade_nao_atualizada = contador_macth_cntobito.get('N_ALTERAR', 0)
-                       
-            msg = (f"processo nomarlização dos dado de homonimos\n"
-                                f"Quantidade de linhas inseridas com sucesso na HOMONIMOS PROSCORE: {quantidade_inserida}\n"
-                                f"Quantidade de registros com falha: {quantidade_erros}\n"
-                                f"Quantidade de linhas atualizadas: {quantidade_atualizada}\n"
-                                f"Quantidade de linhas não atualizadas: {quantidade_nao_atualizada}\n"
-                            )
+            ClassLogger.logging.info("=" * 80)
 
-            print(f"MENSAGEM ç::: {msg}")
-            enviar_email_all_anexo(msg, dados_csv_bytes, 'dados_obitos')
+            try:
 
+                print(
+                    "ESTOU SAINDO PARA A LISTA DE HOMONIMOS",
+                    flush=True
+                )
 
+                # ======================================================
+                # PROCESSA HOMONIMOS
+                # ======================================================
 
+                contador_macth_cntobito, result = verify_homonimos(self)
 
+                print(
+                    "RETORNO FINAL VERIFY_HOMONIMOS >>>>> {}".format(
+                        contador_macth_cntobito
+                    ),
+                    flush=True
+                )
 
-           
-            fim = datetime.now()
-            duracao = (fim - inicio).total_seconds()
-            ClassLogger.logging.info("---" * 80)
-                  
-        
-        except Exception as e:
-            erro_detalhado = traceback.format_exc()
-            print(f"TENHO ERRO NESTE PONTO PARA ACESSAR O HOMONIMOS {erro_detalhado}")
-            ClassLogger.logging.error(f"Erro fatal na execução HOMONIMOS: {str(e)}")
-            error = f"Erro fatal na execução: HOMONIMOS {str(e)}"
-            corpo = f"""<h2 style="color:red;">Falha no processo de Captura e tratamento dos dados</h2> <p>{datetime.now().strftime('%Y-%m-%d %H:%M:%S')} Mensagem:: {error}</p>"""
-            enviar_email_all(corpo)
-            pass  
-        
-        finally:
-            ClassLogger.logging.info(f"Todos os processos finalizados!")
-            corpo = f"""<h2 style="color:green;">Todos os processo concluídos</h2> <p>{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}</p>"""
-            enviar_email_all(corpo)
-        
+                print(
+                    "LISTA FINAL DE ERROS >>>>> {}".format(
+                        result
+                    ),
+                    flush=True
+                )
+
+                # ======================================================
+                # GERA CSV DOS ERROS
+                # ======================================================
+
+                if result:
+
+                    df = pd.DataFrame(result)
+
+                    buffer_memoria = io.StringIO()
+
+                    df.to_csv(
+                        buffer_memoria,
+                        index=False,
+                        sep=';',
+                        encoding='utf-8-sig'
+                    )
+
+                    dados_csv_bytes = buffer_memoria.getvalue().encode(
+                        'utf-8-sig'
+                    )
+
+                else:
+
+                    dados_csv_bytes = None
+
+                # ======================================================
+                # CONTADORES
+                # ======================================================
+
+                quantidade_erros = contador_macth_cntobito.get(
+                    'ERROR',
+                    0
+                )
+
+                quantidade_atualizada = contador_macth_cntobito.get(
+                    'UPDATE',
+                    0
+                )
+
+                quantidade_nao_atualizada = contador_macth_cntobito.get(
+                    'N_ALTERAR',
+                    0
+                )
+
+                quantidade_sucesso = contador_macth_cntobito.get(
+                    'FOUND',
+                    0
+                )
+
+                # ======================================================
+                # MENSAGEM DO E-MAIL
+                # ======================================================
+
+                msg = (
+                    "Processo normalização dos dados de homônimos\n"
+                    "\n"
+                    "Quantidade de linhas processadas: {}\n"
+                    "Quantidade de registros com falha: {}\n"
+                    "Quantidade de linhas atualizadas: {}\n"
+                    "Quantidade de linhas não atualizadas: {}\n"
+                ).format(
+                    quantidade_sucesso,
+                    quantidade_erros,
+                    quantidade_atualizada,
+                    quantidade_nao_atualizada
+                )
+
+                print(
+                    "MENSAGEM ::: {}".format(msg),
+                    flush=True
+                )
+
+                # ======================================================
+                # ENVIO DO E-MAIL
+                # ======================================================
+
+                if dados_csv_bytes:
+
+                    enviar_email_all_anexo(
+                        msg,
+                        dados_csv_bytes,
+                        'dados_obitos'
+                    )
+
+                else:
+
+                    enviar_email_all(msg)
+
+                # ======================================================
+                # FINALIZAÇÃO
+                # ======================================================
+
+                fim = datetime.now()
+
+                duracao = (
+                    fim - inicio
+                ).total_seconds()
+
+                ClassLogger.logging.info(
+                    "Processo HOMONIMOS finalizado em {} segundos".format(
+                        duracao
+                    )
+                )
+
+                ClassLogger.logging.info(
+                    "---" * 80
+                )
+
+            except Exception as e:
+
+                erro_detalhado = traceback.format_exc()
+
+                print(
+                    "TENHO ERRO NESTE PONTO PARA ACESSAR O HOMONIMOS {}".format(
+                        erro_detalhado
+                    ),
+                    flush=True
+                )
+
+                ClassLogger.logging.error(
+                    "Erro fatal na execução HOMONIMOS: {}".format(
+                        str(e)
+                    )
+                )
+
+                error = (
+                    "Erro fatal na execução: HOMONIMOS {}".format(
+                        str(e)
+                    )
+                )
+
+                corpo = """
+                <h2 style="color:red;">
+                    Falha no processo de Captura e tratamento dos dados
+                </h2>
+
+                <p>
+                    {} Mensagem: {}
+                </p>
+                """.format(
+                    datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
+                    error
+                )
+
+                enviar_email_all(corpo)
+
+            finally:
+
+                ClassLogger.logging.info(
+                    "Todos os processos finalizados!"
+                )
+                
              
  
 
@@ -510,10 +638,10 @@ class Processor:
     def executar_ciclo(self):
         # self.executar() 
         # PROCESSAR OS DADOS CAPTURADOS
-        # self.processar_arquivos([11]) 
-        self.process_macht_name()
-        #self.process_cnt_obito()
-        #self.process_homonimos()
+        self.processar_arquivos([6]) 
+        # self.process_macht_name()
+        # self.process_cnt_obito()
+        # self.process_homonimos()
 
        
         

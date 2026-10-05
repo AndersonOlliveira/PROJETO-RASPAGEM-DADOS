@@ -22,215 +22,613 @@ from utils.CrawlerStats import enviar_relatorio_email,enviar_email_all
 
 
 def upDados(self,dados_tabela):
-    futures = []
-    retorno_insert =[]
-    lista_error =[]
-    tabela_atualizar =[]
+    if not dados_tabela:
+            print("Nenhum dado recebido para processamento.")
+            return None
+    registros_para_inserir = []
+    lista_error = []
+    tabela_atualizar = []
 
     fontes_atualizadas = set()
-    contador_por_fonte = defaultdict(lambda: {
-        "INSERT": 0,
-        "JB": 0, #JA NA BASE
-        "ERROR":0,
-        "QTINSERT": 0,
-        "UPDATE": 0,
-        "UPDATE_NAME": 0,
-    
-        })
-    #
-    if not dados_tabela:
+
+    contador_por_fonte = defaultdict(
+        lambda: {
+            "INSERT": 0,
+            "JB": 0,
+            "ERROR": 0,
+            "QTINSERT": 0,
+            "UPDATE": 0,
+            "UPDATE_NAME": 0,
+        }
+    )
+    # ------------------------------------------------------------------
+    # CONVERTE PARA DATAFRAME
+    # ------------------------------------------------------------------
+
+    try:
+        dados_df = pd.DataFrame(dados_tabela)
+    except Exception as e:
+        erro_detalhado = traceback.format_exc()
+
+        ClassLogger.logging.error(
+            "ERRO AO CONVERTER DADOS PARA DATAFRAME: %s",
+            erro_detalhado
+        )
+
         return None
+    
+    total = len(dados_df)
+
+    if total == 0:
+        print("DataFrame vazio.")
+        return None
+
+    print("=" * 80)
+    print("INÍCIO DO PROCESSAMENTO")
+    print("Total de registros:", total)
+    print("Máximo de workers:", self.max_workers)
+    print("Tamanho do lote:", self.process_lote)
+    print("=" * 80)
+
+    # ------------------------------------------------------------------
+    # PROCESSAMENTO EM LOTES
+    # ------------------------------------------------------------------
+
+    batch_size = self.process_lote
+    
    
     with ThreadPoolExecutor(max_workers=self.max_workers) as executor:
-        
-            batch_size = self.process_lote
-            
 
-            dados_tabela = pd.DataFrame(dados_tabela)
-            # subset = dados_tabela.iloc[:50, :]
-            total = len(dados_tabela)
-            # total = len(subset)
+        for start in range(0, total, batch_size):
 
-            print(f"Total de registros para processar: {total}")
+            fim = min(start + batch_size, total)
 
-            for start in range(0, total, batch_size):
-                    bloco = dados_tabela.iloc[start:start + batch_size]
-                    print(
-                        f"Processando registros "
-                        f"{start + 1} até {min(start + batch_size, total)} "
-                        f"de {total}"
+            bloco = dados_df.iloc[start:fim]
+
+            print(
+                "Processando registros %s até %s de %s"
+                % (start + 1, fim, total)
+            )
+
+            # ----------------------------------------------------------
+            # FUTURES DE VERIFICAÇÃO
+            # ----------------------------------------------------------
+
+            futures_verificacao = {}
+
+            for _, registro in bloco.iterrows():
+
+                try:
+                    nome = registro["NOME"]
+                    data_falecimento = registro["DATA_FALECIMENTO"]
+
+                    future = executor.submit(
+                        exists_by_name,
+                        self,
+                        nome,
+                        data_falecimento
                     )
-                    for _, registro in bloco.iterrows():
-                        # futures.append(executor.submit(exists_by_name,conn,registro['NOME'],registro['DATA_FALECIMENTO']))
-                        result_exists = executor.submit(exists_by_name,self,registro['NOME'],registro['DATA_FALECIMENTO'])
-                        
-                        # ADICIONO DENTRO DA FONTE, E VERIFICO SE JÁ EXITE PARA NÃO INSERIR NOVAMENTE!
-                        fonte = registro['LINK_FONTE']
-                        if fonte not in fontes_atualizadas:
-                            tabela_atualizar.append({'LINK_FONTE': fonte})
-                            fontes_atualizadas.add(fonte)
 
-                       
-                        try:
-                            resultado = result_exists.result() # PEGO O RETORNO VINDO DA VERIFICAR DO REGISTRO O QUE FOR FALSE SOMENTE
-                            print(f"RETORNO DO EXISTIS {resultado}")
-                            if (
-                                isinstance(resultado, dict)
-                                and resultado.get('status') == 'erro_conexao'
-                            ):
-                                print(f"Error vindo na procura dos dados {resultado}")
-                                contador_por_fonte[registro['LINK_FONTE']]["JB"] += 1
-                                ClassLogger.logging.error(
-                                    f"Error vindo na procura dos dados {resultado}"
-                                )
-                                continue 
-                            if (
-                                isinstance(resultado, dict)
-                                and resultado.get('status') == 'data_falecimento'
-                            ):
-                                contador_por_fonte[registro['LINK_FONTE']]["ERROR"] += 1
-                                lista_error.append(resultado)
-                                ClassLogger.logging.error(
-                                    f"DADOS NÃO FORMATADO {resultado}"
-                                )
-                                continue
+                    # Guarda o registro correspondente ao Future
+                    futures_verificacao[future] = registro
 
-                            if resultado is True:
-                                contador_por_fonte[registro['LINK_FONTE']]["JB"] += 1
-                            elif resultado is False:
-                                #   print("RESULTADO DO FUTURE: False")
-                                futures.append(registro)
-                        except Exception as e:
-                                erro_detalhado = traceback.format_exc()
-                                print(f"TENHO ERRO NESTE PONTO PARA ACESSAR O REGISTRO {erro_detalhado}")
-                                ClassLogger.logging.error(f"ERRO LINHA PROCESSAMENTO RESULT EXISTS {str(e)}")
+                    # --------------------------------------------------
+                    # REGISTRA A FONTE
+                    # --------------------------------------------------
 
-    # return
-    if futures:
-        
-        # PREPARAR PARA INSERIR NO BANCO DE DADOS
-        with ThreadPoolExecutor(max_workers=self.max_workers) as executor:
-                print(f"quantidade de processos {self.max_workers}")
-                # with self.db.get_connection() as conn:
-                for list_register in futures:
-                    # print(f"MINHA LISTA DE REGISTRO DO FUTURE {list_register}")
-                    retorno_insert.append(
-                                executor.submit(
-                                insert_base_obito,self,list_register
-                                )
+                    fonte = registro.get("LINK_FONTE", "")
+
+                    if fonte not in fontes_atualizadas:
+
+                        tabela_atualizar.append(
+                            {
+                                "LINK_FONTE": fonte
+                            }
+                        )
+
+                        fontes_atualizadas.add(fonte)
+
+                except Exception as e:
+
+                    erro_detalhado = traceback.format_exc()
+
+                    print(
+                        "Erro ao criar processamento para registro: %s"
+                        % erro_detalhado
+                    )
+
+                    ClassLogger.logging.error(
+                        "ERRO AO CRIAR FUTURE EXISTS_BY_NAME: %s",
+                        erro_detalhado
+                    )
+
+                    lista_error.append(
+                        {
+                            "status": "ERRO_FATAL",
+                            "erro": str(e),
+                            "dados": registro.to_dict()
+                        }
+                    )
+
+            # ----------------------------------------------------------
+            # PROCESSA OS RESULTADOS DA VERIFICAÇÃO
+            # ----------------------------------------------------------
+
+            for future in as_completed(futures_verificacao):
+
+                registro = futures_verificacao[future]
+
+                fonte = registro.get("LINK_FONTE", "")
+
+                try:
+
+                    resultado = future.result()
+
+                    print(
+                        "RETORNO EXISTS_BY_NAME:",
+                        resultado
+                    )
+
+                    # --------------------------------------------------
+                    # ERRO DE CONEXÃO
+                    # --------------------------------------------------
+
+                    if (
+                        isinstance(resultado, dict)
+                        and resultado.get("status") == "erro_conexao"
+                    ):
+
+                        contador_por_fonte[fonte]["ERROR"] += 1
+
+                        resultado["LINK_FONTE"] = fonte
+
+                        lista_error.append(resultado)
+
+                        ClassLogger.logging.error(
+                            "ERRO DE CONEXÃO AO CONSULTAR REGISTRO: %s",
+                            resultado
+                        )
+
+                        continue
+
+                    # --------------------------------------------------
+                    # DATA DE FALECIMENTO INVÁLIDA
+                    # --------------------------------------------------
+
+                    if (
+                        isinstance(resultado, dict)
+                        and resultado.get("status") == "data_falecimento"
+                    ):
+
+                        contador_por_fonte[fonte]["ERROR"] += 1
+
+                        resultado["LINK_FONTE"] = fonte
+
+                        lista_error.append(resultado)
+
+                        ClassLogger.logging.error(
+                            "DADOS NÃO FORMATADOS: %s",
+                            resultado
+                        )
+
+                        continue
+
+                    # --------------------------------------------------
+                    # JÁ EXISTE NA BASE
+                    # --------------------------------------------------
+
+                    if resultado is True:
+
+                        contador_por_fonte[fonte]["JB"] += 1
+
+                        continue
+
+                    # --------------------------------------------------
+                    # NÃO EXISTE -> SERÁ INSERIDO
+                    # --------------------------------------------------
+
+                    if resultado is False:
+
+                        registros_para_inserir.append(
+                            registro
+                        )
+
+                        contador_por_fonte[fonte]["QTINSERT"] += 1
+
+                        continue
+
+                    # --------------------------------------------------
+                    # RETORNO DESCONHECIDO
+                    # --------------------------------------------------
+
+                    contador_por_fonte[fonte]["ERROR"] += 1
+
+                    lista_error.append(
+                        {
+                            "status": "ERRO_RETORNO_EXISTS",
+                            "erro": "Retorno desconhecido de exists_by_name",
+                            "LINK_FONTE": fonte,
+                            "NOME": registro.get("NOME"),
+                            "DATA_FALECIMENTO": registro.get(
+                                "DATA_FALECIMENTO"
+                            ),
+                            "resultado": resultado
+                        }
+                    )
+
+                    ClassLogger.logging.error(
+                        "RETORNO DESCONHECIDO DO EXISTS_BY_NAME: %s",
+                        resultado
+                    )
+
+                except Exception as e:
+
+                    erro_detalhado = traceback.format_exc()
+
+                    contador_por_fonte[fonte]["ERROR"] += 1
+
+                    lista_error.append(
+                        {
+                            "status": "ERRO_EXISTS",
+                            "erro": str(e),
+                            "LINK_FONTE": fonte,
+                            "NOME": registro.get("NOME"),
+                            "DATA_FALECIMENTO": registro.get(
+                                "DATA_FALECIMENTO"
                             )
-                    
-        for dados_inserts in as_completed(retorno_insert):
-             resultado = dados_inserts.result()
-             print(f"LISTA COM OS DADOS DO COMPLENT {resultado}")
+                        }
+                    )
 
-             if not resultado or not isinstance(resultado, dict):
-                 ClassLogger.logging.error(
-                     "INSERCAO RETORNOU UM RESULTADO INVALIDO: %r", resultado
-                 )
-                 lista_error.append({
-                     "status": "ERRO_FATAL",
-                     "erro": "A inserção não retornou um resultado válido.",
-                     "resultado": resultado,
-                 })
-                 continue
+                    print(
+                        "ERRO AO PROCESSAR RESULTADO EXISTS:"
+                    )
 
-             status = str(resultado.get('status', '')).lower()
-             print(f"retorno do status? {status}")
-             
-             if 'sucesso' in status:
-                 contador_por_fonte[resultado.get('LINK_FONTE', '')]["INSERT"] += 1
-             elif 'erro' in status or 'ERRO_FATAL' in status.upper():
-                   contador_por_fonte[resultado.get('LINK_FONTE', '')]["ERROR"] += 1
-                   lista_error.append(resultado)
-            
-              
+                    print(erro_detalhado)
 
-            #  print(f"RETORNO VINDO DO INSERT DO OBITO {resultado}")
+                    ClassLogger.logging.error(
+                        "ERRO NO PROCESSAMENTO DO EXISTS_BY_NAME: %s",
+                        erro_detalhado
+                    )
+
+    # ------------------------------------------------------------------
+    # INSERÇÃO DOS REGISTROS
+    # ------------------------------------------------------------------
+
+    if registros_para_inserir:
+
+        print("=" * 80)
+        print(
+            "REGISTROS PARA INSERÇÃO:",
+            len(registros_para_inserir)
+        )
+        print("=" * 80)
+
+        futures_insert = {}
+
+        with ThreadPoolExecutor(
+            max_workers=self.max_workers
+        ) as executor:
+
+            for registro in registros_para_inserir:
+
+                future = executor.submit(
+                    insert_base_obito,
+                    self,
+                    registro
+                )
+
+                futures_insert[future] = registro
+
+            # ----------------------------------------------------------
+            # PROCESSA RESULTADOS DOS INSERTS
+            # ----------------------------------------------------------
+
+            for future in as_completed(futures_insert):
+
+                registro = futures_insert[future]
+
+                fonte_registro = registro.get(
+                    "LINK_FONTE",
+                    ""
+                )
+
+                try:
+
+                    resultado = future.result()
+
+                    print(
+                        "RETORNO INSERT:",
+                        resultado
+                    )
+
+                    # --------------------------------------------------
+                    # RETORNO INVÁLIDO
+                    # --------------------------------------------------
+
+                    if (
+                        not resultado
+                        or not isinstance(resultado, dict)
+                    ):
+
+                        contador_por_fonte[
+                            fonte_registro
+                        ]["ERROR"] += 1
+
+                        lista_error.append(
+                            {
+                                "status": "ERRO_FATAL",
+                                "erro": (
+                                    "A inserção não retornou "
+                                    "um resultado válido."
+                                ),
+                                "LINK_FONTE": fonte_registro,
+                                "NOME": registro.get("NOME"),
+                                "DATA_FALECIMENTO": registro.get(
+                                    "DATA_FALECIMENTO"
+                                ),
+                                "resultado": resultado
+                            }
+                        )
+
+                        ClassLogger.logging.error(
+                            "INSERCAO RETORNOU RESULTADO INVALIDO: %r",
+                            resultado
+                        )
+
+                        continue
+
+                    # --------------------------------------------------
+                    # FONTE DO RETORNO
+                    # --------------------------------------------------
+
+                    fonte = resultado.get(
+                        "LINK_FONTE",
+                        fonte_registro
+                    )
+
+                    status = str(
+                        resultado.get("status", "")
+                    ).lower()
+
+                    print(
+                        "STATUS INSERT:",
+                        status
+                    )
+
+                    # --------------------------------------------------
+                    # INSERT REALIZADO
+                    # --------------------------------------------------
+
+                    if "sucesso" in status:
+
+                        contador_por_fonte[
+                            fonte
+                        ]["INSERT"] += 1
+
+                    # --------------------------------------------------
+                    # ERRO NO INSERT
+                    # --------------------------------------------------
+
+                    elif (
+                        "erro" in status
+                        or "ERRO_FATAL" in status.upper()
+                    ):
+
+                        contador_por_fonte[
+                            fonte
+                        ]["ERROR"] += 1
+
+                        resultado["LINK_FONTE"] = fonte
+
+                        lista_error.append(
+                            resultado
+                        )
+
+                    # --------------------------------------------------
+                    # RETORNO NÃO RECONHECIDO
+                    # --------------------------------------------------
+
+                    else:
+
+                        contador_por_fonte[
+                            fonte
+                        ]["ERROR"] += 1
+
+                        resultado["LINK_FONTE"] = fonte
+
+                        lista_error.append(
+                            {
+                                "status": "ERRO_STATUS",
+                                "erro": (
+                                    "Status de inserção "
+                                    "não reconhecido."
+                                ),
+                                "LINK_FONTE": fonte,
+                                "resultado": resultado
+                            }
+                        )
+
+                except Exception as e:
+
+                    erro_detalhado = traceback.format_exc()
+
+                    contador_por_fonte[
+                        fonte_registro
+                    ]["ERROR"] += 1
+
+                    lista_error.append(
+                        {
+                            "status": "ERRO_INSERT",
+                            "erro": str(e),
+                            "LINK_FONTE": fonte_registro,
+                            "NOME": registro.get("NOME"),
+                            "DATA_FALECIMENTO": registro.get(
+                                "DATA_FALECIMENTO"
+                            )
+                        }
+                    )
+
+                    print(
+                        "ERRO NO INSERT:"
+                    )
+
+                    print(erro_detalhado)
+
+                    ClassLogger.logging.error(
+                        "ERRO PROCESSANDO INSERT: %s",
+                        erro_detalhado
+                    )
+
+    else:
+
+        print(
+            "Nenhum registro novo para inserir."
+        )
+
+    # ------------------------------------------------------------------
+    # ENVIO DOS ERROS
+    # ------------------------------------------------------------------
+
     try:
+
         if lista_error:
+
+            print("=" * 80)
+            print(
+                "TOTAL DE ERROS:",
+                len(lista_error)
+            )
+            print("=" * 80)
+
             erros_para_enviar = list(lista_error)
-            df_erros = pd.DataFrame(erros_para_enviar)
-            #  html_tabela = df_erros.to_html(index=False, classes='table table-striped')
-            convert = df_erros.to_html(index=False, border=1, justify='center')
-            # COM OS ERROS VOU CRIAR UM CSV PARA
-            pasta = 'arquivos/error'
-            documento = f'documento_erros'
-            salvar_csv_error(erros_para_enviar, pasta, documento)
-            enviar_email_all(convert)
-            lista_error.clear()  # limpa após enviar, para não duplicar em execuções futuras
+
+            df_erros = pd.DataFrame(
+                erros_para_enviar
+            )
+
+            html_tabela = df_erros.to_html(
+                index=False,
+                border=1,
+                justify="center"
+            )
+
+            # ----------------------------------------------------------
+            # SALVA CSV
+            # ----------------------------------------------------------
+
+            pasta = "arquivos/error"
+            documento = "documento_erros"
+
+            salvar_csv_error(
+                erros_para_enviar,
+                pasta,
+                documento
+            )
+
+            # ----------------------------------------------------------
+            # ENVIA E-MAIL
+            # ----------------------------------------------------------
+
+            enviar_email_all(
+                html_tabela
+            )
+
+            print(
+                "E-mail de erros enviado com sucesso."
+            )
+
+            # Evita duplicidade
+            lista_error.clear()
+
         else:
-            print('NEHUM DADO A SER ENVIADO')
+
+            print(
+                "Nenhum erro para enviar por e-mail."
+            )
+
     except Exception as e:
-         erro_detalhado = traceback.format_exc()
-         print(f"Tem o erro para o processo de envio de erros:{erro_detalhado}")
-         ClassLogger.logging.error(f"ERRO PROCESAMENTO ERRO {str(e)}")
 
-    print(f"contator populado {contador_por_fonte}")
-    if contador_por_fonte:
-        for linha in tabela_atualizar:
-            fonte = linha['LINK_FONTE']
-            linha['QTA A INSERIR'] = contador_por_fonte[fonte]["INSERT"]
-            linha['QTA J/N BASE'] = contador_por_fonte[fonte]["JB"]
-            linha['QTA ERROR'] = contador_por_fonte[fonte]["ERROR"]
-            linha['QTA INSERIDO'] = contador_por_fonte[fonte]["INSERT"]
+        erro_detalhado = traceback.format_exc()
 
-            
-        
-        df_da_fonte_atual = pd.DataFrame(tabela_atualizar)
-        #ADICIONO O RESULTADO TABELA, NA VARIAVEL GLOBAL PAR ENIVAR NO FINAL
-        self.lista_dataframes_global.append(df_da_fonte_atual)
+        print(
+            "ERRO NO PROCESSAMENTO/ENVIO DOS ERROS:"
+        )
 
-        #RETONRO PROCESSO GERAL
-        return True
+        print(erro_detalhado)
 
+        ClassLogger.logging.error(
+            "ERRO PROCESSAMENTO ENVIO DE ERROS: %s",
+            erro_detalhado
+        )
 
-def base_obito(self, todos_dados):
+    # ------------------------------------------------------------------
+    # MONTA RESUMO POR FONTE
+    # ------------------------------------------------------------------
 
-    futures = []
-    falhas_ids = []
-    
-    with ThreadPoolExecutor(max_workers=self.max_workers) as executor:
+    print("=" * 80)
+    print("CONTADOR POR FONTE")
+    print("=" * 80)
 
+    print(contador_por_fonte)
 
-        # with self.db.get_connection() as conn:
-            dados_df = pd.DataFrame(todos_dados)
-            for lista in todos_dados.itertuples(index=False):
-                print(f"acessando alista aqui {lista.NOME}")
-                # print(f"acesando alista aqui {lista.get('NOME')}")
-                # futures.append(
-                #     executor.submit(
-                #        exists_by_name,conn,lista.NOME,lista.DATA_FALECIMENTO
-                     
-                #     )
-                # )
+    for linha in tabela_atualizar:
 
-            print(f"MEU FETURE POPULADO {futures}")
+        fonte = linha["LINK_FONTE"]
 
-            for future in as_completed(futures):
-                print('teste')
-            #     resultado = future.result()
-            #      # atualiza contador (thread-safe aqui no main)
-            #     if resultado:
-            #         sigla = resultado.get("sigla", "N/I")
+        contador = contador_por_fonte[fonte]
 
-            #         match resultado.get("acao"):
-            #             case "INSERT":
-            #                 contador_por_pais[sigla]["INSERT"] += 1
+        linha["QTA A INSERIR"] = contador["QTINSERT"]
 
-            #             case "UPDATE":
-            #                 contador_por_pais[sigla]["UPDATE"] += 1
+        linha["QTA J/N BASE"] = contador["JB"]
 
-            #             case "UPDATE_NAME":
-            #                 contador_por_pais[sigla]["UPDATE_NAME"] += 1
+        linha["QTA ERROR"] = contador["ERROR"]
 
-            #             case "ERROR":
-            #                 falhas_ids.append(resultado['dados_error'])
-            #                 contador_por_pais[sigla]["ERROR"] += 1
+        linha["QTA INSERIDO"] = contador["INSERT"]
 
-            #             case _:
-            #                 contador_por_pais[sigla]["NA"] += 1
+        linha["QTA UPDATE"] = contador["UPDATE"]
 
+        linha["QTA UPDATE NAME"] = contador["UPDATE_NAME"]
 
-            # print(f"MEU CONTADOR PREENCHDIDO {contador_por_pais}")
-            # ClassLogger.logger.info(f"MEU CONTADOR PREENCHDIDO {contador_por_pais}")
+    # ------------------------------------------------------------------
+    # DATAFRAME FINAL
+    # ------------------------------------------------------------------
+
+    if tabela_atualizar:
+
+        df_da_fonte_atual = pd.DataFrame(
+            tabela_atualizar
+        )
+
+        print("=" * 80)
+        print("RESUMO FINAL")
+        print("=" * 80)
+
+        print(
+            df_da_fonte_atual.to_string(
+                index=False
+            )
+        )
+
+        # --------------------------------------------------------------
+        # GUARDA PARA O PROCESSAMENTO GERAL
+        # --------------------------------------------------------------
+
+        if not hasattr(
+            self,
+            "lista_dataframes_global"
+        ):
+            self.lista_dataframes_global = []
+
+        self.lista_dataframes_global.append(
+            df_da_fonte_atual
+        )
+
+    # ------------------------------------------------------------------
+    # RETORNO
+    # ------------------------------------------------------------------
+
+    print("=" * 80)
+    print("PROCESSAMENTO FINALIZADO")
+    print("=" * 80)
+
+    return True
