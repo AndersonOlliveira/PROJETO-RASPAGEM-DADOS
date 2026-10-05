@@ -177,29 +177,16 @@ def _arquivos_process_servidor(self, chave_servidor):
             print(
                 f"Vou processar {len(df)} registros novos."
             )
-
-                
-            # print(f"Processando : {arquivo}")
-            
-            # Lê o CSV atual
-            # df = pd.read_csv(f"{arquivos}/{arquivo}", sep=";")
-
             
             contador[arquivo]["ACHADAS"] += 1              
             contador[arquivo]["QTINSERT"] += len(df)       
-          
-
-    
             df.columns = df.columns.str.strip().str.rstrip(':').str.strip().str.replace(' ', '_')
 
             df.rename(columns={'FALECIMENTO':  auxliares.TEXTO_FALECIMENTO ,'DATA_NACIMENTO': 'DATA_NASCIMENTO'}, inplace=True)
             # df.rename(columns={'FALECIMENTO':  auxliares.TEXTO_FALECIMENTO ,'DATA_NACIMENTO': 'DATA_NASCIMENTO','FILIACAO_A': 'FAMILIARES_A','FILIACAO_B': 'FAMILIARES_B'}, inplace=True)
 
-            print(df.columns)
-            # df = df.drop_duplicates(subset=['NOME'])
             df = df.drop_duplicates(subset=['NOME', 'DATA_FALECIMENTO'])
-            # print(df)
-
+          
             if 'NOME' in df.columns:
                 df = df[~df['NOME'].astype(str).str.strip().isin(['CANCELADO/TESTE', '.','TESTE', '********','CANCELADO'])].copy()
 
@@ -242,8 +229,7 @@ def _arquivos_process_servidor(self, chave_servidor):
                 if 'FAMILIARES' in df.columns:
                     df['FAMILIARES_A'] =  df['FAMILIARES'].apply(tratar_familiares_A).str.upper()
                     df['FAMILIARES_B'] =  df['FAMILIARES'].apply(tratar_familiares_B).str.upper()
-                # else:
-                    # Se não tem a coluna unificada 'FAMILIARES', verifica as colunas individuais
+               
                 if 'PAIS' in df.columns:
                     df['FAMILIARES_A'] = df['PAIS'].apply(tratar_familiares_array).str.upper()
                 if 'FILHOS' in df.columns:
@@ -255,13 +241,7 @@ def _arquivos_process_servidor(self, chave_servidor):
                 if 'FILIACAO_A' in df.columns:
                     df['FAMILIARES_A'] =  df['FILIACAO_A'].apply(remover).str.upper()
                     df['FAMILIARES_B'] =  df['FILIACAO_B'].apply(remover).str.upper()
-                    # else:
-                    #     df['CONJUGE'] = auxliares.TEXTO_P
-
-            
-                
-                # Aplica as funções nas colunas
-                # df['CONJUGE'] = auxliares.TEXTO_P
+                   
                 df['ANO_NASCIMENTO_ESTIMADO'] = df['IDADE'].apply(calcula_ano)
                 if 'DATA_NASCIMENTO' in df.columns:
                     df['ANO_NASCIMENTO_INFORMADO'] = df['DATA_NASCIMENTO'].apply(formatar_data)
@@ -338,7 +318,7 @@ def calcula_ano(idade_enviada):
         if nasc_str in [0]:
             return auxliares.IDADE
         try:
-            print(f"VINDO AQUI???")
+           
             ano_atual = datetime.now().strftime("%Y")
             return  int(ano_atual) - int(nasc_str)
         except Exception as e:
