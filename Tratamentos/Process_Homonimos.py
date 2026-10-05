@@ -75,9 +75,10 @@ def verify_homonimos(self):
 
                     for _, registro in bloco.iterrows():
                         nasc_str = str(registro['data_nascimento']).strip()
+                        print(f"[INICIO] DE TUDO : {registro['nome']} | obito_id={registro['obito_id']} | data={registro['data_nascimento']}", flush=True)
 
-                        if nasc_str in ['nan']:
-                            print(f"[INICIO] in nan {registro['nome']} | obito_id={registro['obito_id']} | sem data", flush=True)
+                        if nasc_str in ['nan'] or nasc_str == 'None' or nasc_str == 'NaT':
+                            print(f"[INICIO] IN NAN OR NONE {registro['nome']} | obito_id={registro['obito_id']} | sem data", flush=True)
                             result_exists = executor.submit(search_from_name_obito, self, limpar_nome_rn(registro['nome']), None, registro['obito_id'], registro)
                         else:
                             print(f"[INICIO] {registro['nome']} | obito_id={registro['obito_id']} | data={registro['data_nascimento']}", flush=True)
@@ -108,6 +109,7 @@ def verify_homonimos(self):
 
     print(f"QTA {len(lista_localizados)} hom", flush=True)
 
+    # return
     try:
         for result_lista in lista_localizados:
             if not isinstance(result_lista, dict):

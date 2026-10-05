@@ -341,13 +341,9 @@ class Processor:
         ClassLogger.logging.info("=" * 80)
         try:
             contador_match , lista_erros = mathc_process(self)
-            print(f"DADOS LACALIZADOS? {contador_match}")
-
+           
             if lista_erros:
                 df = pd.DataFrame(lista_erros)
-                # corpo_html_string = df.to_html(index=False, border=1, justify="center")
-                # corpo_html_bytes = corpo_html_string.encode('utf-8')
-                            
                 buffer_memoria = io.StringIO()
                 df.to_csv(buffer_memoria, index=False, sep=';', encoding='utf-8-sig')
                 dados_csv_bytes = buffer_memoria.getvalue().encode('utf-8-sig')
@@ -533,7 +529,7 @@ class Processor:
                 # ======================================================
 
                 msg = (
-                    "Processo normalização dos dados de homônimos\n"
+                    "Processo normalização dos dados de  obitos captura homônimos\n"
                     "\n"
                     "Quantidade de linhas processadas: {}\n"
                     "Quantidade de registros com falha: {}\n"
@@ -638,10 +634,10 @@ class Processor:
     def executar_ciclo(self):
         # self.executar() 
         # PROCESSAR OS DADOS CAPTURADOS
-        self.processar_arquivos([6]) 
+        # self.processar_arquivos([6]) 
         # self.process_macht_name()
         # self.process_cnt_obito()
-        # self.process_homonimos()
+        self.process_homonimos()
 
        
         

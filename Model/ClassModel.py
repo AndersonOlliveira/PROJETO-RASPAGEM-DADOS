@@ -323,7 +323,7 @@ def exists_by_name(self, person, falecimento):
             print(f"DATA FORMATAD? {data_falecimento_formatad}")
 
             query = """SELECT EXISTS(SELECT 1 FROM obito_captura.obito_dados WHERE UPPER(nome) = UPPER(%s) AND NULLIF(data_falecimento::TEXT, '') = %s) AS exists"""
-            
+
             try:
                 with self.pool_raspagem.get_connection() as conn:
                         with conn.cursor(cursor_factory=RealDictCursor) as cursor:
@@ -367,9 +367,7 @@ def get_list_cpf(self) -> List[Dict]:
                     ClassLogger.logger.error(f"Falha em caputrar os dados o erro get_lista_name_base_interpol - {str(e)}")
                 
 def get_list_cpf_cntid(self,cpf, link,ano) -> List[Dict]: 
-     
-      print(f"lista com cpf? {cpf}")
-
+      
       dados_achadados = []
       query = """SELECT cntid FROM  cnt, cntfis WHERE cntid = cntfiscnt AND cntcpfcgc = %s"""
       # LEMBRAR QUE PRECISA VIRA UMA TUPLA PARA A BUSCA POR CONTA DO PGADMIN 
@@ -412,7 +410,7 @@ def get_list_cpf_cntid(self,cpf, link,ano) -> List[Dict]:
 def get_list_cntobito(self,cpf,cntid,link,ano) -> List[Dict]: 
      
     
-      query = """SELECT cntobitocnt,cntobitoflag,cntobitofcm,cntobitoano FROM cntobito WHERE cntobitocnt = %s"""
+      query = """SELECT cntobitocnt , cntobitoflag ,cntobitofcm , cntobitoano FROM cntobito WHERE cntobitocnt = %s"""
       try:
                     
             with self.pool_producao.get_connection() as conn:
@@ -504,16 +502,24 @@ def list_obitos_with(self) -> List[Dict]:
 
 
 def search_from_name_obito(self, nome_busca, data_nascimento,obito_id,registro):
-        query = """SELECT cntcpfcgc AS cpf, cntid , trim(to_char(cntfisncm, 'YYYY')) as ano_nascimentos
-                   FROM cnt, cntfis
-                   WHERE cntid = cntfiscnt
-                     AND UPPER(cntnom) = %s
-                     AND length(cntcpfcgc) = %s"""
+        print(f"[INICIO] in nan {nome_busca} | obito_id={registro['obito_id']} | data-{data_nascimento}", flush=True)
+        query = """SELECT cntid, documento as cpf, trim(to_char(nascimento, 'YYYY')) as ano_nascimentos
+        FROM vw_data_nascimento
+        WHERE UPPER(nome) = %s 
+        AND length(documento) = %s """
+        # query = """SELECT cntcpfcgc AS cpf, cntid , trim(to_char(cntfisncm, 'YYYY')) as ano_nascimentos
+        #            FROM cnt, cntfis
+        #            WHERE cntid = cntfiscnt
+        #              AND UPPER(cntnom) = %s
+        #              AND length(cntcpfcgc) = %s"""
         params = [nome_busca.strip().upper(), auxliares.CPF_LEN]
         if data_nascimento:
-            query += " AND cntfisncm = %s"
+            # query += " AND cntfisncm = %s"
+            query += " AND nascimento = %s"
             params.append(data_nascimento.strip())
         query += " LIMIT 2"
+
+
         try:
             #PROCURO EM PRODUDCAO
             with self.pool_producao.get_connection() as conn:
@@ -521,7 +527,7 @@ def search_from_name_obito(self, nome_busca, data_nascimento,obito_id,registro):
                     cursor.execute(query, tuple(params))
                     resultado = cursor.fetchall()
                     # print(f"TOTAL A SER PROCESSADO {len(resultado)} registros para {nome_busca}")
-                    # print(f"LISTA COM OS ENCONTRADOS: {(resultado)}")
+                    print(f"LISTA COM OS ENCONTRADOS: {(resultado)}")
 
                     if resultado:
                         total_resultado = len(resultado)
@@ -559,14 +565,21 @@ def search_from_name_obito(self, nome_busca, data_nascimento,obito_id,registro):
                
             }
 def search_from_cpf_ano_nacimento(self, nome_busca, ano ,obito_id,registro):
-        query = """SELECT cntcpfcgc AS cpf, cntid , trim(to_char(cntfisncm, 'YYYY')) as ano_nascimentos
-                   FROM cnt, cntfis
-                   WHERE cntid = cntfiscnt
-                     AND UPPER(cntnom) = %s
-                     AND length(cntcpfcgc) = %s"""
+        query = """SELECT documento AS cpf, 
+        cntid , trim(to_char(a.nascimento , 'YYYY')) as ano_nascimentos
+                   FROM 
+	               vw_data_nascimento AS a
+                   WHERE  
+                     UPPER(a.nome) = %s
+                     AND length(a.documento) = %s"""
+        # query = """SELECT cntcpfcgc AS cpf, cntid , trim(to_char(cntfisncm, 'YYYY')) as ano_nascimentos
+        #            FROM cnt, cntfis
+        #            WHERE cntid = cntfiscnt
+        #              AND UPPER(cntnom) = %s
+        #              AND length(cntcpfcgc) = %s"""
         params = [nome_busca.strip().upper(), auxliares.CPF_LEN]
         if ano:
-            query += " AND trim(to_char(cntfisncm, 'YYYY')) = %s"
+            query += " AND trim(to_char(a.nascimento, 'YYYY')) = %s"
             params.append(ano.strip())
         query += " LIMIT 2"
         try:
@@ -794,7 +807,7 @@ def full_dados(self)-> List[Dict]:
 
 def full_dados_homonimos(self)-> List[Dict]:
 
-        query = """SELECT trim(UPPER(nome)) as nome, trim(to_char(data_nascimento, 'YYYY-MM-DD')) as data_nascimento , obito_id , cidade , data_falecimento , ano_nascimento_estimado FROM obito_captura.obito_dados where cpf is null limit 10"""
+        query = """SELECT trim(UPPER(nome)) as nome, trim(to_char(data_nascimento, 'YYYY-MM-DD')) as data_nascimento , obito_id , cidade , data_falecimento , ano_nascimento_estimado FROM obito_captura.obito_dados where cpf is null limit 2000"""
                
 
         try:
