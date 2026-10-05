@@ -75,24 +75,24 @@ def cnt_obitos_inserts(self,cntidobito,fonte,ano,data_completa):
 #inserir o lote dos registos
 def insert_base_obito(self,registro):
     # exits = False
-    exits = exists_by_name(self,registro['NOME'],registro['DATA_FALECIMENTO'])
+    # exits = exists_by_name(self,registro['NOME'],registro['DATA_FALECIMENTO'])
 
-    print(f"MEUS DADSOS {exits}")
+    # print(f"MEUS DADSOS {exits}")
 
-    if not exits:
-        print(f"NOME INFORMADO  {registro}")
+    # if not exits:
+    print(f"NOME INFORMADO  {registro}")
         # TRATAMENTO PARA INSERIR OS DADOS DENTRO DO BANCO 
 
-        if registro['DATA_FALECIMENTO'] == "0000-00-00":
+    if registro['DATA_FALECIMENTO'] == "0000-00-00":
             registro['DATA_FALECIMENTO'] = None
-        if registro['ANO_NASCIMENTO_INFORMADO'] == "0000-00-00":
-            registro['ANO_NASCIMENTO_INFORMADO'] = None
-        if registro['IDADE'] == "nan":
+    if registro['ANO_NASCIMENTO_INFORMADO'] == "0000-00-00":
+        registro['ANO_NASCIMENTO_INFORMADO'] = None
+    if registro['IDADE'] == "nan":
            registro['IDADE'] = None
 
-        idade = registro['IDADE']
-        if isinstance(idade, float):
-            idade = int(idade) if not math.isnan(idade) else None
+    idade = registro['IDADE']
+    if isinstance(idade, float):
+        idade = int(idade) if not math.isnan(idade) else None
         # valor = registro.get("ANO_NASCIMENTO_INFORMADO")
 
         # if pd.isna(valor):
@@ -106,12 +106,12 @@ def insert_base_obito(self,registro):
         #         registro["ANO_NASCIMENTO_INFORMADO"] = None
             
         # return
-        try:
-            query = """INSERT INTO obito_captura.obito_dados(
+    try:
+        query = """INSERT INTO obito_captura.obito_dados(
 	                nome, idade, data_falecimento, ano_nascimento_estimado, link_fonte, data_nascimento, cidade,data_captura)
                     VALUES  (%s,%s, %s, %s, %s, %s, %s, %s) RETURNING obito_id;"""
-            print(query)
-            print((
+        print(query)
+        print((
                 registro['NOME'],
                 registro['IDADE'],
                 registro['DATA_FALECIMENTO'],
@@ -126,8 +126,8 @@ def insert_base_obito(self,registro):
             
          
             # return
-            try:
-                with self.pool_raspagem.get_connection() as conn:
+        try:
+            with self.pool_raspagem.get_connection() as conn:
                         with conn.cursor() as cursor:
                             cursor.execute(query, (
                                 registro['NOME'],
@@ -154,7 +154,7 @@ def insert_base_obito(self,registro):
                                 "info_familiar": return_info_familiar if return_info_familiar else auxliares.INFO_INSERT
                                
                         } 
-            except Exception as e:
+        except Exception as e:
                     ClassLogger.logging.error(f"Falha ao inserir os dados na tabela  obito_dados - {repr(e)}")
                     print(f"nome o erro {registro['NOME']}")
                     return {
@@ -164,24 +164,24 @@ def insert_base_obito(self,registro):
                         "error": traceback.format_exc()
                 }
             
-        except Exception as e:
-            print(f"erro sendo apresentado {e}")
-            print(traceback.format_exc())
-            error = traceback.format_exc()
-            ClassLogger.logging.error(f"Segundo try ao inserir os dados na tabela obito_dados - {error}")
-            print(f"nome o erro{registro['NOME']}")
-            return {
+    except Exception as e:
+        print(f"erro sendo apresentado {e}")
+        print(traceback.format_exc())
+        error = traceback.format_exc()
+        ClassLogger.logging.error(f"Segundo try ao inserir os dados na tabela obito_dados - {error}")
+        print(f"nome o erro{registro['NOME']}")
+        return {
                "nome": registro,
                "status": "ERRO_FATAL", 
                "LINK_FONTE": registro['LINK_FONTE']
             }
-    else: 
-        #PEGAR O QUE JÁ EXISTE E TRATAR
-        return {
-               "nome": registro,
-               "status": "existes", 
-               "LINK_FONTE": registro['LINK_FONTE']
-            }
+    # else: 
+    #     #PEGAR O QUE JÁ EXISTE E TRATAR
+    #     return {
+    #            "nome": registro,
+    #            "status": "existes", 
+    #            "LINK_FONTE": registro['LINK_FONTE']
+    #         }
               
 
 
@@ -298,7 +298,7 @@ def update_cntobito(self,link,ano, data_completa, cntid):
         return {  "status": "error","msg": traceback.format_exc(), "cntid": cntid }
 
 
-def exists_by_name(self, person,falecimento):
+def exists_by_name(self, person, falecimento):
             print(person)
             print(falecimento)
 
@@ -323,6 +323,7 @@ def exists_by_name(self, person,falecimento):
             print(f"DATA FORMATAD? {data_falecimento_formatad}")
 
             query = """SELECT EXISTS(SELECT 1 FROM obito_captura.obito_dados WHERE UPPER(nome) = UPPER(%s) AND NULLIF(data_falecimento::TEXT, '') = %s) AS exists"""
+            
             try:
                 with self.pool_raspagem.get_connection() as conn:
                         with conn.cursor(cursor_factory=RealDictCursor) as cursor:
@@ -334,7 +335,7 @@ def exists_by_name(self, person,falecimento):
                 erro_detalhado = traceback.format_exc()
                 erro_msg = f"Falha em capturar os dados no obito_captura.obito_dados {str(e)}"
                 ClassLogger.logging.error(erro_msg)
-                enviar_email_all(f"<h2>Erro processamento </h2><p>{erro_detalhado}</p>")
+                # enviar_email_all(f"<h2>Erro processamento </h2><p>{erro_detalhado}</p>")
                 
                 return {
                     "status": "erro_conexao",

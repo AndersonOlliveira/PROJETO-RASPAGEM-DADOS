@@ -187,12 +187,12 @@ class Processor:
         try:
             self.pool_producao = ConectionPool.DbPool(
                 config=self.db_producao,
-                maxconn=self.max_workers
+                maxconn=self.max_workers_conn
             )
 
             self.pool_raspagem = ConectionPool.DbPool(
                 config=self.db_raspagem,
-                maxconn=self.max_workers
+                maxconn=self.max_workers_conn
             )
 
             self.stats = CrawlerStats(self.pool_raspagem)
