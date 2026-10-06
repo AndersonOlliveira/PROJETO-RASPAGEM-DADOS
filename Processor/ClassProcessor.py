@@ -635,9 +635,9 @@ class Processor:
 
 
     def executar_ciclo(self):
-        self.executar() 
+        # self.executar() 
         # PROCESSAR OS DADOS CAPTURADOS
-        self.processar_arquivos([1,2,3,4,5,6,7,8,9,10,11]) 
+        # self.processar_arquivos([1,2,3,4,5,6,7,8,9,10,11]) 
         self.process_macht_name()
         self.process_cnt_obito()
         self.process_homonimos()
