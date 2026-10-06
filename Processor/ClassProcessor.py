@@ -181,7 +181,8 @@ class Processor:
         self.batch_size_verify = 50
         self.lock = threading.Lock()
         self.db_producao = DbConfig("PROD")
-        self.db_raspagem = DbConfig("RASPAGEM")
+        # self.db_raspagem = DbConfig("RASPAGEM")
+        self.db_raspagem = DbConfig("PROD")
                
         # # ADICIONANDO A CAPTURA DOS ERROS DENTRO DO CODIGO, PARA CONEXAO E QUERY QUE DEREM ERROS
         try:
