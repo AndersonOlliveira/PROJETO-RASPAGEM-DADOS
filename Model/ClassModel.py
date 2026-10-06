@@ -350,7 +350,7 @@ def exists_by_name(self, person, falecimento):
 def get_list_cpf(self) -> List[Dict]: 
      
      
-      query = """SELECT cpf, link_fonte ,TO_CHAR(data_falecimento , 'YYYY-MM-DD') as ano FROM obito_captura.obito_dados where cpf is not null order by obito_id desc"""
+      query = """SELECT cpf, link_fonte ,TO_CHAR(data_falecimento , 'YYYY-MM-DD') as ano FROM obito_captura.obito_dados where cpf is not null order by obito_id desc limit 100"""
       
       try:
                     
@@ -785,7 +785,7 @@ def push_cpf_obito(self,cpf, idObito,registro_bloco,tipo):
 def full_dados(self)-> List[Dict]:
 
         query = """SELECT trim(UPPER(nome)) as nome, trim(to_char(data_nascimento, 'YYYY-MM-DD')) as data_nascimento ,obito_id FROM obito_captura.obito_dados
-                   where data_nascimento is not null and cpf is null and tipo_obito is null"""
+                   where data_nascimento is not null and cpf is null and tipo_obito is null ORDER BY RANDOM() ASC LIMIT 1000"""
                 #  where data_nascimento is not null and cpf is null ORDER BY RANDOM() ASC LIMIT 2 """
 
         try:
@@ -807,7 +807,7 @@ def full_dados(self)-> List[Dict]:
 
 def full_dados_homonimos(self)-> List[Dict]:
 
-        query = """SELECT trim(UPPER(nome)) as nome, trim(to_char(data_nascimento, 'YYYY-MM-DD')) as data_nascimento , obito_id , cidade , data_falecimento , ano_nascimento_estimado FROM obito_captura.obito_dados where cpf is null"""
+        query = """SELECT trim(UPPER(nome)) as nome, trim(to_char(data_nascimento, 'YYYY-MM-DD')) as data_nascimento , obito_id , cidade , data_falecimento , ano_nascimento_estimado FROM obito_captura.obito_dados where cpf is null limit 300"""
                
 
         try:
