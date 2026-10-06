@@ -632,12 +632,6 @@ def verify_cnt_obito(self):
                                     found['ano']
                                 )
 
-                                # ATENÇÃO:
-                                # No seu código original estava:
-                                #
-                                # url_valida = formartar_data(found['fontes'])
-                                #
-                                # Mantive a mesma chamada aqui.
                                 url_valida = formartar_data(
                                     found['fontes']
                                 )

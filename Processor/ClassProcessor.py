@@ -229,8 +229,8 @@ class Processor:
 
         try:
             # print(obter_servidores(self,[1, 7, 12]))
-            registros = obter_servidores(self,[1,2])
-            # registros = obter_servidores(self,[1,2,3,4,5,6,7,8,9,10,11])
+            # registros = obter_servidores(self,[1,2])
+            registros = obter_servidores(self,[1,2,3,4,5,6,7,8,9,10,11])
 
             total_processados = Process(self,registros)
 
@@ -632,11 +632,11 @@ class Processor:
 
 
     def executar_ciclo(self):
-        # self.executar() 
+        self.executar() 
         # PROCESSAR OS DADOS CAPTURADOS
-        # self.processar_arquivos([6]) 
-        # self.process_macht_name()
-        # self.process_cnt_obito()
+        self.processar_arquivos([1,2,3,4,5,6,7,8,9,10,11]) 
+        self.process_macht_name()
+        self.process_cnt_obito()
         self.process_homonimos()
 
        
