@@ -306,7 +306,7 @@ def verify_homonimos(self):
         )
 
         contador_macth_cntobito['N_ALTERAR'] += sucesso_heteronimo.get(
-            'N_ENCOTRATO',
+            'N_ENCONTRADO',
             0
         )
 
@@ -331,7 +331,7 @@ def verify_homonimos(self):
         )
 
         contador_macth_cntobito['N_ALTERAR'] += sucesso_heteronimo.get(
-            'N_ENCOTRATO',
+            'N_ENCONTRADO',
             0
         )
 
@@ -380,7 +380,7 @@ def processa_found(self,list_found):
     update_ob_localizado = []
     contador_ = defaultdict(lambda: {
                "ATUALIZADO": 0,
-               "N_ENCOTRATO": 0, #JA NA BASE
+               "N_ENCONTRADO": 0, #JA NA BASE
                "ERROR_ATUALIZAR":0
     })
     print("ESTOU ACESSANDO O processa_found")

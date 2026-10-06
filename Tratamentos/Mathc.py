@@ -399,7 +399,7 @@ def process_found(self, lista_found):
 
     contador_ = defaultdict(lambda: {
         "ATUALIZADO": 0,
-        "N_ENCOTRATO": 0,  # JA NA BASE
+        "N_ENCONTRADO": 0,  # JA NA BASE
         "ERROR_ATUALIZAR": 0
     })
 
