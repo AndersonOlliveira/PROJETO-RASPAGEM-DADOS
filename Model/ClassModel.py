@@ -785,7 +785,7 @@ def push_cpf_obito(self,cpf, idObito,registro_bloco,tipo):
 def full_dados(self)-> List[Dict]:
 
         query = """SELECT trim(UPPER(nome)) as nome, trim(to_char(data_nascimento, 'YYYY-MM-DD')) as data_nascimento ,obito_id FROM obito_captura.obito_dados
-                   where data_nascimento is not null and cpf is null and tipo_obito not in (1)"""
+                   where data_nascimento is not null and cpf is null and tipo_obito is null"""
                 #  where data_nascimento is not null and cpf is null ORDER BY RANDOM() ASC LIMIT 2 """
 
         try:
