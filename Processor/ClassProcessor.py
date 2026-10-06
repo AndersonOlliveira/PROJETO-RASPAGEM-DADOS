@@ -225,6 +225,8 @@ class Processor:
         inicio = datetime.now()
         ClassLogger.logging.info("=" * 80)
         ClassLogger.logging.info(f"Iniciando Consulta Site - {inicio}")
+        msg = (f"<h2>Iniciando Consulta Sites Obitos - Data hora {inicio}</h2>")
+        enviar_email_all(msg)
         time.sleep(2)
         ClassLogger.logging.info("=" * 80)
 
