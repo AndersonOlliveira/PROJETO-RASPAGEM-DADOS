@@ -416,7 +416,7 @@ class Processor:
                     f"Quantidade de linhas inseridas com sucesso na cntobito PROSCORE: {quantidade_inserida}\n"
                     f"Quantidade de registros com falha: {quantidade_erros}\n"
                     f"Quantidade de linhas atualizadas: {quantidade_atualizada}\n"
-                    f"Quantidade de linhas não atualizadas: {quantidade_nao_atualizada}\n"
+                    f"Quantidade de registros não atualizadod na base: {quantidade_nao_atualizada}\n"
                 )
             enviar_email_all_anexo(msg, dados_csv_bytes, 'dados_obitos')
                 #         # enviar_email_all_anexo(msg, corpo_html_bytes) #original
