@@ -6,14 +6,14 @@ def obter_ultimos_dias():
     
     lista_dias = [
         (data_atual - timedelta(days=i)).strftime('%d/%m/%Y') 
-        for i in range(2)   # ULTIMOS 7 DIAS
-        # for i in range(8)   # ULTIMOS 7 DIAS
+        # for i in range(2)   # ULTIMOS 7 DIAS
+        for i in range(30)   # ULTIMOS 30 DIAS
     ]
     
     # Inverte a lista para que fique na ordem cronológica (do mais antigo ao mais recente)
     lista_dias.reverse()
     
-    print(f"MEUS ULTIMOS 15 DIAS: {lista_dias[0]} até {lista_dias[-1]}")
+    print(f"MEUS ULTIMOS 30 DIAS: {lista_dias[0]} até {lista_dias[-1]}")
     return lista_dias
 
 
