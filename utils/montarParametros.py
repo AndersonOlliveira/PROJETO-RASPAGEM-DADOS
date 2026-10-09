@@ -14,8 +14,8 @@ def gerar_urls_ggo(url_base):
     # print(dez_anos)
     # print(meses)
     lista_param = {
-         "mes": [mes for mes in range(1,3)],
-         "ano":  [ano for ano in range(ano_atual - 1, ano_atual + 1)]
+         "mes": [mes for mes in range(1,13)],
+         "ano":  [ano for ano in range(ano_atual - 9, ano_atual + 1)]
         #  "ano": [ano_atual
     }
 
